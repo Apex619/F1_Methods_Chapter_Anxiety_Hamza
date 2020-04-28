@@ -38,6 +38,8 @@ The aim of this experiment is to compare repatability in typically used holding 
 
 ### Import Data
 ```{r}
+setwd("F1_Repeatability_Anxiety")
+
 Old_Tanks <- read.csv("Old_tanks.csv")
 Tall_Tanks <- read.csv("Tall_tanks.csv")
 Anxiety_Joined <- read.csv("F1_Anxiety_Repeatability_Exp.csv")
