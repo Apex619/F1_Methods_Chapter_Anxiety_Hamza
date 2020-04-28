@@ -1,0 +1,105 @@
+---
+title: "Anxiety_F1"
+author: "Hamza"
+date: "14/04/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+### Load packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+#install.packages("pacman")
+#install.packages("ggThemeAssist")
+#install.packages("ggbeeswarm")
+#install.packages("rptR")
+#install.packages("lme4")
+#install.packages("lmerTest")
+#install.packages("wesanderson")
+library(lmerTest)
+library(ggThemeAssist)
+library(rptR)
+library(lme4)
+library(readxl)
+library(dplyr)
+pacman::p_load(readxl, tidyr, dplyr, magrittr, lubridate, stringr, purrr)
+library(sjPlot)
+library(ggplot2)
+library(lubridate)
+library(wesanderson)
+library(ggbeeswarm)
+library(emmeans)
+#sessionInfo()
+```
+The aim of this experiment is to compare repatability in typically used holding tanks against our custom made tall tanks. We designed these tanks to exploit the zebrafish's natural tendency to dive in a novel environment. Typical holding tanks aren't very deep, and as such, it's harder to comapare variability between individuals. We designed our tanks to hold the same amount of water, but have a much deeper column. For this experiment, we aren't interested in the F1 classification of the fish groups (we are referring to all of them as WT) or even the differences between groups. We are only interested in the repeatability measurements. 
+
+### Import Data
+```{r}
+Old_Tanks <- read.csv("Old_tanks.csv")
+Tall_Tanks <- read.csv("Tall_tanks.csv")
+Anxiety_Joined <- read.csv("F1_Anxiety_Repeatability_Exp.csv")
+
+#Inspect
+str(Old_Tanks)
+str(Tall_Tanks)
+str(Anxiety_Joined)
+```
+
+#total distance (old, tall, joined)
+```{r}
+hist(Old_Tanks$tot_dist)
+hist(Tall_Tanks$tot_dist)
+hist(Anxiety_Joined$tot_dist)
+
+Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
+    nboot = 0, npermut = 0)
+Old_Tot_Dist
+
+Tall_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
+    nboot = 0, npermut = 0)
+Tall_Tot_Dist
+
+Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
+    nboot = 0, npermut = 0)
+Joined_Tot_Dist
+
+
+
+# Old_Tanks %>% 
+#   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
+#   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+#   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+#   theme_minimal()+
+#   labs(title = "Total Distance")
+# 
+# Tall_Tanks %>% 
+#   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
+#   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+#   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+#   theme_minimal()+
+#   labs(title = "Total Distance")
+# 
+# Anxiety_Joined %>% 
+#   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
+#   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+#   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+#   theme_minimal()+
+#   facet_grid(~Tank)
+#   labs(title = "Total Distance")
+# 
+# model1 <- lmer(tot_dist ~ Group  + (1 | Fish_ID), data = Old_Tanks)
+# tab_model(model1)
+# 
+# model2 <- lmer(tot_dist ~ Group + (1 | Fish_ID), data = Tall_Tanks)
+# tab_model(model2)
+# 
+# model3 <- lmer(tot_dist ~ Group + Tank + (1 | Fish_ID), data = Anxiety_Joined)
+# tab_model(model3)
+
+
+```
+
+
