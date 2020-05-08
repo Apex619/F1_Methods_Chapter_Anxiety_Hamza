@@ -56,6 +56,11 @@ hist(Old_Tanks$tot_dist)
 hist(Tall_Tanks$tot_dist)
 hist(Anxiety_Joined$tot_dist)
 
+
+hist(sqrt(Old_Tanks$tot_dist))
+hist(sqrt(Tall_Tanks$tot_dist))
+hist(sqrt(Anxiety_Joined$tot_dist))
+
 Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 0, npermut = 0)
 Old_Tot_Dist
@@ -106,9 +111,16 @@ Joined_Tot_Dist
 
 #low duration
 ```{r}
+
+par(mfrow=c(2,2))
 hist(Old_Tanks$low_dur)
 hist(Tall_Tanks$low_dur)
 hist(Anxiety_Joined$low_dur)
+
+model <- lmer(low_dur ~ (1 | Fish_ID), data = Old_Tanks)
+summary(model)
+plot(residuals(model))
+hist(residuals(model))
 
 Old_low_dur <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 0, npermut = 0)
