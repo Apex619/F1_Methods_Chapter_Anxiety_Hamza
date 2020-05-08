@@ -123,12 +123,16 @@ plot(residuals(model))
 hist(residuals(model))
 
 Old_low_dur <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 0, npermut = 0)
+    nboot = 1000, npermut = 0)
 Old_low_dur
+
+plot(Old_low_dur)
 
 Tall_low_dur <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
     nboot = 0, npermut = 0)
 Tall_low_dur
+
+str(Tall_low_dur)
 
 Joined_low_dur <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 0, npermut = 0)
