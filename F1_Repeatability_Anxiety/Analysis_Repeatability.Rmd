@@ -32,6 +32,7 @@ library(lubridate)
 library(wesanderson)
 library(ggbeeswarm)
 library(emmeans)
+library(patchwork)
 #sessionInfo()
 ```
 The aim of this experiment is to compare repatability in typically used holding tanks against our custom made tall tanks. We designed these tanks to exploit the zebrafish's natural tendency to dive in a novel environment. Typical holding tanks aren't very deep, and as such, it's harder to comapare variability between individuals. We designed our tanks to hold the same amount of water, but have a much deeper column. For this experiment, we aren't interested in the F1 classification of the fish groups (we are referring to all of them as WT) or even the differences between groups. We are only interested in the repeatability measurements. 
@@ -62,15 +63,16 @@ hist(sqrt(Tall_Tanks$tot_dist))
 hist(sqrt(Anxiety_Joined$tot_dist))
 
 Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 0, npermut = 0)
+    nboot = 1000, npermut = 1000)
 Old_Tot_Dist
+plot(Old_Tot_Dist)
 
 Tall_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 0, npermut = 0)
+    nboot = 1000, npermut = 1000)
 Tall_Tot_Dist
 
 Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 0, npermut = 0)
+    nboot = 1000, npermut = 1000)
 Joined_Tot_Dist
 
 
@@ -137,6 +139,94 @@ str(Tall_low_dur)
 Joined_low_dur <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 0, npermut = 0)
 Joined_low_dur
+```
+
+#mid duration
+```{r}
+
+par(mfrow=c(2,2))
+hist(Old_Tanks$mid_dur)
+hist(Tall_Tanks$mid_dur)
+hist(Anxiety_Joined$mid_dur)
+
+model2 <- lmer(mid_dur ~ (1 | Fish_ID), data = Old_Tanks)
+summary(model2)
+plot(residuals(model2))
+hist(residuals(model2))
+
+Old_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Old_mid_dur
+
+plot(Old_mid_dur)
+
+Tall_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Tall_mid_dur
+
+str(Tall_mid_dur)
+
+Joined_mid_dur <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Joined_mid_dur
+```
+
+#high duration
+```{r}
+
+par(mfrow=c(2,2))
+hist(Old_Tanks$high_dur)
+hist(Tall_Tanks$high_dur)
+hist(Anxiety_Joined$high_dur)
+
+model2 <- lmer(high_dur ~ (1 | Fish_ID), data = Old_Tanks)
+summary(model2)
+plot(residuals(model2))
+hist(residuals(model2))
+
+Old_high_dur <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Old_high_dur
+
+plot(Old_high_dur)
+
+Tall_high_dur <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Tall_high_dur
+
+# str(Tall_high_dur)
+
+Joined_high_dur <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Joined_high_dur
+```
+
+#freeze dur
+```{r}
+
+par(mfrow=c(2,2))
+hist(Old_Tanks$freezing_dur)
+hist(Tall_Tanks$freezing_dur)
+hist(Anxiety_Joined$freezing_dur)
+
+model3 <- lmer(freezing_dur ~ (1 | Fish_ID), data = Old_Tanks)
+summary(model3)
+plot(residuals(model3))
+hist(residuals(model3))
+
+Old_freezing_dur <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Old_freezing_dur
+
+plot(Old_freezing_dur)
+
+Tall_freezing_dur <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Tall_freezing_dur
+
+Joined_freezing_dur <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Joined_freezing_dur
 ```
 
 
