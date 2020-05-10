@@ -125,19 +125,17 @@ plot(residuals(model))
 hist(residuals(model))
 
 Old_low_dur <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 1000, npermut = 0)
+    nboot = 1000, npermut = 1000)
 Old_low_dur
 
 plot(Old_low_dur)
 
 Tall_low_dur <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 0, npermut = 0)
+    nboot = 1000, npermut = 1000)
 Tall_low_dur
 
-str(Tall_low_dur)
-
 Joined_low_dur <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 0, npermut = 0)
+    nboot = 1000, npermut = 1000)
 Joined_low_dur
 ```
 
@@ -201,7 +199,7 @@ Joined_high_dur <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data
 Joined_high_dur
 ```
 
-#freeze dur
+#freeze dur (will require some transforming)
 ```{r}
 
 par(mfrow=c(2,2))
@@ -229,5 +227,108 @@ Joined_freezing_dur <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_I
 Joined_freezing_dur
 ```
 
+#Plotting Repeatabilities with ggplot2
+
+Total distance
+```{r}
+Tot_Dist_rptr <- tibble(
+  Tank_Type = c("Short", "Tall"),
+  r = c(Old_Tot_Dist$R$Fish_ID,Tall_Tot_Dist$R$Fish_ID),
+  ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`),
+  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`))
+  
+Tot_Dist_rptr
+
+plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates: total distance")+
+  coord_flip()
+plot_Tot_Dist_rptr
+```
+
+Low duration
+```{r}
+low_dur_rptr <- tibble(
+  Tank_Type = c("Short", "Tall"),
+  r = c(Old_low_dur$R$Fish_ID,Tall_low_dur$R$Fish_ID),
+  ci.lb = c(Old_low_dur$CI_emp$`2.5%`,Tall_low_dur$CI_emp$`2.5%`),
+  ci.ub = c(Old_low_dur$CI_emp$`97.5%`,Tall_low_dur$CI_emp$`97.5%`))
+  
+low_dur_rptr
+
+plot_low_dur_rptr <- ggplot(low_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates: time spent in low zone")+
+  coord_flip()
+plot_low_dur_rptr
+```
+
+Middle duration
+```{r}
+mid_dur_rptr <- tibble(
+  Tank_Type = c("Short", "Tall"),
+  r = c(Old_mid_dur$R$Fish_ID,Tall_mid_dur$R$Fish_ID),
+  ci.lb = c(Old_mid_dur$CI_emp$`2.5%`,Tall_mid_dur$CI_emp$`2.5%`),
+  ci.ub = c(Old_mid_dur$CI_emp$`97.5%`,Tall_mid_dur$CI_emp$`97.5%`))
+  
+mid_dur_rptr
+
+plot_mid_dur_rptr <- ggplot(mid_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates: time spent in middle zone")+
+  coord_flip()
+plot_mid_dur_rptr
+```
+
+High duration
+```{r}
+high_dur_rptr <- tibble(
+  Tank_Type = c("Short", "Tall"),
+  r = c(Old_high_dur$R$Fish_ID,Tall_high_dur$R$Fish_ID),
+  ci.lb = c(Old_high_dur$CI_emp$`2.5%`,Tall_high_dur$CI_emp$`2.5%`),
+  ci.ub = c(Old_high_dur$CI_emp$`97.5%`,Tall_high_dur$CI_emp$`97.5%`))
+  
+high_dur_rptr
+
+plot_high_dur_rptr <- ggplot(high_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates: time spent in high zone")+
+  coord_flip()
+plot_high_dur_rptr
+```
+
+Freezing duration
+```{r}
+freezing_dur_rptr <- tibble(
+  Tank_Type = c("Short", "Tall"),
+  r = c(Old_freezing_dur$R$Fish_ID,Tall_freezing_dur$R$Fish_ID),
+  ci.lb = c(Old_freezing_dur$CI_emp$`2.5%`,Tall_freezing_dur$CI_emp$`2.5%`),
+  ci.ub = c(Old_freezing_dur$CI_emp$`97.5%`,Tall_freezing_dur$CI_emp$`97.5%`))
+  
+freezing_dur_rptr
+
+plot_freezing_dur_rptr <- ggplot(freezing_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates: time spent freezing")+
+  coord_flip()
+plot_freezing_dur_rptr
+```
+
+Joining plots with patchwork
 
 
