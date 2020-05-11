@@ -70,10 +70,13 @@ plot(Old_Tot_Dist)
 Tall_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_Tot_Dist
+tall_tot_dist_plot <- plot(Tall_Tot_Dist)
 
 Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Joined_Tot_Dist
+
+
 
 
 
@@ -227,7 +230,7 @@ Joined_freezing_dur <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_I
 Joined_freezing_dur
 ```
 
-#Plotting Repeatabilities with ggplot2
+#Plotting Repeatabilities 
 
 Total distance
 ```{r}
@@ -247,6 +250,14 @@ plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Ty
   labs(title = "Repeatability estimates: total distance")+
   coord_flip()
 plot_Tot_Dist_rptr
+
+# Set plot layout
+layout.matrix <- matrix(c(1, 2, 1, 2), nrow = 2, ncol = 2)
+layout(mat = layout.matrix,
+       heights = c(3, 3), # Heights of the two rows
+       widths = c(2, 2)) # Widths of the two columns
+
+
 ```
 
 Low duration
@@ -329,6 +340,7 @@ plot_freezing_dur_rptr <- ggplot(freezing_dur_rptr, aes(x=Tank_Type, y=r, colour
 plot_freezing_dur_rptr
 ```
 
-Joining plots with patchwork
+
+
 
 
