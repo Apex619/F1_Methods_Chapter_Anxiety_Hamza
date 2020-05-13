@@ -39,7 +39,6 @@ The aim of this experiment is to compare repatability in typically used holding 
 
 ### Import Data
 ```{r}
-setwd("F1_Repeatability_Anxiety")
 
 Old_Tanks <- read.csv("Old_tanks.csv")
 Tall_Tanks <- read.csv("Tall_tanks.csv")
@@ -251,11 +250,6 @@ plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Ty
   coord_flip()
 plot_Tot_Dist_rptr
 
-# Set plot layout
-layout.matrix <- matrix(c(1, 2, 1, 2), nrow = 2, ncol = 2)
-layout(mat = layout.matrix,
-       heights = c(3, 3), # Heights of the two rows
-       widths = c(2, 2)) # Widths of the two columns
 
 
 ```
@@ -339,6 +333,16 @@ plot_freezing_dur_rptr <- ggplot(freezing_dur_rptr, aes(x=Tank_Type, y=r, colour
   coord_flip()
 plot_freezing_dur_rptr
 ```
+
+Joining plots
+```{r}
+plots_dur <- (plot_high_dur_rptr / plot_mid_dur_rptr / plot_low_dur_rptr)
+plots_dur
+
+plots_other <- (plot_Tot_Dist_rptr/plot_freezing_dur_rptr)
+plots_other
+```
+
 
 
 
