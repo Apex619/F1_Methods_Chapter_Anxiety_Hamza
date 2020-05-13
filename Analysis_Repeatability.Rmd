@@ -75,9 +75,9 @@ Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data
     nboot = 1000, npermut = 1000)
 Joined_Tot_Dist
 
-
-
-
+Model_Tot_Dist <- lmer(tot_dist ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_Tot_Dist)
+hist(residuals(Model_Tot_Dist))
 
 # Old_Tanks %>% 
 #   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
@@ -139,6 +139,10 @@ Tall_low_dur
 Joined_low_dur <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Joined_low_dur
+
+Model_low_dur <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_low_dur)
+hist(residuals(Model_low_dur))
 ```
 
 #mid duration
@@ -169,6 +173,10 @@ str(Tall_mid_dur)
 Joined_mid_dur <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Joined_mid_dur
+
+Model_mid_dur <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_mid_dur)
+hist(residuals(Model_mid_dur))
 ```
 
 #high duration
@@ -188,17 +196,32 @@ Old_high_dur <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tan
     nboot = 1000, npermut = 1000)
 Old_high_dur
 
-plot(Old_high_dur)
+Old_high_dur2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Old_high_dur2
 
 Tall_high_dur <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_high_dur
+
+Tall_high_dur2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Tall_high_dur2
+
 
 # str(Tall_high_dur)
 
 Joined_high_dur <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Joined_high_dur
+
+Model_high_dur <- lmer(high_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_high_dur)
+hist(residuals(Model_high_dur))
+
+Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_high_dur2)
+hist(residuals(Model_high_dur2))
 ```
 
 #freeze dur (will require some transforming)
@@ -218,15 +241,45 @@ Old_freezing_dur <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data =
     nboot = 1000, npermut = 1000)
 Old_freezing_dur
 
+Old_freezing_dur2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Old_freezing_dur2
+
+Old_freezing_dur3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Old_freezing_dur3
+
 plot(Old_freezing_dur)
 
 Tall_freezing_dur <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_freezing_dur
 
+Tall_freezing_dur2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Tall_freezing_dur2
+
+Tall_freezing_dur3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Tall_freezing_dur3
+
 Joined_freezing_dur <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Joined_freezing_dur
+
+Model_freezing_dur <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_freezing_dur)
+hist(residuals(Model_freezing_dur))
+
+
+Model_freezing_dur2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_freezing_dur2)
+hist(residuals(Model_freezing_dur2))
+
+Model_freezing_dur3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_freezing_dur3)
+hist(residuals(Model_freezing_dur3))
+
 ```
 
 #Plotting Repeatabilities 
@@ -249,9 +302,6 @@ plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Ty
   labs(title = "Repeatability estimates: total distance")+
   coord_flip()
 plot_Tot_Dist_rptr
-
-
-
 ```
 
 Low duration
