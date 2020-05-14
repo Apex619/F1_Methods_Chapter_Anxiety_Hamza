@@ -57,9 +57,9 @@ hist(Tall_Tanks$tot_dist)
 hist(Anxiety_Joined$tot_dist)
 
 
-hist(sqrt(Old_Tanks$tot_dist))
-hist(sqrt(Tall_Tanks$tot_dist))
-hist(sqrt(Anxiety_Joined$tot_dist))
+# hist(sqrt(Old_Tanks$tot_dist))
+# hist(sqrt(Tall_Tanks$tot_dist))
+# hist(sqrt(Anxiety_Joined$tot_dist))
 
 Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
@@ -77,6 +77,7 @@ Joined_Tot_Dist
 
 Model_Tot_Dist <- lmer(tot_dist ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_Tot_Dist)
+tab_model(Model_Tot_Dist)
 hist(residuals(Model_Tot_Dist))
 
 # Old_Tanks %>% 
@@ -142,6 +143,7 @@ Joined_low_dur
 
 Model_low_dur <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_low_dur)
+tab_model(Model_low_dur)
 hist(residuals(Model_low_dur))
 ```
 
@@ -209,18 +211,18 @@ Tall_high_dur2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data =
 Tall_high_dur2
 
 
-# str(Tall_high_dur)
-
 Joined_high_dur <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Joined_high_dur
 
 Model_high_dur <- lmer(high_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_high_dur)
+tab_model(Model_high_dur)
 hist(residuals(Model_high_dur))
 
 Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_high_dur2)
+tab_model(Model_high_dur2)
 hist(residuals(Model_high_dur2))
 ```
 
@@ -278,6 +280,7 @@ hist(residuals(Model_freezing_dur2))
 
 Model_freezing_dur3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_freezing_dur3)
+tab_model(Model_freezing_dur3)
 hist(residuals(Model_freezing_dur3))
 
 ```
@@ -348,9 +351,9 @@ High duration
 ```{r}
 high_dur_rptr <- tibble(
   Tank_Type = c("Short", "Tall"),
-  r = c(Old_high_dur$R$Fish_ID,Tall_high_dur$R$Fish_ID),
-  ci.lb = c(Old_high_dur$CI_emp$`2.5%`,Tall_high_dur$CI_emp$`2.5%`),
-  ci.ub = c(Old_high_dur$CI_emp$`97.5%`,Tall_high_dur$CI_emp$`97.5%`))
+  r = c(Old_high_dur2$R$Fish_ID,Tall_high_dur2$R$Fish_ID),
+  ci.lb = c(Old_high_dur2$CI_emp$`2.5%`,Tall_high_dur2$CI_emp$`2.5%`),
+  ci.ub = c(Old_high_dur2$CI_emp$`97.5%`,Tall_high_dur2$CI_emp$`97.5%`))
   
 high_dur_rptr
 
@@ -368,9 +371,9 @@ Freezing duration
 ```{r}
 freezing_dur_rptr <- tibble(
   Tank_Type = c("Short", "Tall"),
-  r = c(Old_freezing_dur$R$Fish_ID,Tall_freezing_dur$R$Fish_ID),
-  ci.lb = c(Old_freezing_dur$CI_emp$`2.5%`,Tall_freezing_dur$CI_emp$`2.5%`),
-  ci.ub = c(Old_freezing_dur$CI_emp$`97.5%`,Tall_freezing_dur$CI_emp$`97.5%`))
+  r = c(Old_freezing_dur3$R$Fish_ID,Tall_freezing_dur3$R$Fish_ID),
+  ci.lb = c(Old_freezing_dur3$CI_emp$`2.5%`,Tall_freezing_dur3$CI_emp$`2.5%`),
+  ci.ub = c(Old_freezing_dur3$CI_emp$`97.5%`,Tall_freezing_dur3$CI_emp$`97.5%`))
   
 freezing_dur_rptr
 
