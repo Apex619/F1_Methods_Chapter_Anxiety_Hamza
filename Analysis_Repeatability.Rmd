@@ -33,6 +33,7 @@ library(wesanderson)
 library(ggbeeswarm)
 library(emmeans)
 library(patchwork)
+library(easyGgplot2)
 #sessionInfo()
 ```
 The aim of this experiment is to compare repatability in typically used holding tanks against our custom made tall tanks. We designed these tanks to exploit the zebrafish's natural tendency to dive in a novel environment. Typical holding tanks aren't very deep, and as such, it's harder to comapare variability between individuals. We designed our tanks to hold the same amount of water, but have a much deeper column. For this experiment, we aren't interested in the F1 classification of the fish groups (we are referring to all of them as WT) or even the differences between groups. We are only interested in the repeatability measurements. 
@@ -117,7 +118,7 @@ hist(residuals(Model_Tot_Dist))
 #low duration
 ```{r}
 
-par(mfrow=c(2,2))
+# par(mfrow=c(2,2))
 hist(Old_Tanks$low_dur)
 hist(Tall_Tanks$low_dur)
 hist(Anxiety_Joined$low_dur)
@@ -150,7 +151,7 @@ hist(residuals(Model_low_dur))
 #mid duration
 ```{r}
 
-par(mfrow=c(2,2))
+
 hist(Old_Tanks$mid_dur)
 hist(Tall_Tanks$mid_dur)
 hist(Anxiety_Joined$mid_dur)
@@ -158,7 +159,7 @@ hist(Anxiety_Joined$mid_dur)
 model2 <- lmer(mid_dur ~ (1 | Fish_ID), data = Old_Tanks)
 summary(model2)
 plot(residuals(model2))
-hist(residuals(model2))
+hist(residuals(model2)) #We need to look at residual normality and not raw data
 
 Old_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
@@ -170,7 +171,6 @@ Tall_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tan
     nboot = 1000, npermut = 1000)
 Tall_mid_dur
 
-str(Tall_mid_dur)
 
 Joined_mid_dur <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
@@ -184,7 +184,7 @@ hist(residuals(Model_mid_dur))
 #high duration
 ```{r}
 
-par(mfrow=c(2,2))
+
 hist(Old_Tanks$high_dur)
 hist(Tall_Tanks$high_dur)
 hist(Anxiety_Joined$high_dur)
@@ -229,7 +229,7 @@ hist(residuals(Model_high_dur2))
 #freeze dur (will require some transforming)
 ```{r}
 
-par(mfrow=c(2,2))
+
 hist(Old_Tanks$freezing_dur)
 hist(Tall_Tanks$freezing_dur)
 hist(Anxiety_Joined$freezing_dur)
@@ -395,6 +395,58 @@ plots_dur
 plots_other <- (plot_Tot_Dist_rptr/plot_freezing_dur_rptr)
 plots_other
 ```
+
+More plots
+```{r}
+Violin_Dist <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='tot_dist', 
+    groupName='Tank',
+    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+    backgroundColor="white", xtitle="Tank", ytitle="Total Distance", 
+    mainTitle="Total Distance: Tall vs Short",
+    addDot=FALSE, dotSize=0.3)+
+  facet_grid(~Sex)
+Violin_Dist
+
+Violin_Low <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='low_dur', 
+    groupName='Tank',
+    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+    backgroundColor="white", xtitle="Tank", ytitle="Low Duration", 
+    mainTitle="Time spent in low zone: Tall vs Short",
+    addDot=FALSE, dotSize=0.3)+
+  facet_grid(~Sex)
+Violin_Low
+
+Violin_Mid <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='mid_dur', 
+    groupName='Tank',
+    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+    backgroundColor="white", xtitle="Tank", ytitle="Mid Duration", 
+    mainTitle="Time spent in mid zone: Tall vs Short",
+    addDot=FALSE, dotSize=0.3)+
+  facet_grid(~Sex)
+Violin_Mid
+
+Violin_High <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='high_dur', 
+    groupName='Tank',
+    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+    backgroundColor="white", xtitle="Tank", ytitle="High Duration", 
+    mainTitle="Time spent in high zone: Tall vs Short",
+    addDot=FALSE, dotSize=0.3)+
+  facet_grid(~Sex)
+Violin_High
+
+Violin_Freezing <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='freezing_dur', 
+    groupName='Tank',
+    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+    backgroundColor="white", xtitle="Tank", ytitle="Freezing Duration", 
+    mainTitle="Time spent in freezing: Tall vs Short",
+    addDot=FALSE, dotSize=0.3)+
+  facet_grid(~Sex)
+Violin_Freezing
+
+
+plot_model(Model_freezing_dur3)
+```
+
 
 
 
