@@ -499,7 +499,7 @@ tab_model(Model_freezing_dur3)
 hist(residuals(Model_freezing_dur3))
 
 ```
-#Freezing sex
+#Freezing sex ( is transformation necessary for some of the data ?)
 ```{r}
 hist(Old_Tanks_Male$freezing_dur)
 hist(Old_Tanks_Female$freezing_dur)
@@ -511,13 +511,14 @@ hist(Both_Tanks_Female$freezing_dur)
 Old_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Old_freezing_dur_Male
-plot(Old_freezing_dur_Male)
+plot(Old_freezing_dur_Male) #transformation not required?
 
 Tall_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_freezing_dur_Male
+plot(Tall_freezing_dur_Male)
 
-Old_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
+Old_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
     nboot = 1000, npermut = 1000)
 Old_freezing_dur_Male2
 plot(Old_freezing_dur_Male2)
@@ -525,8 +526,9 @@ plot(Old_freezing_dur_Male2)
 Tall_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_freezing_dur_Male2
+plot(Tall_freezing_dur_Male2)
 
-Old_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
+Old_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
     nboot = 1000, npermut = 1000)
 Old_freezing_dur_Male3
 plot(Old_freezing_dur_Male3)
@@ -534,6 +536,7 @@ plot(Old_freezing_dur_Male3)
 Tall_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_freezing_dur_Male3
+plot(Tall_freezing_dur_Male3)
 
 
 Joined_freezing_dur_Male <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
@@ -550,7 +553,7 @@ plot(Old_freezing_dur_Female)
 Tall_freezing_dur_Female <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_freezing_dur_Female
-tall_freezing_dur_plot <- plot(Tall_freezing_dur_Female)
+plot(Tall_freezing_dur_Female)
 
 Old_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
@@ -560,6 +563,7 @@ plot(Old_freezing_dur_Female2)
 Tall_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_freezing_dur_Female2
+plot(Tall_freezing_dur_Female2)
 
 Old_freezing_dur_Female3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
@@ -569,6 +573,7 @@ plot(Old_freezing_dur_Female3)
 Tall_freezing_dur_Female3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_freezing_dur_Female3
+plot(Tall_freezing_dur_Female3)
 
 
 
