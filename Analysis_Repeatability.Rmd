@@ -123,7 +123,7 @@ hist(residuals(Model_Tot_Dist))
 
 ```
 
-#Total distance by sex
+### Total distance by sex
 ```{r}
 hist(Old_Tanks_Male$tot_dist)
 hist(Old_Tanks_Female$tot_dist)
@@ -148,15 +148,14 @@ Joined_Tot_Dist_Male
 
 #Female analysis
 
-Old_low_dur_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
+Old_tot_dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
-Old_Tot_Dist_Female
-plot(Old_Tot_Dist_Female)
+Old_tot_dist_Female
 
 Tall_Tot_Dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Tall_Tot_Dist_Female
-tall_tot_dist_plot <- plot(Tall_Tot_Dist_Female)
+plot(Tall_Tot_Dist_Female)
 
 Joined_Tot_Dist_Female <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
@@ -164,7 +163,7 @@ Joined_Tot_Dist_Female
 ```
 
 
-#low duration
+###low duration
 ```{r, echo=FALSE}
 
 # par(mfrow=c(2,2))
@@ -197,7 +196,7 @@ tab_model(Model_low_dur)
 hist(residuals(Model_low_dur))
 ```
 
-#Low duration sex
+###low duration sex
 ```{r}
 hist(Old_Tanks_Male$low_dur)
 hist(Old_Tanks_Female$low_dur)
@@ -248,7 +247,7 @@ hist(residuals(Model_low_dur_female))
 ```
 
 
-#mid duration
+###mid duration
 ```{r, echo=FALSE}
 
 
@@ -632,22 +631,22 @@ plot_Tot_Dist_rptr
 #Total distance sex
 ```{r}
 Tot_Dist_rptr_sex <- tibble(
-  Tank_Type = c("Short", "Tall"),
-  Sex = c("Male", "Female")
-  r = c(Old_Tot_Dist$R$Fish_ID,Tall_Tot_Dist$R$Fish_ID),
-  ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`),
-  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`))
+  Tank_Type = c("Short","Short", "Tall", "Tall"),
+  Sex = c("Male","Female","Male", "Female"),
+  r = c(Old_Tot_Dist_Male$R$Fish_ID,Old_Tot_Dist_Female$R$Fish_ID,Tall_Tot_Dist_Male$R$Fish_ID,Tall_Tot_Dist_Female$R$Fish_ID ),
+  ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`),
+  ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`))
   
 Tot_Dist_rptr
 
-plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+plot_Tot_Dist_rptr_sex <- ggplot(Tot_Dist_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank_Type", y = "r") +
-  labs(title = "Repeatability estimates: total distance")+
+  labs(title = "Repeatability estimates by sex: total distance")+
   coord_flip()
-plot_Tot_Dist_rptr
+plot_Tot_Dist_rptr_sex
 ```
 
 
