@@ -629,6 +629,28 @@ plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Ty
 plot_Tot_Dist_rptr
 ```
 
+#Total distance sex
+```{r}
+Tot_Dist_rptr_sex <- tibble(
+  Tank_Type = c("Short", "Tall"),
+  Sex = c("Male", "Female")
+  r = c(Old_Tot_Dist$R$Fish_ID,Tall_Tot_Dist$R$Fish_ID),
+  ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`),
+  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`))
+  
+Tot_Dist_rptr
+
+plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates: total distance")+
+  coord_flip()
+plot_Tot_Dist_rptr
+```
+
+
 Low duration
 ```{r, echo=FALSE}
 low_dur_rptr <- tibble(
