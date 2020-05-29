@@ -50,13 +50,7 @@ str(Old_Tanks)
 str(Tall_Tanks)
 str(Anxiety_Joined)
 
-#Subset by sex
-Old_Tanks_Male <- subset(Old_Tanks, Old_Tanks$Sex == "male")
-Old_Tanks_Female <- subset(Old_Tanks, Old_Tanks$Sex == "female")
-Tall_Tanks_Male <- subset(Tall_Tanks, Tall_Tanks$Sex == "male")
-Tall_Tanks_Female <- subset(Tall_Tanks, Tall_Tanks$Sex == "female")
-Both_Tanks_Male <- subset(Anxiety_Joined, Anxiety_Joined$Sex == "male")
-Both_Tanks_Female <- subset(Anxiety_Joined, Anxiety_Joined$Sex == "female")
+
 ```
 
 #total distance (old, tall, joined)
@@ -123,44 +117,7 @@ hist(residuals(Model_Tot_Dist))
 
 ```
 
-### Total distance by sex
-```{r}
-hist(Old_Tanks_Male$tot_dist)
-hist(Old_Tanks_Female$tot_dist)
-hist(Tall_Tanks_Male$tot_dist)
-hist(Tall_Tanks_Female$tot_dist)
-hist(Both_Tanks_Male$tot_dist)
-hist(Both_Tanks_Female$tot_dist)
 
-Old_Tot_Dist_Male <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_Tot_Dist_Male
-plot(Old_Tot_Dist_Male)
-
-Tall_Tot_Dist_Male <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_Tot_Dist_Male
-tall_tot_dist_plot <- plot(Tall_Tot_Dist_Male)
-
-Joined_Tot_Dist_Male <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_Tot_Dist_Male
-
-#Female analysis
-
-Old_tot_dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_tot_dist_Female
-
-Tall_Tot_Dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_Tot_Dist_Female
-plot(Tall_Tot_Dist_Female)
-
-Joined_Tot_Dist_Female <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_Tot_Dist_Female
-```
 
 
 ###low duration
@@ -196,55 +153,6 @@ tab_model(Model_low_dur)
 hist(residuals(Model_low_dur))
 ```
 
-###low duration sex
-```{r}
-hist(Old_Tanks_Male$low_dur)
-hist(Old_Tanks_Female$low_dur)
-hist(Tall_Tanks_Male$low_dur)
-hist(Tall_Tanks_Female$low_dur)
-hist(Both_Tanks_Male$low_dur)
-hist(Both_Tanks_Female$low_dur)
-
-Old_low_dur_Male <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_low_dur_Male
-plot(Old_low_dur_Male)
-
-Tall_low_dur_Male <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_low_dur_Male
-tall_low_dur_plot <- plot(Tall_low_dur_Male)
-
-Joined_low_dur_Male <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_low_dur_Male
-
-#Female analysis
-
-Old_low_dur_Female <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_low_dur_Female
-plot(Old_low_dur_Female)
-
-Tall_low_dur_Female <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_low_dur_Female
-tall_low_dur_plot <- plot(Tall_low_dur_Female)
-
-Joined_low_dur_Female <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_low_dur_Female
-
-Model_low_dur_male <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
-summary(Model_low_dur_male)
-tab_model(Model_low_dur_male)
-hist(residuals(Model_low_dur_male))
-
-Model_low_dur_female <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
-summary(Model_low_dur_female)
-tab_model(Model_low_dur_female)
-hist(residuals(Model_low_dur_female))
-```
 
 
 ###mid duration
@@ -277,58 +185,10 @@ summary(Model_mid_dur)
 hist(residuals(Model_mid_dur))
 ```
 
-#mid duration sex
-```{r}
-hist(Old_Tanks_Male$mid_dur)
-hist(Old_Tanks_Female$mid_dur)
-hist(Tall_Tanks_Male$mid_dur)
-hist(Tall_Tanks_Female$mid_dur)
-hist(Both_Tanks_Male$mid_dur)
-hist(Both_Tanks_Female$mid_dur)
-
-Old_mid_dur_Male <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_mid_dur_Male
-plot(Old_mid_dur_Male)
-
-Tall_mid_dur_Male <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_mid_dur_Male
 
 
-Joined_mid_dur_Male <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_mid_dur_Male
 
-#Female analysis
-
-Old_mid_dur_Female <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_mid_dur_Female
-plot(Old_mid_dur_Female)
-
-Tall_mid_dur_Female <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_mid_dur_Female
-tall_mid_dur_plot <- plot(Tall_mid_dur_Female)
-
-Joined_mid_dur_Female <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_mid_dur_Female
-
-Model_mid_dur_male <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
-summary(Model_mid_dur_male)
-hist(residuals(Model_mid_dur_male))
-
-Model_mid_dur_female <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
-summary(Model_mid_dur_female)
-hist(residuals(Model_mid_dur_female))
-
-
-```
-
-
-#high duration
+###high duration
 ```{r, echo=FALSE}
 
 
@@ -373,74 +233,9 @@ tab_model(Model_high_dur2)
 hist(residuals(Model_high_dur2))
 ```
 
-#high duration sex
-```{r}
-hist(Old_Tanks_Male$high_dur)
-hist(Old_Tanks_Female$high_dur)
-hist(Tall_Tanks_Male$high_dur)
-hist(Tall_Tanks_Female$high_dur)
-hist(Both_Tanks_Male$high_dur)
-hist(Both_Tanks_Female$high_dur)
-
-Old_high_dur_Male <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_high_dur_Male
-plot(Old_high_dur_Male)
-
-Old_high_dur_Male2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_high_dur_Male2
-
-Tall_high_dur_Male <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_high_dur_Male
-
-Tall_high_dur_Male2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_high_dur_Male2
 
 
-Joined_high_dur_Male <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_high_dur_Male
-
-#Female analysis
-
-Old_high_dur_Female <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_high_dur_Female
-plot(Old_high_dur_Female)
-
-Old_high_dur_Female2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_high_dur_Female2
-
-Tall_high_dur_Female <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_high_dur_Female
-
-Tall_high_dur_Female2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_high_dur_Female2
-
-
-Joined_high_dur_Female <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_high_dur_Female
-
-Model_high_dur_male <- lmer(high_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
-summary(Model_high_dur_male)
-tab_model(Model_high_dur_male)
-hist(residuals(Model_high_dur_male))
-
-Model_high_dur2_male <- lmer(sqrt(high_dur) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
-summary(Model_high_dur2_male)
-tab_model(Model_high_dur2_male)
-hist(residuals(Model_high_dur2_male))
-```
-
-
-#freeze dur 
+###freeze dur 
 ```{r, echo=FALSE}
 
 
@@ -498,112 +293,7 @@ tab_model(Model_freezing_dur3)
 hist(residuals(Model_freezing_dur3))
 
 ```
-#Freezing sex ( is transformation necessary for some of the data ?)
-```{r}
-hist(Old_Tanks_Male$freezing_dur)
-hist(Old_Tanks_Female$freezing_dur)
-hist(Tall_Tanks_Male$freezing_dur)
-hist(Tall_Tanks_Female$freezing_dur)
-hist(Both_Tanks_Male$freezing_dur)
-hist(Both_Tanks_Female$freezing_dur)
 
-Old_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Male
-plot(Old_freezing_dur_Male) #transformation not required?
-
-Tall_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Male
-plot(Tall_freezing_dur_Male)
-
-Old_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Male2
-plot(Old_freezing_dur_Male2)
-
-Tall_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Male2
-plot(Tall_freezing_dur_Male2)
-
-Old_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Male3
-plot(Old_freezing_dur_Male3)
-
-Tall_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Male3
-plot(Tall_freezing_dur_Male3)
-
-
-Joined_freezing_dur_Male <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_freezing_dur_Male
-
-#Female analysis
-
-Old_freezing_dur_Female <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Female
-plot(Old_freezing_dur_Female)
-
-Tall_freezing_dur_Female <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Female
-plot(Tall_freezing_dur_Female)
-
-Old_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Female2
-plot(Old_freezing_dur_Female2)
-
-Tall_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Female2
-plot(Tall_freezing_dur_Female2)
-
-Old_freezing_dur_Female3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Female3
-plot(Old_freezing_dur_Female3)
-
-Tall_freezing_dur_Female3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Female3
-plot(Tall_freezing_dur_Female3)
-
-
-
-Joined_freezing_dur_Female <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_freezing_dur_Female
-
-Model_freezing_dur_male <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
-summary(Model_freezing_dur_male)
-hist(residuals(Model_freezing_dur_male))
-
-Model_freezing_dur_female <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
-summary(Model_freezing_dur_female)
-hist(residuals(Model_freezing_dur_female))
-
-Model_freezing_dur_male2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
-summary(Model_freezing_dur_male2)
-hist(residuals(Model_freezing_dur_male2))
-
-Model_freezing_dur_female2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
-summary(Model_freezing_dur_female2)
-hist(residuals(Model_freezing_dur_female2))
-
-Model_freezing_dur_male3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
-summary(Model_freezing_dur_male3)
-hist(residuals(Model_freezing_dur_male3))
-
-Model_freezing_dur_female3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
-summary(Model_freezing_dur_female3)
-hist(residuals(Model_freezing_dur_female3))
-```
 
 
 #Plotting Repeatabilities 
@@ -628,26 +318,6 @@ plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Ty
 plot_Tot_Dist_rptr
 ```
 
-#Total distance sex
-```{r}
-Tot_Dist_rptr_sex <- tibble(
-  Tank_Type = c("Short","Short", "Tall", "Tall"),
-  Sex = c("Male","Female","Male", "Female"),
-  r = c(Old_Tot_Dist_Male$R$Fish_ID,Old_Tot_Dist_Female$R$Fish_ID,Tall_Tot_Dist_Male$R$Fish_ID,Tall_Tot_Dist_Female$R$Fish_ID ),
-  ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`),
-  ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`))
-  
-Tot_Dist_rptr
-
-plot_Tot_Dist_rptr_sex <- ggplot(Tot_Dist_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
-  geom_hline(yintercept = 0, lty = "dotted") +
-  labs(x = "Tank_Type", y = "r") +
-  labs(title = "Repeatability estimates by sex: total distance")+
-  coord_flip()
-plot_Tot_Dist_rptr_sex
-```
 
 
 Low duration

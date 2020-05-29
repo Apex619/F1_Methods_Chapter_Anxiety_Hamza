@@ -35,6 +35,16 @@ library(easyGgplot2)
 ```
 
 ```{r}
+
+Old_Tanks <- read.csv("Old_tanks.csv")
+Tall_Tanks <- read.csv("Tall_tanks.csv")
+Anxiety_Joined <- read.csv("F1_Anxiety_Repeatability_Exp.csv")
+
+#Inspect
+str(Old_Tanks)
+str(Tall_Tanks)
+str(Anxiety_Joined)
+
 #Subset by sex
 Old_Tanks_Male <- subset(Old_Tanks, Old_Tanks$Sex == "male")
 Old_Tanks_Female <- subset(Old_Tanks, Old_Tanks$Sex == "female")
@@ -69,9 +79,9 @@ Joined_Tot_Dist_Male
 
 #Female analysis
 
-Old_tot_dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
+Old_Tot_Dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
-Old_tot_dist_Female
+Old_Tot_Dist_Female
 
 Tall_Tot_Dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
@@ -368,7 +378,7 @@ Tot_Dist_rptr_sex <- tibble(
   ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`),
   ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`))
   
-Tot_Dist_rptr
+Tot_Dist_rptr_sex
 
 plot_Tot_Dist_rptr_sex <- ggplot(Tot_Dist_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
