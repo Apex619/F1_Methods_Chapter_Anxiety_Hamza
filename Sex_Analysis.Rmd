@@ -361,6 +361,7 @@ hist(residuals(Model_freezing_dur_female2))
 Model_freezing_dur_male3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
 summary(Model_freezing_dur_male3)
 hist(residuals(Model_freezing_dur_male3))
+hist(residuals(Model_freezing_dur_male3))
 
 Model_freezing_dur_female3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
 summary(Model_freezing_dur_female3)
@@ -389,5 +390,91 @@ plot_Tot_Dist_rptr_sex <- ggplot(Tot_Dist_rptr_sex, aes(x=Tank_Type, y=r, colour
   coord_flip()
 plot_Tot_Dist_rptr_sex
 ```
+
+#Low duration sex
+```{r}
+low_dur_rptr_sex <- tibble(
+  Tank_Type = c("Short","Short", "Tall", "Tall"),
+  Sex = c("Male","Female","Male", "Female"),
+  r = c(Old_low_dur_Male$R$Fish_ID,Old_low_dur_Female$R$Fish_ID,Tall_low_dur_Male$R$Fish_ID,Tall_low_dur_Female$R$Fish_ID ),
+  ci.lb = c(Old_low_dur_Male$CI_emp$`2.5%`,Old_low_dur_Female$CI_emp$`2.5%`,Tall_low_dur_Male$CI_emp$`2.5%`,Tall_low_dur_Female$CI_emp$`2.5%`),
+  ci.ub = c(Old_low_dur_Male$CI_emp$`97.5%`,Old_low_dur_Female$CI_emp$`97.5%`,Tall_low_dur_Male$CI_emp$`97.5%`,Tall_low_dur_Female$CI_emp$`97.5%`))
+
+low_dur_rptr_sex
+
+plot_low_dur_rptr_sex <- ggplot(low_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates by sex: low duration")+
+  coord_flip()
+plot_low_dur_rptr_sex
+```
+#Mid duration
+```{r}
+mid_dur_rptr_sex <- tibble(
+  Tank_Type = c("Short","Short", "Tall", "Tall"),
+  Sex = c("Male","Female","Male", "Female"),
+  r = c(Old_mid_dur_Male$R$Fish_ID,Old_mid_dur_Female$R$Fish_ID,Tall_mid_dur_Male$R$Fish_ID,Tall_mid_dur_Female$R$Fish_ID ),
+  ci.lb = c(Old_mid_dur_Male$CI_emp$`2.5%`,Old_mid_dur_Female$CI_emp$`2.5%`,Tall_mid_dur_Male$CI_emp$`2.5%`,Tall_mid_dur_Female$CI_emp$`2.5%`),
+  ci.ub = c(Old_mid_dur_Male$CI_emp$`97.5%`,Old_mid_dur_Female$CI_emp$`97.5%`,Tall_mid_dur_Male$CI_emp$`97.5%`,Tall_mid_dur_Female$CI_emp$`97.5%`))
+
+mid_dur_rptr_sex
+
+plot_mid_dur_rptr_sex <- ggplot(mid_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates by sex: mid duration")+
+  coord_flip()
+plot_mid_dur_rptr_sex
+```
+#High duration
+```{r}
+high_dur_rptr_sex <- tibble(
+  Tank_Type = c("Short","Short", "Tall", "Tall"),
+  Sex = c("Male","Female","Male", "Female"),
+  r = c(Old_high_dur_Male2$R$Fish_ID,Old_high_dur_Female2$R$Fish_ID,Tall_high_dur_Male2$R$Fish_ID,Tall_high_dur_Female2$R$Fish_ID ),
+  ci.lb = c(Old_high_dur_Male2$CI_emp$`2.5%`,Old_high_dur_Female2$CI_emp$`2.5%`,Tall_high_dur_Male2$CI_emp$`2.5%`,Tall_high_dur_Female2$CI_emp$`2.5%`),
+  ci.ub = c(Old_high_dur_Male2$CI_emp$`97.5%`,Old_high_dur_Female2$CI_emp$`97.5%`,Tall_high_dur_Male2$CI_emp$`97.5%`,Tall_high_dur_Female2$CI_emp$`97.5%`))
+
+high_dur_rptr_sex
+
+plot_high_dur_rptr_sex <- ggplot(high_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates by sex: high duration")+
+  coord_flip()
+plot_high_dur_rptr_sex
+```
+
+#Freezing duration
+```{r}
+freezing_dur_rptr_sex <- tibble(
+  Tank_Type = c("Short","Short", "Tall", "Tall"),
+  Sex = c("Male","Female","Male", "Female"),
+  r = c(Old_freezing_dur_Male3$R$Fish_ID,Old_freezing_dur_Female3$R$Fish_ID,Tall_freezing_dur_Male3$R$Fish_ID,Tall_freezing_dur_Female3$R$Fish_ID ),
+  ci.lb = c(Old_freezing_dur_Male3$CI_emp$`2.5%`,Old_freezing_dur_Female3$CI_emp$`2.5%`,Tall_freezing_dur_Male3$CI_emp$`2.5%`,Tall_freezing_dur_Female3$CI_emp$`2.5%`),
+  ci.ub = c(Old_freezing_dur_Male3$CI_emp$`97.5%`,Old_freezing_dur_Female3$CI_emp$`97.5%`,Tall_freezing_dur_Male3$CI_emp$`97.5%`,Tall_freezing_dur_Female3$CI_emp$`97.5%`))
+
+freezing_dur_rptr_sex
+
+plot_freezing_dur_rptr_sex <- ggplot(freezing_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank_Type", y = "r") +
+  labs(title = "Repeatability estimates by sex: freezing duration")+
+  coord_flip()
+plot_freezing_dur_rptr_sex
+```
+
+
+
+
 
 
