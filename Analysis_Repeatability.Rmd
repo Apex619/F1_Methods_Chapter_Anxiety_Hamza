@@ -93,6 +93,7 @@ Diff_boot <- Tall_boot - Old_boot
 hist(Diff_boot, breaks = 50)
 
 quantile(Diff_boot, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot)
 
 # Old_Tanks %>% 
 #   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
