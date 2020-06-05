@@ -65,17 +65,17 @@ hist(Anxiety_Joined$tot_dist)
 # hist(sqrt(Anxiety_Joined$tot_dist))
 
 Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 5000, npermut = 1000)
 Old_Tot_Dist
 plot(Old_Tot_Dist)
 
 Tall_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 5000, npermut = 1000)
 Tall_Tot_Dist
 tall_tot_dist_plot <- plot(Tall_Tot_Dist)
 
 Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 5000, npermut = 1000)
 Joined_Tot_Dist
 
 Model_Tot_Dist <- lmer(tot_dist ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
@@ -83,7 +83,16 @@ Model_Tot_Dist <- lmer(tot_dist ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
 tab_model(Model_Tot_Dist)
 hist(residuals(Model_Tot_Dist))
 
+# Shinichi's addition to show Hamza how to get the difference between these two tank's repeatablities. 
+Old_boot<-unlist(Old_Tot_Dist$R_boot)
+hist(Old_boot, breaks = 50)
+Tall_boot<-unlist(Tall_Tot_Dist$R_boot)
+hist(Tall_boot, breaks = 50)
 
+Diff_boot <- Tall_boot - Old_boot
+hist(Diff_boot, breaks = 50)
+
+quantile(Diff_boot, c(0.025, 0.975)) # difference ditribuiton 95% CI
 
 # Old_Tanks %>% 
 #   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
