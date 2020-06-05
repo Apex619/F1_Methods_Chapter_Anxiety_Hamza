@@ -41,5 +41,19 @@ plots_dur
 
 plots_other <- (plot_Tot_Dist_rptr/plot_freezing_dur_rptr)
 plots_other
+
+Overall_plot <- wrap_plots(plots_other,plots_dur) + plot_layout(guides="collect")
+
+Overall_plot
+
+ggsave(path = "Plots", file = "Overall_plot.jpeg", limitsize = FALSE)
 ```
+
+#Sex plots
+```{r}
+
+```
+
+
+
 
