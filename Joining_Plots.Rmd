@@ -51,6 +51,15 @@ ggsave(path = "Plots", file = "Overall_plot.jpeg", limitsize = FALSE)
 
 #Sex plots
 ```{r}
+plots_dur_sex <- (plot_high_dur_rptr_sex / plot_mid_dur_rptr_sex / plot_low_dur_rptr_sex)
+
+plots_other_sex <- (plot_Tot_Dist_rptr_sex/plot_freezing_dur_rptr_sex)
+
+Overall_plot_sex <- wrap_plots(plots_other_sex,plots_dur_sex) + plot_layout(guides="collect")
+
+Overall_plot_sex
+
+ggsave(path = "Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
 
 ```
 
