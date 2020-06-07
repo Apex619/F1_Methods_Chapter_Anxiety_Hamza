@@ -314,9 +314,12 @@ plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Ty
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
-  labs(x = "Tank Type", y = "r") +
+  labs(y = "r") +
   labs(title = "Repeatability estimates", subtitle = "A. Total distance")+
-  coord_flip()
+  coord_flip()+
+   theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
 plot_Tot_Dist_rptr
 ```
 
@@ -338,7 +341,10 @@ plot_low_dur_rptr <- ggplot(low_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "E. time spent in low zone")+
-  coord_flip()
+  coord_flip()+
+   theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
 plot_low_dur_rptr
 ```
 
@@ -358,7 +364,10 @@ plot_mid_dur_rptr <- ggplot(mid_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "D .Time spent in middle zone")+
-  coord_flip()
+  coord_flip()+
+   theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
 plot_mid_dur_rptr
 ```
 
@@ -378,7 +387,10 @@ plot_high_dur_rptr <- ggplot(high_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Ty
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "C. Time spent in high zone")+
-  coord_flip()
+  coord_flip()+
+   theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
 plot_high_dur_rptr
 ```
 
@@ -398,7 +410,10 @@ plot_freezing_dur_rptr <- ggplot(freezing_dur_rptr, aes(x=Tank_Type, y=r, colour
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "B. Time spent freezing")+
-  coord_flip()
+  coord_flip()+
+   theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
 plot_freezing_dur_rptr
 ```
 
