@@ -386,7 +386,7 @@ plot_Tot_Dist_rptr_sex <- ggplot(Tot_Dist_rptr_sex, aes(x=Tank_Type, y=r, colour
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(title = "Repeatability estimates by sex", subtitle = "A. Total distance")
+  labs(title = "Repeatability estimates by sex", subtitle = "A. Total distance")+
   coord_flip()
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
@@ -410,7 +410,7 @@ plot_low_dur_rptr_sex <- ggplot(low_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=S
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "E. Time spent in low zone")
+  labs(subtitle = "E. Time spent in low zone")+
   coord_flip()
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
@@ -433,7 +433,7 @@ plot_mid_dur_rptr_sex <- ggplot(mid_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=S
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank type", y = "r") +
-  labs(subtitle = "D. Time spent in mid zone")
+  labs(subtitle = "D. Time spent in mid zone")+
   coord_flip()
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
@@ -456,7 +456,7 @@ plot_high_dur_rptr_sex <- ggplot(high_dur_rptr_sex, aes(x=Tank_Type, y=r, colour
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "C. Time spent in high zone")
+  labs(subtitle = "C. Time spent in high zone")+
   coord_flip()
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
@@ -480,7 +480,7 @@ plot_freezing_dur_rptr_sex <- ggplot(freezing_dur_rptr_sex, aes(x=Tank_Type, y=r
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "B. Time spent freezing")
+  labs(subtitle = "B. Time spent freezing")+
   coord_flip()
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),

@@ -163,6 +163,22 @@ Model_low_dur <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_low_dur)
 tab_model(Model_low_dur)
 hist(residuals(Model_low_dur))
+
+### Analysis to find differences
+
+Old_low_dur_boot<-unlist(Old_low_dur$R_boot)
+hist(Old_low_dur_boot, breaks = 50)
+Tall_low_dur_boot<-unlist(Tall_low_dur$R_boot)
+hist(Tall_low_dur_boot, breaks = 50)
+
+Diff_boot_low_dur <- Tall_low_dur_boot - Old_low_dur_boot
+hist(Diff_boot_low_dur, breaks = 50)
+
+quantile(Diff_boot_low_dur, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_low_dur)
+
+#2.5% quartile greater than zero, indicates a significant difference?
+
 ```
 
 
@@ -195,6 +211,19 @@ Joined_mid_dur
 Model_mid_dur <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_mid_dur)
 hist(residuals(Model_mid_dur))
+
+###Analysis to find differences
+
+Old_mid_dur_boot<-unlist(Old_mid_dur$R_boot)
+hist(Old_mid_dur_boot, breaks = 50)
+Tall_mid_dur_boot<-unlist(Tall_mid_dur$R_boot)
+hist(Tall_mid_dur_boot, breaks = 50)
+
+Diff_boot_mid_dur <- Old_mid_dur_boot - Tall_mid_dur_boot
+hist(Diff_boot_mid_dur, breaks = 50)
+
+quantile(Diff_boot_mid_dur, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+mean(Diff_boot_mid_dur)
 ```
 
 
@@ -243,6 +272,19 @@ Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + (1 | Fish_ID), data = Anxiety_Jo
 summary(Model_high_dur2)
 tab_model(Model_high_dur2)
 hist(residuals(Model_high_dur2))
+
+###Analysis to find differences
+
+Old_high_dur2_boot<-unlist(Old_high_dur2$R_boot)
+hist(Old_high_dur2_boot, breaks = 50)
+Tall_high_dur2_boot<-unlist(Tall_high_dur2$R_boot)
+hist(Tall_high_dur2_boot, breaks = 50)
+
+Diff_boot_high_dur2 <- Tall_high_dur2_boot - Old_high_dur2_boot
+hist(Diff_boot_high_dur2, breaks = 50)
+
+quantile(Diff_boot_high_dur2, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+mean(Diff_boot_high_dur2)
 ```
 
 
@@ -303,6 +345,19 @@ Model_freezing_dur3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = A
 summary(Model_freezing_dur3)
 tab_model(Model_freezing_dur3)
 hist(residuals(Model_freezing_dur3))
+
+###Analysis to find differences
+
+Old_freezing_dur3_boot<-unlist(Old_freezing_dur3$R_boot)
+hist(Old_freezing_dur3_boot, breaks = 50)
+Tall_freezing_dur3_boot<-unlist(Tall_freezing_dur3$R_boot)
+hist(Tall_freezing_dur3_boot, breaks = 50)
+
+Diff_boot_freezing_dur3 <- Tall_freezing_dur3_boot - Old_freezing_dur3_boot
+hist(Diff_boot_freezing_dur3, breaks = 50)
+
+quantile(Diff_boot_freezing_dur3, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+mean(Diff_boot_freezing_dur3)
 
 ```
 
