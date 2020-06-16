@@ -41,9 +41,14 @@ The aim of this experiment is to compare repatability in typically used holding 
 ### Import Data
 ```{r, include=FALSE}
 
-Old_Tanks <- read.csv("Old_tanks.csv")
-Tall_Tanks <- read.csv("Tall_tanks.csv")
+# Old_Tanks <- read.csv("Old_tanks.csv")
+# Tall_Tanks <- read.csv("Tall_tanks.csv")
 Anxiety_Joined <- read.csv("F1_Anxiety_Repeatability_Exp.csv")
+
+#Subset by tank
+Old_Tanks <- subset(Anxiety_Joined, Anxiety_Joined$Tank == "Old")
+Tall_Tanks <- subset(Anxiety_Joined, Anxiety_Joined$Tank == "Tall")
+
 
 #Inspect
 str(Old_Tanks)
@@ -360,6 +365,12 @@ quantile(Diff_boot_freezing_dur3, c(0.025, 0.975)) #2.5% crosses 0, not signific
 mean(Diff_boot_freezing_dur3)
 
 ```
+
+#latency to high
+```{r}
+
+```
+
 
 
 
