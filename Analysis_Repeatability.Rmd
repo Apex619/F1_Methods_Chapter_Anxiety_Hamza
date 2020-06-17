@@ -70,17 +70,17 @@ hist(Anxiety_Joined$tot_dist)
 # hist(sqrt(Anxiety_Joined$tot_dist))
 
 Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 10000)
+    nboot = 10000, npermut = 10000)
 Old_Tot_Dist
 plot(Old_Tot_Dist)
 
 Tall_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 10000)
+    nboot = 10000, npermut = 10000)
 Tall_Tot_Dist
 tall_tot_dist_plot <- plot(Tall_Tot_Dist)
 
 Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 1000000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Joined_Tot_Dist
 
 Model_Tot_Dist <- lmer(tot_dist ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
@@ -151,17 +151,17 @@ plot(residuals(model))
 hist(residuals(model))
 
 Old_low_dur <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Old_low_dur
 
 plot(Old_low_dur)
 
 Tall_low_dur <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Tall_low_dur
 
 Joined_low_dur <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Joined_low_dur
 
 Model_low_dur <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
@@ -199,18 +199,18 @@ hist(Anxiety_Joined$mid_dur)
 #We need to look at residual normality and not raw data
 
 Old_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Old_mid_dur
 
 plot(Old_mid_dur)
 
 Tall_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Tall_mid_dur
 
 
 Joined_mid_dur <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Joined_mid_dur
 
 Model_mid_dur <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
@@ -248,19 +248,19 @@ plot(residuals(model2))
 hist(residuals(model2))
 
 Old_high_dur <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Old_high_dur
 
 Old_high_dur2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Old_high_dur2
 
 Tall_high_dur <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Tall_high_dur
 
 Tall_high_dur2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 100000, npermut = 10000)
+    nboot = 10000, npermut = 10000)
 Tall_high_dur2
 
 
