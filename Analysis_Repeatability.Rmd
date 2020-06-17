@@ -368,8 +368,54 @@ mean(Diff_boot_freezing_dur3)
 
 #latency to high
 ```{r}
+Model_latency <- lmer(latency_high ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_latency)
+hist(residuals(Model_latency)) 
 
+Model_latency2 <- lmer(sqrt(latency_high) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_latency2)
+hist(residuals(Model_latency2)) #Transformation seems better?
+
+Old_latency <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Old_latency
+
+
+Tall_latency <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Tall_latency
+
+
+Joined_latency <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Joined_latency
 ```
+
+#entries into high
+```{r}
+Model_freq_high <- lmer(freq_high ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_freq_high)
+hist(residuals(Model_freq_high)) #needs transformation, right skewed heavily
+
+Model_freq_high2 <- lmer(sqrt(freq_high) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_freq_high2)
+hist(residuals(Model_freq_high2))
+
+Old_freq_high <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Old_freq_high
+
+
+Tall_freq_high <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Tall_freq_high
+
+
+Joined_freq_high <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Joined_freq_high
+```
+
 
 
 
