@@ -56,6 +56,7 @@ str(Tall_Tanks)
 str(Anxiety_Joined)
 
 
+
 ```
 
 #total distance (old, tall, joined)
@@ -379,11 +380,13 @@ hist(residuals(Model_latency2)) #Transformation seems better?
 Old_latency <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_latency
+plot(Old_latency)
 
 
 Tall_latency <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_latency
+plot(Tall_latency)
 
 
 Joined_latency <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
@@ -404,11 +407,13 @@ hist(residuals(Model_freq_high2))
 Old_freq_high <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_freq_high
+plot(Old_freq_high)
 
 
 Tall_freq_high <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_freq_high
+plot(Tall_freq_high)
 
 
 Joined_freq_high <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
@@ -463,7 +468,7 @@ plot_low_dur_rptr <- ggplot(low_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "E. time spent in low zone")+
+  labs(subtitle = "G. time spent in low zone")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
@@ -487,7 +492,7 @@ plot_mid_dur_rptr <- ggplot(mid_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "D .Time spent in middle zone")+
+  labs(subtitle = "F .Time spent in middle zone")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
@@ -511,7 +516,7 @@ plot_high_dur_rptr <- ggplot(high_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Ty
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "C. Time spent in high zone")+
+  labs(subtitle = "E. Time spent in high zone")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
@@ -543,6 +548,54 @@ plot_freezing_dur_rptr <- ggplot(freezing_dur_rptr, aes(x=Tank_Type, y=r, colour
   ylim(0, 1)
 plot_freezing_dur_rptr
 ```
+
+Entries into high zone
+```{r}
+frequency_rptr <- tibble(
+  Tank_Type = c("Short", "Tall"),
+  r = c(Old_freq_high$R$Fish_ID,Tall_freq_high$R$Fish_ID),
+  ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`),
+  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`))
+  
+frequency_rptr
+
+plot_frequency_rptr <- ggplot(frequency_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank Type", y = "r") +
+  labs(subtitle = "C. Entries into high zone")+
+  coord_flip()+
+   theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())+
+  ylim(0, 1)
+plot_frequency_rptr
+```
+
+
+Latency to high
+```{r}
+latency_rptr <- tibble(
+  Tank_Type = c("Short", "Tall"),
+  r = c(Old_latency$R$Fish_ID,Tall_latency$R$Fish_ID),
+  ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`),
+  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`))
+
+plot_latency_rptr <- ggplot(latency_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank Type", y = "r") +
+  labs(subtitle = "D. Latency to high")+
+  coord_flip()+
+   theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())+
+  ylim(0, 1)
+plot_latency_rptr
+```
+
 
 
 More plots
@@ -591,6 +644,24 @@ Violin_Freezing <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='f
     addDot=FALSE, dotSize=0.3)+
   facet_grid(~Sex)
 Violin_Freezing
+
+Violin_Latency <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='latency_high', 
+    groupName='Tank',
+    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+    backgroundColor="white", xtitle="Tank", ytitle="Latency to high(s)", 
+    mainTitle="Latency to high zone: Tall vs Short",
+    addDot=FALSE, dotSize=0.3)+
+  facet_grid(~Sex)
+Violin_Latency
+
+Violin_entries <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='freq_high', 
+    groupName='Tank',
+    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+    backgroundColor="white", xtitle="Tank", ytitle="Frequency to high zone", 
+    mainTitle="Frequency to high zone: Tall vs Short",
+    addDot=FALSE, dotSize=0.3)+
+  facet_grid(~Sex)
+Violin_entries
 ```
 
 
