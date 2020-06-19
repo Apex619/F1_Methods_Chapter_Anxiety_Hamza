@@ -368,6 +368,102 @@ summary(Model_freezing_dur_female3)
 hist(residuals(Model_freezing_dur_female3))
 ```
 
+#Latency to high 
+```{r}
+Model_latency_male <- lmer(latency_high ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
+summary(Model_latency_male)
+hist(residuals(Model_latency_male))
+
+Model_latency_female <- lmer(latency_high ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+summary(Model_latency_female)
+hist(residuals(Model_latency_female))
+
+#histogram of residuals look normal
+
+#Male analysis
+
+
+Old_latency_high_Male <- rpt(latency_high ~ + (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Old_latency_high_Male
+
+Tall_latency_high_Male <- rpt(latency_high ~ + (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Tall_latency_high_Male
+
+Joined_latency_high_Male <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Joined_latency_high_Male
+
+#Female analysis
+
+Old_latency_high_Female <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Old_latency_high_Female
+
+Tall_latency_high_Female <- rpt(latency_high ~ + (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Tall_latency_high_Female
+
+Joined_latency_high_Female <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Joined_latency_high_Female
+```
+
+#Entries into high zone
+
+```{r}
+Model_freq_high_male <- lmer(freq_high ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
+summary(Model_freq_high_male)
+hist(residuals(Model_freq_high_male))
+
+Model_freq_high_male2 <- lmer(sqrt(freq_high) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
+summary(Model_freq_high_male2)
+hist(residuals(Model_freq_high_male2))
+
+Model_freq_high_female <- lmer(freq_high ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+summary(Model_freq_high_female)
+hist(residuals(Model_freq_high_female))
+
+Model_freq_high_female2 <- lmer(sqrt(freq_high) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+summary(Model_freq_high_female2)
+hist(residuals(Model_freq_high_female2))
+
+#Will use square root transformations as distributions look normal here
+
+#Male analysis
+
+Old_freq_high_Male <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Old_freq_high_Male
+
+Tall_freq_high_Male <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Tall_freq_high_Male
+
+Joined_freq_high_Male <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Joined_freq_high_Male
+
+#Female analysis
+
+Old_freq_high_Female <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Old_freq_high_Female
+
+Tall_freq_high_Female <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
+    nboot = 1000, npermut = 1000)
+Tall_freq_high_Female
+
+Joined_freq_high_Female <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
+    nboot = 10000, npermut = 10000)
+Joined_freq_high_Female
+
+
+```
+
+
+
 ### Plotting repeatabilities
 
 #Total distance sex
@@ -387,7 +483,8 @@ plot_Tot_Dist_rptr_sex <- ggplot(Tot_Dist_rptr_sex, aes(x=Tank_Type, y=r, colour
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(title = "Repeatability estimates by sex", subtitle = "A. Total distance")+
-  coord_flip()
+  coord_flip()+
+  ylim(0, 1)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -411,7 +508,8 @@ plot_low_dur_rptr_sex <- ggplot(low_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=S
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "E. Time spent in low zone")+
-  coord_flip()
+  coord_flip()+
+  ylim(0, 1)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -434,7 +532,8 @@ plot_mid_dur_rptr_sex <- ggplot(mid_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=S
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank type", y = "r") +
   labs(subtitle = "D. Time spent in mid zone")+
-  coord_flip()
+  coord_flip()+
+  ylim(0, 1)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -457,7 +556,8 @@ plot_high_dur_rptr_sex <- ggplot(high_dur_rptr_sex, aes(x=Tank_Type, y=r, colour
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "C. Time spent in high zone")+
-  coord_flip()
+  coord_flip()+
+  ylim(0, 1)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -481,12 +581,63 @@ plot_freezing_dur_rptr_sex <- ggplot(freezing_dur_rptr_sex, aes(x=Tank_Type, y=r
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "B. Time spent freezing")+
-  coord_flip()
+  coord_flip()+
+  ylim(0, 1)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
 plot_freezing_dur_rptr_sex
 ```
+#Latency high
+```{r}
+latency_high_rptr_sex <- tibble(
+  Tank_Type = c("Short","Short", "Tall", "Tall"),
+  Sex = c("Male","Female","Male", "Female"),
+  r = c(Old_latency_high_Male$R$Fish_ID,Old_latency_high_Female$R$Fish_ID,Tall_latency_high_Male$R$Fish_ID,Tall_latency_high_Female$R$Fish_ID ),
+  ci.lb = c(Old_latency_high_Male$CI_emp$`2.5%`,Old_latency_high_Female$CI_emp$`2.5%`,Tall_latency_high_Male$CI_emp$`2.5%`,Tall_latency_high_Female$CI_emp$`2.5%`),
+  ci.ub = c(Old_latency_high_Male$CI_emp$`97.5%`,Old_latency_high_Female$CI_emp$`97.5%`,Tall_latency_high_Male$CI_emp$`97.5%`,Tall_latency_high_Female$CI_emp$`97.5%`))
+
+latency_high_rptr_sex
+
+plot_latency_high_rptr_sex <- ggplot(latency_high_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank Type", y = "r") +
+  labs(subtitle = "Latency to high zone")+
+  coord_flip()+
+  ylim(0, 1)
+  #  theme(axis.title.y=element_blank(),
+  #       axis.text.y=element_blank(),
+  #       axis.ticks.y=element_blank())
+plot_latency_high_rptr_sex
+```
+
+#Entries to high
+```{r}
+freq_high_rptr_sex <- tibble(
+  Tank_Type = c("Short","Short", "Tall", "Tall"),
+  Sex = c("Male","Female","Male", "Female"),
+  r = c(Old_freq_high_Male$R$Fish_ID,Old_freq_high_Female$R$Fish_ID,Tall_freq_high_Male$R$Fish_ID,Tall_freq_high_Female$R$Fish_ID ),
+  ci.lb = c(Old_freq_high_Male$CI_emp$`2.5%`,Old_freq_high_Female$CI_emp$`2.5%`,Tall_freq_high_Male$CI_emp$`2.5%`,Tall_freq_high_Female$CI_emp$`2.5%`),
+  ci.ub = c(Old_freq_high_Male$CI_emp$`97.5%`,Old_freq_high_Female$CI_emp$`97.5%`,Tall_freq_high_Male$CI_emp$`97.5%`,Tall_freq_high_Female$CI_emp$`97.5%`))
+
+freq_high_rptr_sex
+
+plot_freq_high_rptr_sex <- ggplot(freq_high_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_hline(yintercept = 0, lty = "dotted") +
+  labs(x = "Tank Type", y = "r") +
+  labs(subtitle = "Entries to high")+
+  coord_flip()+
+  ylim(0, 1)
+  #  theme(axis.title.y=element_blank(),
+  #       axis.text.y=element_blank(),
+  #       axis.ticks.y=element_blank())
+plot_freq_high_rptr_sex
+```
+
 
 
 

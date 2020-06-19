@@ -447,7 +447,7 @@ plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Ty
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())+
-  ylim(0, 1)
+  ylim(0, 1) 
 plot_Tot_Dist_rptr
 ```
 

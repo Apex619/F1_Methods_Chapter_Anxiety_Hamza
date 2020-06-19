@@ -39,10 +39,10 @@ library(easyGgplot2)
 plots_dur <- (plot_high_dur_rptr / plot_mid_dur_rptr / plot_low_dur_rptr)
 plots_dur
 
-plots_other <- (plot_Tot_Dist_rptr/plot_freezing_dur_rptr)
+plots_other <- (plot_Tot_Dist_rptr/plot_freezing_dur_rptr/plot_frequency_rptr/ plot_latency_rptr)
 plots_other
 
-Overall_plot <- wrap_plots(plots_other,plots_dur) + plot_layout(guides="collect")
+Overall_plot <- wrap_plots(plots_other|plots_dur) + plot_layout(guides="collect")
 
 Overall_plot
 
@@ -61,6 +61,11 @@ Overall_plot_sex
 
 ggsave(path = "Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
 
+plots_extra_param <- (plot_latency_high_rptr_sex/ plot_freq_high_rptr_sex)
+
+plots_extra_param
+
+ggsave(path = "Plots", file = "Extra_param_plot_sex.jpeg", limitsize = FALSE)
 ```
 
 
