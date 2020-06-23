@@ -91,6 +91,37 @@ plot(Tall_Tot_Dist_Female)
 Joined_Tot_Dist_Female <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
 Joined_Tot_Dist_Female
+
+#Contrast analysis old tank
+
+Old_Tot_Dist_Female_boot<-unlist(Old_Tot_Dist_Female$R_boot)
+hist(Old_Tot_Dist_Female_boot, breaks = 50)
+Old_Tot_Dist_Male_boot<-unlist(Old_Tot_Dist_Male$R_boot)
+hist(Old_Tot_Dist_Male_boot, breaks = 50)
+
+Diff_boot_Tot_Dist_old <- Old_Tot_Dist_Male_boot - Old_Tot_Dist_Female_boot
+hist(Diff_boot_Tot_Dist_old, breaks = 50)
+
+quantile(Diff_boot_Tot_Dist_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_Tot_Dist_old)
+
+#Significant difference
+
+#Contrast analysis tall tank
+
+Tall_Tot_Dist_Female_boot<-unlist(Tall_Tot_Dist_Female$R_boot)
+hist(Tall_Tot_Dist_Female_boot, breaks = 50)
+Tall_Tot_Dist_Male_boot<-unlist(Tall_Tot_Dist_Male$R_boot)
+hist(Tall_Tot_Dist_Male_boot, breaks = 50)
+
+Diff_boot_Tot_Dist_tall <- Tall_Tot_Dist_Male_boot - Tall_Tot_Dist_Female_boot
+hist(Diff_boot_Tot_Dist_tall, breaks = 50)
+
+quantile(Diff_boot_Tot_Dist_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_Tot_Dist_tall)
+
+#Insignificant difference
+
 ```
 
 
@@ -142,6 +173,34 @@ Model_low_dur_female <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_F
 summary(Model_low_dur_female)
 tab_model(Model_low_dur_female)
 hist(residuals(Model_low_dur_female))
+
+#Contrast analysis old tank
+
+Old_low_dur_Female_boot<-unlist(Old_low_dur_Female$R_boot)
+hist(Old_low_dur_Female_boot, breaks = 50)
+Old_low_dur_Male_boot<-unlist(Old_low_dur_Male$R_boot)
+hist(Old_low_dur_Male_boot, breaks = 50)
+
+Diff_boot_low_dur_old <- Old_low_dur_Male_boot - Old_low_dur_Female_boot
+hist(Diff_boot_low_dur_old, breaks = 50)
+
+quantile(Diff_boot_low_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_low_dur_old)
+
+#Contrast analysis tall tank
+
+Tall_low_dur_Female_boot<-unlist(Tall_low_dur_Female$R_boot)
+hist(Tall_low_dur_Female_boot, breaks = 50)
+Tall_low_dur_Male_boot<-unlist(Tall_low_dur_Male$R_boot)
+hist(Tall_low_dur_Male_boot, breaks = 50)
+
+Diff_boot_low_dur_tall <- Tall_low_dur_Male_boot - Tall_low_dur_Female_boot
+hist(Diff_boot_low_dur_tall, breaks = 50)
+
+quantile(Diff_boot_low_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_low_dur_tall)
+
+
 ```
 
 ###mid duration sex
@@ -191,6 +250,31 @@ Model_mid_dur_female <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_F
 summary(Model_mid_dur_female)
 hist(residuals(Model_mid_dur_female))
 
+#Contrast analysis old tank
+
+Old_mid_dur_Female_boot<-unlist(Old_mid_dur_Female$R_boot)
+hist(Old_mid_dur_Female_boot, breaks = 50)
+Old_mid_dur_Male_boot<-unlist(Old_mid_dur_Male$R_boot)
+hist(Old_mid_dur_Male_boot, breaks = 50)
+
+Diff_boot_mid_dur_old <- Old_mid_dur_Male_boot - Old_mid_dur_Female_boot
+hist(Diff_boot_mid_dur_old, breaks = 50)
+
+quantile(Diff_boot_mid_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_mid_dur_old)
+
+#Contrast analysis tall tank
+
+Tall_mid_dur_Female_boot<-unlist(Tall_mid_dur_Female$R_boot)
+hist(Tall_mid_dur_Female_boot, breaks = 50)
+Tall_mid_dur_Male_boot<-unlist(Tall_mid_dur_Male$R_boot)
+hist(Tall_mid_dur_Male_boot, breaks = 50)
+
+Diff_boot_mid_dur_tall <- Tall_mid_dur_Male_boot - Tall_mid_dur_Female_boot
+hist(Diff_boot_mid_dur_tall, breaks = 50)
+
+quantile(Diff_boot_mid_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_mid_dur_tall)
 
 ```
 
@@ -258,9 +342,35 @@ Model_high_dur2_male <- lmer(sqrt(high_dur) ~ Tank + (1 | Fish_ID), data = Both_
 summary(Model_high_dur2_male)
 tab_model(Model_high_dur2_male)
 hist(residuals(Model_high_dur2_male))
+
+#Contrast analysis old tank
+
+Old_high_dur_Female_boot<-unlist(Old_high_dur_Female$R_boot)
+hist(Old_high_dur_Female_boot, breaks = 50)
+Old_high_dur_Male_boot<-unlist(Old_high_dur_Male$R_boot)
+hist(Old_high_dur_Male_boot, breaks = 50)
+
+Diff_boot_high_dur_old <- Old_high_dur_Male_boot - Old_high_dur_Female_boot
+hist(Diff_boot_high_dur_old, breaks = 50)
+
+quantile(Diff_boot_high_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_high_dur_old)
+
+#Contrast analysis tall tank
+
+Tall_high_dur_Female_boot<-unlist(Tall_high_dur_Female$R_boot)
+hist(Tall_high_dur_Female_boot, breaks = 50)
+Tall_high_dur_Male_boot<-unlist(Tall_high_dur_Male$R_boot)
+hist(Tall_high_dur_Male_boot, breaks = 50)
+
+Diff_boot_high_dur_tall <- Tall_high_dur_Male_boot - Tall_high_dur_Female_boot
+hist(Diff_boot_high_dur_tall, breaks = 50)
+
+quantile(Diff_boot_high_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_high_dur_tall)
 ```
 
-###Freezing sex ( is transformation necessary for some of the data ?)
+###Freezing sex (is transformation necessary for some of the data ?)
 ```{r}
 hist(Old_Tanks_Male$freezing_dur)
 hist(Old_Tanks_Female$freezing_dur)
@@ -269,25 +379,25 @@ hist(Tall_Tanks_Female$freezing_dur)
 hist(Both_Tanks_Male$freezing_dur)
 hist(Both_Tanks_Female$freezing_dur)
 
-Old_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Male
-plot(Old_freezing_dur_Male) #transformation not required?
-
-Tall_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Male
-plot(Tall_freezing_dur_Male)
-
-Old_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Male2
-plot(Old_freezing_dur_Male2)
-
-Tall_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Male2
-plot(Tall_freezing_dur_Male2)
+# Old_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
+#     nboot = 1000, npermut = 1000)
+# Old_freezing_dur_Male
+# plot(Old_freezing_dur_Male) #transformation not required?
+# 
+# Tall_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
+#     nboot = 1000, npermut = 1000)
+# Tall_freezing_dur_Male
+# plot(Tall_freezing_dur_Male)
+# 
+# Old_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
+#     nboot = 1000, npermut = 1000)
+# Old_freezing_dur_Male2
+# plot(Old_freezing_dur_Male2)
+# 
+# Tall_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
+#     nboot = 1000, npermut = 1000)
+# Tall_freezing_dur_Male2
+# plot(Tall_freezing_dur_Male2)
 
 Old_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
     nboot = 1000, npermut = 1000)
@@ -300,31 +410,31 @@ Tall_freezing_dur_Male3
 plot(Tall_freezing_dur_Male3)
 
 
-Joined_freezing_dur_Male <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_freezing_dur_Male
-
-#Female analysis
-
-Old_freezing_dur_Female <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Female
-plot(Old_freezing_dur_Female)
-
-Tall_freezing_dur_Female <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Female
-plot(Tall_freezing_dur_Female)
-
-Old_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Old_freezing_dur_Female2
-plot(Old_freezing_dur_Female2)
-
-Tall_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Tall_freezing_dur_Female2
-plot(Tall_freezing_dur_Female2)
+# Joined_freezing_dur_Male <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
+#     nboot = 1000, npermut = 1000)
+# Joined_freezing_dur_Male
+# 
+# #Female analysis
+# 
+# Old_freezing_dur_Female <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
+#     nboot = 1000, npermut = 1000)
+# Old_freezing_dur_Female
+# plot(Old_freezing_dur_Female)
+# 
+# Tall_freezing_dur_Female <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
+#     nboot = 1000, npermut = 1000)
+# Tall_freezing_dur_Female
+# plot(Tall_freezing_dur_Female)
+# 
+# Old_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
+#     nboot = 1000, npermut = 1000)
+# Old_freezing_dur_Female2
+# plot(Old_freezing_dur_Female2)
+# 
+# Tall_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
+#     nboot = 1000, npermut = 1000)
+# Tall_freezing_dur_Female2
+# plot(Tall_freezing_dur_Female2)
 
 Old_freezing_dur_Female3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
     nboot = 1000, npermut = 1000)
@@ -338,25 +448,25 @@ plot(Tall_freezing_dur_Female3)
 
 
 
-Joined_freezing_dur_Female <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
-Joined_freezing_dur_Female
-
-Model_freezing_dur_male <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
-summary(Model_freezing_dur_male)
-hist(residuals(Model_freezing_dur_male))
-
-Model_freezing_dur_female <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
-summary(Model_freezing_dur_female)
-hist(residuals(Model_freezing_dur_female))
-
-Model_freezing_dur_male2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
-summary(Model_freezing_dur_male2)
-hist(residuals(Model_freezing_dur_male2))
-
-Model_freezing_dur_female2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
-summary(Model_freezing_dur_female2)
-hist(residuals(Model_freezing_dur_female2))
+# Joined_freezing_dur_Female <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
+#     nboot = 1000, npermut = 1000)
+# Joined_freezing_dur_Female
+# 
+# Model_freezing_dur_male <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
+# summary(Model_freezing_dur_male)
+# hist(residuals(Model_freezing_dur_male))
+# 
+# Model_freezing_dur_female <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+# summary(Model_freezing_dur_female)
+# hist(residuals(Model_freezing_dur_female))
+# 
+# Model_freezing_dur_male2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
+# summary(Model_freezing_dur_male2)
+# hist(residuals(Model_freezing_dur_male2))
+# 
+# Model_freezing_dur_female2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+# summary(Model_freezing_dur_female2)
+# hist(residuals(Model_freezing_dur_female2))
 
 Model_freezing_dur_male3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
 summary(Model_freezing_dur_male3)
@@ -366,6 +476,34 @@ hist(residuals(Model_freezing_dur_male3))
 Model_freezing_dur_female3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
 summary(Model_freezing_dur_female3)
 hist(residuals(Model_freezing_dur_female3))
+
+#Contrast analysis old tank
+
+Old_freezing_dur_Female_boot<-unlist(Old_freezing_dur_Female3$R_boot)
+hist(Old_freezing_dur_Female_boot, breaks = 50)
+Old_freezing_dur_Male_boot<-unlist(Old_freezing_dur_Male3$R_boot)
+hist(Old_freezing_dur_Male_boot, breaks = 50)
+
+Diff_boot_freezing_dur_old <- Old_freezing_dur_Male_boot - Old_freezing_dur_Female_boot
+hist(Diff_boot_freezing_dur_old, breaks = 50)
+
+quantile(Diff_boot_freezing_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_freezing_dur_old)
+
+#Contrast analysis tall tank
+
+Tall_freezing_dur_Female_boot<-unlist(Tall_freezing_dur_Female3$R_boot)
+hist(Tall_freezing_dur_Female_boot, breaks = 50)
+Tall_freezing_dur_Male_boot<-unlist(Tall_freezing_dur_Male3$R_boot)
+hist(Tall_freezing_dur_Male_boot, breaks = 50)
+
+Diff_boot_freezing_dur_tall <- Tall_freezing_dur_Male_boot - Tall_freezing_dur_Female_boot
+hist(Diff_boot_freezing_dur_tall, breaks = 50)
+
+quantile(Diff_boot_freezing_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_freezing_dur_tall)
+
+
 ```
 
 #Latency to high 
@@ -408,6 +546,32 @@ Tall_latency_high_Female
 Joined_latency_high_Female <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Joined_latency_high_Female
+
+#Contrast analysis old tank
+
+Old_latency_high_Female_boot<-unlist(Old_latency_high_Female$R_boot)
+hist(Old_latency_high_Female_boot, breaks = 50)
+Old_latency_high_Male_boot<-unlist(Old_latency_high_Male$R_boot)
+hist(Old_latency_high_Male_boot, breaks = 50)
+
+Diff_boot_latency_high_old <- Old_latency_high_Male_boot - Old_latency_high_Female_boot
+hist(Diff_boot_latency_high_old, breaks = 50)
+
+quantile(Diff_boot_latency_high_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_latency_high_old)
+
+#Contrast analysis tall tank
+
+Tall_latency_high_Female_boot<-unlist(Tall_latency_high_Female$R_boot)
+hist(Tall_latency_high_Female_boot, breaks = 50)
+Tall_latency_high_Male_boot<-unlist(Tall_latency_high_Male$R_boot)
+hist(Tall_latency_high_Male_boot, breaks = 50)
+
+Diff_boot_latency_high_tall <- Tall_latency_high_Male_boot - Tall_latency_high_Female_boot
+hist(Diff_boot_latency_high_tall, breaks = 50)
+
+quantile(Diff_boot_latency_high_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_latency_high_tall)
 ```
 
 #Entries into high zone
@@ -459,6 +623,31 @@ Joined_freq_high_Female <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = 
     nboot = 10000, npermut = 10000)
 Joined_freq_high_Female
 
+#Contrast analysis old tank
+
+Old_freq_high_Female_boot<-unlist(Old_freq_high_Female$R_boot)
+hist(Old_freq_high_Female_boot, breaks = 50)
+Old_freq_high_Male_boot<-unlist(Old_freq_high_Male$R_boot)
+hist(Old_freq_high_Male_boot, breaks = 50)
+
+Diff_boot_freq_high_old <- Old_freq_high_Male_boot - Old_freq_high_Female_boot
+hist(Diff_boot_freq_high_old, breaks = 50)
+
+quantile(Diff_boot_freq_high_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_freq_high_old)
+
+#Contrast analysis tall tank
+
+Tall_freq_high_Female_boot<-unlist(Tall_freq_high_Female$R_boot)
+hist(Tall_freq_high_Female_boot, breaks = 50)
+Tall_freq_high_Male_boot<-unlist(Tall_freq_high_Male$R_boot)
+hist(Tall_freq_high_Male_boot, breaks = 50)
+
+Diff_boot_freq_high_tall <- Tall_freq_high_Male_boot - Tall_freq_high_Female_boot
+hist(Diff_boot_freq_high_tall, breaks = 50)
+
+quantile(Diff_boot_freq_high_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean(Diff_boot_freq_high_tall)
 
 ```
 
