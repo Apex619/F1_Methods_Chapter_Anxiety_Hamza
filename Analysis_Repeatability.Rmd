@@ -34,6 +34,7 @@ library(ggbeeswarm)
 library(emmeans)
 library(patchwork)
 library(easyGgplot2)
+library(viridis)
 #sessionInfo()
 ```
 The aim of this experiment is to compare repatability in typically used holding tanks against our custom made tall tanks. We designed these tanks to exploit the zebrafish's natural tendency to dive in a novel environment. Typical holding tanks aren't very deep, and as such, it's harder to comapare variability between individuals. We designed our tanks to hold the same amount of water, but have a much deeper column. For this experiment, we aren't interested in the F1 classification of the fish groups (we are referring to all of them as WT) or even the differences between groups. We are only interested in the repeatability measurements. 
@@ -98,8 +99,9 @@ hist(Tall_boot, breaks = 50)
 Diff_boot <- Tall_boot - Old_boot
 hist(Diff_boot, breaks = 50)
 
-quantile(Diff_boot, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot)
+q1<- quantile(Diff_boot, c(0.025, 0.975))
+q1# difference ditribuiton 95% CI
+m1 <- mean(Diff_boot)
 
 # Old_Tanks %>% 
 #   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
@@ -180,8 +182,8 @@ hist(Tall_low_dur_boot, breaks = 50)
 Diff_boot_low_dur <- Tall_low_dur_boot - Old_low_dur_boot
 hist(Diff_boot_low_dur, breaks = 50)
 
-quantile(Diff_boot_low_dur, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_low_dur)
+q2 <- quantile(Diff_boot_low_dur, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m2 <-mean(Diff_boot_low_dur)
 
 #2.5% quartile greater than zero, indicates a significant difference?
 
@@ -228,8 +230,9 @@ hist(Tall_mid_dur_boot, breaks = 50)
 Diff_boot_mid_dur <- Old_mid_dur_boot - Tall_mid_dur_boot
 hist(Diff_boot_mid_dur, breaks = 50)
 
-quantile(Diff_boot_mid_dur, c(0.025, 0.975)) #2.5% crosses 0, not significant?
-mean(Diff_boot_mid_dur)
+q3 <- quantile(Diff_boot_mid_dur, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+m3 <- mean(Diff_boot_mid_dur)
+str(q3)
 ```
 
 
@@ -289,8 +292,8 @@ hist(Tall_high_dur2_boot, breaks = 50)
 Diff_boot_high_dur2 <- Tall_high_dur2_boot - Old_high_dur2_boot
 hist(Diff_boot_high_dur2, breaks = 50)
 
-quantile(Diff_boot_high_dur2, c(0.025, 0.975)) #2.5% crosses 0, not significant?
-mean(Diff_boot_high_dur2)
+q4 <- quantile(Diff_boot_high_dur2, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+m4 <- mean(Diff_boot_high_dur2)
 ```
 
 
@@ -362,8 +365,8 @@ hist(Tall_freezing_dur3_boot, breaks = 50)
 Diff_boot_freezing_dur3 <- Old_freezing_dur3_boot - Tall_freezing_dur3_boot
 hist(Diff_boot_freezing_dur3, breaks = 50)
 
-quantile(Diff_boot_freezing_dur3, c(0.025, 0.975)) #2.5% crosses 0, not significant?
-mean(Diff_boot_freezing_dur3)
+q5 <- quantile(Diff_boot_freezing_dur3, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+m5 <- mean(Diff_boot_freezing_dur3)
 
 ```
 
@@ -392,6 +395,19 @@ plot(Tall_latency)
 Joined_latency <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Joined_latency
+
+###Analysis to find differences
+
+Old_latency_boot<-unlist(Old_latency$R_boot)
+hist(Old_latency_boot, breaks = 50)
+Tall_latency_boot<-unlist(Tall_latency$R_boot)
+hist(Tall_latency_boot, breaks = 50)
+
+Diff_boot_latency <- Tall_latency_boot - Old_latency_boot
+hist(Diff_boot_latency, breaks = 50)
+
+q6 <- quantile(Diff_boot_latency, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+m6 <- mean(Diff_boot_latency)
 ```
 
 #entries into high
@@ -419,6 +435,21 @@ plot(Tall_freq_high)
 Joined_freq_high <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Joined_freq_high
+
+###Analysis to find differences
+
+Old_freq_high_boot<-unlist(Old_freq_high$R_boot)
+hist(Old_freq_high_boot, breaks = 50)
+Tall_freq_high_boot<-unlist(Tall_freq_high$R_boot)
+hist(Tall_freq_high_boot, breaks = 50)
+
+Diff_boot_freq_high <- Old_freq_high_boot - Tall_freq_high_boot
+hist(Diff_boot_freq_high, breaks = 50)
+
+q7 <- quantile(Diff_boot_freq_high, c(0.025, 0.975)) 
+m7 <- mean(Diff_boot_freq_high)
+
+
 ```
 
 
@@ -438,8 +469,9 @@ Tot_Dist_rptr <- tibble(
 Tot_Dist_rptr
 
 plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  scale_color_manual(values=c("#339900", "#666666"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(y = "r") +
   labs(title = "Repeatability estimates", subtitle = "A. Total distance")+
@@ -464,8 +496,9 @@ low_dur_rptr <- tibble(
 low_dur_rptr
 
 plot_low_dur_rptr <- ggplot(low_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  scale_color_manual(values=c("#339900", "#666666"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "G. time spent in low zone")+
@@ -488,8 +521,9 @@ mid_dur_rptr <- tibble(
 mid_dur_rptr
 
 plot_mid_dur_rptr <- ggplot(mid_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  scale_color_manual(values=c("#339900", "#666666"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "F .Time spent in middle zone")+
@@ -512,8 +546,9 @@ high_dur_rptr <- tibble(
 high_dur_rptr
 
 plot_high_dur_rptr <- ggplot(high_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  scale_color_manual(values=c("#339900", "#666666"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "E. Time spent in high zone")+
@@ -536,8 +571,9 @@ freezing_dur_rptr <- tibble(
 freezing_dur_rptr
 
 plot_freezing_dur_rptr <- ggplot(freezing_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  scale_color_manual(values=c("#339900", "#666666"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "B. Time spent freezing")+
@@ -560,8 +596,9 @@ frequency_rptr <- tibble(
 frequency_rptr
 
 plot_frequency_rptr <- ggplot(frequency_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  scale_color_manual(values=c("#339900", "#666666"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "C. Entries into high zone")+
@@ -583,8 +620,9 @@ latency_rptr <- tibble(
   ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`))
 
 plot_latency_rptr <- ggplot(latency_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  scale_color_manual(values=c("#339900", "#666666"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "D. Latency to high")+
