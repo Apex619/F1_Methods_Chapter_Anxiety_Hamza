@@ -102,8 +102,8 @@ hist(Old_Tot_Dist_Male_boot, breaks = 50)
 Diff_boot_Tot_Dist_old <- Old_Tot_Dist_Male_boot - Old_Tot_Dist_Female_boot
 hist(Diff_boot_Tot_Dist_old, breaks = 50)
 
-quantile(Diff_boot_Tot_Dist_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_Tot_Dist_old)
+q_tot_old <- quantile(Diff_boot_Tot_Dist_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean_tot_old <- mean(Diff_boot_Tot_Dist_old)
 
 #Significant difference
 
@@ -117,8 +117,8 @@ hist(Tall_Tot_Dist_Male_boot, breaks = 50)
 Diff_boot_Tot_Dist_tall <- Tall_Tot_Dist_Male_boot - Tall_Tot_Dist_Female_boot
 hist(Diff_boot_Tot_Dist_tall, breaks = 50)
 
-quantile(Diff_boot_Tot_Dist_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_Tot_Dist_tall)
+q_tot_tall <- quantile(Diff_boot_Tot_Dist_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+mean_tot_tall <- mean(Diff_boot_Tot_Dist_tall)
 
 #Insignificant difference
 
@@ -184,8 +184,10 @@ hist(Old_low_dur_Male_boot, breaks = 50)
 Diff_boot_low_dur_old <- Old_low_dur_Male_boot - Old_low_dur_Female_boot
 hist(Diff_boot_low_dur_old, breaks = 50)
 
-quantile(Diff_boot_low_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_low_dur_old)
+q8 <- quantile(Diff_boot_low_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m8 <- mean(Diff_boot_low_dur_old)
+m8
+q8
 
 #Contrast analysis tall tank
 
@@ -197,8 +199,8 @@ hist(Tall_low_dur_Male_boot, breaks = 50)
 Diff_boot_low_dur_tall <- Tall_low_dur_Male_boot - Tall_low_dur_Female_boot
 hist(Diff_boot_low_dur_tall, breaks = 50)
 
-quantile(Diff_boot_low_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_low_dur_tall)
+q9 <- quantile(Diff_boot_low_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m9 <- mean(Diff_boot_low_dur_tall)
 
 
 ```
@@ -260,8 +262,8 @@ hist(Old_mid_dur_Male_boot, breaks = 50)
 Diff_boot_mid_dur_old <- Old_mid_dur_Male_boot - Old_mid_dur_Female_boot
 hist(Diff_boot_mid_dur_old, breaks = 50)
 
-quantile(Diff_boot_mid_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_mid_dur_old)
+q10 <- quantile(Diff_boot_mid_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m10 <- mean(Diff_boot_mid_dur_old)
 
 #Contrast analysis tall tank
 
@@ -273,8 +275,8 @@ hist(Tall_mid_dur_Male_boot, breaks = 50)
 Diff_boot_mid_dur_tall <- Tall_mid_dur_Male_boot - Tall_mid_dur_Female_boot
 hist(Diff_boot_mid_dur_tall, breaks = 50)
 
-quantile(Diff_boot_mid_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_mid_dur_tall)
+q11 <- quantile(Diff_boot_mid_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m11 <- mean(Diff_boot_mid_dur_tall)
 
 ```
 
@@ -353,8 +355,8 @@ hist(Old_high_dur_Male_boot, breaks = 50)
 Diff_boot_high_dur_old <- Old_high_dur_Male_boot - Old_high_dur_Female_boot
 hist(Diff_boot_high_dur_old, breaks = 50)
 
-quantile(Diff_boot_high_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_high_dur_old)
+q12 <- quantile(Diff_boot_high_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m12 <- mean(Diff_boot_high_dur_old)
 
 #Contrast analysis tall tank
 
@@ -366,8 +368,8 @@ hist(Tall_high_dur_Male_boot, breaks = 50)
 Diff_boot_high_dur_tall <- Tall_high_dur_Male_boot - Tall_high_dur_Female_boot
 hist(Diff_boot_high_dur_tall, breaks = 50)
 
-quantile(Diff_boot_high_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_high_dur_tall)
+q13 <- quantile(Diff_boot_high_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m13 <- mean(Diff_boot_high_dur_tall)
 ```
 
 ###Freezing sex (is transformation necessary for some of the data ?)
@@ -487,8 +489,8 @@ hist(Old_freezing_dur_Male_boot, breaks = 50)
 Diff_boot_freezing_dur_old <- Old_freezing_dur_Male_boot - Old_freezing_dur_Female_boot
 hist(Diff_boot_freezing_dur_old, breaks = 50)
 
-quantile(Diff_boot_freezing_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_freezing_dur_old)
+q14 <- quantile(Diff_boot_freezing_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m14 <- mean(Diff_boot_freezing_dur_old)
 
 #Contrast analysis tall tank
 
@@ -500,8 +502,8 @@ hist(Tall_freezing_dur_Male_boot, breaks = 50)
 Diff_boot_freezing_dur_tall <- Tall_freezing_dur_Male_boot - Tall_freezing_dur_Female_boot
 hist(Diff_boot_freezing_dur_tall, breaks = 50)
 
-quantile(Diff_boot_freezing_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_freezing_dur_tall)
+q15 <- quantile(Diff_boot_freezing_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m15 <- mean(Diff_boot_freezing_dur_tall)
 
 
 ```
@@ -557,8 +559,8 @@ hist(Old_latency_high_Male_boot, breaks = 50)
 Diff_boot_latency_high_old <- Old_latency_high_Male_boot - Old_latency_high_Female_boot
 hist(Diff_boot_latency_high_old, breaks = 50)
 
-quantile(Diff_boot_latency_high_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_latency_high_old)
+q16 <- quantile(Diff_boot_latency_high_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m16 <- mean(Diff_boot_latency_high_old)
 
 #Contrast analysis tall tank
 
@@ -570,8 +572,8 @@ hist(Tall_latency_high_Male_boot, breaks = 50)
 Diff_boot_latency_high_tall <- Tall_latency_high_Male_boot - Tall_latency_high_Female_boot
 hist(Diff_boot_latency_high_tall, breaks = 50)
 
-quantile(Diff_boot_latency_high_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_latency_high_tall)
+q17 <- quantile(Diff_boot_latency_high_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m17<- mean(Diff_boot_latency_high_tall)
 ```
 
 #Entries into high zone
@@ -633,8 +635,8 @@ hist(Old_freq_high_Male_boot, breaks = 50)
 Diff_boot_freq_high_old <- Old_freq_high_Male_boot - Old_freq_high_Female_boot
 hist(Diff_boot_freq_high_old, breaks = 50)
 
-quantile(Diff_boot_freq_high_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_freq_high_old)
+q18 <- quantile(Diff_boot_freq_high_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m18 <- mean(Diff_boot_freq_high_old)
 
 #Contrast analysis tall tank
 
@@ -646,8 +648,8 @@ hist(Tall_freq_high_Male_boot, breaks = 50)
 Diff_boot_freq_high_tall <- Tall_freq_high_Male_boot - Tall_freq_high_Female_boot
 hist(Diff_boot_freq_high_tall, breaks = 50)
 
-quantile(Diff_boot_freq_high_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
-mean(Diff_boot_freq_high_tall)
+q19 <- quantile(Diff_boot_freq_high_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+m19 <- mean(Diff_boot_freq_high_tall)
 
 ```
 
@@ -658,22 +660,23 @@ mean(Diff_boot_freq_high_tall)
 #Total distance sex
 ```{r}
 Tot_Dist_rptr_sex <- tibble(
-  Tank_Type = c("Short","Short", "Tall", "Tall"),
-  Sex = c("Male","Female","Male", "Female"),
-  r = c(Old_Tot_Dist_Male$R$Fish_ID,Old_Tot_Dist_Female$R$Fish_ID,Tall_Tot_Dist_Male$R$Fish_ID,Tall_Tot_Dist_Female$R$Fish_ID ),
-  ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`),
-  ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`))
+  Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
+  Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
+  r = c(Old_Tot_Dist_Male$R$Fish_ID,Old_Tot_Dist_Female$R$Fish_ID,Tall_Tot_Dist_Male$R$Fish_ID,Tall_Tot_Dist_Female$R$Fish_ID,mean_tot_old, mean_tot_tall ),
+  ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`, 0.36, -0.06),
+  ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`, 0.68, 0.47))
   
 Tot_Dist_rptr_sex
 
 plot_Tot_Dist_rptr_sex <- ggplot(Tot_Dist_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3), size=3)+
+    scale_color_manual(values=c("#FF3300","#0000FF", "#000000", "#000000"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(title = "Repeatability estimates by sex", subtitle = "A. Total distance")+
   coord_flip()+
-  ylim(0, 1)
+  ylim(-0.5, 0.9)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -683,22 +686,23 @@ plot_Tot_Dist_rptr_sex
 #Low duration sex
 ```{r}
 low_dur_rptr_sex <- tibble(
-  Tank_Type = c("Short","Short", "Tall", "Tall"),
-  Sex = c("Male","Female","Male", "Female"),
-  r = c(Old_low_dur_Male$R$Fish_ID,Old_low_dur_Female$R$Fish_ID,Tall_low_dur_Male$R$Fish_ID,Tall_low_dur_Female$R$Fish_ID ),
-  ci.lb = c(Old_low_dur_Male$CI_emp$`2.5%`,Old_low_dur_Female$CI_emp$`2.5%`,Tall_low_dur_Male$CI_emp$`2.5%`,Tall_low_dur_Female$CI_emp$`2.5%`),
-  ci.ub = c(Old_low_dur_Male$CI_emp$`97.5%`,Old_low_dur_Female$CI_emp$`97.5%`,Tall_low_dur_Male$CI_emp$`97.5%`,Tall_low_dur_Female$CI_emp$`97.5%`))
+  Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
+  Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
+  r = c(Old_low_dur_Male$R$Fish_ID,Old_low_dur_Female$R$Fish_ID,Tall_low_dur_Male$R$Fish_ID,Tall_low_dur_Female$R$Fish_ID,m8,m9),
+  ci.lb = c(Old_low_dur_Male$CI_emp$`2.5%`,Old_low_dur_Female$CI_emp$`2.5%`,Tall_low_dur_Male$CI_emp$`2.5%`,Tall_low_dur_Female$CI_emp$`2.5%`,-0.29,0.09),
+  ci.ub = c(Old_low_dur_Male$CI_emp$`97.5%`,Old_low_dur_Female$CI_emp$`97.5%`,Tall_low_dur_Male$CI_emp$`97.5%`,Tall_low_dur_Female$CI_emp$`97.5%`,0.27,0.54))
 
 low_dur_rptr_sex
 
 plot_low_dur_rptr_sex <- ggplot(low_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3), size=3)+
+    scale_color_manual(values=c("#FF3300","#0000FF", "#000000", "#000000"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "E. Time spent in low zone")+
   coord_flip()+
-  ylim(0, 1)
+  ylim(-0.5, 0.9)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -707,22 +711,23 @@ plot_low_dur_rptr_sex
 #Mid duration
 ```{r}
 mid_dur_rptr_sex <- tibble(
-  Tank_Type = c("Short","Short", "Tall", "Tall"),
-  Sex = c("Male","Female","Male", "Female"),
-  r = c(Old_mid_dur_Male$R$Fish_ID,Old_mid_dur_Female$R$Fish_ID,Tall_mid_dur_Male$R$Fish_ID,Tall_mid_dur_Female$R$Fish_ID ),
-  ci.lb = c(Old_mid_dur_Male$CI_emp$`2.5%`,Old_mid_dur_Female$CI_emp$`2.5%`,Tall_mid_dur_Male$CI_emp$`2.5%`,Tall_mid_dur_Female$CI_emp$`2.5%`),
-  ci.ub = c(Old_mid_dur_Male$CI_emp$`97.5%`,Old_mid_dur_Female$CI_emp$`97.5%`,Tall_mid_dur_Male$CI_emp$`97.5%`,Tall_mid_dur_Female$CI_emp$`97.5%`))
+  Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
+  Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
+  r = c(Old_mid_dur_Male$R$Fish_ID,Old_mid_dur_Female$R$Fish_ID,Tall_mid_dur_Male$R$Fish_ID,Tall_mid_dur_Female$R$Fish_ID,m10,m11 ),
+  ci.lb = c(Old_mid_dur_Male$CI_emp$`2.5%`,Old_mid_dur_Female$CI_emp$`2.5%`,Tall_mid_dur_Male$CI_emp$`2.5%`,Tall_mid_dur_Female$CI_emp$`2.5%`,-0.21,0.07),
+  ci.ub = c(Old_mid_dur_Male$CI_emp$`97.5%`,Old_mid_dur_Female$CI_emp$`97.5%`,Tall_mid_dur_Male$CI_emp$`97.5%`,Tall_mid_dur_Female$CI_emp$`97.5%`,0.28,0.57))
 
 mid_dur_rptr_sex
 
 plot_mid_dur_rptr_sex <- ggplot(mid_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3), size=3)+
+    scale_color_manual(values=c("#FF3300","#0000FF", "#000000", "#000000"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank type", y = "r") +
   labs(subtitle = "D. Time spent in mid zone")+
   coord_flip()+
-  ylim(0, 1)
+  ylim(-0.5, 0.9)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -731,22 +736,23 @@ plot_mid_dur_rptr_sex
 #High duration
 ```{r}
 high_dur_rptr_sex <- tibble(
-  Tank_Type = c("Short","Short", "Tall", "Tall"),
-  Sex = c("Male","Female","Male", "Female"),
-  r = c(Old_high_dur_Male2$R$Fish_ID,Old_high_dur_Female2$R$Fish_ID,Tall_high_dur_Male2$R$Fish_ID,Tall_high_dur_Female2$R$Fish_ID ),
-  ci.lb = c(Old_high_dur_Male2$CI_emp$`2.5%`,Old_high_dur_Female2$CI_emp$`2.5%`,Tall_high_dur_Male2$CI_emp$`2.5%`,Tall_high_dur_Female2$CI_emp$`2.5%`),
-  ci.ub = c(Old_high_dur_Male2$CI_emp$`97.5%`,Old_high_dur_Female2$CI_emp$`97.5%`,Tall_high_dur_Male2$CI_emp$`97.5%`,Tall_high_dur_Female2$CI_emp$`97.5%`))
+  Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
+  Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
+  r = c(Old_high_dur_Male2$R$Fish_ID,Old_high_dur_Female2$R$Fish_ID,Tall_high_dur_Male2$R$Fish_ID,Tall_high_dur_Female2$R$Fish_ID,m12,m13 ),
+  ci.lb = c(Old_high_dur_Male2$CI_emp$`2.5%`,Old_high_dur_Female2$CI_emp$`2.5%`,Tall_high_dur_Male2$CI_emp$`2.5%`,Tall_high_dur_Female2$CI_emp$`2.5%`,-0.36,0.08),
+  ci.ub = c(Old_high_dur_Male2$CI_emp$`97.5%`,Old_high_dur_Female2$CI_emp$`97.5%`,Tall_high_dur_Male2$CI_emp$`97.5%`,Tall_high_dur_Female2$CI_emp$`97.5%`,0.13,0.49))
 
 high_dur_rptr_sex
 
 plot_high_dur_rptr_sex <- ggplot(high_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3), size=3)+
+    scale_color_manual(values=c("#FF3300","#0000FF", "#000000", "#000000"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "C. Time spent in high zone")+
   coord_flip()+
-  ylim(0, 1)
+  ylim(-0.5, 0.9)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -756,22 +762,23 @@ plot_high_dur_rptr_sex
 #Freezing duration
 ```{r}
 freezing_dur_rptr_sex <- tibble(
-  Tank_Type = c("Short","Short", "Tall", "Tall"),
-  Sex = c("Male","Female","Male", "Female"),
-  r = c(Old_freezing_dur_Male3$R$Fish_ID,Old_freezing_dur_Female3$R$Fish_ID,Tall_freezing_dur_Male3$R$Fish_ID,Tall_freezing_dur_Female3$R$Fish_ID ),
-  ci.lb = c(Old_freezing_dur_Male3$CI_emp$`2.5%`,Old_freezing_dur_Female3$CI_emp$`2.5%`,Tall_freezing_dur_Male3$CI_emp$`2.5%`,Tall_freezing_dur_Female3$CI_emp$`2.5%`),
-  ci.ub = c(Old_freezing_dur_Male3$CI_emp$`97.5%`,Old_freezing_dur_Female3$CI_emp$`97.5%`,Tall_freezing_dur_Male3$CI_emp$`97.5%`,Tall_freezing_dur_Female3$CI_emp$`97.5%`))
+  Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
+  Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
+  r = c(Old_freezing_dur_Male3$R$Fish_ID,Old_freezing_dur_Female3$R$Fish_ID,Tall_freezing_dur_Male3$R$Fish_ID,Tall_freezing_dur_Female3$R$Fish_ID,m15,m15 ),
+  ci.lb = c(Old_freezing_dur_Male3$CI_emp$`2.5%`,Old_freezing_dur_Female3$CI_emp$`2.5%`,Tall_freezing_dur_Male3$CI_emp$`2.5%`,Tall_freezing_dur_Female3$CI_emp$`2.5%`,0.01,-0.25),
+  ci.ub = c(Old_freezing_dur_Male3$CI_emp$`97.5%`,Old_freezing_dur_Female3$CI_emp$`97.5%`,Tall_freezing_dur_Male3$CI_emp$`97.5%`,Tall_freezing_dur_Female3$CI_emp$`97.5%`,0.55,0.31))
 
 freezing_dur_rptr_sex
 
 plot_freezing_dur_rptr_sex <- ggplot(freezing_dur_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3), size=3)+
+    scale_color_manual(values=c("#FF3300","#0000FF", "#000000", "#000000"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "B. Time spent freezing")+
   coord_flip()+
-  ylim(0, 1)
+  ylim(-0.5, 0.9)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -780,22 +787,23 @@ plot_freezing_dur_rptr_sex
 #Latency high
 ```{r}
 latency_high_rptr_sex <- tibble(
-  Tank_Type = c("Short","Short", "Tall", "Tall"),
-  Sex = c("Male","Female","Male", "Female"),
-  r = c(Old_latency_high_Male$R$Fish_ID,Old_latency_high_Female$R$Fish_ID,Tall_latency_high_Male$R$Fish_ID,Tall_latency_high_Female$R$Fish_ID ),
-  ci.lb = c(Old_latency_high_Male$CI_emp$`2.5%`,Old_latency_high_Female$CI_emp$`2.5%`,Tall_latency_high_Male$CI_emp$`2.5%`,Tall_latency_high_Female$CI_emp$`2.5%`),
-  ci.ub = c(Old_latency_high_Male$CI_emp$`97.5%`,Old_latency_high_Female$CI_emp$`97.5%`,Tall_latency_high_Male$CI_emp$`97.5%`,Tall_latency_high_Female$CI_emp$`97.5%`))
+  Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
+  Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
+  r = c(Old_latency_high_Male$R$Fish_ID,Old_latency_high_Female$R$Fish_ID,Tall_latency_high_Male$R$Fish_ID,Tall_latency_high_Female$R$Fish_ID,m16,m17),
+  ci.lb = c(Old_latency_high_Male$CI_emp$`2.5%`,Old_latency_high_Female$CI_emp$`2.5%`,Tall_latency_high_Male$CI_emp$`2.5%`,Tall_latency_high_Female$CI_emp$`2.5%`,-0.31,0.18),
+  ci.ub = c(Old_latency_high_Male$CI_emp$`97.5%`,Old_latency_high_Female$CI_emp$`97.5%`,Tall_latency_high_Male$CI_emp$`97.5%`,Tall_latency_high_Female$CI_emp$`97.5%`,0.34,0.68))
 
 latency_high_rptr_sex
 
 plot_latency_high_rptr_sex <- ggplot(latency_high_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3), size=3)+
+    scale_color_manual(values=c("#FF3300","#0000FF", "#000000", "#000000"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "Latency to high zone")+
   coord_flip()+
-  ylim(0, 1)
+  ylim(-0.5, 0.9)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
@@ -805,22 +813,23 @@ plot_latency_high_rptr_sex
 #Entries to high
 ```{r}
 freq_high_rptr_sex <- tibble(
-  Tank_Type = c("Short","Short", "Tall", "Tall"),
-  Sex = c("Male","Female","Male", "Female"),
-  r = c(Old_freq_high_Male$R$Fish_ID,Old_freq_high_Female$R$Fish_ID,Tall_freq_high_Male$R$Fish_ID,Tall_freq_high_Female$R$Fish_ID ),
-  ci.lb = c(Old_freq_high_Male$CI_emp$`2.5%`,Old_freq_high_Female$CI_emp$`2.5%`,Tall_freq_high_Male$CI_emp$`2.5%`,Tall_freq_high_Female$CI_emp$`2.5%`),
-  ci.ub = c(Old_freq_high_Male$CI_emp$`97.5%`,Old_freq_high_Female$CI_emp$`97.5%`,Tall_freq_high_Male$CI_emp$`97.5%`,Tall_freq_high_Female$CI_emp$`97.5%`))
+  Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
+  Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
+  r = c(Old_freq_high_Male$R$Fish_ID,Old_freq_high_Female$R$Fish_ID,Tall_freq_high_Male$R$Fish_ID,Tall_freq_high_Female$R$Fish_ID,m18,m19 ),
+  ci.lb = c(Old_freq_high_Male$CI_emp$`2.5%`,Old_freq_high_Female$CI_emp$`2.5%`,Tall_freq_high_Male$CI_emp$`2.5%`,Tall_freq_high_Female$CI_emp$`2.5%`,-0.43,0.07),
+  ci.ub = c(Old_freq_high_Male$CI_emp$`97.5%`,Old_freq_high_Female$CI_emp$`97.5%`,Tall_freq_high_Male$CI_emp$`97.5%`,Tall_freq_high_Female$CI_emp$`97.5%`,0.12,0.62))
 
 freq_high_rptr_sex
 
 plot_freq_high_rptr_sex <- ggplot(freq_high_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3)) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3))+
+  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3), size=3)+
+    scale_color_manual(values=c("#FF3300","#0000FF", "#000000", "#000000"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
   labs(subtitle = "Entries to high")+
   coord_flip()+
-  ylim(0, 1)
+  ylim(-0.5, 0.9)
   #  theme(axis.title.y=element_blank(),
   #       axis.text.y=element_blank(),
   #       axis.ticks.y=element_blank())
