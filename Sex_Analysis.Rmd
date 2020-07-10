@@ -64,32 +64,32 @@ hist(Both_Tanks_Male$tot_dist)
 hist(Both_Tanks_Female$tot_dist)
 
 Old_Tot_Dist_Male <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 100000, npermut = 100000)
 Old_Tot_Dist_Male
 plot(Old_Tot_Dist_Male)
 
 Tall_Tot_Dist_Male <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_Tot_Dist_Male
 tall_tot_dist_plot <- plot(Tall_Tot_Dist_Male)
 
 Joined_Tot_Dist_Male <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Joined_Tot_Dist_Male
 
 #Female analysis
 
 Old_Tot_Dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_Tot_Dist_Female
 
 Tall_Tot_Dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_Tot_Dist_Female
 plot(Tall_Tot_Dist_Female)
 
 Joined_Tot_Dist_Female <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Joined_Tot_Dist_Female
 
 #Contrast analysis old tank
@@ -135,33 +135,33 @@ hist(Both_Tanks_Male$low_dur)
 hist(Both_Tanks_Female$low_dur)
 
 Old_low_dur_Male <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_low_dur_Male
 plot(Old_low_dur_Male)
 
 Tall_low_dur_Male <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_low_dur_Male
 tall_low_dur_plot <- plot(Tall_low_dur_Male)
 
 Joined_low_dur_Male <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Joined_low_dur_Male
 
 #Female analysis
 
 Old_low_dur_Female <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_low_dur_Female
 plot(Old_low_dur_Female)
 
 Tall_low_dur_Female <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_low_dur_Female
 tall_low_dur_plot <- plot(Tall_low_dur_Female)
 
 Joined_low_dur_Female <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Joined_low_dur_Female
 
 Model_low_dur_male <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
@@ -215,33 +215,33 @@ hist(Both_Tanks_Male$mid_dur)
 hist(Both_Tanks_Female$mid_dur)
 
 Old_mid_dur_Male <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_mid_dur_Male
 plot(Old_mid_dur_Male)
 
 Tall_mid_dur_Male <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_mid_dur_Male
 
 
 Joined_mid_dur_Male <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Joined_mid_dur_Male
 
 #Female analysis
 
 Old_mid_dur_Female <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_mid_dur_Female
 plot(Old_mid_dur_Female)
 
 Tall_mid_dur_Female <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_mid_dur_Female
 tall_mid_dur_plot <- plot(Tall_mid_dur_Female)
 
 Joined_mid_dur_Female <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Joined_mid_dur_Female
 
 Model_mid_dur_male <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
@@ -290,49 +290,49 @@ hist(Both_Tanks_Male$high_dur)
 hist(Both_Tanks_Female$high_dur)
 
 Old_high_dur_Male <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_high_dur_Male
 plot(Old_high_dur_Male)
 
 Old_high_dur_Male2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_high_dur_Male2
 
 Tall_high_dur_Male <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_high_dur_Male
 
 Tall_high_dur_Male2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_high_dur_Male2
 
 
 Joined_high_dur_Male <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Joined_high_dur_Male
 
 #Female analysis
 
 Old_high_dur_Female <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_high_dur_Female
 plot(Old_high_dur_Female)
 
 Old_high_dur_Female2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_high_dur_Female2
 
 Tall_high_dur_Female <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_high_dur_Female
 
 Tall_high_dur_Female2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_high_dur_Female2
 
 
 Joined_high_dur_Female <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Joined_high_dur_Female
 
 Model_high_dur_male <- lmer(high_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
@@ -382,76 +382,76 @@ hist(Both_Tanks_Male$freezing_dur)
 hist(Both_Tanks_Female$freezing_dur)
 
 # Old_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Old_freezing_dur_Male
 # plot(Old_freezing_dur_Male) #transformation not required?
 # 
 # Tall_freezing_dur_Male <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Tall_freezing_dur_Male
 # plot(Tall_freezing_dur_Male)
 # 
 # Old_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Old_freezing_dur_Male2
 # plot(Old_freezing_dur_Male2)
 # 
 # Tall_freezing_dur_Male2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Tall_freezing_dur_Male2
 # plot(Tall_freezing_dur_Male2)
 
 Old_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_freezing_dur_Male3
 plot(Old_freezing_dur_Male3)
 
 Tall_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_freezing_dur_Male3
 plot(Tall_freezing_dur_Male3)
 
 
 # Joined_freezing_dur_Male <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Joined_freezing_dur_Male
 # 
 # #Female analysis
 # 
 # Old_freezing_dur_Female <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Old_freezing_dur_Female
 # plot(Old_freezing_dur_Female)
 # 
 # Tall_freezing_dur_Female <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Tall_freezing_dur_Female
 # plot(Tall_freezing_dur_Female)
 # 
 # Old_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Old_freezing_dur_Female2
 # plot(Old_freezing_dur_Female2)
 # 
 # Tall_freezing_dur_Female2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Tall_freezing_dur_Female2
 # plot(Tall_freezing_dur_Female2)
 
 Old_freezing_dur_Female3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Old_freezing_dur_Female3
 plot(Old_freezing_dur_Female3)
 
 Tall_freezing_dur_Female3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_freezing_dur_Female3
 plot(Tall_freezing_dur_Female3)
 
 
 
 # Joined_freezing_dur_Female <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-#     nboot = 1000, npermut = 1000)
+#     nboot = 10000, npermut = 10000)
 # Joined_freezing_dur_Female
 # 
 # Model_freezing_dur_male <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
@@ -524,29 +524,29 @@ hist(residuals(Model_latency_female))
 
 
 Old_latency_high_Male <- rpt(latency_high ~ + (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Old_latency_high_Male
 
 Tall_latency_high_Male <- rpt(latency_high ~ + (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Tall_latency_high_Male
 
 Joined_latency_high_Male <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Joined_latency_high_Male
 
 #Female analysis
 
 Old_latency_high_Female <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Old_latency_high_Female
 
 Tall_latency_high_Female <- rpt(latency_high ~ + (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Tall_latency_high_Female
 
 Joined_latency_high_Female <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Joined_latency_high_Female
 
 #Contrast analysis old tank
@@ -600,29 +600,29 @@ hist(residuals(Model_freq_high_female2))
 #Male analysis
 
 Old_freq_high_Male <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Old_freq_high_Male
 
 Tall_freq_high_Male <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_freq_high_Male
 
 Joined_freq_high_Male <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Joined_freq_high_Male
 
 #Female analysis
 
 Old_freq_high_Female <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Old_freq_high_Female
 
 Tall_freq_high_Female <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 1000, npermut = 1000)
+    nboot = 10000, npermut = 10000)
 Tall_freq_high_Female
 
 Joined_freq_high_Female <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
+    nboot = 100000, npermut = 100000)
 Joined_freq_high_Female
 
 #Contrast analysis old tank
