@@ -64,7 +64,7 @@ hist(Both_Tanks_Male$tot_dist)
 hist(Both_Tanks_Female$tot_dist)
 
 Old_Tot_Dist_Male <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Old_Tot_Dist_Male
 plot(Old_Tot_Dist_Male)
 
@@ -524,29 +524,29 @@ hist(residuals(Model_latency_female))
 
 
 Old_latency_high_Male <- rpt(latency_high ~ + (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Old_latency_high_Male
 
 Tall_latency_high_Male <- rpt(latency_high ~ + (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Tall_latency_high_Male
 
 Joined_latency_high_Male <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Joined_latency_high_Male
 
 #Female analysis
 
 Old_latency_high_Female <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Old_latency_high_Female
 
 Tall_latency_high_Female <- rpt(latency_high ~ + (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Tall_latency_high_Female
 
 Joined_latency_high_Female <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Joined_latency_high_Female
 
 #Contrast analysis old tank
@@ -600,7 +600,7 @@ hist(residuals(Model_freq_high_female2))
 #Male analysis
 
 Old_freq_high_Male <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Old_freq_high_Male
 
 Tall_freq_high_Male <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
@@ -608,13 +608,13 @@ Tall_freq_high_Male <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", 
 Tall_freq_high_Male
 
 Joined_freq_high_Male <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Joined_freq_high_Male
 
 #Female analysis
 
 Old_freq_high_Female <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Old_freq_high_Female
 
 Tall_freq_high_Female <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
@@ -622,7 +622,7 @@ Tall_freq_high_Female <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID"
 Tall_freq_high_Female
 
 Joined_freq_high_Female <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
-    nboot = 100000, npermut = 100000)
+    nboot = 10000, npermut = 10000)
 Joined_freq_high_Female
 
 #Contrast analysis old tank
