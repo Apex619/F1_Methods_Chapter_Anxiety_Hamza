@@ -56,6 +56,8 @@ str(Old_Tanks)
 str(Tall_Tanks)
 str(Anxiety_Joined)
 
+#
+
 
 
 ```
@@ -638,68 +640,117 @@ plot_latency_rptr
 
 More plots
 ```{r, echo=FALSE}
-Violin_Dist <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='tot_dist', 
-    groupName='Tank',
-    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
-    backgroundColor="white", xtitle="Tank", ytitle="Total Distance", 
-    mainTitle="Total Distance: Tall vs Short",
-    addDot=FALSE, dotSize=0.3)+
-  facet_grid(~Sex)
-Violin_Dist
+# Violin_Dist <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='tot_dist', 
+#     groupName='Tank',
+#     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+#     backgroundColor="white", xtitle="Tank", ytitle="Total Distance", 
+#     mainTitle="Total Distance: Tall vs Short",
+#     addDot=FALSE, dotSize=0.3)+
+#   facet_grid(~Sex)
+# Violin_Dist
 
-Violin_Low <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='low_dur', 
-    groupName='Tank',
-    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
-    backgroundColor="white", xtitle="Tank", ytitle="Low Duration", 
-    mainTitle="Time spent in low zone: Tall vs Short",
-    addDot=FALSE, dotSize=0.3)+
+Violin_Dist <- ggplot(Anxiety_Joined, aes(x=Tank, y=tot_dist, fill=Tank)) + 
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1, fill="white")+
+  labs(title="Total distance travelled: Tall vs Short",x="Tank type", y = "Total distance (cm)")
+Violin_Dist + theme_classic()+
   facet_grid(~Sex)
-Violin_Low
 
-Violin_Mid <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='mid_dur', 
-    groupName='Tank',
-    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
-    backgroundColor="white", xtitle="Tank", ytitle="Mid Duration", 
-    mainTitle="Time spent in mid zone: Tall vs Short",
-    addDot=FALSE, dotSize=0.3)+
-  facet_grid(~Sex)
-Violin_Mid
+# Violin_Low <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='low_dur', 
+#     groupName='Tank',
+#     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+#     backgroundColor="white", xtitle="Tank", ytitle="Low Duration", 
+#     mainTitle="Time spent in low zone: Tall vs Short",
+#     addDot=FALSE, dotSize=0.3)+
+#   facet_grid(~Sex)
+# Violin_Low
 
-Violin_High <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='high_dur', 
-    groupName='Tank',
-    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
-    backgroundColor="white", xtitle="Tank", ytitle="High Duration", 
-    mainTitle="Time spent in high zone: Tall vs Short",
-    addDot=FALSE, dotSize=0.3)+
+Violin_Low <- ggplot(Anxiety_Joined, aes(x=Tank, y=low_dur, fill=Tank)) + 
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1, fill="white")+
+  labs(title="Time spent in low zone: Tall vs Short",x="Tank type", y = "Time spent (seconds)")
+Violin_Low + theme_classic()+
   facet_grid(~Sex)
-Violin_High
 
-Violin_Freezing <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='freezing_dur', 
-    groupName='Tank',
-    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
-    backgroundColor="white", xtitle="Tank", ytitle="Freezing Duration", 
-    mainTitle="Time spent in freezing: Tall vs Short",
-    addDot=FALSE, dotSize=0.3)+
-  facet_grid(~Sex)
-Violin_Freezing
+# Violin_Mid <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='mid_dur', 
+#     groupName='Tank',
+#     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+#     backgroundColor="white", xtitle="Tank", ytitle="Mid Duration", 
+#     mainTitle="Time spent in mid zone: Tall vs Short",
+#     addDot=FALSE, dotSize=0.3)+
+#   facet_grid(~Sex)
+# Violin_Mid
 
-Violin_Latency <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='latency_high', 
-    groupName='Tank',
-    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
-    backgroundColor="white", xtitle="Tank", ytitle="Latency to high(s)", 
-    mainTitle="Latency to high zone: Tall vs Short",
-    addDot=FALSE, dotSize=0.3)+
+Violin_Mid <- ggplot(Anxiety_Joined, aes(x=Tank, y=mid_dur, fill=Tank)) + 
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1, fill="white")+
+  labs(title="Time spent in mid zone: Tall vs Short",x="Tank type", y = "Time spent (seconds)")
+Violin_Mid + theme_classic()+
   facet_grid(~Sex)
-Violin_Latency
 
-Violin_entries <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='freq_high', 
-    groupName='Tank',
-    groupColors=c('#999999','#E69F00'), showLegend=TRUE,
-    backgroundColor="white", xtitle="Tank", ytitle="Frequency to high zone", 
-    mainTitle="Frequency to high zone: Tall vs Short",
-    addDot=FALSE, dotSize=0.3)+
+# Violin_High <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='high_dur', 
+#     groupName='Tank',
+#     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+#     backgroundColor="white", xtitle="Tank", ytitle="High Duration", 
+#     mainTitle="Time spent in high zone: Tall vs Short",
+#     addDot=FALSE, dotSize=0.3)+
+#   facet_grid(~Sex)
+# Violin_High
+
+Violin_High <- ggplot(Anxiety_Joined, aes(x=Tank, y=high_dur, fill=Tank)) + 
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1, fill="white")+
+  labs(title="Time spent in high zone: Tall vs Short",x="Tank type", y = "Time spent (seconds)")
+Violin_High + theme_classic()+
   facet_grid(~Sex)
-Violin_entries
+
+# Violin_Freezing <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='freezing_dur', 
+#     groupName='Tank',
+#     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+#     backgroundColor="white", xtitle="Tank", ytitle="Freezing Duration", 
+#     mainTitle="Time spent in freezing: Tall vs Short",
+#     addDot=FALSE, dotSize=0.3)+
+#   facet_grid(~Sex)
+# Violin_Freezing
+
+Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Tank, y=freezing_dur, fill=Tank)) + 
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1, fill="white")+
+  labs(title="Time spent freezing: Tall vs Short",x="Tank type", y = "Time spent (seconds)")
+Violin_Freezing + theme_classic()+
+  facet_grid(~Sex)
+
+# Violin_Latency <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='latency_high', 
+#     groupName='Tank',
+#     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+#     backgroundColor="white", xtitle="Tank", ytitle="Latency to high(s)", 
+#     mainTitle="Latency to high zone: Tall vs Short",
+#     addDot=FALSE, dotSize=0.3)+
+#   facet_grid(~Sex)
+# Violin_Latency
+
+Violin_Latency <- ggplot(Anxiety_Joined, aes(x=Tank, y=latency_high, fill=Tank)) + 
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1, fill="white")+
+  labs(title="Latency to high zone",x="Tank type", y = "Seconds")
+Violin_Latency + theme_classic()+
+  facet_grid(~Sex)
+
+# Violin_entries <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='freq_high', 
+#     groupName='Tank',
+#     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
+#     backgroundColor="white", xtitle="Tank", ytitle="Frequency to high zone", 
+#     mainTitle="Frequency to high zone: Tall vs Short",
+#     addDot=FALSE, dotSize=0.3)+
+#   facet_grid(~Sex)
+# Violin_entries
+
+Violin_entries <- ggplot(Anxiety_Joined, aes(x=Tank, y=freq_high, fill=Tank)) + 
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1, fill="white")+
+  labs(title="Frequency to high zone",x="Tank type", y = "Frequency")
+Violin_entries + theme_classic()+
+  facet_grid(~Sex)
 ```
 
 
