@@ -67,6 +67,29 @@ plots_extra_param
 
 ggsave(path = "Plots", file = "Extra_param_plot_sex.jpeg", limitsize = FALSE)
 ```
+Violin Plots
+```{r}
+Duration_Violin <- (Violin_High + plot_spacer() + Violin_Mid + plot_spacer() + Violin_Low+ plot_spacer())+ plot_layout(guides="collect")
+Duration_Violin
+
+ggsave(path = "Plots", file = "Violin_plots_duration.jpeg", limitsize = FALSE)
+```
+
+#Systematic extraction plot
+```{r}
+Review <- read.csv("Systematic_Extraction.csv")
+
+p<-ggplot(data=Review, aes(x=Endpoint, y=Count)) +
+  geom_bar(stat="identity")+
+coord_flip()+
+   scale_x_discrete(labels=c("tot_dist_exploration"=expression(bold(tot_dist_exploration)), "mid_zone_dur"=expression(bold(mid_zone_dur)),
+                              "low_zone_dur"=expression(bold(low_zone_dur)),"latency_high"=expression(bold(latency_high)),"high_zone_dur"=expression(bold(high_zone_dur)),"freezing_dur_or_freq"=expression(bold(freezing_dur_or_freq)),"entries_high"=expression(bold(entries_high)), parse=TRUE))+
+  labs(title="Counts of zebrafish anxiety endpoints from review")
+p
+  
+ggsave(path = "Plots", file = "Review.jpeg", limitsize = FALSE)
+```
+
 
 
 
