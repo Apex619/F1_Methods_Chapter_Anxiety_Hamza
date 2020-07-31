@@ -1,0 +1,22 @@
+Endpoint,Condition,r,ci.lb,ci.ub
+Total Distance,Tall,0.42,0.285,0.54
+Total Distance,Short,0.234,0.073,0.377
+Total Distance,Contrast,0.19,-0.01,0.38
+Freezing Duration,Short,0.296,0.144,0.434
+Freezing Duration,Tall,0.299,0.152,0.435
+Freezing Duration,Contrast,-0.00346,-0.2,0.2
+Latency to High,Short,0.099,0,0.3
+Latency to High,Tall,0.488,0.342,0.614
+Latency to High,Contrast,0.167,-0.02,0.35
+Entries to High,Short,0.478,0.345,0.593
+Entries to High,Tall,0.311,0.164,0.446
+Entries to High,Contrast,0.377,0.14,0.57
+Low Zone Duration,Short,0.355,0.205,0.486
+Low Zone Duration,Tall,0.535,0.415,0.637
+Low Zone Duration,Contrast,0.318,0.09,0.54
+Mid Zone Duration,Short,0.508,0.378,0.619
+Mid Zone Duration,Tall,0.466,0.336,0.576
+Mid Zone Duration,Contrast,0.0428,-0.13,0.21
+High Zone Duration,Short,0.535,0.409,0.641
+High Zone Duration,Tall,0.594,0.484,0.686
+High Zone Duration,Contrast,0.0605,-0.09,0.22

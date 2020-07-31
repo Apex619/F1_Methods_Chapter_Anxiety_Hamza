@@ -104,6 +104,7 @@ hist(Diff_boot, breaks = 50)
 q1<- quantile(Diff_boot, c(0.025, 0.975))
 q1# difference ditribuiton 95% CI
 m1 <- mean(Diff_boot)
+m1
 
 # Old_Tanks %>% 
 #   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
@@ -621,6 +622,8 @@ latency_rptr <- tibble(
   ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`, -0.02),
   ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.35))
 
+latency_rptr
+
 plot_latency_rptr <- ggplot(latency_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
@@ -668,7 +671,7 @@ Violin_Dist + theme_classic()+
 Violin_Low <- ggplot(Anxiety_Joined, aes(x=Tank, y=low_dur, fill=Tank)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent in low zone: Tall vs Short",x="Tank type", y = "Time spent (seconds)")
+  labs(title="C. Low zone",x="Tank type", y = "Time spent (seconds)")
 Violin_Low + theme_classic()+
   facet_grid(~Sex)
 
@@ -684,7 +687,7 @@ Violin_Low + theme_classic()+
 Violin_Mid <- ggplot(Anxiety_Joined, aes(x=Tank, y=mid_dur, fill=Tank)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent in mid zone: Tall vs Short",x="Tank type", y = "Time spent (seconds)")
+  labs(title="B. Mid zone",x="Tank type", y = "Time spent (seconds)")
 Violin_Mid + theme_classic()+
   facet_grid(~Sex)
 
@@ -700,7 +703,7 @@ Violin_Mid + theme_classic()+
 Violin_High <- ggplot(Anxiety_Joined, aes(x=Tank, y=high_dur, fill=Tank)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent in high zone: Tall vs Short",x="Tank type", y = "Time spent (seconds)")
+  labs(title="A. High zone",x="Tank type", y = "Time spent (seconds)")
 Violin_High + theme_classic()+
   facet_grid(~Sex)
 
@@ -716,7 +719,7 @@ Violin_High + theme_classic()+
 Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Tank, y=freezing_dur, fill=Tank)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent freezing: Tall vs Short",x="Tank type", y = "Time spent (seconds)")
+  labs(title="Time spent freezing",x="Tank type", y = "Time spent (seconds)")
 Violin_Freezing + theme_classic()+
   facet_grid(~Sex)
 

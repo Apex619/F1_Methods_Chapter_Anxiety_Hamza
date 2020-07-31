@@ -1,0 +1,17 @@
+Endpoint,Count
+low_zone_dur,17
+dist_low,2
+entries_low,11
+mid_zone_dur,8
+dist_mid,1
+entries_mid,4
+high_zone_dur,43
+dist_high,4
+entries_high,33
+latency_high,19
+tot_dist_exploration,29
+freezing_dur_or_freq,30
+erratic_movements,10
+mean_max_speed,8
+turn_angle,10
+velocity,7
