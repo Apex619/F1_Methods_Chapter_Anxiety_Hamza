@@ -35,6 +35,7 @@ library(emmeans)
 library(patchwork)
 library(easyGgplot2)
 library(viridis)
+library(nlme)
 #sessionInfo()
 ```
 The aim of this experiment is to compare repatability in typically used holding tanks against our custom made tall tanks. We designed these tanks to exploit the zebrafish's natural tendency to dive in a novel environment. Typical holding tanks aren't very deep, and as such, it's harder to comapare variability between individuals. We designed our tanks to hold the same amount of water, but have a much deeper column. For this experiment, we aren't interested in the F1 classification of the fish groups (we are referring to all of them as WT) or even the differences between groups. We are only interested in the repeatability measurements. 
@@ -87,10 +88,19 @@ Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data
     nboot = 10000, npermut = 10000)
 Joined_Tot_Dist
 
-Model_Tot_Dist <- lmer(tot_dist ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+Model_Tot_Dist <- lmer(tot_dist ~ Tank + Sex +  (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_Tot_Dist)
 # summary(Model_Tot_Dist)
 tab_model(Model_Tot_Dist)
 hist(residuals(Model_Tot_Dist))
+
+# modeling 
+Model_Tot_Dist1 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+summary(Model_Tot_Dist1)
+Model_Tot_Dist2 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+summary(Model_Tot_Dist2)
+anova(Model_Tot_Dist1, Model_Tot_Dist2)
+
 
 # Shinichi's addition to show Hamza how to get the difference between these two tank's repeatablities. 
 Old_boot<-unlist(Old_Tot_Dist$R_boot)
@@ -170,7 +180,7 @@ Joined_low_dur <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data =
     nboot = 10000, npermut = 10000)
 Joined_low_dur
 
-Model_low_dur <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+Model_low_dur <- lmer(low_dur ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_low_dur)
 tab_model(Model_low_dur)
 hist(residuals(Model_low_dur))
@@ -219,7 +229,7 @@ Joined_mid_dur <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data =
     nboot = 10000, npermut = 10000)
 Joined_mid_dur
 
-Model_mid_dur <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+Model_mid_dur <- lmer(mid_dur ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_mid_dur)
 hist(residuals(Model_mid_dur))
 
@@ -280,10 +290,18 @@ summary(Model_high_dur)
 tab_model(Model_high_dur)
 hist(residuals(Model_high_dur))
 
-Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_high_dur2)
 tab_model(Model_high_dur2)
 hist(residuals(Model_high_dur2))
+
+
+# modeling 
+Model_high_durA <- lme(sqrt(high_dur) ~ Tank, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+summary(Model_high_durA)
+Model_high_durB <- lme(sqrt(high_dur) ~ Tank, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+summary(Model_high_durB)
+anova(Model_high_durA, Model_high_durB)
 
 ###Analysis to find differences
 
@@ -353,7 +371,7 @@ Model_freezing_dur2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = An
 summary(Model_freezing_dur2)
 hist(residuals(Model_freezing_dur2))
 
-Model_freezing_dur3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+Model_freezing_dur3 <- lmer(log(freezing_dur+1) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_freezing_dur3)
 tab_model(Model_freezing_dur3)
 hist(residuals(Model_freezing_dur3))
