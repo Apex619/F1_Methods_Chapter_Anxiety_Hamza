@@ -677,6 +677,8 @@ Violin_Dist <- ggplot(Anxiety_Joined, aes(x=Tank, y=tot_dist, fill=Tank)) +
 Violin_Dist + theme_classic()+
   facet_grid(~Sex)
 
+ggsave(path = "Plots", file = "Total Distance.jpeg", limitsize = FALSE)
+
 # Violin_Low <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='low_dur', 
 #     groupName='Tank',
 #     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
@@ -692,6 +694,8 @@ Violin_Low <- ggplot(Anxiety_Joined, aes(x=Tank, y=low_dur, fill=Tank)) +
   labs(title="C. Low zone",x="Tank type", y = "Time spent (seconds)")
 Violin_Low + theme_classic()+
   facet_grid(~Sex)
+
+ggsave(path = "Plots", file = "Low Duration.jpeg", limitsize = FALSE)
 
 # Violin_Mid <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='mid_dur', 
 #     groupName='Tank',
@@ -709,6 +713,7 @@ Violin_Mid <- ggplot(Anxiety_Joined, aes(x=Tank, y=mid_dur, fill=Tank)) +
 Violin_Mid + theme_classic()+
   facet_grid(~Sex)
 
+ggsave(path = "Plots", file = "Mid_Duration.jpeg", limitsize = FALSE)
 # Violin_High <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='high_dur', 
 #     groupName='Tank',
 #     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
@@ -724,6 +729,8 @@ Violin_High <- ggplot(Anxiety_Joined, aes(x=Tank, y=high_dur, fill=Tank)) +
   labs(title="A. High zone",x="Tank type", y = "Time spent (seconds)")
 Violin_High + theme_classic()+
   facet_grid(~Sex)
+
+ggsave(path = "Plots", file = "High_Durationt.jpeg", limitsize = FALSE)
 
 # Violin_Freezing <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='freezing_dur', 
 #     groupName='Tank',
@@ -741,6 +748,8 @@ Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Tank, y=freezing_dur, fill=Tank)
 Violin_Freezing + theme_classic()+
   facet_grid(~Sex)
 
+ggsave(path = "Plots", file = "Freezing.jpeg", limitsize = FALSE)
+
 # Violin_Latency <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='latency_high', 
 #     groupName='Tank',
 #     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
@@ -757,6 +766,8 @@ Violin_Latency <- ggplot(Anxiety_Joined, aes(x=Tank, y=latency_high, fill=Tank))
 Violin_Latency + theme_classic()+
   facet_grid(~Sex)
 
+ggsave(path = "Plots", file = "Latency to High.jpeg", limitsize = FALSE)
+
 # Violin_entries <- ggplot2.violinplot(data=Anxiety_Joined, xName='Tank',yName='freq_high', 
 #     groupName='Tank',
 #     groupColors=c('#999999','#E69F00'), showLegend=TRUE,
@@ -772,6 +783,8 @@ Violin_entries <- ggplot(Anxiety_Joined, aes(x=Tank, y=freq_high, fill=Tank)) +
   labs(title="Frequency to high zone",x="Tank type", y = "Frequency")
 Violin_entries + theme_classic()+
   facet_grid(~Sex)
+
+ggsave(path = "Plots", file = "Entries to high.jpeg", limitsize = FALSE)
 ```
 
 
