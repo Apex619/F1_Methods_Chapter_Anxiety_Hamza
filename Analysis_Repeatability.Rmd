@@ -77,7 +77,7 @@ hist(Anxiety_Joined$tot_dist)
 Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_Tot_Dist
-plot(Old_Tot_Dist)
+
 
 Tall_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -195,10 +195,19 @@ hist(Tall_low_dur_boot, breaks = 50)
 Diff_boot_low_dur <- Tall_low_dur_boot - Old_low_dur_boot
 hist(Diff_boot_low_dur, breaks = 50)
 
-q2 <- quantile(Diff_boot_low_dur, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q2 <- quantile(Diff_boot_low_dur, c(0.025, 0.975))
+q2# difference ditribuiton 95% CI
 m2 <-mean(Diff_boot_low_dur)
+m2
 
 #2.5% quartile greater than zero, indicates a significant difference?
+
+# modeling 
+Model_low_dur1 <- lme(low_dur ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+summary(Model_low_dur1)
+Model_low_dur2 <- lme(low_dur ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+summary(Model_low_dur2)
+anova(Model_low_dur1, Model_low_dur2)
 
 ```
 
@@ -218,7 +227,6 @@ Old_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks
     nboot = 10000, npermut = 10000)
 Old_mid_dur
 
-plot(Old_mid_dur)
 
 Tall_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -243,9 +251,18 @@ hist(Tall_mid_dur_boot, breaks = 50)
 Diff_boot_mid_dur <- Old_mid_dur_boot - Tall_mid_dur_boot
 hist(Diff_boot_mid_dur, breaks = 50)
 
-q3 <- quantile(Diff_boot_mid_dur, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+q3 <- quantile(Diff_boot_mid_dur, c(0.025, 0.975))
+q3#2.5% crosses 0, not significant?
 m3 <- mean(Diff_boot_mid_dur)
+m3
 str(q3)
+
+# modeling 
+Model_mid_dur1 <- lme(mid_dur ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+summary(Model_mid_dur1)
+Model_mid_dur2 <- lme(mid_dur ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+summary(Model_mid_dur2)
+anova(Model_mid_dur1, Model_mid_dur2)
 ```
 
 
@@ -313,8 +330,17 @@ hist(Tall_high_dur2_boot, breaks = 50)
 Diff_boot_high_dur2 <- Tall_high_dur2_boot - Old_high_dur2_boot
 hist(Diff_boot_high_dur2, breaks = 50)
 
-q4 <- quantile(Diff_boot_high_dur2, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+q4 <- quantile(Diff_boot_high_dur2, c(0.025, 0.975))
+q4#2.5% crosses 0, not significant?
 m4 <- mean(Diff_boot_high_dur2)
+m4
+
+# modeling 
+Model_high_dur1a <- lme(sqrt(high_dur) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+summary(Model_high_dur1a)
+Model_high_dur2a <- lme(sqrt(high_dur) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+summary(Model_high_dur2a)
+anova(Model_high_dur1a, Model_high_dur2a)
 ```
 
 
@@ -383,12 +409,21 @@ hist(Old_freezing_dur3_boot, breaks = 50)
 Tall_freezing_dur3_boot<-unlist(Tall_freezing_dur3$R_boot)
 hist(Tall_freezing_dur3_boot, breaks = 50)
 
-Diff_boot_freezing_dur3 <- Old_freezing_dur3_boot - Tall_freezing_dur3_boot
+Diff_boot_freezing_dur3 <- Tall_freezing_dur3_boot - Old_freezing_dur3_boot
 hist(Diff_boot_freezing_dur3, breaks = 50)
 
-q5 <- quantile(Diff_boot_freezing_dur3, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+q5 <- quantile(Diff_boot_freezing_dur3, c(0.025, 0.975))#2.5% crosses 0, not significant?
+q5
 m5 <- mean(Diff_boot_freezing_dur3)
+m5
 
+
+# modeling 
+Model_freezing_dur1a <- lme(log(freezing_dur+1) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+summary(Model_freezing_dur1a)
+Model_freezing_dur2a <- lme(log(freezing_dur+1) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+summary(Model_freezing_dur2a)
+anova(Model_freezing_dur1a, Model_freezing_dur2a)
 ```
 
 #latency to high
@@ -404,7 +439,7 @@ hist(residuals(Model_latency2)) #Transformation seems better?
 Old_latency <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_latency
-plot(Old_latency)
+
 
 
 Tall_latency <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
@@ -428,7 +463,16 @@ Diff_boot_latency <- Tall_latency_boot - Old_latency_boot
 hist(Diff_boot_latency, breaks = 50)
 
 q6 <- quantile(Diff_boot_latency, c(0.025, 0.975)) #2.5% crosses 0, not significant?
+q6
 m6 <- mean(Diff_boot_latency)
+m6
+
+# modeling 
+Model_latency_high1a <- lme(latency_high ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined, na.action=na.omit)
+summary(Model_latency_high1a)
+Model_latency_high2a <- lme(latency_high ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined, na.action=na.omit)
+summary(Model_latency_high2a)
+anova(Model_latency_high1a, Model_latency_high2a)
 ```
 
 #entries into high
@@ -468,7 +512,17 @@ Diff_boot_freq_high <- Old_freq_high_boot - Tall_freq_high_boot
 hist(Diff_boot_freq_high, breaks = 50)
 
 q7 <- quantile(Diff_boot_freq_high, c(0.025, 0.975)) 
+q7
 m7 <- mean(Diff_boot_freq_high)
+m7
+
+
+#models
+Model_freq_high1a <- lme(sqrt(freq_high) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+summary(Model_freq_high1a)
+Model_freq_high2a <- lme(sqrt(freq_high) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+summary(Model_freq_high2a)
+anova(Model_freq_high1a, Model_freq_high2a)
 
 
 ```
@@ -610,9 +664,9 @@ Entries into high zone
 ```{r}
 frequency_rptr <- tibble(
   Tank_Type = c("Short", "Tall", "Contrast"),
-  r = c(Old_freq_high$R$Fish_ID,Tall_freq_high$R$Fish_ID, m6),
-  ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`, 0.14),
-  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.57))
+  r = c(Old_freq_high$R$Fish_ID,Tall_freq_high$R$Fish_ID, m7),
+  ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`, -0.02),
+  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.35))
   
 frequency_rptr
 

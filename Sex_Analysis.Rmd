@@ -71,7 +71,7 @@ plot(Old_Tot_Dist_Male)
 Tall_Tot_Dist_Male <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_Tot_Dist_Male
-tall_tot_dist_plot <- plot(Tall_Tot_Dist_Male)
+
 
 Joined_Tot_Dist_Male <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -86,7 +86,7 @@ Old_Tot_Dist_Female
 Tall_Tot_Dist_Female <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_Tot_Dist_Female
-plot(Tall_Tot_Dist_Female)
+
 
 Joined_Tot_Dist_Female <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -103,8 +103,9 @@ Diff_boot_Tot_Dist_old <- Old_Tot_Dist_Male_boot - Old_Tot_Dist_Female_boot
 hist(Diff_boot_Tot_Dist_old, breaks = 50)
 
 q_tot_old <- quantile(Diff_boot_Tot_Dist_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q_tot_old
 mean_tot_old <- mean(Diff_boot_Tot_Dist_old)
-
+mean_tot_old
 #Significant difference
 
 #Contrast analysis tall tank
@@ -118,7 +119,9 @@ Diff_boot_Tot_Dist_tall <- Tall_Tot_Dist_Male_boot - Tall_Tot_Dist_Female_boot
 hist(Diff_boot_Tot_Dist_tall, breaks = 50)
 
 q_tot_tall <- quantile(Diff_boot_Tot_Dist_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q_tot_tall
 mean_tot_tall <- mean(Diff_boot_Tot_Dist_tall)
+mean_tot_tall
 
 #Insignificant difference
 
@@ -153,12 +156,12 @@ Joined_low_dur_Male
 Old_low_dur_Female <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_low_dur_Female
-plot(Old_low_dur_Female)
+
 
 Tall_low_dur_Female <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_low_dur_Female
-tall_low_dur_plot <- plot(Tall_low_dur_Female)
+
 
 Joined_low_dur_Female <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -200,7 +203,9 @@ Diff_boot_low_dur_tall <- Tall_low_dur_Male_boot - Tall_low_dur_Female_boot
 hist(Diff_boot_low_dur_tall, breaks = 50)
 
 q9 <- quantile(Diff_boot_low_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q9
 m9 <- mean(Diff_boot_low_dur_tall)
+m9
 
 
 ```
@@ -217,7 +222,7 @@ hist(Both_Tanks_Female$mid_dur)
 Old_mid_dur_Male <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_mid_dur_Male
-plot(Old_mid_dur_Male)
+
 
 Tall_mid_dur_Male <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -233,12 +238,12 @@ Joined_mid_dur_Male
 Old_mid_dur_Female <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_mid_dur_Female
-plot(Old_mid_dur_Female)
+
 
 Tall_mid_dur_Female <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_mid_dur_Female
-tall_mid_dur_plot <- plot(Tall_mid_dur_Female)
+
 
 Joined_mid_dur_Female <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -263,7 +268,9 @@ Diff_boot_mid_dur_old <- Old_mid_dur_Male_boot - Old_mid_dur_Female_boot
 hist(Diff_boot_mid_dur_old, breaks = 50)
 
 q10 <- quantile(Diff_boot_mid_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q10
 m10 <- mean(Diff_boot_mid_dur_old)
+m10
 
 #Contrast analysis tall tank
 
@@ -276,8 +283,9 @@ Diff_boot_mid_dur_tall <- Tall_mid_dur_Male_boot - Tall_mid_dur_Female_boot
 hist(Diff_boot_mid_dur_tall, breaks = 50)
 
 q11 <- quantile(Diff_boot_mid_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q11
 m11 <- mean(Diff_boot_mid_dur_tall)
-
+m11
 ```
 
 ###high duration sex
@@ -288,19 +296,19 @@ hist(Tall_Tanks_Male$high_dur)
 hist(Tall_Tanks_Female$high_dur)
 hist(Both_Tanks_Male$high_dur)
 hist(Both_Tanks_Female$high_dur)
+# 
+# Old_high_dur_Male <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
+#     nboot = 10000, npermut = 10000)
+# Old_high_dur_Male
 
-Old_high_dur_Male <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_high_dur_Male
-plot(Old_high_dur_Male)
 
 Old_high_dur_Male2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_high_dur_Male2
 
-Tall_high_dur_Male <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_high_dur_Male
+# Tall_high_dur_Male <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
+#     nboot = 10000, npermut = 10000)
+# Tall_high_dur_Male
 
 Tall_high_dur_Male2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -313,18 +321,18 @@ Joined_high_dur_Male
 
 #Female analysis
 
-Old_high_dur_Female <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_high_dur_Female
-plot(Old_high_dur_Female)
+# Old_high_dur_Female <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
+#     nboot = 10000, npermut = 10000)
+# Old_high_dur_Female
+
 
 Old_high_dur_Female2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_high_dur_Female2
 
-Tall_high_dur_Female <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_high_dur_Female
+# Tall_high_dur_Female <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
+#     nboot = 10000, npermut = 10000)
+# Tall_high_dur_Female
 
 Tall_high_dur_Female2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -352,12 +360,13 @@ hist(Old_high_dur_Female_boot, breaks = 50)
 Old_high_dur_Male_boot<-unlist(Old_high_dur_Male$R_boot)
 hist(Old_high_dur_Male_boot, breaks = 50)
 
-Diff_boot_high_dur_old <- Old_high_dur_Male_boot - Old_high_dur_Female_boot
+Diff_boot_high_dur_old <- Old_high_dur_Female_boot - Old_high_dur_Male_boot
 hist(Diff_boot_high_dur_old, breaks = 50)
 
-q12 <- quantile(Diff_boot_high_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q12 <- quantile(Diff_boot_high_dur_old, c(0.025, 0.975))
+q12
 m12 <- mean(Diff_boot_high_dur_old)
-
+m12
 #Contrast analysis tall tank
 
 Tall_high_dur_Female_boot<-unlist(Tall_high_dur_Female$R_boot)
@@ -369,7 +378,9 @@ Diff_boot_high_dur_tall <- Tall_high_dur_Male_boot - Tall_high_dur_Female_boot
 hist(Diff_boot_high_dur_tall, breaks = 50)
 
 q13 <- quantile(Diff_boot_high_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q13
 m13 <- mean(Diff_boot_high_dur_tall)
+m13
 ```
 
 ###Freezing sex (is transformation necessary for some of the data ?)
@@ -404,12 +415,12 @@ hist(Both_Tanks_Female$freezing_dur)
 Old_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian",
     nboot = 10000, npermut = 10000)
 Old_freezing_dur_Male3
-plot(Old_freezing_dur_Male3)
+
 
 Tall_freezing_dur_Male3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_freezing_dur_Male3
-plot(Tall_freezing_dur_Male3)
+
 
 
 # Joined_freezing_dur_Male <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
@@ -441,12 +452,12 @@ plot(Tall_freezing_dur_Male3)
 Old_freezing_dur_Female3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_freezing_dur_Female3
-plot(Old_freezing_dur_Female3)
+
 
 Tall_freezing_dur_Female3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Female, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_freezing_dur_Female3
-plot(Tall_freezing_dur_Female3)
+
 
 
 
@@ -490,7 +501,9 @@ Diff_boot_freezing_dur_old <- Old_freezing_dur_Male_boot - Old_freezing_dur_Fema
 hist(Diff_boot_freezing_dur_old, breaks = 50)
 
 q14 <- quantile(Diff_boot_freezing_dur_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q14
 m14 <- mean(Diff_boot_freezing_dur_old)
+m14
 
 #Contrast analysis tall tank
 
@@ -503,7 +516,9 @@ Diff_boot_freezing_dur_tall <- Tall_freezing_dur_Male_boot - Tall_freezing_dur_F
 hist(Diff_boot_freezing_dur_tall, breaks = 50)
 
 q15 <- quantile(Diff_boot_freezing_dur_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q15
 m15 <- mean(Diff_boot_freezing_dur_tall)
+m15
 
 
 ```
@@ -560,7 +575,9 @@ Diff_boot_latency_high_old <- Old_latency_high_Male_boot - Old_latency_high_Fema
 hist(Diff_boot_latency_high_old, breaks = 50)
 
 q16 <- quantile(Diff_boot_latency_high_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q16
 m16 <- mean(Diff_boot_latency_high_old)
+m16
 
 #Contrast analysis tall tank
 
@@ -573,7 +590,9 @@ Diff_boot_latency_high_tall <- Tall_latency_high_Male_boot - Tall_latency_high_F
 hist(Diff_boot_latency_high_tall, breaks = 50)
 
 q17 <- quantile(Diff_boot_latency_high_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q17
 m17<- mean(Diff_boot_latency_high_tall)
+m17
 ```
 
 #Entries into high zone
@@ -632,11 +651,13 @@ hist(Old_freq_high_Female_boot, breaks = 50)
 Old_freq_high_Male_boot<-unlist(Old_freq_high_Male$R_boot)
 hist(Old_freq_high_Male_boot, breaks = 50)
 
-Diff_boot_freq_high_old <- Old_freq_high_Male_boot - Old_freq_high_Female_boot
+Diff_boot_freq_high_old <- Old_freq_high_Female_boot - Old_freq_high_Male_boot
 hist(Diff_boot_freq_high_old, breaks = 50)
 
 q18 <- quantile(Diff_boot_freq_high_old, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q18
 m18 <- mean(Diff_boot_freq_high_old)
+m18
 
 #Contrast analysis tall tank
 
@@ -649,7 +670,9 @@ Diff_boot_freq_high_tall <- Tall_freq_high_Male_boot - Tall_freq_high_Female_boo
 hist(Diff_boot_freq_high_tall, breaks = 50)
 
 q19 <- quantile(Diff_boot_freq_high_tall, c(0.025, 0.975)) # difference ditribuiton 95% CI
+q19
 m19 <- mean(Diff_boot_freq_high_tall)
+m19
 
 ```
 
@@ -663,8 +686,8 @@ Tot_Dist_rptr_sex <- tibble(
   Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
   Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
   r = c(Old_Tot_Dist_Male$R$Fish_ID,Old_Tot_Dist_Female$R$Fish_ID,Tall_Tot_Dist_Male$R$Fish_ID,Tall_Tot_Dist_Female$R$Fish_ID,mean_tot_old, mean_tot_tall ),
-  ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`, 0.36, -0.06),
-  ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`, 0.68, 0.47))
+  ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`, 0.35, -0.08),
+  ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`, 0.68, 0.45))
   
 Tot_Dist_rptr_sex
 
@@ -689,8 +712,8 @@ low_dur_rptr_sex <- tibble(
   Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
   Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
   r = c(Old_low_dur_Male$R$Fish_ID,Old_low_dur_Female$R$Fish_ID,Tall_low_dur_Male$R$Fish_ID,Tall_low_dur_Female$R$Fish_ID,m8,m9),
-  ci.lb = c(Old_low_dur_Male$CI_emp$`2.5%`,Old_low_dur_Female$CI_emp$`2.5%`,Tall_low_dur_Male$CI_emp$`2.5%`,Tall_low_dur_Female$CI_emp$`2.5%`,-0.29,0.09),
-  ci.ub = c(Old_low_dur_Male$CI_emp$`97.5%`,Old_low_dur_Female$CI_emp$`97.5%`,Tall_low_dur_Male$CI_emp$`97.5%`,Tall_low_dur_Female$CI_emp$`97.5%`,0.27,0.54))
+  ci.lb = c(Old_low_dur_Male$CI_emp$`2.5%`,Old_low_dur_Female$CI_emp$`2.5%`,Tall_low_dur_Male$CI_emp$`2.5%`,Tall_low_dur_Female$CI_emp$`2.5%`,-0.28,0.10),
+  ci.ub = c(Old_low_dur_Male$CI_emp$`97.5%`,Old_low_dur_Female$CI_emp$`97.5%`,Tall_low_dur_Male$CI_emp$`97.5%`,Tall_low_dur_Female$CI_emp$`97.5%`,0.27,0.55))
 
 low_dur_rptr_sex
 
@@ -714,8 +737,8 @@ mid_dur_rptr_sex <- tibble(
   Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
   Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
   r = c(Old_mid_dur_Male$R$Fish_ID,Old_mid_dur_Female$R$Fish_ID,Tall_mid_dur_Male$R$Fish_ID,Tall_mid_dur_Female$R$Fish_ID,m10,m11 ),
-  ci.lb = c(Old_mid_dur_Male$CI_emp$`2.5%`,Old_mid_dur_Female$CI_emp$`2.5%`,Tall_mid_dur_Male$CI_emp$`2.5%`,Tall_mid_dur_Female$CI_emp$`2.5%`,-0.21,0.07),
-  ci.ub = c(Old_mid_dur_Male$CI_emp$`97.5%`,Old_mid_dur_Female$CI_emp$`97.5%`,Tall_mid_dur_Male$CI_emp$`97.5%`,Tall_mid_dur_Female$CI_emp$`97.5%`,0.28,0.57))
+  ci.lb = c(Old_mid_dur_Male$CI_emp$`2.5%`,Old_mid_dur_Female$CI_emp$`2.5%`,Tall_mid_dur_Male$CI_emp$`2.5%`,Tall_mid_dur_Female$CI_emp$`2.5%`,-0.22,0.07),
+  ci.ub = c(Old_mid_dur_Male$CI_emp$`97.5%`,Old_mid_dur_Female$CI_emp$`97.5%`,Tall_mid_dur_Male$CI_emp$`97.5%`,Tall_mid_dur_Female$CI_emp$`97.5%`,0.27,0.56))
 
 mid_dur_rptr_sex
 
@@ -739,8 +762,8 @@ high_dur_rptr_sex <- tibble(
   Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
   Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
   r = c(Old_high_dur_Male2$R$Fish_ID,Old_high_dur_Female2$R$Fish_ID,Tall_high_dur_Male2$R$Fish_ID,Tall_high_dur_Female2$R$Fish_ID,m12,m13 ),
-  ci.lb = c(Old_high_dur_Male2$CI_emp$`2.5%`,Old_high_dur_Female2$CI_emp$`2.5%`,Tall_high_dur_Male2$CI_emp$`2.5%`,Tall_high_dur_Female2$CI_emp$`2.5%`,-0.36,0.08),
-  ci.ub = c(Old_high_dur_Male2$CI_emp$`97.5%`,Old_high_dur_Female2$CI_emp$`97.5%`,Tall_high_dur_Male2$CI_emp$`97.5%`,Tall_high_dur_Female2$CI_emp$`97.5%`,0.13,0.49))
+  ci.lb = c(Old_high_dur_Male2$CI_emp$`2.5%`,Old_high_dur_Female2$CI_emp$`2.5%`,Tall_high_dur_Male2$CI_emp$`2.5%`,Tall_high_dur_Female2$CI_emp$`2.5%`,-0.13,0.07),
+  ci.ub = c(Old_high_dur_Male2$CI_emp$`97.5%`,Old_high_dur_Female2$CI_emp$`97.5%`,Tall_high_dur_Male2$CI_emp$`97.5%`,Tall_high_dur_Female2$CI_emp$`97.5%`,0.36,0.51))
 
 high_dur_rptr_sex
 
@@ -764,9 +787,9 @@ plot_high_dur_rptr_sex
 freezing_dur_rptr_sex <- tibble(
   Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
   Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
-  r = c(Old_freezing_dur_Male3$R$Fish_ID,Old_freezing_dur_Female3$R$Fish_ID,Tall_freezing_dur_Male3$R$Fish_ID,Tall_freezing_dur_Female3$R$Fish_ID,m15,m15 ),
-  ci.lb = c(Old_freezing_dur_Male3$CI_emp$`2.5%`,Old_freezing_dur_Female3$CI_emp$`2.5%`,Tall_freezing_dur_Male3$CI_emp$`2.5%`,Tall_freezing_dur_Female3$CI_emp$`2.5%`,0.01,-0.25),
-  ci.ub = c(Old_freezing_dur_Male3$CI_emp$`97.5%`,Old_freezing_dur_Female3$CI_emp$`97.5%`,Tall_freezing_dur_Male3$CI_emp$`97.5%`,Tall_freezing_dur_Female3$CI_emp$`97.5%`,0.55,0.31))
+  r = c(Old_freezing_dur_Male3$R$Fish_ID,Old_freezing_dur_Female3$R$Fish_ID,Tall_freezing_dur_Male3$R$Fish_ID,Tall_freezing_dur_Female3$R$Fish_ID,m14,m15),
+  ci.lb = c(Old_freezing_dur_Male3$CI_emp$`2.5%`,Old_freezing_dur_Female3$CI_emp$`2.5%`,Tall_freezing_dur_Male3$CI_emp$`2.5%`,Tall_freezing_dur_Female3$CI_emp$`2.5%`,0.03,-0.25),
+  ci.ub = c(Old_freezing_dur_Male3$CI_emp$`97.5%`,Old_freezing_dur_Female3$CI_emp$`97.5%`,Tall_freezing_dur_Male3$CI_emp$`97.5%`,Tall_freezing_dur_Female3$CI_emp$`97.5%`,0.56,0.32))
 
 freezing_dur_rptr_sex
 
@@ -790,7 +813,7 @@ latency_high_rptr_sex <- tibble(
   Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
   Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
   r = c(Old_latency_high_Male$R$Fish_ID,Old_latency_high_Female$R$Fish_ID,Tall_latency_high_Male$R$Fish_ID,Tall_latency_high_Female$R$Fish_ID,m16,m17),
-  ci.lb = c(Old_latency_high_Male$CI_emp$`2.5%`,Old_latency_high_Female$CI_emp$`2.5%`,Tall_latency_high_Male$CI_emp$`2.5%`,Tall_latency_high_Female$CI_emp$`2.5%`,-0.31,0.18),
+  ci.lb = c(Old_latency_high_Male$CI_emp$`2.5%`,Old_latency_high_Female$CI_emp$`2.5%`,Tall_latency_high_Male$CI_emp$`2.5%`,Tall_latency_high_Female$CI_emp$`2.5%`,-0.31,0.16),
   ci.ub = c(Old_latency_high_Male$CI_emp$`97.5%`,Old_latency_high_Female$CI_emp$`97.5%`,Tall_latency_high_Male$CI_emp$`97.5%`,Tall_latency_high_Female$CI_emp$`97.5%`,0.34,0.68))
 
 latency_high_rptr_sex
@@ -816,8 +839,8 @@ freq_high_rptr_sex <- tibble(
   Tank_Type = c("Short","Short", "Tall", "Tall", "Contrast Short", "Contrast Tall"),
   Sex = c("Male","Female","Male", "Female", "Sex Contrast Short", "Sex Contrast Tall"),
   r = c(Old_freq_high_Male$R$Fish_ID,Old_freq_high_Female$R$Fish_ID,Tall_freq_high_Male$R$Fish_ID,Tall_freq_high_Female$R$Fish_ID,m18,m19 ),
-  ci.lb = c(Old_freq_high_Male$CI_emp$`2.5%`,Old_freq_high_Female$CI_emp$`2.5%`,Tall_freq_high_Male$CI_emp$`2.5%`,Tall_freq_high_Female$CI_emp$`2.5%`,-0.43,0.07),
-  ci.ub = c(Old_freq_high_Male$CI_emp$`97.5%`,Old_freq_high_Female$CI_emp$`97.5%`,Tall_freq_high_Male$CI_emp$`97.5%`,Tall_freq_high_Female$CI_emp$`97.5%`,0.12,0.62))
+  ci.lb = c(Old_freq_high_Male$CI_emp$`2.5%`,Old_freq_high_Female$CI_emp$`2.5%`,Tall_freq_high_Male$CI_emp$`2.5%`,Tall_freq_high_Female$CI_emp$`2.5%`,-0.07,0.12),
+  ci.ub = c(Old_freq_high_Male$CI_emp$`97.5%`,Old_freq_high_Female$CI_emp$`97.5%`,Tall_freq_high_Male$CI_emp$`97.5%`,Tall_freq_high_Female$CI_emp$`97.5%`,0.43,0.62))
 
 freq_high_rptr_sex
 
