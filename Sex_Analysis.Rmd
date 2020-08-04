@@ -818,7 +818,7 @@ latency_high_rptr_sex <- tibble(
 
 latency_high_rptr_sex
 
-plot_latency_high_rptr_sex <- ggplot(latency_high_rptr_sex, aes(x=Tank_Type, y=r, colour=Sex)) +
+plot_latency_high_rptr_sex <- ggplot(latency_high_rptr_sex, aes(x=Tank_Type, y=r, color=Sex)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
   geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3), size=3)+
     scale_color_manual(values=c("#FF3300","#0000FF", "#000000", "#000000"))+
@@ -858,6 +858,8 @@ plot_freq_high_rptr_sex <- ggplot(freq_high_rptr_sex, aes(x=Tank_Type, y=r, colo
   #       axis.ticks.y=element_blank())
 plot_freq_high_rptr_sex
 ```
+
+
 
 
 

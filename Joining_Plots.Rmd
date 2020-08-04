@@ -62,7 +62,7 @@ Overall_plot_sex
 
 ggsave(path = "Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
 
-plots_extra_param <- (plot_latency_high_rptr_sex/ plot_freq_high_rptr_sex)
+plots_extra_param <- (plot_latency_high_rptr_sex/ plot_freq_high_rptr_sex) + plot_layout(guides="collect")
 
 plots_extra_param
 
@@ -85,6 +85,24 @@ p
   
 ggsave(path = "Plots", file = "Review.jpeg", limitsize = FALSE)
 ```
+
+
+#New improved plot for repeatabilty results (overall)
+```{r}
+#Creating new tibble with all data
+
+# Overall_Data_Joined1 <- full_join(Tot_Dist_rptr, low_dur_rptr)
+# Overall_Data_Joined2 <- full_join(Overall_Data_Joined1, mid_dur_rptr)
+# Overall_Data_Joined3 <- full_join(Overall_Data_Joined2, high_dur_rptr)
+# Overall_Data_Joined4 <- full_join(Overall_Data_Joined3, freezing_dur_rptr)
+# Overall_Data_Joined5 <- full_join(Overall_Data_Joined4, frequency_rptr)
+# Overall_Data_Joined_Final <- full_join(Overall_Data_Joined5, latency_rptr)
+
+
+
+
+```
+
 
 
 
