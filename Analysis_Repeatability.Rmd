@@ -716,18 +716,25 @@ plot_latency_rptr
 More plots
 ```{r, echo=FALSE}
 
+#Renaming facets
 
-sex_labs <- c("Female", "Male") # To rename facets
+sex_labs <- c("Female", "Male") 
 names(sex_labs) <- c("female", "male")
 
-Violin_Dist <- ggplot(Anxiety_Joined, aes(x=Tank, y=tot_dist, fill=Tank)) + 
+tank_labs <- c("Short", "Tall")
+names(tank_labs) <- c("Old", "Tall")
+
+
+#Plots
+
+Violin_Dist <- ggplot(Anxiety_Joined, aes(x=Sex, y=tot_dist, fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Total distance travelled",x="Tank type", y = "Total distance (cm)")+
+  labs(title="Total distance travelled",y = "Total distance (cm)")+
 theme_grey()+
-  facet_grid(~Sex, labeller = labeller(Sex = sex_labs))+
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
  
 
 Violin_Dist
@@ -736,56 +743,56 @@ ggsave(path = "Plots", file = "Total Distance.jpeg", limitsize = FALSE)
 
 
 
-Violin_Low <- ggplot(Anxiety_Joined, aes(x=Tank, y=low_dur, fill=Tank)) + 
+Violin_Low <- ggplot(Anxiety_Joined, aes(x=Sex, y=low_dur, fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent in low zone",x="Tank type", y = "Time spent (seconds)")+
+  labs(title="Time spent in low zone",y = "Time spent (seconds)")+
 theme_grey()+
-  facet_grid(~Sex, labeller = labeller(Sex = sex_labs))+
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
 
 Violin_Low
 
 ggsave(path = "Plots", file = "Low Duration.jpeg", limitsize = FALSE)
 
 
-Violin_Mid <- ggplot(Anxiety_Joined, aes(x=Tank, y=mid_dur, fill=Tank)) + 
+Violin_Mid <- ggplot(Anxiety_Joined, aes(x=Sex, y=mid_dur, fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent in middle zone",x="Tank type", y = "Time spent (seconds)")+
+  labs(title="Time spent in middle zone",y = "Time spent (seconds)")+
 theme_grey()+
-  facet_grid(~Sex, labeller = labeller(Sex = sex_labs))+
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
 
 Violin_Mid
 ggsave(path = "Plots", file = "Mid_Duration.jpeg", limitsize = FALSE)
 
 
-Violin_High <- ggplot(Anxiety_Joined, aes(x=Tank, y=high_dur, fill=Tank)) + 
+Violin_High <- ggplot(Anxiety_Joined, aes(x=Sex, y=high_dur, fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent in high zone",x="Tank type", y = "Time spent (seconds)")+
+  labs(title="Time spent in high zone",y = "Time spent (seconds)")+
 theme_grey()+
-  facet_grid(~Sex, labeller = labeller(Sex = sex_labs))+
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
 
 Violin_High
 
-ggsave(path = "Plots", file = "High_Durationt.jpeg", limitsize = FALSE)
+ggsave(path = "Plots", file = "High_Duration.jpeg", limitsize = FALSE)
 
 
 
-Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Tank, y=(log(freezing_dur+1)), fill=Tank)) + 
+Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Sex, y=(log(freezing_dur+1)), fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
   labs(title="Time spent freezing (log transformed)",x="Tank type", y = "Time spent (seconds)")+
 theme_grey()+
-  facet_grid(~Sex, labeller = labeller(Sex = sex_labs))+
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
 
 Violin_Freezing
 
@@ -793,27 +800,27 @@ ggsave(path = "Plots", file = "Freezing.jpeg", limitsize = FALSE)
 
 
 
-Violin_Latency <- ggplot(Anxiety_Joined, aes(x=Tank, y=latency_high, fill=Tank)) + 
+Violin_Latency <- ggplot(Anxiety_Joined, aes(x=Sex, y=latency_high, fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
   labs(title="Latency to high zone",x="Tank type", y = "Seconds")+
 theme_grey()+
-  facet_grid(~Sex, labeller = labeller(Sex = sex_labs))+
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
 
 Violin_Latency
 
 ggsave(path = "Plots", file = "Latency to High.jpeg", limitsize = FALSE)
 
 
-Hist_entries <- ggplot(Anxiety_Joined, aes(y=freq_high, fill=Tank))+
+Hist_entries <- ggplot(Anxiety_Joined, aes(y=freq_high, fill=Sex))+
   geom_histogram()+
   stat_bin(binwidth=6)+
 theme_grey()+
-  facet_grid(~Sex, labeller = labeller(Sex = sex_labs))+
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   labs(title="Entries into the high zone",x="Counts", y = "Number of entries")+
-  scale_fill_discrete(name = "Tank type", labels = c("Short","Tall"))+
+  scale_fill_discrete(name = "Sex", labels = c("Female","Male"))+
   coord_flip()
   
   

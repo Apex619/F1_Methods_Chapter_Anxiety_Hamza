@@ -48,20 +48,6 @@ Overall_plot
 
 ggsave(path = "Plots", file = "Overall_plot.jpeg", limitsize = FALSE)
 
-# #New Overall Plot
-# Overall_New <- read.csv("Overall_New.csv")
-# 
-# Overall_New_plot <- ggplot(Overall_New, aes(x=Endpoint, y=r)) +
-#   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-#   geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
-#   geom_hline(yintercept = 0, lty = "dotted") +
-#   scale_color_manual(values=c("#000000","#FF3300","#0000FF"))+
-#   coord_flip()+
-#   ylim(-0.5, 0.9)+
-#   facet_grid(~Condition)
-# Overall_New_plot
-# 
-# ggsave(path = "Plots", file = "Overall_New_Plot.jpeg", limitsize = FALSE)
 ```
 
 #Sex plots
@@ -81,21 +67,7 @@ plots_extra_param <- (plot_latency_high_rptr_sex/ plot_freq_high_rptr_sex)
 plots_extra_param
 
 ggsave(path = "Plots", file = "Extra_param_plot_sex.jpeg", limitsize = FALSE)
-# 
-# #New Sex Plot
-# Sex_New <- read.csv("Sex_Analysis.csv")
-# 
-# Sex_New_plot <- ggplot(Sex_New, aes(x=Endpoint, y=r, colour=Condition)) +
-#   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-#   geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
-#   geom_hline(yintercept = 0, lty = "dotted") +
-#   scale_color_manual(values=c("#000000","#FF3300","#0000FF"))+
-#   coord_flip()+
-#   ylim(-0.5, 0.9)+
-#   facet_grid(~Tank)
-# Sex_New_plot
-# 
-# ggsave(path = "Plots", file = "New_Sex_Plot.jpeg", limitsize = FALSE)
+
 ```
 
 
