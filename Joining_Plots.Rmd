@@ -63,9 +63,20 @@ ggsave(path = "Plots", file = "Review.jpeg", limitsize = FALSE)
 ```
 
 
-#Repeatabilty plot for Sex
+#Repeatabilty plot for Overall and Sex
 ```{r}
-# #Joining all tibbles
+
+#Joining all tibbles for overall
+Overall_Data_Joined1 <- full_join(Tot_Dist_rptr, low_dur_rptr)
+Overall_Data_Joined2 <- full_join(Overall_Data_Joined1, mid_dur_rptr)
+Overall_Data_Joined3 <- full_join(Overall_Data_Joined2, high_dur_rptr)
+Overall_Data_Joined4 <- full_join(Overall_Data_Joined3, freezing_dur_rptr)
+Overall_Data_Joined5 <- full_join(Overall_Data_Joined4, frequency_rptr)
+Overall_Data_Joined_Final <- full_join(Overall_Data_Joined5, latency_rptr)
+
+Overall_Data_Joined_Final
+
+# #Joining all tibbles for sex
 # Overall_Data_Joined1 <- full_join(Tot_Dist_rptr_sex, low_dur_rptr_sex)
 # Overall_Data_Joined2 <- full_join(Overall_Data_Joined1, mid_dur_rptr_sex)
 # Overall_Data_Joined3 <- full_join(Overall_Data_Joined2, high_dur_rptr_sex)
@@ -74,6 +85,21 @@ ggsave(path = "Plots", file = "Review.jpeg", limitsize = FALSE)
 # Overall_Data_Joined_Final_sex <- full_join(Overall_Data_Joined5, latency_high_rptr_sex)
 # 
 # Overall_Data_Joined_Final_sex
+
+Overall_New_plot <- ggplot(Overall_Data_Joined_Final, aes(x=Endpoint, y=r, colour=Condition)) +
+geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
+geom_hline(yintercept = 0, lty = "dotted") +
+coord_flip()+
+ylim(-0.5, 0.9)+
+  theme(legend.position = "bottom")+
+   theme(axis.title.y=element_blank())+
+   theme(legend.title=element_blank())+
+  scale_color_manual(values=c("#000000", "#339900", "#FF9900"))
+
+Overall_New_plot
+
+ggsave(path = "Plots", file = "Overall_plot_new.jpeg", limitsize = FALSE)
 
 Sex_New_plot <- ggplot(Overall_Data_Joined_Final_sex, aes(x=Endpoint, y=r, colour=Condition)) +
 geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
