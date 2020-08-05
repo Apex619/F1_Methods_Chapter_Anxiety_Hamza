@@ -57,8 +57,6 @@ str(Old_Tanks)
 str(Tall_Tanks)
 str(Anxiety_Joined)
 
-#
-
 
 
 ```
@@ -94,12 +92,7 @@ summary(Model_Tot_Dist)
 tab_model(Model_Tot_Dist)
 hist(residuals(Model_Tot_Dist))
 
-# modeling 
-Model_Tot_Dist1 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
-summary(Model_Tot_Dist1)
-Model_Tot_Dist2 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
-summary(Model_Tot_Dist2)
-anova(Model_Tot_Dist1, Model_Tot_Dist2)
+
 
 
 # Shinichi's addition to show Hamza how to get the difference between these two tank's repeatablities. 
@@ -116,37 +109,12 @@ q1# difference ditribuiton 95% CI
 m1 <- mean(Diff_boot)
 m1
 
-# Old_Tanks %>% 
-#   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
-#   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
-#   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-#   theme_minimal()+
-#   labs(title = "Total Distance")
-# 
-# Tall_Tanks %>% 
-#   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
-#   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
-#   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-#   theme_minimal()+
-#   labs(title = "Total Distance")
-# 
-# Anxiety_Joined %>% 
-#   ggplot(aes(x = Group, y = tot_dist, colour = Group)) +
-#   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
-#   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-#   theme_minimal()+
-#   facet_grid(~Tank)
-#   labs(title = "Total Distance")
-# 
-# model1 <- lmer(tot_dist ~ Group  + (1 | Fish_ID), data = Old_Tanks)
-# tab_model(model1)
-# 
-# model2 <- lmer(tot_dist ~ Group + (1 | Fish_ID), data = Tall_Tanks)
-# tab_model(model2)
-# 
-# model3 <- lmer(tot_dist ~ Group + Tank + (1 | Fish_ID), data = Anxiety_Joined)
-# tab_model(model3)
-
+# Variance models
+Model_Tot_Dist1 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+summary(Model_Tot_Dist1)
+Model_Tot_Dist2 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+summary(Model_Tot_Dist2)
+anova(Model_Tot_Dist1, Model_Tot_Dist2)
 
 ```
 
@@ -202,7 +170,7 @@ m2
 
 #2.5% quartile greater than zero, indicates a significant difference?
 
-# modeling 
+# Variance models
 Model_low_dur1 <- lme(low_dur ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_low_dur1)
 Model_low_dur2 <- lme(low_dur ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
@@ -257,7 +225,7 @@ m3 <- mean(Diff_boot_mid_dur)
 m3
 str(q3)
 
-# modeling 
+# Variance models
 Model_mid_dur1 <- lme(mid_dur ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_mid_dur1)
 Model_mid_dur2 <- lme(mid_dur ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
@@ -335,7 +303,7 @@ q4#2.5% crosses 0, not significant?
 m4 <- mean(Diff_boot_high_dur2)
 m4
 
-# modeling 
+# Variance models
 Model_high_dur1a <- lme(sqrt(high_dur) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_high_dur1a)
 Model_high_dur2a <- lme(sqrt(high_dur) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
@@ -418,7 +386,7 @@ m5 <- mean(Diff_boot_freezing_dur3)
 m5
 
 
-# modeling 
+#Variance models
 Model_freezing_dur1a <- lme(log(freezing_dur+1) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_freezing_dur1a)
 Model_freezing_dur2a <- lme(log(freezing_dur+1) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
@@ -467,7 +435,7 @@ q6
 m6 <- mean(Diff_boot_latency)
 m6
 
-# modeling 
+# Variance models
 Model_latency_high1a <- lme(latency_high ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined, na.action=na.omit)
 summary(Model_latency_high1a)
 Model_latency_high2a <- lme(latency_high ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined, na.action=na.omit)
@@ -517,7 +485,7 @@ m7 <- mean(Diff_boot_freq_high)
 m7
 
 
-#models
+#Variance models
 Model_freq_high1a <- lme(sqrt(freq_high) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_freq_high1a)
 Model_freq_high2a <- lme(sqrt(freq_high) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
@@ -536,25 +504,30 @@ anova(Model_freq_high1a, Model_freq_high2a)
 Total distance
 ```{r, echo=FALSE}
 Tot_Dist_rptr <- tibble(
-  Tank_Type = c("Short", "Tall", "Contrast"),
+  Condition = c("Short", "Tall", "Contrast"),
   r = c(Old_Tot_Dist$R$Fish_ID,Tall_Tot_Dist$R$Fish_ID, m1),
   ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`,-0.01),
-  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`, 0.38))
+  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`, 0.38),
+Endpoint = c("Total Distance", "Total Distance", "Total Distance"))
   
 Tot_Dist_rptr
 
-plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Condition, y=r, colour=Condition)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
   scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(y = "r") +
-  labs(title = "Repeatability estimates", subtitle = "A. Total distance")+
+  labs(title = "Repeatability estimates", subtitle = "Total distance")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())+
-  ylim(-0.2, 0.8) 
+  ylim(-0.2, 0.8) +
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank())+
+  theme(legend.position="top")
+  
 plot_Tot_Dist_rptr
 ```
 
@@ -563,125 +536,145 @@ plot_Tot_Dist_rptr
 Low duration
 ```{r, echo=FALSE}
 low_dur_rptr <- tibble(
-  Tank_Type = c("Short", "Tall", "Contrast"),
+  Condition = c("Short", "Tall", "Contrast"),
   r = c(Old_low_dur$R$Fish_ID,Tall_low_dur$R$Fish_ID, m2),
   ci.lb = c(Old_low_dur$CI_emp$`2.5%`,Tall_low_dur$CI_emp$`2.5%`, 0.09),
-  ci.ub = c(Old_low_dur$CI_emp$`97.5%`,Tall_low_dur$CI_emp$`97.5%`, 0.54))
+  ci.ub = c(Old_low_dur$CI_emp$`97.5%`,Tall_low_dur$CI_emp$`97.5%`, 0.54),
+Endpoint = c("Low Duration", "Low Duration", "Low Duration"))
   
 low_dur_rptr
 
-plot_low_dur_rptr <- ggplot(low_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+plot_low_dur_rptr <- ggplot(low_dur_rptr, aes(x=Condition, y=r, colour=Condition)) +
    geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
   scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "G. time spent in low zone")+
+  labs(subtitle = "Time spent in low zone")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())+
-   ylim(-0.2, 0.8) 
+   ylim(-0.2, 0.8) + 
+  theme(legend.position = "none")+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank())
 plot_low_dur_rptr
 ```
 
 Middle duration
 ```{r, echo=FALSE}
 mid_dur_rptr <- tibble(
-  Tank_Type = c("Short", "Tall", "Contrast"),
+  Condition = c("Short", "Tall", "Contrast"),
   r = c(Old_mid_dur$R$Fish_ID,Tall_mid_dur$R$Fish_ID, m3),
   ci.lb = c(Old_mid_dur$CI_emp$`2.5%`,Tall_mid_dur$CI_emp$`2.5%`, -0.13),
-  ci.ub = c(Old_mid_dur$CI_emp$`97.5%`,Tall_mid_dur$CI_emp$`97.5%`,0.21))
+  ci.ub = c(Old_mid_dur$CI_emp$`97.5%`,Tall_mid_dur$CI_emp$`97.5%`,0.21),
+Endpoint = c("Mid Duration", "Mid Duration", "Mid Duration"))
   
 mid_dur_rptr
 
-plot_mid_dur_rptr <- ggplot(mid_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+plot_mid_dur_rptr <- ggplot(mid_dur_rptr, aes(x=Condition, y=r, colour=Condition)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
   scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "F .Time spent in middle zone")+
+  labs(subtitle = "Time spent in middle zone")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())+
-   ylim(-0.2, 0.8) 
+   ylim(-0.2, 0.8) + theme(legend.position = "none")+ 
+  theme(legend.position = "none")+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank())
 plot_mid_dur_rptr
 ```
 
 High duration
 ```{r, echo=FALSE}
 high_dur_rptr <- tibble(
-  Tank_Type = c("Short", "Tall", "Contrast"),
+  Condition = c("Short", "Tall", "Contrast"),
   r = c(Old_high_dur2$R$Fish_ID,Tall_high_dur2$R$Fish_ID, m4),
   ci.lb = c(Old_high_dur2$CI_emp$`2.5%`,Tall_high_dur2$CI_emp$`2.5%`, -0.09),
-  ci.ub = c(Old_high_dur2$CI_emp$`97.5%`,Tall_high_dur2$CI_emp$`97.5%`, 0.22))
+  ci.ub = c(Old_high_dur2$CI_emp$`97.5%`,Tall_high_dur2$CI_emp$`97.5%`, 0.22),
+Endpoint = c("High Duration", "High Duration", "High Duration"))
   
 high_dur_rptr
 
-plot_high_dur_rptr <- ggplot(high_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+plot_high_dur_rptr <- ggplot(high_dur_rptr, aes(x=Condition, y=r, colour=Condition)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
 scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "E. Time spent in high zone")+
+  labs(subtitle = "Time spent in high zone")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())+
-   ylim(-0.2, 0.8) 
+   ylim(-0.2, 0.8) + 
+  theme(legend.position = "none")+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank())
 plot_high_dur_rptr
 ```
 
 Freezing duration
 ```{r, echo=FALSE}
 freezing_dur_rptr <- tibble(
-  Tank_Type = c("Short", "Tall", "Contrast"),
+  Condition = c("Short", "Tall", "Contrast"),
   r = c(Old_freezing_dur3$R$Fish_ID,Tall_freezing_dur3$R$Fish_ID, m5),
   ci.lb = c(Old_freezing_dur3$CI_emp$`2.5%`,Tall_freezing_dur3$CI_emp$`2.5%`, -0.20),
-  ci.ub = c(Old_freezing_dur3$CI_emp$`97.5%`,Tall_freezing_dur3$CI_emp$`97.5%`, 0.20))
+  ci.ub = c(Old_freezing_dur3$CI_emp$`97.5%`,Tall_freezing_dur3$CI_emp$`97.5%`, 0.20),
+Endpoint = c("Freezing Duration", "Freezing Duration", "Freezing Duration"))
   
 freezing_dur_rptr
 
-plot_freezing_dur_rptr <- ggplot(freezing_dur_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+plot_freezing_dur_rptr <- ggplot(freezing_dur_rptr, aes(x=Condition, y=r, colour=Condition)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
 scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "B. Time spent freezing")+
+  labs(subtitle = "Time spent freezing")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())+
-  ylim(-0.2, 0.8) 
+  ylim(-0.2, 0.8) + 
+  theme(legend.position = "none")+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank())
 plot_freezing_dur_rptr
 ```
 
 Entries into high zone
 ```{r}
 frequency_rptr <- tibble(
-  Tank_Type = c("Short", "Tall", "Contrast"),
+  Condition = c("Short", "Tall", "Contrast"),
   r = c(Old_freq_high$R$Fish_ID,Tall_freq_high$R$Fish_ID, m7),
   ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`, -0.02),
-  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.35))
+  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.35),
+Endpoint = c("High Zone Frequency", "High Zone Frequency", "High Zone Frequency"))
   
 frequency_rptr
 
-plot_frequency_rptr <- ggplot(frequency_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+plot_frequency_rptr <- ggplot(frequency_rptr, aes(x=Condition, y=r, colour=Condition)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
 scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "C. Entries into high zone")+
+  labs(subtitle = "Entries into high zone")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())+
-   ylim(-0.2, 0.8) 
+   ylim(-0.2, 0.8) + 
+  theme(legend.position = "none")+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank())
 plot_frequency_rptr
 ```
 
@@ -689,25 +682,27 @@ plot_frequency_rptr
 Latency to high
 ```{r}
 latency_rptr <- tibble(
-  Tank_Type = c("Short", "Tall", "Contrast"),
+  Condition = c("Short", "Tall", "Contrast"),
   r = c(Old_latency$R$Fish_ID,Tall_latency$R$Fish_ID, m6),
   ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`, 0.14),
-  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.57))
+  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.57),
+Endpoint = c("Latency to High Zone", "Latency to High Zone", "Latency to High Zone"))
 
 latency_rptr
 
-plot_latency_rptr <- ggplot(latency_rptr, aes(x=Tank_Type, y=r, colour=Tank_Type)) +
+plot_latency_rptr <- ggplot(latency_rptr, aes(x=Condition, y=r, colour=Condition)) +
   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Tank_Type, y = r), position = position_dodge(0.3),size=3)+
+  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
 scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
   geom_hline(yintercept = 0, lty = "dotted") +
   labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "D. Latency to high")+
+  labs(subtitle = "Latency to high zone")+
   coord_flip()+
    theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())+
-  ylim(-0.2, 0.8) 
+  ylim(-0.2, 0.8) + 
+  theme(legend.position = "none")
 plot_latency_rptr
 ```
 

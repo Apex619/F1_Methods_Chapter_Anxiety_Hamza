@@ -36,40 +36,15 @@ library(easyGgplot2)
 ```
 #Overall plots
 ```{r}
-plots_dur <- (plot_high_dur_rptr / plot_mid_dur_rptr / plot_low_dur_rptr)
-plots_dur
-
-plots_other <- (plot_Tot_Dist_rptr/plot_freezing_dur_rptr/plot_frequency_rptr/ plot_latency_rptr)
-plots_other
-
-Overall_plot <- wrap_plots(plots_other|plots_dur) + plot_layout(guides="collect")
+Overall_plot <- plot_Tot_Dist_rptr+ plot_low_dur_rptr+ plot_mid_dur_rptr+ plot_high_dur_rptr+ plot_freezing_dur_rptr+ plot_frequency_rptr+ plot_latency_rptr + plot_layout(ncol=1)+ plot_layout(guides="collect")&
+  theme(legend.position="bottom")
 
 Overall_plot
 
-ggsave(path = "Plots", file = "Overall_plot.jpeg", limitsize = FALSE)
+ggsave(path = "Plots", file = "Overall_plot.jpeg", width = 6, height=7)
+
 
 ```
-
-#Sex plots
-```{r}
-plots_dur_sex <- (plot_high_dur_rptr_sex / plot_mid_dur_rptr_sex / plot_low_dur_rptr_sex)
-
-plots_other_sex <- (plot_Tot_Dist_rptr_sex/plot_freezing_dur_rptr_sex)
-
-Overall_plot_sex <- wrap_plots(plots_other_sex,plots_dur_sex) + plot_layout(guides="collect")
-
-Overall_plot_sex
-
-ggsave(path = "Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
-
-plots_extra_param <- (plot_latency_high_rptr_sex/ plot_freq_high_rptr_sex) + plot_layout(guides="collect")
-
-plots_extra_param
-
-ggsave(path = "Plots", file = "Extra_param_plot_sex.jpeg", limitsize = FALSE)
-
-```
-
 
 #Systematic extraction plot
 ```{r}
@@ -87,18 +62,34 @@ ggsave(path = "Plots", file = "Review.jpeg", limitsize = FALSE)
 ```
 
 
-#New improved plot for repeatabilty results (overall)
+#Repeatabilty plot for Sex
 ```{r}
-#Creating new tibble with all data
+# #Joining all tibbles
+# Overall_Data_Joined1 <- full_join(Tot_Dist_rptr_sex, low_dur_rptr_sex)
+# Overall_Data_Joined2 <- full_join(Overall_Data_Joined1, mid_dur_rptr_sex)
+# Overall_Data_Joined3 <- full_join(Overall_Data_Joined2, high_dur_rptr_sex)
+# Overall_Data_Joined4 <- full_join(Overall_Data_Joined3, freezing_dur_rptr_sex)
+# Overall_Data_Joined5 <- full_join(Overall_Data_Joined4, freq_high_rptr_sex)
+# Overall_Data_Joined_Final_sex <- full_join(Overall_Data_Joined5, latency_high_rptr_sex)
+# 
+# Overall_Data_Joined_Final_sex
 
-# Overall_Data_Joined1 <- full_join(Tot_Dist_rptr, low_dur_rptr)
-# Overall_Data_Joined2 <- full_join(Overall_Data_Joined1, mid_dur_rptr)
-# Overall_Data_Joined3 <- full_join(Overall_Data_Joined2, high_dur_rptr)
-# Overall_Data_Joined4 <- full_join(Overall_Data_Joined3, freezing_dur_rptr)
-# Overall_Data_Joined5 <- full_join(Overall_Data_Joined4, frequency_rptr)
-# Overall_Data_Joined_Final <- full_join(Overall_Data_Joined5, latency_rptr)
+Sex_New_plot <- ggplot(Overall_Data_Joined_Final_sex, aes(x=Endpoint, y=r, colour=Condition)) +
+geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
+geom_hline(yintercept = 0, lty = "dotted") +
+coord_flip()+
+ylim(-0.5, 0.9)+
+facet_grid(~Tank)+
+  theme(legend.position = "bottom")+
+   theme(axis.title.y=element_blank())+
+  # theme(axis.text.y = element_text(angle = 15))+
+  scale_color_manual(values = c("#000000", "#f8766d", "#00bfc4"))+
+   theme(legend.title=element_blank())
 
+Sex_New_plot
 
+ggsave(path = "Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
 
 
 ```
