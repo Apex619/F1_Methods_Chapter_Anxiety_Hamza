@@ -37,7 +37,8 @@ library(easyGgplot2)
 #Overall plots
 ```{r}
 Overall_plot <- plot_Tot_Dist_rptr+ plot_low_dur_rptr+ plot_mid_dur_rptr+ plot_high_dur_rptr+ plot_freezing_dur_rptr+ plot_frequency_rptr+ plot_latency_rptr + plot_layout(ncol=1)+ plot_layout(guides="collect")&
-  theme(legend.position="bottom")
+  theme(legend.position="bottom")&
+   theme(legend.title=element_blank())
 
 Overall_plot
 
