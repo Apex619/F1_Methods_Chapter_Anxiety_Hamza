@@ -783,7 +783,7 @@ ggsave(path = "Plots", file = "High_Duration.jpeg", limitsize = FALSE)
 Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Sex, y=(log(freezing_dur+1)), fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent freezing (log transformed)",x="Tank type", y = "Time spent (seconds)")+
+  labs(title="Time spent freezing (log transformed)",x="Sex", y = "Time spent (seconds)")+
 theme_grey()+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
@@ -798,7 +798,7 @@ ggsave(path = "Plots", file = "Freezing.jpeg", limitsize = FALSE)
 Violin_Latency <- ggplot(Anxiety_Joined, aes(x=Sex, y=latency_high, fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Latency to high zone",x="Tank type", y = "Seconds")+
+  labs(title="Latency to high zone",x="Sex", y = "Seconds")+
 theme_grey()+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
