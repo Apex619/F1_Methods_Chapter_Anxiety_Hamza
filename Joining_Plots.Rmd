@@ -121,6 +121,106 @@ ggsave(path = "Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
 
 ```
 
+#Obtaining individual means and plotting them
+```{r}
+#Total distance
+
+individual_means_tot_dist <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(tot_dist, na.rm=TRUE))
+
+ggplot(individual_means_tot_dist, aes(Sex, Mean, colour=Sex)) + 
+   geom_violin() +
+   theme(legend.position="none")+
+  facet_grid(~Tank)+
+  labs(title = "Total distance travelled")
+
+ggsave(path = "Plots", file = "indiv_tot_dist.jpeg", limitsize = FALSE)
+
+
+#Low Zone
+individual_means_low <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(low_dur, na.rm=TRUE))
+
+ggplot(individual_means_low, aes(Sex, Mean, colour=Sex)) + 
+   geom_violin() +
+   theme(legend.position="none")+
+  facet_grid(~Tank)+
+  labs(title = "Time spent in low zone")
+
+ggsave(path = "Plots", file = "indiv_low_duration.jpeg", limitsize = FALSE)
+
+#Mid Zone
+individual_means_mid <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(mid_dur, na.rm=TRUE))
+
+ggplot(individual_means_mid, aes(Sex, Mean, colour=Sex)) + 
+   geom_violin() +
+   theme(legend.position="none")+
+  facet_grid(~Tank)+
+  labs(title = "Time spent in mid zone")
+
+ggsave(path = "Plots", file = "indiv_mid_dur.jpeg", limitsize = FALSE)
+
+#High Zone
+individual_means_high <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(high_dur, na.rm=TRUE))
+
+ggplot(individual_means_high, aes(Sex, Mean, colour=Sex)) + 
+   geom_violin() +
+   theme(legend.position="none")+
+  facet_grid(~Tank)+
+  labs(title = "Time spent in high zone")
+
+ggsave(path = "Plots", file = "indiv_high_dur.jpeg", limitsize = FALSE)
+
+#Freezing
+individual_means_freezing <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(freezing_dur, na.rm=TRUE))
+
+ggplot(individual_means_freezing, aes(Sex, log(Mean)+1, colour=Sex)) + 
+   geom_violin() +
+   theme(legend.position="none")+
+  facet_grid(~Tank)+
+  labs(title = "Time spent freezing (log transformed")
+
+ggsave(path = "Plots", file = "indiv_freezing.jpeg", limitsize = FALSE)
+
+#Latency to high
+
+individual_means_latency <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(latency_high, na.rm=TRUE))
+
+ggplot(individual_means_freezing, aes(Sex, Mean, colour=Sex)) + 
+   geom_violin() +
+   theme(legend.position="none")+
+  facet_grid(~Tank)+
+  labs(title = "Latency to high zone")
+
+ggsave(path = "Plots", file = "indiv_latency.jpeg", limitsize = FALSE)
+
+#Entries to high
+individual_means_entries <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(freq_high, na.rm=TRUE))
+
+ggplot(individual_means_entries, aes(Sex, Mean, colour=Sex)) + 
+   geom_violin() +
+   theme(legend.position="none")+
+  facet_grid(~Tank)+
+  labs(title = "Entries to high zone")
+
+ggsave(path = "Plots", file = "indiv_frequency_high.jpeg", limitsize = FALSE)
+
+
+```
+
+
 
 
 

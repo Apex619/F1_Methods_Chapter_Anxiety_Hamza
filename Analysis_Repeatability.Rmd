@@ -488,11 +488,11 @@ m7
 #Variance models
 Model_freq_high1a <- lme(sqrt(freq_high) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_freq_high1a)
+tab_model(Model_freq_high1a)
 Model_freq_high2a <- lme(sqrt(freq_high) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
 summary(Model_freq_high2a)
+tab_model(Model_freq_high2a)
 anova(Model_freq_high1a, Model_freq_high2a)
-
-
 ```
 
 
