@@ -63,14 +63,13 @@ str(Anxiety_Joined)
 
 #total distance (old, tall, joined)
 ```{r, echo=FALSE}
-hist(Old_Tanks$tot_dist)
-hist(Tall_Tanks$tot_dist)
-hist(Anxiety_Joined$tot_dist)
 
+#Check Normality with mixed model
 
-# hist(sqrt(Old_Tanks$tot_dist))
-# hist(sqrt(Tall_Tanks$tot_dist))
-# hist(sqrt(Anxiety_Joined$tot_dist))
+Model_Tot_Dist <- lmer(tot_dist ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
+tab_model(Model_Tot_Dist)
+hist(residuals(Model_Tot_Dist))
+
 
 Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -86,11 +85,7 @@ Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data
     nboot = 10000, npermut = 10000)
 Joined_Tot_Dist
 
-Model_Tot_Dist <- lmer(tot_dist ~ Tank + Sex +  (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_Tot_Dist)
-# summary(Model_Tot_Dist)
-tab_model(Model_Tot_Dist)
-hist(residuals(Model_Tot_Dist))
+
 
 
 
@@ -109,7 +104,7 @@ q1# difference ditribuiton 95% CI
 m1 <- mean(Diff_boot)
 m1
 
-# Variance models
+# Variance models 
 Model_Tot_Dist1 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_Tot_Dist1)
 Model_Tot_Dist2 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
@@ -129,7 +124,7 @@ hist(Old_Tanks$low_dur)
 hist(Tall_Tanks$low_dur)
 hist(Anxiety_Joined$low_dur)
 
-model <- lmer(low_dur ~ (1 | Fish_ID), data = Old_Tanks)
+model <- lmer(low_dur ~ Tank + Sex + (1 | Fish_ID), data = Old_Tanks)
 summary(model)
 plot(residuals(model))
 hist(residuals(model))
@@ -184,12 +179,9 @@ anova(Model_low_dur1, Model_low_dur2)
 ###mid duration
 ```{r, echo=FALSE}
 
-
-hist(Old_Tanks$mid_dur)
-hist(Tall_Tanks$mid_dur)
-hist(Anxiety_Joined$mid_dur)
-
-#We need to look at residual normality and not raw data
+Model_mid_dur <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_mid_dur)
+hist(residuals(Model_mid_dur))
 
 Old_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -205,9 +197,7 @@ Joined_mid_dur <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data =
     nboot = 10000, npermut = 10000)
 Joined_mid_dur
 
-Model_mid_dur <- lmer(mid_dur ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_mid_dur)
-hist(residuals(Model_mid_dur))
+
 
 ###Analysis to find differences
 
@@ -239,15 +229,16 @@ anova(Model_mid_dur1, Model_mid_dur2)
 ###high duration
 ```{r, echo=FALSE}
 
+Model_high_dur <- lmer(high_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_high_dur)
+tab_model(Model_high_dur)
+hist(residuals(Model_high_dur))
 
-hist(Old_Tanks$high_dur)
-hist(Tall_Tanks$high_dur)
-hist(Anxiety_Joined$high_dur)
+Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_high_dur2)
+tab_model(Model_high_dur2)
+hist(residuals(Model_high_dur2))
 
-model2 <- lmer(high_dur ~ (1 | Fish_ID), data = Old_Tanks)
-summary(model2)
-plot(residuals(model2))
-hist(residuals(model2))
 
 Old_high_dur <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -270,15 +261,6 @@ Joined_high_dur <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data
     nboot = 10000, npermut = 10000)
 Joined_high_dur
 
-Model_high_dur <- lmer(high_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_high_dur)
-tab_model(Model_high_dur)
-hist(residuals(Model_high_dur))
-
-Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_high_dur2)
-tab_model(Model_high_dur2)
-hist(residuals(Model_high_dur2))
 
 
 # modeling 
@@ -315,16 +297,20 @@ anova(Model_high_dur1a, Model_high_dur2a)
 
 ###freeze dur 
 ```{r, echo=FALSE}
+Model_freezing_dur <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_freezing_dur)
+hist(residuals(Model_freezing_dur))
 
 
-hist(Old_Tanks$freezing_dur)
-hist(Tall_Tanks$freezing_dur)
-hist(Anxiety_Joined$freezing_dur)
+Model_freezing_dur2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_freezing_dur2)
+hist(residuals(Model_freezing_dur2))
 
-model3 <- lmer(freezing_dur ~ (1 | Fish_ID), data = Old_Tanks)
-summary(model3)
-plot(residuals(model3))
-hist(residuals(model3))
+Model_freezing_dur3 <- lmer(log(freezing_dur+1) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
+summary(Model_freezing_dur3)
+tab_model(Model_freezing_dur3)
+hist(residuals(Model_freezing_dur3))
+
 
 Old_freezing_dur <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -356,19 +342,7 @@ Joined_freezing_dur <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_I
     nboot = 10000, npermut = 10000)
 Joined_freezing_dur
 
-Model_freezing_dur <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_freezing_dur)
-hist(residuals(Model_freezing_dur))
 
-
-Model_freezing_dur2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_freezing_dur2)
-hist(residuals(Model_freezing_dur2))
-
-Model_freezing_dur3 <- lmer(log(freezing_dur+1) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_freezing_dur3)
-tab_model(Model_freezing_dur3)
-hist(residuals(Model_freezing_dur3))
 
 ###Analysis to find differences
 
@@ -396,13 +370,13 @@ anova(Model_freezing_dur1a, Model_freezing_dur2a)
 
 #latency to high
 ```{r}
-Model_latency <- lmer(latency_high ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+Model_latency <- lmer(latency_high ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_latency)
 hist(residuals(Model_latency)) 
 
-Model_latency2 <- lmer(sqrt(latency_high) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_latency2)
-hist(residuals(Model_latency2)) #Transformation seems better?
+# Model_latency2 <- lmer(sqrt(latency_high) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
+# summary(Model_latency2)
+# hist(residuals(Model_latency2)) #Transformation seems better?
 
 Old_latency <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
@@ -449,7 +423,7 @@ Model_freq_high <- lmer(freq_high ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_freq_high)
 hist(residuals(Model_freq_high)) #needs transformation, right skewed heavily
 
-Model_freq_high2 <- lmer(sqrt(freq_high) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
+Model_freq_high2 <- lmer(sqrt(freq_high) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
 summary(Model_freq_high2)
 hist(residuals(Model_freq_high2))
 

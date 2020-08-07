@@ -63,6 +63,10 @@ hist(Tall_Tanks_Female$tot_dist)
 hist(Both_Tanks_Male$tot_dist)
 hist(Both_Tanks_Female$tot_dist)
 
+Model_Tot_Dist_sex <- lmer(tot_dist ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
+tab_model(Model_Tot_Dist)
+hist(residuals(Model_Tot_Dist_sex))
+
 Old_Tot_Dist_Male <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_Tot_Dist_Male
