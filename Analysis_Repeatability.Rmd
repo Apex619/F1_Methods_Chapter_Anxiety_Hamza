@@ -33,9 +33,9 @@ library(wesanderson)
 library(ggbeeswarm)
 library(emmeans)
 library(patchwork)
-library(easyGgplot2)
 library(viridis)
 library(nlme)
+library(Rmisc)
 #sessionInfo()
 ```
 The aim of this experiment is to compare repatability in typically used holding tanks against our custom made tall tanks. We designed these tanks to exploit the zebrafish's natural tendency to dive in a novel environment. Typical holding tanks aren't very deep, and as such, it's harder to comapare variability between individuals. We designed our tanks to hold the same amount of water, but have a much deeper column. For this experiment, we aren't interested in the F1 classification of the fish groups (we are referring to all of them as WT) or even the differences between groups. We are only interested in the repeatability measurements. 
@@ -703,7 +703,8 @@ Violin_Dist <- ggplot(Anxiety_Joined, aes(x=Sex, y=tot_dist, fill=Sex)) +
 theme_grey()+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank())
  
 
 Violin_Dist
@@ -719,7 +720,8 @@ Violin_Low <- ggplot(Anxiety_Joined, aes(x=Sex, y=low_dur, fill=Sex)) +
 theme_grey()+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank())
 
 Violin_Low
 
@@ -733,7 +735,8 @@ Violin_Mid <- ggplot(Anxiety_Joined, aes(x=Sex, y=mid_dur, fill=Sex)) +
 theme_grey()+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank())
 
 Violin_Mid
 ggsave(path = "Plots", file = "Mid_Duration.jpeg", limitsize = FALSE)
@@ -746,7 +749,8 @@ Violin_High <- ggplot(Anxiety_Joined, aes(x=Sex, y=high_dur, fill=Sex)) +
 theme_grey()+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank())
 
 Violin_High
 
@@ -757,11 +761,12 @@ ggsave(path = "Plots", file = "High_Duration.jpeg", limitsize = FALSE)
 Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Sex, y=(log(freezing_dur+1)), fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent freezing (log transformed)",x="Sex", y = "Time spent (seconds)")+
+  labs(title="Time spent freezing (log transformed)",y = "Time spent (seconds)")+
 theme_grey()+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank())
 
 Violin_Freezing
 
@@ -772,37 +777,43 @@ ggsave(path = "Plots", file = "Freezing.jpeg", limitsize = FALSE)
 Violin_Latency <- ggplot(Anxiety_Joined, aes(x=Sex, y=latency_high, fill=Sex)) + 
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1, fill="white")+
-  labs(title="Latency to high zone",x="Sex", y = "Seconds")+
+  labs(title="Latency to high zone",y = "Seconds")+
 theme_grey()+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank())
 
 Violin_Latency
 
 ggsave(path = "Plots", file = "Latency to High.jpeg", limitsize = FALSE)
 
 
-Hist_entries <- ggplot(Anxiety_Joined, aes(y=freq_high, fill=Sex))+
-  geom_histogram()+
-  stat_bin(binwidth=6)+
+Violin_entries <- ggplot(Anxiety_Joined, aes(x=Sex, y=freq_high, fill=Sex)) + 
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1, fill="white")+
+  labs(title="Entries into the high zone",y = "Number of entries")+
 theme_grey()+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
-  labs(title="Entries into the high zone",x="Counts", y = "Number of entries")+
-  scale_fill_discrete(name = "Sex", labels = c("Female","Male"))+
-  coord_flip()
-  
-  
-Hist_entries
-
-#Double check whether I got the x and y axes correct
+ theme(legend.position = "none")+
+  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank())
 
 
 
 ggsave(path = "Plots", file = "Entries to high.jpeg", limitsize = FALSE)
 ```
 
+#Summary stats
+```{r}
+Summary_tot_dist <- summarySE(Anxiety_Joined, measurevar="tot_dist", groupvars=c("Tank","Sex"))
+knitr::kable(
+  Summary_Sex[1:4, ], 
+  caption = "Summary_tot_dist"
+)
 
+Summary_tot_dist
+```
 
 
 

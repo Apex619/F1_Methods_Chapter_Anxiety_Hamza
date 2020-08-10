@@ -56,7 +56,7 @@ p<-ggplot(data=Review, aes(x=Endpoint, y=Count)) +
 coord_flip()+
    scale_x_discrete(labels=c("tot_dist_exploration"=expression(bold(tot_dist_exploration)), "mid_zone_dur"=expression(bold(mid_zone_dur)),
                               "low_zone_dur"=expression(bold(low_zone_dur)),"latency_high"=expression(bold(latency_high)),"high_zone_dur"=expression(bold(high_zone_dur)),"freezing_dur_or_freq"=expression(bold(freezing_dur_or_freq)),"entries_high"=expression(bold(entries_high)), parse=TRUE))+
-  labs(title="Counts of zebrafish anxiety endpoints from review")
+  theme(axis.title.y=element_blank())
 p
   
 ggsave(path = "Plots", file = "Review.jpeg", limitsize = FALSE)
@@ -123,17 +123,27 @@ ggsave(path = "Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
 
 #Obtaining individual means and plotting them
 ```{r}
+
+
+
 #Total distance
 
 individual_means_tot_dist <- Anxiety_Joined %>%
     group_by(Fish_ID, Sex, Tank) %>%
     dplyr::summarize(Mean = mean(tot_dist, na.rm=TRUE))
 
-ggplot(individual_means_tot_dist, aes(Sex, Mean, colour=Sex)) + 
+indiv_tot_dist <-ggplot(individual_means_tot_dist, aes(Sex, Mean, colour=Sex)) + 
    geom_violin() +
    theme(legend.position="none")+
-  facet_grid(~Tank)+
-  labs(title = "Total distance travelled")
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.x=element_blank())+
+  labs("Mean total distance travelled")
+  # labs(title = "Total distance travelled")
+
+indiv_tot_dist
 
 ggsave(path = "Plots", file = "indiv_tot_dist.jpeg", limitsize = FALSE)
 
@@ -143,11 +153,16 @@ individual_means_low <- Anxiety_Joined %>%
     group_by(Fish_ID, Sex, Tank) %>%
     dplyr::summarize(Mean = mean(low_dur, na.rm=TRUE))
 
-ggplot(individual_means_low, aes(Sex, Mean, colour=Sex)) + 
+indiv_low <-ggplot(individual_means_low, aes(Sex, Mean, colour=Sex)) + 
    geom_violin() +
    theme(legend.position="none")+
-  facet_grid(~Tank)+
-  labs(title = "Time spent in low zone")
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.x=element_blank())+
+  labs("Mean time spent in low zone")
+  # labs(title = "Time spent in low zone")
 
 ggsave(path = "Plots", file = "indiv_low_duration.jpeg", limitsize = FALSE)
 
@@ -156,11 +171,16 @@ individual_means_mid <- Anxiety_Joined %>%
     group_by(Fish_ID, Sex, Tank) %>%
     dplyr::summarize(Mean = mean(mid_dur, na.rm=TRUE))
 
-ggplot(individual_means_mid, aes(Sex, Mean, colour=Sex)) + 
+indiv_mid <-ggplot(individual_means_mid, aes(Sex, Mean, colour=Sex)) + 
    geom_violin() +
    theme(legend.position="none")+
-  facet_grid(~Tank)+
-  labs(title = "Time spent in mid zone")
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.x=element_blank())+
+  labs("Mean time spent in mid zone")
+  # labs(title = "Time spent in mid zone")
 
 ggsave(path = "Plots", file = "indiv_mid_dur.jpeg", limitsize = FALSE)
 
@@ -169,11 +189,16 @@ individual_means_high <- Anxiety_Joined %>%
     group_by(Fish_ID, Sex, Tank) %>%
     dplyr::summarize(Mean = mean(high_dur, na.rm=TRUE))
 
-ggplot(individual_means_high, aes(Sex, Mean, colour=Sex)) + 
+indiv_high <-ggplot(individual_means_high, aes(Sex, Mean, colour=Sex)) +
    geom_violin() +
    theme(legend.position="none")+
-  facet_grid(~Tank)+
-  labs(title = "Time spent in high zone")
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.x=element_blank())+
+  labs(y="Mean time spent in high zone")
+  # labs(title = "Time spent in high zone")
 
 ggsave(path = "Plots", file = "indiv_high_dur.jpeg", limitsize = FALSE)
 
@@ -182,11 +207,16 @@ individual_means_freezing <- Anxiety_Joined %>%
     group_by(Fish_ID, Sex, Tank) %>%
     dplyr::summarize(Mean = mean(freezing_dur, na.rm=TRUE))
 
-ggplot(individual_means_freezing, aes(Sex, log(Mean)+1, colour=Sex)) + 
+indiv_freezing <-ggplot(individual_means_freezing, aes(Sex, log(Mean)+1, colour=Sex)) + 
    geom_violin() +
    theme(legend.position="none")+
-  facet_grid(~Tank)+
-  labs(title = "Time spent freezing (log transformed")
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.x=element_blank())+
+  labs(y="Mean time spent freezing")
+  # labs(title = "Time spent freezing (log transformed")
 
 ggsave(path = "Plots", file = "indiv_freezing.jpeg", limitsize = FALSE)
 
@@ -196,11 +226,16 @@ individual_means_latency <- Anxiety_Joined %>%
     group_by(Fish_ID, Sex, Tank) %>%
     dplyr::summarize(Mean = mean(latency_high, na.rm=TRUE))
 
-ggplot(individual_means_freezing, aes(Sex, Mean, colour=Sex)) + 
+indiv_latency <-ggplot(individual_means_freezing, aes(Sex, Mean, colour=Sex)) + 
    geom_violin() +
    theme(legend.position="none")+
-  facet_grid(~Tank)+
-  labs(title = "Latency to high zone")
+ facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme(axis.title.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.x=element_blank())+
+  labs(y="Mean latency to high zone")
+  # labs(title = "Latency to high zone")
 
 ggsave(path = "Plots", file = "indiv_latency.jpeg", limitsize = FALSE)
 
@@ -209,16 +244,28 @@ individual_means_entries <- Anxiety_Joined %>%
     group_by(Fish_ID, Sex, Tank) %>%
     dplyr::summarize(Mean = mean(freq_high, na.rm=TRUE))
 
-ggplot(individual_means_entries, aes(Sex, Mean, colour=Sex)) + 
+indiv_freq <-ggplot(individual_means_entries, aes(Sex, Mean, colour=Sex)) + 
    geom_violin() +
    theme(legend.position="none")+
-  facet_grid(~Tank)+
-  labs(title = "Entries to high zone")
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean entries into high")
+
+indiv_freq
 
 ggsave(path = "Plots", file = "indiv_frequency_high.jpeg", limitsize = FALSE)
 
 
 ```
+#Joining total variance and indiv violin plots
+```{r}
+Joined_violins <- (Violin_Dist | indiv_tot_dist ) / (Violin_Low | indiv_low) / (Violin_Mid | indiv_mid) / (Violin_High | indiv_high) / (Violin_Freezing | indiv_freezing) / (Violin_Latency | indiv_latency) / (Violin_entries | indiv_freq) + plot_layout(guides="collect")
+
+Joined_violins
+```
+
 
 
 

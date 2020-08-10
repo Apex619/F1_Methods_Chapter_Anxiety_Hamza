@@ -1,0 +1,62 @@
+---
+title: "Additional Analyses"
+author: "Hamza"
+date: "8/10/2020"
+output: html_document
+---
+
+### Load packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+#install.packages("pacman")
+#install.packages("ggThemeAssist")
+#install.packages("ggbeeswarm")
+#install.packages("rptR")
+#install.packages("lme4")
+#install.packages("lmerTest")
+#install.packages("wesanderson")
+library(lmerTest)
+library(ggThemeAssist)
+library(rptR)
+library(lme4)
+library(readxl)
+library(dplyr)
+pacman::p_load(readxl, tidyr, dplyr, magrittr, lubridate, stringr, purrr)
+library(sjPlot)
+library(ggplot2)
+library(lubridate)
+library(wesanderson)
+library(ggbeeswarm)
+library(emmeans)
+library(patchwork)
+library(viridis)
+library(nlme)
+library(Rmisc)
+#sessionInfo()
+```
+
+#Mixed models
+```{r}
+#Total distance
+
+Summary_tot_dist <- summarySE(Anxiety_Joined, measurevar="tot_dist", groupvars=c("Tank","Sex"))
+knitr::kable(
+  Summary_Sex[1:4, ], 
+  caption = "Summary_tot_dist"
+)
+
+Summary_tot_dist
+
+mixed_model_total_distance <- lmer(tot_dist ~ Sex + Tank + (1|Fish_ID), data=Anxiety_Joined)
+summary(mixed_model_total_distance)
+hist(residuals(mixed_model_total_distance))
+tab_model(mixed_model_total_distance)
+
+#Contrast
+
+tot_dist_contrast <- emmeans(mixed_model_total_distance, ~ Sex + Tank)
+pairs(tot_dist_contrast)
+```
+
