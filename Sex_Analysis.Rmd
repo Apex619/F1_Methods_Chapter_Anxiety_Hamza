@@ -149,7 +149,7 @@ plot(Old_low_dur_Male)
 Tall_low_dur_Male <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_low_dur_Male
-tall_low_dur_plot <- plot(Tall_low_dur_Male)
+
 
 Joined_low_dur_Male <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Both_Tanks_Male, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)

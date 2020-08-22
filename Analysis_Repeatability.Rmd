@@ -74,11 +74,13 @@ hist(residuals(Model_Tot_Dist))
 Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Old_Tot_Dist
+plot(Old_Tot_Dist)
 
 
 Tall_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
     nboot = 10000, npermut = 10000)
 Tall_Tot_Dist
+plot(Tall_Tot_Dist)
 
 
 Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
@@ -105,12 +107,12 @@ m1 <- mean(Diff_boot)
 m1
 
 # Variance models 
-Model_Tot_Dist1 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+Model_Tot_Dist1 <- lme(tot_dist ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_Tot_Dist1)
-Model_Tot_Dist2 <- lme(tot_dist ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+tab_model(Model_Tot_Dist1)
+Model_Tot_Dist2 <- lme(tot_dist ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
 summary(Model_Tot_Dist2)
 anova(Model_Tot_Dist1, Model_Tot_Dist2)
-
 ```
 
 
@@ -166,9 +168,9 @@ m2
 #2.5% quartile greater than zero, indicates a significant difference?
 
 # Variance models
-Model_low_dur1 <- lme(low_dur ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+Model_low_dur1 <- lme(low_dur ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_low_dur1)
-Model_low_dur2 <- lme(low_dur ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+Model_low_dur2 <- lme(low_dur ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
 summary(Model_low_dur2)
 anova(Model_low_dur1, Model_low_dur2)
 
@@ -213,12 +215,12 @@ q3 <- quantile(Diff_boot_mid_dur, c(0.025, 0.975))
 q3#2.5% crosses 0, not significant?
 m3 <- mean(Diff_boot_mid_dur)
 m3
-str(q3)
+
 
 # Variance models
-Model_mid_dur1 <- lme(mid_dur ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+Model_mid_dur1 <- lme(mid_dur ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_mid_dur1)
-Model_mid_dur2 <- lme(mid_dur ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+Model_mid_dur2 <- lme(mid_dur ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
 summary(Model_mid_dur2)
 anova(Model_mid_dur1, Model_mid_dur2)
 ```
@@ -286,9 +288,9 @@ m4 <- mean(Diff_boot_high_dur2)
 m4
 
 # Variance models
-Model_high_dur1a <- lme(sqrt(high_dur) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+Model_high_dur1a <- lme(sqrt(high_dur) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_high_dur1a)
-Model_high_dur2a <- lme(sqrt(high_dur) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+Model_high_dur2a <- lme(sqrt(high_dur) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
 summary(Model_high_dur2a)
 anova(Model_high_dur1a, Model_high_dur2a)
 ```
@@ -361,9 +363,10 @@ m5
 
 
 #Variance models
-Model_freezing_dur1a <- lme(log(freezing_dur+1) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+Model_freezing_dur1a <- lme(log(freezing_dur+1) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_freezing_dur1a)
-Model_freezing_dur2a <- lme(log(freezing_dur+1) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+tab_model(Model_freezing_dur1a)
+Model_freezing_dur2a <- lme(log(freezing_dur+1) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
 summary(Model_freezing_dur2a)
 anova(Model_freezing_dur1a, Model_freezing_dur2a)
 ```
@@ -410,9 +413,9 @@ m6 <- mean(Diff_boot_latency)
 m6
 
 # Variance models
-Model_latency_high1a <- lme(latency_high ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined, na.action=na.omit)
+Model_latency_high1a <- lme(latency_high ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined, na.action=na.omit)
 summary(Model_latency_high1a)
-Model_latency_high2a <- lme(latency_high ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined, na.action=na.omit)
+Model_latency_high2a <- lme(latency_high ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined, na.action=na.omit)
 summary(Model_latency_high2a)
 anova(Model_latency_high1a, Model_latency_high2a)
 ```
@@ -460,10 +463,10 @@ m7
 
 
 #Variance models
-Model_freq_high1a <- lme(sqrt(freq_high) ~ Tank + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+Model_freq_high1a <- lme(sqrt(freq_high) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_freq_high1a)
 tab_model(Model_freq_high1a)
-Model_freq_high2a <- lme(sqrt(freq_high) ~ Tank + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+Model_freq_high2a <- lme(sqrt(freq_high) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
 summary(Model_freq_high2a)
 tab_model(Model_freq_high2a)
 anova(Model_freq_high1a, Model_freq_high2a)
@@ -682,7 +685,7 @@ plot_latency_rptr
 
 
 
-More plots
+Violin plots (tank differences)
 ```{r, echo=FALSE}
 
 #Renaming facets
@@ -696,14 +699,14 @@ names(tank_labs) <- c("Old", "Tall")
 
 #Plots
 
-Violin_Dist <- ggplot(Anxiety_Joined, aes(x=Sex, y=tot_dist, fill=Sex)) + 
-  geom_violin(trim=FALSE)+
-  geom_boxplot(width=0.1, fill="white")+
+Violin_Dist <- ggplot(Anxiety_Joined, aes(x=Tank, y=tot_dist, fill=Tank)) + 
+ geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
   labs(title="Total distance travelled",y = "Total distance (cm)")+
 theme_grey()+
-  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+  scale_fill_manual(values=c("#DD8D29", "#E2D200"))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
   theme(axis.title.x=element_blank())
  
 
@@ -713,14 +716,14 @@ ggsave(path = "Plots", file = "Total Distance.jpeg", limitsize = FALSE)
 
 
 
-Violin_Low <- ggplot(Anxiety_Joined, aes(x=Sex, y=low_dur, fill=Sex)) + 
-  geom_violin(trim=FALSE)+
-  geom_boxplot(width=0.1, fill="white")+
+Violin_Low <- ggplot(Anxiety_Joined, aes(x=Tank, y=low_dur, fill=Tank)) + 
+geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
   labs(title="Time spent in low zone",y = "Time spent (seconds)")+
 theme_grey()+
-  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
   theme(axis.title.x=element_blank())
 
 Violin_Low
@@ -728,28 +731,29 @@ Violin_Low
 ggsave(path = "Plots", file = "Low Duration.jpeg", limitsize = FALSE)
 
 
-Violin_Mid <- ggplot(Anxiety_Joined, aes(x=Sex, y=mid_dur, fill=Sex)) + 
-  geom_violin(trim=FALSE)+
-  geom_boxplot(width=0.1, fill="white")+
+Violin_Mid <- ggplot(Anxiety_Joined, aes(x=Tank, y=mid_dur, fill=Tank)) + 
+geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
   labs(title="Time spent in middle zone",y = "Time spent (seconds)")+
 theme_grey()+
-  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
   theme(axis.title.x=element_blank())
+
 
 Violin_Mid
 ggsave(path = "Plots", file = "Mid_Duration.jpeg", limitsize = FALSE)
 
 
-Violin_High <- ggplot(Anxiety_Joined, aes(x=Sex, y=high_dur, fill=Sex)) + 
-  geom_violin(trim=FALSE)+
-  geom_boxplot(width=0.1, fill="white")+
+Violin_High <- ggplot(Anxiety_Joined, aes(x=Tank, y=high_dur, fill=Tank)) + 
+geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
   labs(title="Time spent in high zone",y = "Time spent (seconds)")+
 theme_grey()+
-  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
   theme(axis.title.x=element_blank())
 
 Violin_High
@@ -758,14 +762,14 @@ ggsave(path = "Plots", file = "High_Duration.jpeg", limitsize = FALSE)
 
 
 
-Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Sex, y=(log(freezing_dur+1)), fill=Sex)) + 
-  geom_violin(trim=FALSE)+
-  geom_boxplot(width=0.1, fill="white")+
-  labs(title="Time spent freezing (log transformed)",y = "Time spent (seconds)")+
+Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Tank, y=freezing_dur, fill=Tank)) +
+    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+  labs(title="Time spent freezing",y = "Time spent (seconds)")+
 theme_grey()+
-  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
   theme(axis.title.x=element_blank())
 
 Violin_Freezing
@@ -774,14 +778,14 @@ ggsave(path = "Plots", file = "Freezing.jpeg", limitsize = FALSE)
 
 
 
-Violin_Latency <- ggplot(Anxiety_Joined, aes(x=Sex, y=latency_high, fill=Sex)) + 
-  geom_violin(trim=FALSE)+
-  geom_boxplot(width=0.1, fill="white")+
+Violin_Latency <- ggplot(Anxiety_Joined, aes(x=Tank, y=latency_high, fill=Tank)) + 
+geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
   labs(title="Latency to high zone",y = "Seconds")+
 theme_grey()+
-  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
   theme(axis.title.x=element_blank())
 
 Violin_Latency
@@ -789,31 +793,22 @@ Violin_Latency
 ggsave(path = "Plots", file = "Latency to High.jpeg", limitsize = FALSE)
 
 
-Violin_entries <- ggplot(Anxiety_Joined, aes(x=Sex, y=freq_high, fill=Sex)) + 
-  geom_violin(trim=FALSE)+
-  geom_boxplot(width=0.1, fill="white")+
+Violin_entries <- ggplot(Anxiety_Joined, aes(x=Tank, y=freq_high, fill=Tank)) + 
+ geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
   labs(title="Entries into the high zone",y = "Number of entries")+
 theme_grey()+
-  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
  theme(legend.position = "none")+
-  scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
   theme(axis.title.x=element_blank())
 
-
+Violin_entries
 
 ggsave(path = "Plots", file = "Entries to high.jpeg", limitsize = FALSE)
 ```
 
-#Summary stats
-```{r}
-Summary_tot_dist <- summarySE(Anxiety_Joined, measurevar="tot_dist", groupvars=c("Tank","Sex"))
-knitr::kable(
-  Summary_Sex[1:4, ], 
-  caption = "Summary_tot_dist"
-)
 
-Summary_tot_dist
-```
 
 
 
