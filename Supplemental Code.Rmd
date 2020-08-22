@@ -37,26 +37,19 @@ library(Rmisc)
 #sessionInfo()
 ```
 
-#Mixed models
+#Tables
 ```{r}
-#Total distance
+mixed_model_tables <- tab_model(mixed_model_total_distance, mixed_model_low_dur, mixed_model_mid_dur, mixed_model_high_dur, mixed_model_freezing_dur, mixed_model_latency_high, mixed_model_freq_high,collapse.ci = TRUE,  file = "tables.docx")
 
-Summary_tot_dist <- summarySE(Anxiety_Joined, measurevar="tot_dist", groupvars=c("Tank","Sex"))
-knitr::kable(
-  Summary_Sex[1:4, ], 
-  caption = "Summary_tot_dist"
-)
-
-Summary_tot_dist
-
-mixed_model_total_distance <- lmer(tot_dist ~ Sex + Tank + (1|Fish_ID), data=Anxiety_Joined)
-summary(mixed_model_total_distance)
-hist(residuals(mixed_model_total_distance))
-tab_model(mixed_model_total_distance)
-
-#Contrast
-
-tot_dist_contrast <- emmeans(mixed_model_total_distance, ~ Sex + Tank)
-pairs(tot_dist_contrast)
+mixed_model_tables
 ```
+
+
+
+
+
+
+
+
+
 
