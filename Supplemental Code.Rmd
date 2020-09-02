@@ -39,9 +39,7 @@ library(Rmisc)
 
 #Tables
 ```{r}
-mixed_model_tables <- tab_model(mixed_model_total_distance, mixed_model_low_dur, mixed_model_mid_dur, mixed_model_high_dur, mixed_model_freezing_dur, mixed_model_latency_high, mixed_model_freq_high,collapse.ci = TRUE,  file = "tables.docx")
-
-mixed_model_tables
+tab_model(Model_Tot_Dist1)
 ```
 
 
