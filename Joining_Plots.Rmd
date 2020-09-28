@@ -90,11 +90,15 @@ geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(
 geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
 geom_hline(yintercept = 0, lty = "dotted") +
 coord_flip()+
-ylim(-0.5, 0.9)+
+ylim(-0.2, 0.9)+
   theme(legend.position = "bottom")+
    theme(axis.title.y=element_blank())+
    theme(legend.title=element_blank())+
-  scale_color_manual(values=c("#000000", "#DD8D29", "#E2D200"))
+  scale_color_manual(values=c("#000000", "#DD8D29", "#E2D200"))+
+    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"),legend.position = c(0.92, 0.85))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +font("legend.text",size = 15)+
+    theme(legend.position = "none")+
+  theme(axis.title.y=element_blank())
+ 
 
 
 Overall_New_plot
@@ -106,13 +110,15 @@ geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(
 geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
 geom_hline(yintercept = 0, lty = "dotted") +
 coord_flip()+
-ylim(-0.5, 0.9)+
+ylim(-0.2, 0.9)+
 facet_grid(~Tank)+
   theme(legend.position = "bottom")+
    theme(axis.title.y=element_blank())+
   # theme(axis.text.y = element_text(angle = 15))+
   scale_color_manual(values = c("#000000", "#f8766d", "#00bfc4"))+
-   theme(legend.title=element_blank())
+    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"),legend.position = c(0.92, 0.85))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +font("legend.text",size = 15)+
+    theme(legend.position = "none")+
+  theme(axis.title.y=element_blank())
 
 Sex_New_plot
 
@@ -139,7 +145,8 @@ indiv_tot_dist_tank <-ggplot(individual_means_tot_dist_tank, aes(Tank, Mean, fil
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean total distance travelled (cm)")
+  labs(y="Mean distance (cm)")+
+   labs(title = "Total distance travelled")
 
 indiv_tot_dist_tank
 
@@ -158,7 +165,8 @@ indiv_low_dur_tank <-ggplot(individual_means_low_dur_tank, aes(Tank, Mean, fill=
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean time spent in low zone (seconds)")
+  labs(y="Mean seconds")+
+   labs(title = "Time spent in low zone")
 
 indiv_low_dur_tank
 
@@ -176,7 +184,8 @@ indiv_mid_dur_tank <-ggplot(individual_means_mid_dur_tank, aes(Tank, Mean, fill=
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean time spent in mid zone (seconds)")
+  labs(y="Mean seconds")+
+   labs(title = "Time spent in mid zone")
 
 indiv_mid_dur_tank
 
@@ -194,7 +203,8 @@ indiv_high_dur_tank <-ggplot(individual_means_high_dur_tank, aes(Tank, Mean, fil
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean time spent in high zone (seconds)")
+  labs(y="Mean seconds")+
+   labs(title = "Time spent in high zone")
 
 indiv_high_dur_tank
 
@@ -211,7 +221,8 @@ indiv_freezing_dur_tank <-ggplot(individual_means_freezing_dur_tank, aes(Tank, M
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean time spent freezing (seconds)")
+  labs(y="Mean seconds")+
+   labs(title = "Time spent freezing")
 
 indiv_freezing_dur_tank
 
@@ -232,7 +243,8 @@ indiv_latency_high_tank <-ggplot(individual_means_latency_high_tank, aes(Tank, M
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean latency to high zone (seconds)")
+  labs(y="Mean latency (seconds)")+
+   labs(title = "Latency to high zone")
 
 indiv_latency_high_tank
 
@@ -249,7 +261,8 @@ indiv_entries_tank <-ggplot(individual_means_entries_tank, aes(Tank, Mean, fill=
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean entries to high zone")
+  labs(y="Mean entries")+
+   labs(title = "Entries into high zone")
 
 indiv_entries_tank
 
@@ -279,8 +292,8 @@ indiv_tot_dist <-ggplot(individual_means_tot_dist, aes(Sex, Mean, fill=Sex)) +
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean total distance travelled")
-  # labs(title = "Total distance travelled")
+  labs(y="Mean distance (cm)")+
+  labs(title = "Total distance travelled")
 
 indiv_tot_dist
 
@@ -301,8 +314,8 @@ indiv_low <-ggplot(individual_means_low, aes(Sex, Mean, fill=Sex)) +
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean time spent in low zone")
-  # labs(title = "Time spent in low zone")
+  labs(y="Mean seconds")+
+  labs(title = "Time spent in low zone")
 
 ggsave(path = "Plots", file = "indiv_low_duration.jpeg", limitsize = FALSE)
 
@@ -320,8 +333,8 @@ indiv_mid <-ggplot(individual_means_mid, aes(Sex, Mean, fill=Sex)) +
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean time spent in mid zone")
-  # labs(title = "Time spent in mid zone")
+  labs(y="Mean seconds")+
+  labs(title = "Time spent in mid zone")
 
 ggsave(path = "Plots", file = "indiv_mid_dur.jpeg", limitsize = FALSE)
 
@@ -339,8 +352,8 @@ indiv_high <-ggplot(individual_means_high, aes(Sex, Mean, fill=Sex)) +
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean time spent in high zone")
-  # labs(title = "Time spent in high zone")
+  labs(y="Mean seconds")+
+  labs(title = "Time spent in high zone")
 
 ggsave(path = "Plots", file = "indiv_high_dur.jpeg", limitsize = FALSE)
 
@@ -358,8 +371,8 @@ indiv_freezing <-ggplot(individual_means_freezing, aes(Sex, log(Mean)+1, fill=Se
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean time spent freezing")
-  # labs(title = "Time spent freezing (log transformed")
+  labs(y="Mean seconds")+
+  labs(title = "Time spent freezing")
 
 ggsave(path = "Plots", file = "indiv_freezing.jpeg", limitsize = FALSE)
 
@@ -378,8 +391,8 @@ indiv_latency <-ggplot(individual_means_freezing, aes(Sex, Mean, fill=Sex)) +
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean latency to high zone")
-  # labs(title = "Latency to high zone")
+  labs(y="Mean latency")+
+  labs(title = "Latency to high zone")
 
 ggsave(path = "Plots", file = "indiv_latency.jpeg", limitsize = FALSE)
 
@@ -396,7 +409,8 @@ indiv_freq <-ggplot(individual_means_entries, aes(Sex, Mean, fill=Sex)) +
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
-  labs(y="Mean entries into high")
+  labs(y="Mean entries")+
+  labs(title = "Entries into high zone")
 
 indiv_freq
 
@@ -406,18 +420,20 @@ ggsave(path = "Plots", file = "indiv_frequency_high.jpeg", limitsize = FALSE)
 ```
 #Joining total variance and indiv violin plots
 ```{r}
-Joined_violins <- Violin_Dist + Violin_Low + Violin_Mid + Violin_High + Violin_Freezing + Violin_Latency+Violin_entries + plot_layout(ncol = 2, nrow=4)+ grid::textGrob('Important text')
+Joined_violins <- Violin_Dist + Violin_Low + Violin_Mid + Violin_High + Violin_Freezing + Violin_Latency+Violin_entries + plot_layout(ncol = 2, nrow=4)
 
 Joined_violins
 
-Joined_violins_indiv_sex_tank <- indiv_tot_dist + indiv_low + indiv_mid + indiv_high + indiv_freezing + indiv_latency+indiv_freq + plot_layout(ncol = 2, nrow=4)+ grid::textGrob('Important text')
+Joined_violins_indiv_sex_tank <- indiv_tot_dist + indiv_low + indiv_mid + indiv_high + indiv_freezing + indiv_latency+indiv_freq + plot_layout(ncol = 2, nrow=4)
 
 Joined_violins_indiv_sex_tank
 
-Joined_violins_indiv_tank <- indiv_tot_dist_tank + indiv_low_dur_tank + indiv_mid_dur_tank + indiv_high_dur_tank + indiv_freezing_dur_tank + indiv_latency_high_tank+indiv_entries_tank + plot_layout(ncol = 2, nrow=4)+ grid::textGrob('Important text')
+Joined_violins_indiv_tank <- indiv_tot_dist_tank + indiv_low_dur_tank + indiv_mid_dur_tank + indiv_high_dur_tank + indiv_freezing_dur_tank + indiv_latency_high_tank+indiv_entries_tank + plot_layout(ncol = 2, nrow=4)
 
 Joined_violins_indiv_tank
 ```
+
+
 
 
 

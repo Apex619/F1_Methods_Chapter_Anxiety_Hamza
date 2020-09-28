@@ -36,6 +36,7 @@ library(patchwork)
 library(viridis)
 library(nlme)
 library(Rmisc)
+library(ggpubr) 
 #sessionInfo()
 ```
 The aim of this experiment is to compare repatability in typically used holding tanks against our custom made tall tanks. We designed these tanks to exploit the zebrafish's natural tendency to dive in a novel environment. Typical holding tanks aren't very deep, and as such, it's harder to comapare variability between individuals. We designed our tanks to hold the same amount of water, but have a much deeper column. For this experiment, we aren't interested in the F1 classification of the fish groups (we are referring to all of them as WT) or even the differences between groups. We are only interested in the repeatability measurements. 
@@ -762,7 +763,7 @@ ggsave(path = "Plots", file = "High_Duration.jpeg", limitsize = FALSE)
 
 
 
-Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Tank, y=freezing_dur, fill=Tank)) +
+Violin_Freezing <- ggplot(Anxiety_Joined, aes(x=Tank, y=log(freezing_dur+1), fill=Tank)) +
     geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
   labs(title="Time spent freezing",y = "Time spent (seconds)")+
@@ -806,9 +807,70 @@ scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
 Violin_entries
 
 ggsave(path = "Plots", file = "Entries to high.jpeg", limitsize = FALSE)
+
+###Alternate design (use functions for other plots)
+
+Test <-  ggplot(data = Anxiety_Joined,aes(x = Tank, y = freq_high, fill = Tank))+
+ scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
+  geom_violin(alpha=0.4, position = position_dodge(width = .75),size=1,color="black")+
+  geom_boxplot(notch = TRUE,  outlier.size = -1, color="black",lwd=1.2, alpha = 0.7)+
+  geom_point( shape = 21,size=2, position = position_jitterdodge(), color="black",alpha=1)+
+  theme_pubr()+
+  ylab(  c("Number of entries"))+
+  xlab(  c("Entries into the high zone"))+
+  rremove("legend.title")+
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"),legend.position = c(0.92, 0.85))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +font("legend.text",size = 15)+
+    scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+  theme(legend.position = "none")
+
+Test
 ```
 
+#Testing functions for new design of plots
+```{r}
+violin_plot_custom_hamza <- function(df,param,lab1,lab2) {
+ggplot(data = df,aes(x = Tank, y = param, fill = Tank))+
+ scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
+  geom_violin(alpha=0.4, position = position_dodge(width = .75),size=1,color="black")+
+  geom_boxplot(notch = TRUE,  outlier.size = -1, color="black",lwd=1.2, alpha = 0.7)+
+  geom_point( shape = 21,size=2, position = position_jitterdodge(), color="black",alpha=1)+
+  theme_pubr()+
+  labs(title=lab1,y = lab2)+
+  rremove("legend.title")+
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"),legend.position = c(0.92, 0.85))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +font("legend.text",size = 15)+
+    scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+  theme(legend.position = "none")+
+  theme(axis.title.x=element_blank())
+    
+}
 
+low_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined,Anxiety_Joined$low_dur,"Time spent in low zone", "Time spent (seconds)")
+
+
+
+tot_dist_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$tot_dist, "Total distance travelled", "Distance (cm)")
+
+
+
+mid_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$mid_dur, "Time spent in mid zone", "Seconds")
+
+
+high_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$high_dur, "Time spent in high zone", "Seconds")
+
+
+freezing_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, log(Anxiety_Joined$freezing_dur+1), "Time spent freezing", "Seconds")
+
+
+freq_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$freq_high, "Frequency of visits to high zone", "Visits")
+freq_violin
+
+latency_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$latency_high, "Latency to the high zone", "Seconds")
+
+#Joining
+
+Joined_violins_new_design <- tot_dist_violin + low_dur_violin + mid_dur_violin + high_dur_violin + freezing_dur_violin + latency_violin+freq_violin + plot_layout(ncol = 2, nrow=4)
+Joined_violins_new_design
+```
 
 
 
