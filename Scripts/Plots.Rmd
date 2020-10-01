@@ -16,6 +16,21 @@ pacman::p_load(lmerTest,ggThemeAssist,rptR,lme4,readxl, tidyr, dplyr, magrittr, 
 
 ```
 
+#Systematic extraction plot
+```{r}
+Review <- read.csv("./Data/Systematic_Extraction.csv")
+
+p<-ggplot(data=Review, aes(x = reorder(Endpoint, Count), y=Count)) +
+  geom_bar(stat="identity")+
+coord_flip()+
+   scale_x_discrete(labels=c("Total distance travelled/exploration"=expression(bold("Total distance travelled/exploration")), "Time spent in mid zone"=expression(bold("Time spent in mid zone")),
+                              "Time spent in low zone"=expression(bold("Time spent in low zone")),"Latency to high zone"=expression(bold("Latency to high zone")),"Time spent in high zone"=expression(bold("Time spent in high zone")),"Freezing duration/frequency"=expression(bold("Freezing duration/frequency")),"Entries into high zone"=expression(bold("Entries into high zone")), parse=TRUE))+
+  theme(axis.title.y=element_blank())
+p
+  
+ggsave(path = "Plots", file = "Review.jpeg", limitsize = FALSE)
+```
+
 #Creating tibbles to use in plotting repeatabilities 
 
 Total distance
@@ -137,12 +152,11 @@ geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
 geom_hline(yintercept = 0, lty = "dotted") +
 coord_flip()+
 ylim(-0.2, 0.9)+
-  theme(legend.position = "bottom")+
    theme(axis.title.y=element_blank())+
    theme(legend.title=element_blank())+
   scale_color_manual(values=c("#000000", "#DD8D29", "#E2D200"))+
-    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"),legend.position = c(0.92, 0.85))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +font("legend.text",size = 15)+
-    theme(legend.position = "none")+
+    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +
+    theme(legend.position = "bottom")+
   theme(axis.title.y=element_blank())
  
 
@@ -152,6 +166,27 @@ Overall_New_plot
 ggsave(path = "Plots", file = "Overall_plot_new.jpeg", limitsize = FALSE)
 ```
 
+#Overall forest plot showing differences between males and female repeatabilities for behavioral parameters in tall and short tanks
+```{r}
+Sex_New_plot <- ggplot(Overall_Data_Joined_Final_sex, aes(x=Endpoint, y=r, colour=Condition)) +
+geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
+geom_hline(yintercept = 0, lty = "dotted") +
+coord_flip()+
+ylim(-0.2, 0.9)+
+facet_grid(~Tank)+
+   theme(axis.title.y=element_blank())+
+  # theme(axis.text.y = element_text(angle = 15))+
+  scale_color_manual(values = c("#000000", "#f8766d", "#00bfc4"))+
+    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +
+  theme(axis.title.y=element_blank())+
+  theme(legend.position="bottom")+
+  theme(legend.title = element_blank())
+
+Sex_New_plot
+
+ggsave(path = "Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
+```
 
 
 #Generating custom designed violin plots to display raw distributions of behavioral responses
