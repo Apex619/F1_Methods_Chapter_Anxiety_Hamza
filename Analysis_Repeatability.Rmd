@@ -11,164 +11,119 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+#checks for installation and loads packages
+pacman::p_load(lmerTest,ggThemeAssist,rptR,lme4,readxl, tidyr, dplyr, magrittr, lubridate, stringr, purrr,
+               sjPlot,ggplot2,lubridate,wesanderson,ggbeeswarm,emmeans,patchwork,viridis,nlme,Rmisc,ggpubr,
+               stargazer)
 
-#install.packages("pacman")
-#install.packages("ggThemeAssist")
-#install.packages("ggbeeswarm")
-#install.packages("rptR")
-#install.packages("lme4")
-#install.packages("lmerTest")
-#install.packages("wesanderson")
-library(lmerTest)
-library(ggThemeAssist)
-library(rptR)
-library(lme4)
-library(readxl)
-library(dplyr)
-pacman::p_load(readxl, tidyr, dplyr, magrittr, lubridate, stringr, purrr)
-library(sjPlot)
-library(ggplot2)
-library(lubridate)
-library(wesanderson)
-library(ggbeeswarm)
-library(emmeans)
-library(patchwork)
-library(viridis)
-library(nlme)
-library(Rmisc)
-library(ggpubr) 
-#sessionInfo()
 ```
-The aim of this experiment is to compare repatability in typically used holding tanks against our custom made tall tanks. We designed these tanks to exploit the zebrafish's natural tendency to dive in a novel environment. Typical holding tanks aren't very deep, and as such, it's harder to comapare variability between individuals. We designed our tanks to hold the same amount of water, but have a much deeper column. For this experiment, we aren't interested in the F1 classification of the fish groups (we are referring to all of them as WT) or even the differences between groups. We are only interested in the repeatability measurements. 
+
 
 ### Import Data
 ```{r, include=FALSE}
+#Master file with all raw data
+Anxiety_Joined <- read.csv("./Data/F1_Anxiety_Repeatability_Exp.csv") 
 
-# Old_Tanks <- read.csv("Old_tanks.csv")
-# Tall_Tanks <- read.csv("Tall_tanks.csv")
-Anxiety_Joined <- read.csv("F1_Anxiety_Repeatability_Exp.csv")
-
-#Subset by tank
-Old_Tanks <- subset(Anxiety_Joined, Anxiety_Joined$Tank == "Old")
-Tall_Tanks <- subset(Anxiety_Joined, Anxiety_Joined$Tank == "Tall")
+#Subseting data by tank; NOTE: initially, short tanks are referred to as "Old" tanks, howevever we later change this to refer to them as "Short" tanks
+Old_Tanks <- subset(Anxiety_Joined, Anxiety_Joined$Tank == "Old") 
+Tall_Tanks <- subset(Anxiety_Joined, Anxiety_Joined$Tank == "Tall") 
 
 
-#Inspect
+#Inspecting imported data 
+str(Anxiety_Joined)
 str(Old_Tanks)
 str(Tall_Tanks)
-str(Anxiety_Joined)
-
-
-
 ```
 
-#total distance (old, tall, joined)
+### MAIN ANALYSIS FOR ALL BEHAVIORAL PARAMETERS
+1) cHECKING NORMALITY ASSUMPTIONS WITH MIXED MODELS AND A HISTOGRAM OF RESIDUALS
+2) PERFORMING REPEATABILITY ANALYSIS FOR EACH TANK SEPARATELY (USING SUBSETS) AND THEN WITH BOTH DATA COMBINED
+3) CALCULATING DIFFERENCES BETWEEN REPEATABILITIES
+4) FINAL MIXED MODEL USING LME FUNCTION
+5) CALCULATING VARIANCE DIFFERENCES BETWEEN TALL AND SHORT TANKS
+
+THESE STEPS ARE REPEATED FOR ALL BEHAVIORAL PARAMETERS, REFER TO THE FIRST BEHAVIORAL PARAMETER FOR COMMENTS AND REFERENCE 
+
+# Total distance travelled
 ```{r, echo=FALSE}
 
-#Check Normality with mixed model
+#Check Normality with mixed model and then histogram of residuals
 
-Model_Tot_Dist <- lmer(tot_dist ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-tab_model(Model_Tot_Dist)
-hist(residuals(Model_Tot_Dist))
-
-
-Old_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_Tot_Dist
-plot(Old_Tot_Dist)
-
-
-Tall_Tot_Dist <- rpt(tot_dist ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_Tot_Dist
-plot(Tall_Tot_Dist)
-
-
-Joined_Tot_Dist <- rpt(tot_dist ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Joined_Tot_Dist
+Model_Tot_Dist <- lmer(tot_dist ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined) #mixed model 
+hist(residuals(Model_Tot_Dist)) #histogam of residuals to check for normal distribution (easiest way to check assumption of normality)
 
 
 
+#Writing a function for calculating repeatability for total distance travelled
+rpt_tot_dist <- function(df) {
+  x <- rpt(tot_dist ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
+}
 
+#Calculating repeatabilities using custom made functions
+rpt_tot_dist(Old_Tanks) -> Old_Tot_Dist #repeatability for short tanks
+rpt_tot_dist(Tall_Tanks) -> Tall_Tot_Dist #repeatability for tall tanks
+rpt_tot_dist(Anxiety_Joined) -> Joined_Tot_Dist #repeatability overall (both tanks)
 
+# Writing functions for getting the difference between these two tank's repeatablities
+unlist_rptr <- function(rpt_model) { #unlisting the bootstrapped distribution 
+  unlist(rpt_model$R_boot)
+}
 
-# Shinichi's addition to show Hamza how to get the difference between these two tank's repeatablities. 
-Old_boot<-unlist(Old_Tot_Dist$R_boot)
-hist(Old_boot, breaks = 50)
-Tall_boot<-unlist(Tall_Tot_Dist$R_boot)
-hist(Tall_boot, breaks = 50)
+difference_boot <- function(boot1,boot2) { #calculating difference between tall and short (depending on which has the higher repeatability)
+  boot1 - boot2
+}
 
-Diff_boot <- Tall_boot - Old_boot
-hist(Diff_boot, breaks = 50)
+quantiles_diff_boot <- function(from_diff_boot) { #obtaining quantiles at 2.5% and 97.5% (becomes 95% CI)
+  quantile(from_diff_boot, c(0.025, 0.975))
+} 
+#Obtaining differences between repeatabilities using custom made functions
+Old_tot_dist_boot <- unlist_rptr(Old_Tot_Dist) #unlisting from the short tanks
+Tall_tot_dist_boot <- unlist_rptr(Tall_Tot_Dist) #unlisting from the tall tanks
+Tot_dist_diff <- difference_boot(Tall_tot_dist_boot,Old_tot_dist_boot) #calculating the difference
+q1 <- quantiles_diff_boot(Tot_dist_diff) #obtaining 95% CI
+m1 <- mean(Tot_dist_diff) #Obtaining mean
 
-q1<- quantile(Diff_boot, c(0.025, 0.975))
-q1# difference ditribuiton 95% CI
-m1 <- mean(Diff_boot)
+q1
 m1
 
-# Variance models 
-Model_Tot_Dist1 <- lme(tot_dist ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
+# Calculating difference in variance between short tanks and tall tanks 
+Model_Tot_Dist1 <- lme(tot_dist ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined) #mixed model without variance structure
 summary(Model_Tot_Dist1)
-tab_model(Model_Tot_Dist1)
-Model_Tot_Dist2 <- lme(tot_dist ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
+Model_Tot_Dist2 <- lme(tot_dist ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined) #mixed model with variance structure varIdent
 summary(Model_Tot_Dist2)
-anova(Model_Tot_Dist1, Model_Tot_Dist2)
+anova(Model_Tot_Dist1, Model_Tot_Dist2) #calculating difference between two models to find difference in variance
 ```
 
 
 
 
-###low duration
+### Time spent in low zone ('low duration')
 ```{r, echo=FALSE}
+#Checking normality assumptions
+Model_Low_Dur <- lmer(low_dur ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)  
+hist(residuals(Model_Low_Dur)) 
+qqnorm(residuals(Model_Low_Dur)) 
+scatter.smooth(residuals(Model_Low_Dur)~fitted(Model_Low_Dur)) 
 
-# par(mfrow=c(2,2))
-hist(Old_Tanks$low_dur)
-hist(Tall_Tanks$low_dur)
-hist(Anxiety_Joined$low_dur)
+#Writing a function for calculating repeatability for time spent in low zone
+rpt_low_dur <- function(df) {
+  x <- rpt(low_dur ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
+}
 
-model <- lmer(low_dur ~ Tank + Sex + (1 | Fish_ID), data = Old_Tanks)
-summary(model)
-plot(residuals(model))
-hist(residuals(model))
 
-Old_low_dur <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_low_dur
+#Calculating repeatabilities 
+rpt_low_dur(Old_Tanks) -> Old_low_dur 
+rpt_low_dur(Tall_Tanks) -> Tall_low_dur 
+rpt_low_dur(Anxiety_Joined) -> Joined_low_dur 
 
-plot(Old_low_dur)
+#Obtaining differences between repeatabilities 
+Old_low_dur_boot <- unlist_rptr(Old_low_dur) 
+Tall_low_dur_boot <- unlist_rptr(Tall_low_dur) 
+low_dur_diff <- difference_boot(Tall_low_dur_boot,Old_low_dur_boot) 
+q2 <- quantiles_diff_boot(low_dur_diff) 
+m2 <- mean(low_dur_diff) 
 
-Tall_low_dur <- rpt(low_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_low_dur
-
-Joined_low_dur <- rpt(low_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Joined_low_dur
-
-Model_low_dur <- lmer(low_dur ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_low_dur)
-tab_model(Model_low_dur)
-hist(residuals(Model_low_dur))
-
-### Analysis to find differences
-
-Old_low_dur_boot<-unlist(Old_low_dur$R_boot)
-hist(Old_low_dur_boot, breaks = 50)
-Tall_low_dur_boot<-unlist(Tall_low_dur$R_boot)
-hist(Tall_low_dur_boot, breaks = 50)
-
-Diff_boot_low_dur <- Tall_low_dur_boot - Old_low_dur_boot
-hist(Diff_boot_low_dur, breaks = 50)
-
-q2 <- quantile(Diff_boot_low_dur, c(0.025, 0.975))
-q2# difference ditribuiton 95% CI
-m2 <-mean(Diff_boot_low_dur)
-m2
-
-#2.5% quartile greater than zero, indicates a significant difference?
-
-# Variance models
+# Calculating difference in variance between short tanks and tall tanks 
 Model_low_dur1 <- lme(low_dur ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_low_dur1)
 Model_low_dur2 <- lme(low_dur ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
@@ -179,46 +134,33 @@ anova(Model_low_dur1, Model_low_dur2)
 
 
 
-###mid duration
+### Time spent in the mid zone ('mid duration')
 ```{r, echo=FALSE}
 
-Model_mid_dur <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_mid_dur)
-hist(residuals(Model_mid_dur))
-
-Old_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_mid_dur
+#Checking normality assumptions
+Model_Mid_Dur <- lmer(mid_dur ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)  
+hist(residuals(Model_Mid_Dur)) 
 
 
-Tall_mid_dur <- rpt(mid_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_mid_dur
+#Writing a function for calculating repeatability for time spent in mid zone
+rpt_mid_dur <- function(df) {
+  x <- rpt(mid_dur ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
+}
+
+#Calculating repeatabilities 
+rpt_mid_dur(Old_Tanks) -> Old_mid_dur 
+rpt_mid_dur(Tall_Tanks) -> Tall_mid_dur 
+rpt_mid_dur(Anxiety_Joined) -> Joined_mid_dur 
+
+#Obtaining differences between repeatabilities 
+Old_mid_dur_boot <- unlist_rptr(Old_mid_dur) 
+Tall_mid_dur_boot <- unlist_rptr(Tall_mid_dur) 
+Diff_boot_mid_dur <- difference_boot(Old_mid_dur_boot,Tall_mid_dur_boot) 
+q3 <- quantiles_diff_boot(Diff_boot_mid_dur) 
+m3 <- mean(Diff_boot_mid_dur) 
 
 
-Joined_mid_dur <- rpt(mid_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Joined_mid_dur
-
-
-
-###Analysis to find differences
-
-Old_mid_dur_boot<-unlist(Old_mid_dur$R_boot)
-hist(Old_mid_dur_boot, breaks = 50)
-Tall_mid_dur_boot<-unlist(Tall_mid_dur$R_boot)
-hist(Tall_mid_dur_boot, breaks = 50)
-
-Diff_boot_mid_dur <- Old_mid_dur_boot - Tall_mid_dur_boot
-hist(Diff_boot_mid_dur, breaks = 50)
-
-q3 <- quantile(Diff_boot_mid_dur, c(0.025, 0.975))
-q3#2.5% crosses 0, not significant?
-m3 <- mean(Diff_boot_mid_dur)
-m3
-
-
-# Variance models
+# Calculating difference in variance between short tanks and tall tanks 
 Model_mid_dur1 <- lme(mid_dur ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_mid_dur1)
 Model_mid_dur2 <- lme(mid_dur ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
@@ -229,66 +171,37 @@ anova(Model_mid_dur1, Model_mid_dur2)
 
 
 
-###high duration
+###Time spent in the high zone ('high duration')
 ```{r, echo=FALSE}
 
 Model_high_dur <- lmer(high_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_high_dur)
-tab_model(Model_high_dur)
-hist(residuals(Model_high_dur))
+hist(residuals(Model_high_dur)) #Our normality assumption is not met, distribution skewed
 
-Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_high_dur2)
-tab_model(Model_high_dur2)
-hist(residuals(Model_high_dur2))
+Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)#attempting a square root transformation
+hist(residuals(Model_high_dur2))#square root transformation is considered sufficient to meet normal distribution assumption, will be used for this parameter
 
 
-Old_high_dur <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_high_dur
-
-Old_high_dur2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_high_dur2
-
-Tall_high_dur <- rpt(high_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_high_dur
-
-Tall_high_dur2 <- rpt(sqrt(high_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_high_dur2
+#Writing a function for calculating repeatability for time spent in high zone
+rpt_high_dur <- function(df) {
+  x <- rpt(sqrt(high_dur) ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
+}
 
 
-Joined_high_dur <- rpt(high_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Joined_high_dur
+#Calculating repeatabilities 
+rpt_high_dur(Old_Tanks) -> Old_high_dur2 
+rpt_high_dur(Tall_Tanks) -> Tall_high_dur2 
+rpt_high_dur(Anxiety_Joined) -> Joined_high_dur2 
+
+#Obtaining differences between repeatabilities 
+Old_high_dur_boot <- unlist_rptr(Old_high_dur2) 
+Tall_high_dur_boot <- unlist_rptr(Tall_high_dur2) 
+Diff_boot_high_dur <- difference_boot(Tall_high_dur_boot,Old_high_dur_boot) 
+q4 <- quantiles_diff_boot(Diff_boot_high_dur) 
+m4 <- mean(Diff_boot_high_dur) 
 
 
+# Calculating difference in variance between short tanks and tall tanks 
 
-# modeling 
-Model_high_durA <- lme(sqrt(high_dur) ~ Tank, random = ~ 1| Fish_ID, data = Anxiety_Joined)
-summary(Model_high_durA)
-Model_high_durB <- lme(sqrt(high_dur) ~ Tank, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
-summary(Model_high_durB)
-anova(Model_high_durA, Model_high_durB)
-
-###Analysis to find differences
-
-Old_high_dur2_boot<-unlist(Old_high_dur2$R_boot)
-hist(Old_high_dur2_boot, breaks = 50)
-Tall_high_dur2_boot<-unlist(Tall_high_dur2$R_boot)
-hist(Tall_high_dur2_boot, breaks = 50)
-
-Diff_boot_high_dur2 <- Tall_high_dur2_boot - Old_high_dur2_boot
-hist(Diff_boot_high_dur2, breaks = 50)
-
-q4 <- quantile(Diff_boot_high_dur2, c(0.025, 0.975))
-q4#2.5% crosses 0, not significant?
-m4 <- mean(Diff_boot_high_dur2)
-m4
-
-# Variance models
 Model_high_dur1a <- lme(sqrt(high_dur) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_high_dur1a)
 Model_high_dur2a <- lme(sqrt(high_dur) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
@@ -298,75 +211,38 @@ anova(Model_high_dur1a, Model_high_dur2a)
 
 
 
-###freeze dur 
+### Time spent freezing
 ```{r, echo=FALSE}
 Model_freezing_dur <- lmer(freezing_dur ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_freezing_dur)
-hist(residuals(Model_freezing_dur))
-
+hist(residuals(Model_freezing_dur))#Our normality assumption is not met
 
 Model_freezing_dur2 <- lmer(sqrt(freezing_dur) ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_freezing_dur2)
-hist(residuals(Model_freezing_dur2))
+hist(residuals(Model_freezing_dur2))#Our normality assumption is still not satisfied
 
 Model_freezing_dur3 <- lmer(log(freezing_dur+1) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_freezing_dur3)
-tab_model(Model_freezing_dur3)
-hist(residuals(Model_freezing_dur3))
+hist(residuals(Model_freezing_dur3))#Our normality assumption is deemed adequate
 
+#Writing a function for calculating repeatability for time spent freezing
+rpt_freezing_dur <- function(df) {
+  x <- rpt(log(freezing_dur+1) ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
+}
 
-Old_freezing_dur <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_freezing_dur
+#Calculating repeatabilities 
+rpt_freezing_dur(Old_Tanks) -> Old_freezing_dur3 
+rpt_freezing_dur(Tall_Tanks) -> Tall_freezing_dur3 
+rpt_freezing_dur(Anxiety_Joined) -> Joined_freezing_dur 
 
-Old_freezing_dur2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_freezing_dur2
-
-Old_freezing_dur3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_freezing_dur3
-
-plot(Old_freezing_dur)
-
-Tall_freezing_dur <- rpt(freezing_dur ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_freezing_dur
-
-Tall_freezing_dur2 <- rpt(sqrt(freezing_dur) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_freezing_dur2
-
-Tall_freezing_dur3 <- rpt(log(freezing_dur+1) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_freezing_dur3
-
-Joined_freezing_dur <- rpt(freezing_dur ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Joined_freezing_dur
-
-
-
-###Analysis to find differences
-
-Old_freezing_dur3_boot<-unlist(Old_freezing_dur3$R_boot)
-hist(Old_freezing_dur3_boot, breaks = 50)
-Tall_freezing_dur3_boot<-unlist(Tall_freezing_dur3$R_boot)
-hist(Tall_freezing_dur3_boot, breaks = 50)
-
-Diff_boot_freezing_dur3 <- Tall_freezing_dur3_boot - Old_freezing_dur3_boot
-hist(Diff_boot_freezing_dur3, breaks = 50)
-
-q5 <- quantile(Diff_boot_freezing_dur3, c(0.025, 0.975))#2.5% crosses 0, not significant?
-q5
-m5 <- mean(Diff_boot_freezing_dur3)
-m5
+#Obtaining differences between repeatabilities 
+Old_freezing_dur_boot <- unlist_rptr(Old_freezing_dur3) 
+Tall_freezing_dur_boot <- unlist_rptr(Tall_freezing_dur3) 
+Diff_boot_freezing_dur <- difference_boot(Tall_freezing_dur_boot,Old_freezing_dur_boot) 
+q5 <- quantiles_diff_boot(Diff_boot_freezing_dur) 
+m5 <- mean(Diff_boot_freezing_dur) 
 
 
 #Variance models
 Model_freezing_dur1a <- lme(log(freezing_dur+1) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_freezing_dur1a)
-tab_model(Model_freezing_dur1a)
 Model_freezing_dur2a <- lme(log(freezing_dur+1) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
 summary(Model_freezing_dur2a)
 anova(Model_freezing_dur1a, Model_freezing_dur2a)
@@ -375,43 +251,25 @@ anova(Model_freezing_dur1a, Model_freezing_dur2a)
 #latency to high
 ```{r}
 Model_latency <- lmer(latency_high ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_latency)
 hist(residuals(Model_latency)) 
 
-# Model_latency2 <- lmer(sqrt(latency_high) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-# summary(Model_latency2)
-# hist(residuals(Model_latency2)) #Transformation seems better?
-
-Old_latency <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_latency
+#Writing a function for calculating repeatability for latency to the high zone
+rpt_latency <- function(df) {
+  x <- rpt(latency_high ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
+}
 
 
+#Calculating repeatabilities 
+rpt_latency(Old_Tanks) -> Old_latency
+rpt_latency(Tall_Tanks) -> Tall_latency
+rpt_latency(Anxiety_Joined) -> Joined_latency
 
-Tall_latency <- rpt(latency_high ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_latency
-plot(Tall_latency)
-
-
-Joined_latency <- rpt(latency_high ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Joined_latency
-
-###Analysis to find differences
-
-Old_latency_boot<-unlist(Old_latency$R_boot)
-hist(Old_latency_boot, breaks = 50)
-Tall_latency_boot<-unlist(Tall_latency$R_boot)
-hist(Tall_latency_boot, breaks = 50)
-
-Diff_boot_latency <- Tall_latency_boot - Old_latency_boot
-hist(Diff_boot_latency, breaks = 50)
-
-q6 <- quantile(Diff_boot_latency, c(0.025, 0.975)) #2.5% crosses 0, not significant?
-q6
-m6 <- mean(Diff_boot_latency)
-m6
+#Obtaining differences between repeatabilities 
+Old_latency_boot <- unlist_rptr(Old_latency) 
+Tall_latency_boot <- unlist_rptr(Tall_latency) 
+Diff_boot_latency <- difference_boot(Tall_latency_boot,Old_latency_boot) 
+q6 <- quantiles_diff_boot(Diff_boot_latency) 
+m6 <- mean(Diff_boot_latency) 
 
 # Variance models
 Model_latency_high1a <- lme(latency_high ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined, na.action=na.omit)
@@ -424,265 +282,41 @@ anova(Model_latency_high1a, Model_latency_high2a)
 #entries into high
 ```{r}
 Model_freq_high <- lmer(freq_high ~ Tank + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_freq_high)
-hist(residuals(Model_freq_high)) #needs transformation, right skewed heavily
+hist(residuals(Model_freq_high)) #assumptions of normality not met
 
 Model_freq_high2 <- lmer(sqrt(freq_high) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-summary(Model_freq_high2)
-hist(residuals(Model_freq_high2))
+hist(residuals(Model_freq_high2))#square root transformation deemed adequate
 
-Old_freq_high <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Old_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Old_freq_high
-plot(Old_freq_high)
-
-
-Tall_freq_high <- rpt(sqrt(freq_high) ~ (1 | Fish_ID), grname = "Fish_ID", data = Tall_Tanks, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Tall_freq_high
-plot(Tall_freq_high)
+#Writing a function for calculating repeatability for latency to the high zone
+rpt_freq <- function(df) {
+  x <- rpt(sqrt(freq_high) ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
+}
 
 
-Joined_freq_high <- rpt(sqrt(freq_high) ~ Tank + (1 | Fish_ID), grname = "Fish_ID", data = Anxiety_Joined, datatype = "Gaussian", 
-    nboot = 10000, npermut = 10000)
-Joined_freq_high
+#Calculating repeatabilities 
+rpt_freq(Old_Tanks) -> Old_freq_high
+rpt_freq(Tall_Tanks) -> Tall_freq_high
+rpt_freq(Anxiety_Joined) -> Joined_freq_high
 
-###Analysis to find differences
 
-Old_freq_high_boot<-unlist(Old_freq_high$R_boot)
-hist(Old_freq_high_boot, breaks = 50)
-Tall_freq_high_boot<-unlist(Tall_freq_high$R_boot)
-hist(Tall_freq_high_boot, breaks = 50)
-
-Diff_boot_freq_high <- Old_freq_high_boot - Tall_freq_high_boot
-hist(Diff_boot_freq_high, breaks = 50)
-
-q7 <- quantile(Diff_boot_freq_high, c(0.025, 0.975)) 
-q7
-m7 <- mean(Diff_boot_freq_high)
-m7
+#Obtaining differences between repeatabilities 
+Old_freq_boot <- unlist_rptr(Old_freq_high) 
+Tall_freq_boot <- unlist_rptr(Tall_freq_high) 
+Diff_boot_freq <- difference_boot(Old_freq_boot,Tall_freq_boot) 
+q7 <- quantiles_diff_boot(Diff_boot_freq) 
+m7 <- mean(Diff_boot_freq) 
 
 
 #Variance models
 Model_freq_high1a <- lme(sqrt(freq_high) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, data = Anxiety_Joined)
 summary(Model_freq_high1a)
-tab_model(Model_freq_high1a)
 Model_freq_high2a <- lme(sqrt(freq_high) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, weights = varIdent(form=~1|Tank), data = Anxiety_Joined)
 summary(Model_freq_high2a)
-tab_model(Model_freq_high2a)
 anova(Model_freq_high1a, Model_freq_high2a)
 ```
 
 
 
-
-
-#Plotting Repeatabilities 
-
-Total distance
-```{r, echo=FALSE}
-Tot_Dist_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_Tot_Dist$R$Fish_ID,Tall_Tot_Dist$R$Fish_ID, m1),
-  ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`,-0.01),
-  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`, 0.38),
-Endpoint = c("Total distance", "Total distance", "Total distance"))
-  
-Tot_Dist_rptr
-
-plot_Tot_Dist_rptr <- ggplot(Tot_Dist_rptr, aes(x=Condition, y=r, colour=Condition)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
-  scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
-  geom_hline(yintercept = 0, lty = "dotted") +
-  labs(y = "r") +
-  labs(title = "Repeatability estimates", subtitle = "Total distance")+
-  coord_flip()+
-   theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank())+
-  ylim(-0.2, 0.8) +
-  theme(axis.title.x = element_blank(),
-        axis.text.x = element_blank())+
-  theme(legend.position="top")
-  
-plot_Tot_Dist_rptr
-```
-
-
-
-Low duration
-```{r, echo=FALSE}
-low_dur_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_low_dur$R$Fish_ID,Tall_low_dur$R$Fish_ID, m2),
-  ci.lb = c(Old_low_dur$CI_emp$`2.5%`,Tall_low_dur$CI_emp$`2.5%`, 0.09),
-  ci.ub = c(Old_low_dur$CI_emp$`97.5%`,Tall_low_dur$CI_emp$`97.5%`, 0.54),
-Endpoint = c("Time spent in low zone", "Time spent in low zone", "Time spent in low zone"))
-  
-low_dur_rptr
-
-plot_low_dur_rptr <- ggplot(low_dur_rptr, aes(x=Condition, y=r, colour=Condition)) +
-   geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
-  scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
-  geom_hline(yintercept = 0, lty = "dotted") +
-  labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "Time spent in low zone")+
-  coord_flip()+
-   theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank())+
-   ylim(-0.2, 0.8) + 
-  theme(legend.position = "none")+
-  theme(axis.title.x = element_blank(),
-        axis.text.x = element_blank())
-plot_low_dur_rptr
-```
-
-Middle duration
-```{r, echo=FALSE}
-mid_dur_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_mid_dur$R$Fish_ID,Tall_mid_dur$R$Fish_ID, m3),
-  ci.lb = c(Old_mid_dur$CI_emp$`2.5%`,Tall_mid_dur$CI_emp$`2.5%`, -0.13),
-  ci.ub = c(Old_mid_dur$CI_emp$`97.5%`,Tall_mid_dur$CI_emp$`97.5%`,0.21),
-Endpoint = c("Time spent in mid zone", "Time spent in mid zone", "Time spent in mid zone"))
-  
-mid_dur_rptr
-
-plot_mid_dur_rptr <- ggplot(mid_dur_rptr, aes(x=Condition, y=r, colour=Condition)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
-  scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
-  geom_hline(yintercept = 0, lty = "dotted") +
-  labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "Time spent in middle zone")+
-  coord_flip()+
-   theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank())+
-   ylim(-0.2, 0.8) + theme(legend.position = "none")+ 
-  theme(legend.position = "none")+
-  theme(axis.title.x = element_blank(),
-        axis.text.x = element_blank())
-plot_mid_dur_rptr
-```
-
-High duration
-```{r, echo=FALSE}
-high_dur_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_high_dur2$R$Fish_ID,Tall_high_dur2$R$Fish_ID, m4),
-  ci.lb = c(Old_high_dur2$CI_emp$`2.5%`,Tall_high_dur2$CI_emp$`2.5%`, -0.09),
-  ci.ub = c(Old_high_dur2$CI_emp$`97.5%`,Tall_high_dur2$CI_emp$`97.5%`, 0.22),
-Endpoint = c("Time spent in high zone", "Time spent in high zone", "Time spent in high zone"))
-  
-high_dur_rptr
-
-plot_high_dur_rptr <- ggplot(high_dur_rptr, aes(x=Condition, y=r, colour=Condition)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
-scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
-  geom_hline(yintercept = 0, lty = "dotted") +
-  labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "Time spent in high zone")+
-  coord_flip()+
-   theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank())+
-   ylim(-0.2, 0.8) + 
-  theme(legend.position = "none")+
-  theme(axis.title.x = element_blank(),
-        axis.text.x = element_blank())
-plot_high_dur_rptr
-```
-
-Freezing duration
-```{r, echo=FALSE}
-freezing_dur_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_freezing_dur3$R$Fish_ID,Tall_freezing_dur3$R$Fish_ID, m5),
-  ci.lb = c(Old_freezing_dur3$CI_emp$`2.5%`,Tall_freezing_dur3$CI_emp$`2.5%`, -0.20),
-  ci.ub = c(Old_freezing_dur3$CI_emp$`97.5%`,Tall_freezing_dur3$CI_emp$`97.5%`, 0.20),
-Endpoint = c("Time spent freezing", "Time spent freezing", "Time spent freezing"))
-  
-freezing_dur_rptr
-
-plot_freezing_dur_rptr <- ggplot(freezing_dur_rptr, aes(x=Condition, y=r, colour=Condition)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
-scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
-  geom_hline(yintercept = 0, lty = "dotted") +
-  labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "Time spent freezing")+
-  coord_flip()+
-   theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank())+
-  ylim(-0.2, 0.8) + 
-  theme(legend.position = "none")+
-  theme(axis.title.x = element_blank(),
-        axis.text.x = element_blank())
-plot_freezing_dur_rptr
-```
-
-Entries into high zone
-```{r}
-frequency_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_freq_high$R$Fish_ID,Tall_freq_high$R$Fish_ID, m7),
-  ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`, -0.02),
-  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.35),
-Endpoint = c("Entries into high zone", "Entries into high zone", "Entries into high zone"))
-  
-frequency_rptr
-
-plot_frequency_rptr <- ggplot(frequency_rptr, aes(x=Condition, y=r, colour=Condition)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
-scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
-  geom_hline(yintercept = 0, lty = "dotted") +
-  labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "Entries into high zone")+
-  coord_flip()+
-   theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank())+
-   ylim(-0.2, 0.8) + 
-  theme(legend.position = "none")+
-  theme(axis.title.x = element_blank(),
-        axis.text.x = element_blank())
-plot_frequency_rptr
-```
-
-
-Latency to high
-```{r}
-latency_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_latency$R$Fish_ID,Tall_latency$R$Fish_ID, m6),
-  ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`, 0.14),
-  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.57),
-Endpoint = c("Latency to high zone", "Latency to high zone", "Latency to high zone"))
-
-latency_rptr
-
-plot_latency_rptr <- ggplot(latency_rptr, aes(x=Condition, y=r, colour=Condition)) +
-  geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-  geom_point(aes(x = Condition, y = r), position = position_dodge(0.3),size=3)+
-scale_color_manual(values=c("#000000", "#339900", "#FF9900"))+
-  geom_hline(yintercept = 0, lty = "dotted") +
-  labs(x = "Tank Type", y = "r") +
-  labs(subtitle = "Latency to high zone")+
-  coord_flip()+
-   theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank())+
-  ylim(-0.2, 0.8) + 
-  theme(legend.position = "none")
-plot_latency_rptr
-```
 
 
 
@@ -808,6 +442,7 @@ Violin_entries
 
 ggsave(path = "Plots", file = "Entries to high.jpeg", limitsize = FALSE)
 
+
 ###Alternate design (use functions for other plots)
 
 Test <-  ggplot(data = Anxiety_Joined,aes(x = Tank, y = freq_high, fill = Tank))+
@@ -826,51 +461,15 @@ Test <-  ggplot(data = Anxiety_Joined,aes(x = Tank, y = freq_high, fill = Tank))
 Test
 ```
 
-#Testing functions for new design of plots
+
+
+Tables using stargazer
 ```{r}
-violin_plot_custom_hamza <- function(df,param,lab1,lab2) {
-ggplot(data = df,aes(x = Tank, y = param, fill = Tank))+
- scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
-  geom_violin(alpha=0.4, position = position_dodge(width = .75),size=1,color="black")+
-  geom_boxplot(notch = TRUE,  outlier.size = -1, color="black",lwd=1.2, alpha = 0.7)+
-  geom_point( shape = 21,size=2, position = position_jitterdodge(), color="black",alpha=1)+
-  theme_pubr()+
-  labs(title=lab1,y = lab2)+
-  rremove("legend.title")+
-  theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"),legend.position = c(0.92, 0.85))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +font("legend.text",size = 15)+
-    scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
-  theme(legend.position = "none")+
-  theme(axis.title.x=element_blank())
-    
-}
+stargazer(Model_Tot_Dist1, Model_low_dur1, Model_mid_dur1, Model_high_dur1a, Model_freezing_dur1a, Model_latency_high1a, Model_freq_high1a, omit.stat = c("bic","aic","ll"),  covariate.labels = c("Short Tank", "Tall Tank", "Male"), align = TRUE, type= "html",dep.var.labels= c("Total distance travelled", "Time spent in low zone", "Time spent in mid zone", "Time spent in high zone", "Time spent freezing", "Latency to high zone", "Entries to high zone"),dep.var.caption= "Behavioral parameters",style="all", out = "Table.html")
 
-low_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined,Anxiety_Joined$low_dur,"Time spent in low zone", "Time spent (seconds)")
-
-
-
-tot_dist_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$tot_dist, "Total distance travelled", "Distance (cm)")
-
-
-
-mid_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$mid_dur, "Time spent in mid zone", "Seconds")
-
-
-high_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$high_dur, "Time spent in high zone", "Seconds")
-
-
-freezing_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, log(Anxiety_Joined$freezing_dur+1), "Time spent freezing", "Seconds")
-
-
-freq_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$freq_high, "Frequency of visits to high zone", "Visits")
-freq_violin
-
-latency_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$latency_high, "Latency to the high zone", "Seconds")
-
-#Joining
-
-Joined_violins_new_design <- tot_dist_violin + low_dur_violin + mid_dur_violin + high_dur_violin + freezing_dur_violin + latency_violin+freq_violin + plot_layout(ncol = 2, nrow=4)
-Joined_violins_new_design
 ```
+
+
 
 
 

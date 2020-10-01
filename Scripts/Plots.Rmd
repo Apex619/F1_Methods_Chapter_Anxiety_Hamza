@@ -1,0 +1,210 @@
+---
+title: "Plots"
+author: "Hamza"
+date: "01/10/2020"
+output: html_document
+---
+
+### Load packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#checks for installation and loads packages
+pacman::p_load(lmerTest,ggThemeAssist,rptR,lme4,readxl, tidyr, dplyr, magrittr, lubridate, stringr, purrr,
+               sjPlot,ggplot2,lubridate,wesanderson,ggbeeswarm,emmeans,patchwork,viridis,nlme,Rmisc,ggpubr,
+               stargazer)
+
+```
+
+#Creating tibbles to use in plotting repeatabilities 
+
+Total distance
+```{r, echo=FALSE}
+Tot_Dist_rptr <- tibble(
+  Condition = c("Short", "Tall", "Contrast"),
+  r = c(Old_Tot_Dist$R$Fish_ID,Tall_Tot_Dist$R$Fish_ID, m1),
+  ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`,-0.01),
+  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`, 0.38),
+Endpoint = c("Total distance", "Total distance", "Total distance"))
+  
+Tot_Dist_rptr
+```
+
+
+
+Low duration
+```{r, echo=FALSE}
+low_dur_rptr <- tibble(
+  Condition = c("Short", "Tall", "Contrast"),
+  r = c(Old_low_dur$R$Fish_ID,Tall_low_dur$R$Fish_ID, m2),
+  ci.lb = c(Old_low_dur$CI_emp$`2.5%`,Tall_low_dur$CI_emp$`2.5%`, 0.0005054131),
+  ci.ub = c(Old_low_dur$CI_emp$`97.5%`,Tall_low_dur$CI_emp$`97.5%`, 0.3558383921 ),
+Endpoint = c("Time spent in low zone", "Time spent in low zone", "Time spent in low zone"))
+  
+low_dur_rptr
+```
+
+Middle duration
+```{r, echo=FALSE}
+mid_dur_rptr <- tibble(
+  Condition = c("Short", "Tall", "Contrast"),
+  r = c(Old_mid_dur$R$Fish_ID,Tall_mid_dur$R$Fish_ID, m3),
+  ci.lb = c(Old_mid_dur$CI_emp$`2.5%`,Tall_mid_dur$CI_emp$`2.5%`, -0.13),
+  ci.ub = c(Old_mid_dur$CI_emp$`97.5%`,Tall_mid_dur$CI_emp$`97.5%`,0.21),
+Endpoint = c("Time spent in mid zone", "Time spent in mid zone", "Time spent in mid zone"))
+  
+mid_dur_rptr
+```
+
+High duration
+```{r, echo=FALSE}
+high_dur_rptr <- tibble(
+  Condition = c("Short", "Tall", "Contrast"),
+  r = c(Old_high_dur2$R$Fish_ID,Tall_high_dur2$R$Fish_ID, m4),
+  ci.lb = c(Old_high_dur2$CI_emp$`2.5%`,Tall_high_dur2$CI_emp$`2.5%`, -0.09),
+  ci.ub = c(Old_high_dur2$CI_emp$`97.5%`,Tall_high_dur2$CI_emp$`97.5%`, 0.22),
+Endpoint = c("Time spent in high zone", "Time spent in high zone", "Time spent in high zone"))
+  
+high_dur_rptr
+```
+
+Freezing duration
+```{r, echo=FALSE}
+freezing_dur_rptr <- tibble(
+  Condition = c("Short", "Tall", "Contrast"),
+  r = c(Old_freezing_dur3$R$Fish_ID,Tall_freezing_dur3$R$Fish_ID, m5),
+  ci.lb = c(Old_freezing_dur3$CI_emp$`2.5%`,Tall_freezing_dur3$CI_emp$`2.5%`, -0.20),
+  ci.ub = c(Old_freezing_dur3$CI_emp$`97.5%`,Tall_freezing_dur3$CI_emp$`97.5%`, 0.20),
+Endpoint = c("Time spent freezing", "Time spent freezing", "Time spent freezing"))
+  
+freezing_dur_rptr
+```
+
+Entries into high zone
+```{r}
+frequency_rptr <- tibble(
+  Condition = c("Short", "Tall", "Contrast"),
+  r = c(Old_freq_high$R$Fish_ID,Tall_freq_high$R$Fish_ID, m7),
+  ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`, -0.02),
+  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.35),
+Endpoint = c("Entries into high zone", "Entries into high zone", "Entries into high zone"))
+  
+frequency_rptr
+```
+
+
+Latency to high
+```{r}
+latency_rptr <- tibble(
+  Condition = c("Short", "Tall", "Contrast"),
+  r = c(Old_latency$R$Fish_ID,Tall_latency$R$Fish_ID, m6),
+  ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`, 0.14),
+  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.57),
+Endpoint = c("Latency to high zone", "Latency to high zone", "Latency to high zone"))
+
+latency_rptr
+```
+
+Joining tibbles to use in plotting 
+```{r}
+
+#Joining all tibbles for overall
+Overall_Data_Joined1 <- full_join(Tot_Dist_rptr, low_dur_rptr)
+Overall_Data_Joined2 <- full_join(Overall_Data_Joined1, mid_dur_rptr)
+Overall_Data_Joined3 <- full_join(Overall_Data_Joined2, high_dur_rptr)
+Overall_Data_Joined4 <- full_join(Overall_Data_Joined3, freezing_dur_rptr)
+Overall_Data_Joined5 <- full_join(Overall_Data_Joined4, frequency_rptr)
+Overall_Data_Joined_Final <- full_join(Overall_Data_Joined5, latency_rptr)
+
+Overall_Data_Joined_Final
+
+#Joining all tibbles for sex
+Overall_Data_Joined1 <- full_join(Tot_Dist_rptr_sex, low_dur_rptr_sex)
+Overall_Data_Joined2 <- full_join(Overall_Data_Joined1, mid_dur_rptr_sex)
+Overall_Data_Joined3 <- full_join(Overall_Data_Joined2, high_dur_rptr_sex)
+Overall_Data_Joined4 <- full_join(Overall_Data_Joined3, freezing_dur_rptr_sex)
+Overall_Data_Joined5 <- full_join(Overall_Data_Joined4, freq_high_rptr_sex)
+Overall_Data_Joined_Final_sex <- full_join(Overall_Data_Joined5, latency_high_rptr_sex)
+
+Overall_Data_Joined_Final_sex
+
+#Renaming facets (for later use in plots)
+
+sex_labs <- c("Female", "Male") 
+names(sex_labs) <- c("female", "male")
+
+tank_labs <- c("Short", "Tall")
+names(tank_labs) <- c("Old", "Tall")
+```
+
+#Overall forest plot showing repeatabilities of tall and short tanks
+```{r}
+Overall_New_plot <- ggplot(Overall_Data_Joined_Final, aes(x=Endpoint, y=r, colour=Condition)) +
+geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
+geom_hline(yintercept = 0, lty = "dotted") +
+coord_flip()+
+ylim(-0.2, 0.9)+
+  theme(legend.position = "bottom")+
+   theme(axis.title.y=element_blank())+
+   theme(legend.title=element_blank())+
+  scale_color_manual(values=c("#000000", "#DD8D29", "#E2D200"))+
+    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"),legend.position = c(0.92, 0.85))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +font("legend.text",size = 15)+
+    theme(legend.position = "none")+
+  theme(axis.title.y=element_blank())
+ 
+
+
+Overall_New_plot
+
+ggsave(path = "Plots", file = "Overall_plot_new.jpeg", limitsize = FALSE)
+```
+
+
+
+#Generating custom designed violin plots to display raw distributions of behavioral responses
+```{r}
+#Function for generating a custom designed violin plot
+violin_plot_custom_hamza <- function(df,param,lab1,lab2) { #only need to add dataframe, parameter, and labels for axes
+ggplot(data = df,aes(x = Tank, y = param, fill = Tank))+
+ scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+ #color schee
+  geom_violin(alpha=0.4, position = position_dodge(width = .75),size=1,color="black")+ #violin plot to display distribution density
+  geom_boxplot(notch = TRUE,  outlier.size = -1, color="black",lwd=1.2, alpha = 0.7)+#boxplot to display quantiles
+  geom_point( shape = 21,size=2, position = position_jitterdodge(), color="black",alpha=1)+#scatterplot of individual data points
+  theme_pubr()+
+  labs(title=lab1,y = lab2)+#labels
+  rremove("legend.title")+
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"),legend.position = c(0.92, 0.85))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +font("legend.text",size = 15)+
+    scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+#formatting 
+  theme(legend.position = "none")+
+  theme(axis.title.x=element_blank())
+    
+}
+
+low_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined,Anxiety_Joined$low_dur,"Time spent in low zone", "Seconds")
+
+
+tot_dist_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$tot_dist, "Total distance travelled", "Distance (cm)")
+
+
+
+mid_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$mid_dur, "Time spent in mid zone", "Seconds")
+
+
+high_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$high_dur, "Time spent in high zone", "Seconds")
+
+
+freezing_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, log(Anxiety_Joined$freezing_dur+1), "Time spent freezing", "Seconds")
+
+
+freq_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$freq_high, "Frequency of visits to high zone", "Visits")
+freq_violin
+
+latency_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$latency_high, "Latency to the high zone", "Seconds")
+
+#Joining plots together using patchwork to create one main plot
+
+Joined_violins_new_design <- tot_dist_violin + low_dur_violin + mid_dur_violin + high_dur_violin + freezing_dur_violin + latency_violin+freq_violin + plot_layout(ncol = 2, nrow=4)
+Joined_violins_new_design
+```
+

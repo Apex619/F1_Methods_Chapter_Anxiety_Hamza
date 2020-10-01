@@ -1,0 +1,17 @@
+Endpoint,Count
+Time spent in low zone,17
+Distance travelled in low zone,2
+Entries into low zone,11
+Time spent in mid zone,8
+Distance travelled in mid zone,1
+Entries into mid zone,4
+Time spent in high zone,43
+Distance travelled in high zone,4
+Entries into high zone,33
+Latency to high zone,19
+Total distance travelled/exploration,29
+Freezing duration/frequency,30
+Erratic movements,10
+Max speed,8
+Turn angle,10
+Velocity,7
