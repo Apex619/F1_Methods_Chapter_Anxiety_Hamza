@@ -1,0 +1,334 @@
+---
+title: "Supplemental Information"
+author: "Hamza"
+date: "8/10/2020"
+output: html_document
+---
+
+### Load packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#checks for installation and loads packages
+pacman::p_load(lmerTest,ggThemeAssist,rptR,lme4,readxl, tidyr, dplyr, magrittr, lubridate, stringr, purrr,
+               sjPlot,ggplot2,lubridate,wesanderson,ggbeeswarm,emmeans,patchwork,viridis,nlme,Rmisc,ggpubr,
+               stargazer)
+
+```
+
+#Obtaining individual means and plotting them (tank only)
+```{r}
+#Total distance
+
+individual_means_tot_dist_tank <- Anxiety_Joined %>%
+    group_by(Fish_ID, Tank) %>%
+    dplyr::summarize(Mean = mean(tot_dist, na.rm=TRUE))
+
+individual_means_tot_dist_tank
+
+indiv_tot_dist_tank <-ggplot(individual_means_tot_dist_tank, aes(Tank, Mean, fill=Tank)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+      scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+  scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean distance (cm)")+
+   labs(title = "Total distance travelled")
+
+indiv_tot_dist_tank
+
+
+#Low Zone
+individual_means_low_dur_tank <- Anxiety_Joined %>%
+    group_by(Fish_ID, Tank) %>%
+    dplyr::summarize(Mean = mean(low_dur, na.rm=TRUE))
+
+
+indiv_low_dur_tank <-ggplot(individual_means_low_dur_tank, aes(Tank, Mean, fill=Tank)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+      scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+  scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean seconds")+
+   labs(title = "Time spent in low zone")
+
+indiv_low_dur_tank
+
+#Mid Zone
+individual_means_mid_dur_tank <- Anxiety_Joined %>%
+    group_by(Fish_ID, Tank) %>%
+    dplyr::summarize(Mean = mean(mid_dur, na.rm=TRUE))
+
+
+indiv_mid_dur_tank <-ggplot(individual_means_mid_dur_tank, aes(Tank, Mean, fill=Tank)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+      scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+  scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean seconds")+
+   labs(title = "Time spent in mid zone")
+
+indiv_mid_dur_tank
+
+
+#High Zone
+individual_means_high_dur_tank <- Anxiety_Joined %>%
+    group_by(Fish_ID, Tank) %>%
+    dplyr::summarize(Mean = mean(high_dur, na.rm=TRUE))
+
+indiv_high_dur_tank <-ggplot(individual_means_high_dur_tank, aes(Tank, Mean, fill=Tank)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+      scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+  scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean seconds")+
+   labs(title = "Time spent in high zone")
+
+indiv_high_dur_tank
+
+#Freezing
+individual_means_freezing_dur_tank <- Anxiety_Joined %>%
+    group_by(Fish_ID, Tank) %>%
+    dplyr::summarize(Mean = mean(freezing_dur, na.rm=TRUE))
+
+indiv_freezing_dur_tank <-ggplot(individual_means_freezing_dur_tank, aes(Tank, Mean, fill=Tank)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+      scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+  scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean seconds")+
+   labs(title = "Time spent freezing")
+
+indiv_freezing_dur_tank
+
+
+#Latency high
+
+
+individual_means_latency_high_tank <- Anxiety_Joined %>%
+    group_by(Fish_ID, Tank) %>%
+    dplyr::summarize(Mean = mean(latency_high, na.rm=TRUE))
+
+
+indiv_latency_high_tank <-ggplot(individual_means_latency_high_tank, aes(Tank, Mean, fill=Tank)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+      scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+  scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean latency (seconds)")+
+   labs(title = "Latency to high zone")
+
+indiv_latency_high_tank
+
+#Entries to high
+individual_means_entries_tank <- Anxiety_Joined %>%
+    group_by(Fish_ID, Tank) %>%
+    dplyr::summarize(Mean = mean(freq_high, na.rm=TRUE))
+
+indiv_entries_tank <-ggplot(individual_means_entries_tank, aes(Tank, Mean, fill=Tank)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+      scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+  scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean entries")+
+   labs(title = "Entries into high zone")
+
+indiv_entries_tank
+
+```
+
+
+
+#Obtaining individual means and plotting them (sex and tank)
+```{r}
+
+
+
+#Total distance
+
+individual_means_tot_dist <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(tot_dist, na.rm=TRUE))
+
+individual_means_tot_dist
+
+indiv_tot_dist <-ggplot(individual_means_tot_dist, aes(Sex, Mean, fill=Sex)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean distance (cm)")+
+  labs(title = "Total distance travelled")
+
+indiv_tot_dist
+
+ggsave(path = "Plots", file = "indiv_tot_dist.jpeg", limitsize = FALSE)
+
+
+#Low Zone
+individual_means_low <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(low_dur, na.rm=TRUE))
+
+indiv_low <-ggplot(individual_means_low, aes(Sex, Mean, fill=Sex)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean seconds")+
+  labs(title = "Time spent in low zone")
+
+ggsave(path = "Plots", file = "indiv_low_duration.jpeg", limitsize = FALSE)
+
+#Mid Zone
+individual_means_mid <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(mid_dur, na.rm=TRUE))
+
+indiv_mid <-ggplot(individual_means_mid, aes(Sex, Mean, fill=Sex)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean seconds")+
+  labs(title = "Time spent in mid zone")
+
+ggsave(path = "Plots", file = "indiv_mid_dur.jpeg", limitsize = FALSE)
+
+#High Zone
+individual_means_high <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(high_dur, na.rm=TRUE))
+
+indiv_high <-ggplot(individual_means_high, aes(Sex, Mean, fill=Sex)) +
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean seconds")+
+  labs(title = "Time spent in high zone")
+
+ggsave(path = "Plots", file = "indiv_high_dur.jpeg", limitsize = FALSE)
+
+#Freezing
+individual_means_freezing <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(freezing_dur, na.rm=TRUE))
+
+indiv_freezing <-ggplot(individual_means_freezing, aes(Sex, log(Mean)+1, fill=Sex)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean seconds")+
+  labs(title = "Time spent freezing")
+
+ggsave(path = "Plots", file = "indiv_freezing.jpeg", limitsize = FALSE)
+
+#Latency to high
+
+individual_means_latency <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(latency_high, na.rm=TRUE))
+
+indiv_latency <-ggplot(individual_means_freezing, aes(Sex, Mean, fill=Sex)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+ facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean latency")+
+  labs(title = "Latency to high zone")
+
+ggsave(path = "Plots", file = "indiv_latency.jpeg", limitsize = FALSE)
+
+#Entries to high
+individual_means_entries <- Anxiety_Joined %>%
+    group_by(Fish_ID, Sex, Tank) %>%
+    dplyr::summarize(Mean = mean(freq_high, na.rm=TRUE))
+
+indiv_freq <-ggplot(individual_means_entries, aes(Sex, Mean, fill=Sex)) + 
+   geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
+  geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
+   theme(legend.position="none")+
+    scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
+  theme(axis.ticks.x=element_blank(),
+       axis.title.x=element_blank())+
+  labs(y="Mean entries")+
+  labs(title = "Entries into high zone")
+
+indiv_freq
+
+ggsave(path = "Plots", file = "indiv_frequency_high.jpeg", limitsize = FALSE)
+
+
+```
+
+#Joining mean individual violin plots
+```{r}
+
+Joined_violins_indiv_sex_tank <- indiv_tot_dist + indiv_low + indiv_mid + indiv_high + indiv_freezing + indiv_latency+indiv_freq + plot_layout(ncol = 2, nrow=4)
+
+Joined_violins_indiv_sex_tank
+
+Joined_violins_indiv_tank <- indiv_tot_dist_tank + indiv_low_dur_tank + indiv_mid_dur_tank + indiv_high_dur_tank + indiv_freezing_dur_tank + indiv_latency_high_tank+indiv_entries_tank + plot_layout(ncol = 2, nrow=4)
+
+Joined_violins_indiv_tank
+```
+
+Table to display mixed model results (using stargazer)
+```{r}
+stargazer(Model_Tot_Dist1, Model_low_dur1, Model_mid_dur1, Model_high_dur1a, Model_freezing_dur1a, Model_latency_high1a, Model_freq_high1a, omit.stat = c("bic","aic","ll"),  covariate.labels = c("Short Tank", "Tall Tank", "Male"), align = TRUE, type= "html",dep.var.labels= c("Total distance travelled", "Time spent in low zone", "Time spent in mid zone", "Time spent in high zone", "Time spent freezing", "Latency to high zone", "Entries to high zone"),dep.var.caption= "Behavioral parameters",style="all", out = "Table.html")
+```
+
+
+
+
+
+
+
+

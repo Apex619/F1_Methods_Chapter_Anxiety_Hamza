@@ -127,14 +127,6 @@ Overall_Data_Joined5 <- full_join(Overall_Data_Joined4, freq_high_rptr_sex)
 Overall_Data_Joined_Final_sex <- full_join(Overall_Data_Joined5, latency_high_rptr_sex)
 
 Overall_Data_Joined_Final_sex
-
-#Renaming facets (for later use in plots)
-
-sex_labs <- c("Female", "Male") 
-names(sex_labs) <- c("female", "male")
-
-tank_labs <- c("Short", "Tall")
-names(tank_labs) <- c("Old", "Tall")
 ```
 
 #Overall forest plot showing repeatabilities of tall and short tanks
