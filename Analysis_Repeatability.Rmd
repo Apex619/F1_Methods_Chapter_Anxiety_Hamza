@@ -16,6 +16,9 @@ pacman::p_load(lmerTest,ggThemeAssist,rptR,lme4,readxl, tidyr, dplyr, magrittr, 
                sjPlot,ggplot2,lubridate,wesanderson,ggbeeswarm,emmeans,patchwork,viridis,nlme,Rmisc,ggpubr,
                stargazer)
 
+# Load custom functions
+source("Scripts/functions.R") #load custom functions
+
 ```
 
 
@@ -24,7 +27,7 @@ pacman::p_load(lmerTest,ggThemeAssist,rptR,lme4,readxl, tidyr, dplyr, magrittr, 
 #Master file with all raw data
 Anxiety_Joined <- read.csv("./Data/F1_Anxiety_Repeatability_Exp.csv") 
 
-#Subseting data by tank; NOTE: initially, short tanks are referred to as "Old" tanks, howevever we later change this to refer to them as "Short" tanks
+#Subseting data by tank; NOTE: short tanks are usually referred to as "Old" tanks throughout the analysis
 Old_Tanks <- subset(Anxiety_Joined, Anxiety_Joined$Tank == "Old") 
 Tall_Tanks <- subset(Anxiety_Joined, Anxiety_Joined$Tank == "Tall") 
 
@@ -54,28 +57,12 @@ hist(residuals(Model_Tot_Dist)) #histogam of residuals to check for normal distr
 
 
 
-#Writing a function for calculating repeatability for total distance travelled
-rpt_tot_dist <- function(df) {
-  x <- rpt(tot_dist ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
-}
-
 #Calculating repeatabilities using custom made functions
 rpt_tot_dist(Old_Tanks) -> Old_Tot_Dist #repeatability for short tanks
 rpt_tot_dist(Tall_Tanks) -> Tall_Tot_Dist #repeatability for tall tanks
 rpt_tot_dist(Anxiety_Joined) -> Joined_Tot_Dist #repeatability overall (both tanks)
 
-# Writing functions for getting the difference between these two tank's repeatablities
-unlist_rptr <- function(rpt_model) { #unlisting the bootstrapped distribution 
-  unlist(rpt_model$R_boot)
-}
 
-difference_boot <- function(boot1,boot2) { #calculating difference between tall and short (depending on which has the higher repeatability)
-  boot1 - boot2
-}
-
-quantiles_diff_boot <- function(from_diff_boot) { #obtaining quantiles at 2.5% and 97.5% (becomes 95% CI)
-  quantile(from_diff_boot, c(0.025, 0.975))
-} 
 #Obtaining differences between repeatabilities using custom made functions
 Old_tot_dist_boot <- unlist_rptr(Old_Tot_Dist) #unlisting from the short tanks
 Tall_tot_dist_boot <- unlist_rptr(Tall_Tot_Dist) #unlisting from the tall tanks
@@ -105,10 +92,7 @@ hist(residuals(Model_Low_Dur))
 qqnorm(residuals(Model_Low_Dur)) 
 scatter.smooth(residuals(Model_Low_Dur)~fitted(Model_Low_Dur)) 
 
-#Writing a function for calculating repeatability for time spent in low zone
-rpt_low_dur <- function(df) {
-  x <- rpt(low_dur ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
-}
+
 
 
 #Calculating repeatabilities 
@@ -141,11 +125,6 @@ anova(Model_low_dur1, Model_low_dur2)
 Model_Mid_Dur <- lmer(mid_dur ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)  
 hist(residuals(Model_Mid_Dur)) 
 
-
-#Writing a function for calculating repeatability for time spent in mid zone
-rpt_mid_dur <- function(df) {
-  x <- rpt(mid_dur ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
-}
 
 #Calculating repeatabilities 
 rpt_mid_dur(Old_Tanks) -> Old_mid_dur 
@@ -181,10 +160,7 @@ Model_high_dur2 <- lmer(sqrt(high_dur) ~ Tank + Sex + (1 | Fish_ID), data = Anxi
 hist(residuals(Model_high_dur2))#square root transformation is considered sufficient to meet normal distribution assumption, will be used for this parameter
 
 
-#Writing a function for calculating repeatability for time spent in high zone
-rpt_high_dur <- function(df) {
-  x <- rpt(sqrt(high_dur) ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
-}
+
 
 
 #Calculating repeatabilities 
@@ -222,10 +198,7 @@ hist(residuals(Model_freezing_dur2))#Our normality assumption is still not satis
 Model_freezing_dur3 <- lmer(log(freezing_dur+1) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
 hist(residuals(Model_freezing_dur3))#Our normality assumption is deemed adequate
 
-#Writing a function for calculating repeatability for time spent freezing
-rpt_freezing_dur <- function(df) {
-  x <- rpt(log(freezing_dur+1) ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
-}
+
 
 #Calculating repeatabilities 
 rpt_freezing_dur(Old_Tanks) -> Old_freezing_dur3 
@@ -253,10 +226,6 @@ anova(Model_freezing_dur1a, Model_freezing_dur2a)
 Model_latency <- lmer(latency_high ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
 hist(residuals(Model_latency)) 
 
-#Writing a function for calculating repeatability for latency to the high zone
-rpt_latency <- function(df) {
-  x <- rpt(latency_high ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
-}
 
 
 #Calculating repeatabilities 
@@ -287,11 +256,6 @@ hist(residuals(Model_freq_high)) #assumptions of normality not met
 Model_freq_high2 <- lmer(sqrt(freq_high) ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
 hist(residuals(Model_freq_high2))#square root transformation deemed adequate
 
-#Writing a function for calculating repeatability for latency to the high zone
-rpt_freq <- function(df) {
-  x <- rpt(sqrt(freq_high) ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
-}
-
 
 #Calculating repeatabilities 
 rpt_freq(Old_Tanks) -> Old_freq_high
@@ -314,6 +278,7 @@ Model_freq_high2a <- lme(sqrt(freq_high) ~ Tank-1 + Sex, random = ~ 1| Fish_ID, 
 summary(Model_freq_high2a)
 anova(Model_freq_high1a, Model_freq_high2a)
 ```
+
 
 
 

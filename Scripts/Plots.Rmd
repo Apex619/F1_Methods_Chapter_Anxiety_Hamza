@@ -13,12 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 pacman::p_load(lmerTest,ggThemeAssist,rptR,lme4,readxl, tidyr, dplyr, magrittr, lubridate, stringr, purrr,
                sjPlot,ggplot2,lubridate,wesanderson,ggbeeswarm,emmeans,patchwork,viridis,nlme,Rmisc,ggpubr,
                stargazer)
-
 ```
 
 #Systematic extraction plot
 ```{r}
-Review <- read.csv("./Data/Systematic_Extraction.csv")
+Review <- read.csv("../Data/Systematic_Extraction.csv")
 
 p<-ggplot(data=Review, aes(x = reorder(Endpoint, Count), y=Count)) +
   geom_bar(stat="identity")+
@@ -28,10 +27,10 @@ coord_flip()+
   theme(axis.title.y=element_blank())
 p
   
-ggsave(path = "Plots", file = "Review.jpeg", limitsize = FALSE)
+ggsave(path = "../Plots", file = "Review.jpeg", limitsize = FALSE)
 ```
 
-#Creating tibbles to use in plotting repeatabilities 
+#Creating tibbles to use in plotting repeatabilities : one for overall plots, and one for sex plots
 
 Total distance
 ```{r, echo=FALSE}
@@ -43,6 +42,16 @@ Tot_Dist_rptr <- tibble(
 Endpoint = c("Total distance", "Total distance", "Total distance"))
   
 Tot_Dist_rptr
+
+Tot_Dist_rptr_sex <- tibble(
+  Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
+  Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
+  r = c(Old_Tot_Dist_Male$R$Fish_ID,Old_Tot_Dist_Female$R$Fish_ID,Tall_Tot_Dist_Male$R$Fish_ID,Tall_Tot_Dist_Female$R$Fish_ID,mean_tot_old, mean_tot_tall ),
+  ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`, 0.35, -0.08),
+  ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`, 0.68, 0.45),
+Endpoint = c("Total distance","Total distance","Total distance","Total distance","Total distance","Total distance"))
+  
+Tot_Dist_rptr_sex
 ```
 
 
@@ -57,6 +66,16 @@ low_dur_rptr <- tibble(
 Endpoint = c("Time spent in low zone", "Time spent in low zone", "Time spent in low zone"))
   
 low_dur_rptr
+
+low_dur_rptr_sex <- tibble(
+  Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
+  Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
+  r = c(Old_low_dur_Male$R$Fish_ID,Old_low_dur_Female$R$Fish_ID,Tall_low_dur_Male$R$Fish_ID,Tall_low_dur_Female$R$Fish_ID,m8,m9),
+  ci.lb = c(Old_low_dur_Male$CI_emp$`2.5%`,Old_low_dur_Female$CI_emp$`2.5%`,Tall_low_dur_Male$CI_emp$`2.5%`,Tall_low_dur_Female$CI_emp$`2.5%`,-0.28,0.10),
+  ci.ub = c(Old_low_dur_Male$CI_emp$`97.5%`,Old_low_dur_Female$CI_emp$`97.5%`,Tall_low_dur_Male$CI_emp$`97.5%`,Tall_low_dur_Female$CI_emp$`97.5%`,0.27,0.55),
+Endpoint = c("Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone"))
+
+low_dur_rptr_sex
 ```
 
 Middle duration
@@ -69,6 +88,16 @@ mid_dur_rptr <- tibble(
 Endpoint = c("Time spent in mid zone", "Time spent in mid zone", "Time spent in mid zone"))
   
 mid_dur_rptr
+
+mid_dur_rptr_sex <- tibble(
+  Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
+  Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
+  r = c(Old_mid_dur_Male$R$Fish_ID,Old_mid_dur_Female$R$Fish_ID,Tall_mid_dur_Male$R$Fish_ID,Tall_mid_dur_Female$R$Fish_ID,m10,m11 ),
+  ci.lb = c(Old_mid_dur_Male$CI_emp$`2.5%`,Old_mid_dur_Female$CI_emp$`2.5%`,Tall_mid_dur_Male$CI_emp$`2.5%`,Tall_mid_dur_Female$CI_emp$`2.5%`,-0.22,0.07),
+  ci.ub = c(Old_mid_dur_Male$CI_emp$`97.5%`,Old_mid_dur_Female$CI_emp$`97.5%`,Tall_mid_dur_Male$CI_emp$`97.5%`,Tall_mid_dur_Female$CI_emp$`97.5%`,0.27,0.56),
+Endpoint = c("Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone"))
+
+mid_dur_rptr_sex
 ```
 
 High duration
@@ -81,6 +110,16 @@ high_dur_rptr <- tibble(
 Endpoint = c("Time spent in high zone", "Time spent in high zone", "Time spent in high zone"))
   
 high_dur_rptr
+
+high_dur_rptr_sex <- tibble(
+  Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
+  Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
+  r = c(Old_high_dur_Male2$R$Fish_ID,Old_high_dur_Female2$R$Fish_ID,Tall_high_dur_Male2$R$Fish_ID,Tall_high_dur_Female2$R$Fish_ID,m12,m13 ),
+  ci.lb = c(Old_high_dur_Male2$CI_emp$`2.5%`,Old_high_dur_Female2$CI_emp$`2.5%`,Tall_high_dur_Male2$CI_emp$`2.5%`,Tall_high_dur_Female2$CI_emp$`2.5%`,-0.13,0.07),
+  ci.ub = c(Old_high_dur_Male2$CI_emp$`97.5%`,Old_high_dur_Female2$CI_emp$`97.5%`,Tall_high_dur_Male2$CI_emp$`97.5%`,Tall_high_dur_Female2$CI_emp$`97.5%`,0.36,0.51),
+Endpoint = c("Time spent in high zone","Time spent in high zone","Time spent in high zone","Time spent in high zone","Time spent in high zone","Time spent in high zone"))
+
+high_dur_rptr_sex
 ```
 
 Freezing duration
@@ -93,6 +132,16 @@ freezing_dur_rptr <- tibble(
 Endpoint = c("Time spent freezing", "Time spent freezing", "Time spent freezing"))
   
 freezing_dur_rptr
+
+freezing_dur_rptr_sex <- tibble(
+  Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
+  Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
+  r = c(Old_freezing_dur_Male3$R$Fish_ID,Old_freezing_dur_Female3$R$Fish_ID,Tall_freezing_dur_Male3$R$Fish_ID,Tall_freezing_dur_Female3$R$Fish_ID,m14,m15),
+  ci.lb = c(Old_freezing_dur_Male3$CI_emp$`2.5%`,Old_freezing_dur_Female3$CI_emp$`2.5%`,Tall_freezing_dur_Male3$CI_emp$`2.5%`,Tall_freezing_dur_Female3$CI_emp$`2.5%`,0.03,-0.25),
+  ci.ub = c(Old_freezing_dur_Male3$CI_emp$`97.5%`,Old_freezing_dur_Female3$CI_emp$`97.5%`,Tall_freezing_dur_Male3$CI_emp$`97.5%`,Tall_freezing_dur_Female3$CI_emp$`97.5%`,0.56,0.32),
+Endpoint = c("Time spent freezing","Time spent freezing","Time spent freezing","Time spent freezing","Time spent freezing","Time spent freezing"))
+
+freezing_dur_rptr_sex
 ```
 
 Entries into high zone
@@ -105,6 +154,16 @@ frequency_rptr <- tibble(
 Endpoint = c("Entries into high zone", "Entries into high zone", "Entries into high zone"))
   
 frequency_rptr
+
+freq_high_rptr_sex <- tibble(
+  Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
+  Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
+  r = c(Old_freq_high_Male$R$Fish_ID,Old_freq_high_Female$R$Fish_ID,Tall_freq_high_Male$R$Fish_ID,Tall_freq_high_Female$R$Fish_ID,m18,m19 ),
+  ci.lb = c(Old_freq_high_Male$CI_emp$`2.5%`,Old_freq_high_Female$CI_emp$`2.5%`,Tall_freq_high_Male$CI_emp$`2.5%`,Tall_freq_high_Female$CI_emp$`2.5%`,-0.07,0.12),
+  ci.ub = c(Old_freq_high_Male$CI_emp$`97.5%`,Old_freq_high_Female$CI_emp$`97.5%`,Tall_freq_high_Male$CI_emp$`97.5%`,Tall_freq_high_Female$CI_emp$`97.5%`,0.43,0.62),
+Endpoint = c("Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone"))
+
+freq_high_rptr_sex
 ```
 
 
@@ -118,6 +177,16 @@ latency_rptr <- tibble(
 Endpoint = c("Latency to high zone", "Latency to high zone", "Latency to high zone"))
 
 latency_rptr
+
+latency_high_rptr_sex <- tibble(
+  Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
+  Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
+  r = c(Old_latency_high_Male$R$Fish_ID,Old_latency_high_Female$R$Fish_ID,Tall_latency_high_Male$R$Fish_ID,Tall_latency_high_Female$R$Fish_ID,m16,m17),
+  ci.lb = c(Old_latency_high_Male$CI_emp$`2.5%`,Old_latency_high_Female$CI_emp$`2.5%`,Tall_latency_high_Male$CI_emp$`2.5%`,Tall_latency_high_Female$CI_emp$`2.5%`,-0.31,0.16),
+  ci.ub = c(Old_latency_high_Male$CI_emp$`97.5%`,Old_latency_high_Female$CI_emp$`97.5%`,Tall_latency_high_Male$CI_emp$`97.5%`,Tall_latency_high_Female$CI_emp$`97.5%`,0.34,0.68),
+Endpoint = c("Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone"))
+
+latency_high_rptr_sex
 ```
 
 Joining tibbles to use in plotting 
@@ -163,50 +232,51 @@ ylim(-0.2, 0.9)+
 
 Overall_New_plot
 
-ggsave(path = "Plots", file = "Overall_plot_new.jpeg", limitsize = FALSE)
+ggsave(path = "../Plots", file = "Overall_plot_new.jpeg", limitsize = FALSE)
 ```
 
 #Overall forest plot showing differences between males and female repeatabilities for behavioral parameters in tall and short tanks
 ```{r}
-Sex_New_plot <- ggplot(Overall_Data_Joined_Final_sex, aes(x=Endpoint, y=r, colour=Condition)) +
-geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
-geom_hline(yintercept = 0, lty = "dotted") +
-coord_flip()+
-ylim(-0.2, 0.9)+
-facet_grid(~Tank)+
-   theme(axis.title.y=element_blank())+
-  # theme(axis.text.y = element_text(angle = 15))+
-  scale_color_manual(values = c("#000000", "#f8766d", "#00bfc4"))+
-    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +
-  theme(axis.title.y=element_blank())+
-  theme(legend.position="bottom")+
+Sex_New_plot <-
+  ggplot(Overall_Data_Joined_Final_sex,
+         aes(x = Endpoint, y = r, colour = Condition)) +
+  geom_errorbar(
+    aes(ymin = ci.lb, ymax = ci.ub),
+    width = 0,
+    position = position_dodge(0.3),
+    size = 1.1
+  ) +
+  geom_point(aes(x = Endpoint, y = r),
+             position = position_dodge(0.3),
+             size = 3) +
+  geom_hline(yintercept = 0, lty = "dotted") +
+  coord_flip() +
+  ylim(-0.4, 0.9) +
+  facet_grid( ~ Tank) +
+  theme(axis.title.y = element_blank()) +
+  scale_color_manual(values = c("#000000", "#f8766d", "#00bfc4")) +
+  theme(
+    panel.border = element_rect(
+      colour = "black",
+      fill = NA,
+      size = 2
+    ),
+    axis.ticks = element_line(size = 2, color = "black"),
+    axis.ticks.length = unit(0.2, "cm")
+  ) +      font("xylab", size = 15) + font("xy", size = 15) + font("xy.text", size = 15) +
+  theme(axis.title.y = element_blank()) +
+  theme(legend.position = "bottom") +
   theme(legend.title = element_blank())
 
 Sex_New_plot
 
-ggsave(path = "Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
+ggsave(path = "../Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
 ```
 
 
 #Generating custom designed violin plots to display raw distributions of behavioral responses
 ```{r}
-#Function for generating a custom designed violin plot
-violin_plot_custom_hamza <- function(df,param,lab1,lab2) { #only need to add dataframe, parameter, and labels for axes
-ggplot(data = df,aes(x = Tank, y = param, fill = Tank))+
- scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+ #color schee
-  geom_violin(alpha=0.4, position = position_dodge(width = .75),size=1,color="black")+ #violin plot to display distribution density
-  geom_boxplot(notch = TRUE,  outlier.size = -1, color="black",lwd=1.2, alpha = 0.7)+#boxplot to display quantiles
-  geom_point( shape = 21,size=2, position = position_jitterdodge(), color="black",alpha=1)+#scatterplot of individual data points
-  theme_pubr()+
-  labs(title=lab1,y = lab2)+#labels
-  rremove("legend.title")+
-  theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"),legend.position = c(0.92, 0.85))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +font("legend.text",size = 15)+
-    scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+#formatting 
-  theme(legend.position = "none")+
-  theme(axis.title.x=element_blank())
-    
-}
+
 
 low_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined,Anxiety_Joined$low_dur,"Time spent in low zone", "Seconds")
 
