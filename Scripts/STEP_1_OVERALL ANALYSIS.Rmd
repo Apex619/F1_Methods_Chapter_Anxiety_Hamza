@@ -55,7 +55,10 @@ THESE STEPS ARE REPEATED FOR ALL BEHAVIORAL PARAMETERS, REFER TO THE FIRST BEHAV
 Model_Tot_Dist <- lmer(tot_dist ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined) #mixed model 
 hist(residuals(Model_Tot_Dist)) #histogam of residuals to check for normal distribution (easiest way to check assumption of normality)
 
-
+#TODO - shinichi is adding code for gettng between and within individual variances 
+# 1 - we need to make all response variables to have the same unit - z transformation
+rpt(scale(tot_dist) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = Old_Tanks, datatype = "Gaussian", nboot = 100, npermut = 100, ratio = FALSE)
+rpt(scale(tot_dist) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = Tall_Tanks, datatype = "Gaussian", nboot = 100, npermut = 100, ratio = FALSE)
 
 #Calculating repeatabilities using custom made functions
 rpt_tot_dist(Old_Tanks) -> Old_Tot_Dist #repeatability for short tanks
