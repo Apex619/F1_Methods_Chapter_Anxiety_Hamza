@@ -45,6 +45,8 @@ Endpoint = c("Total distance", "Total distance", "Total distance", "Total distan
   
 Tot_Dist_rptr
 
+Tot_Dist_rptr$r <- as.numeric(Tot_Dist_rptr$r)
+
 Tot_Dist_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
@@ -69,6 +71,8 @@ Endpoint = c("Time spent in low zone", "Time spent in low zone", "Time spent in 
   
 low_dur_rptr
 
+low_dur_rptr$r <- as.numeric(low_dur_rptr$r)
+
 low_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
@@ -90,6 +94,8 @@ mid_dur_rptr <- tibble(
 Endpoint = c("Time spent in mid zone", "Time spent in mid zone", "Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone"))
   
 mid_dur_rptr
+
+mid_dur_rptr$r <- as.numeric(mid_dur_rptr$r)
 
 mid_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
@@ -113,6 +119,8 @@ Endpoint = c("Time spent in high zone", "Time spent in high zone", "Time spent i
   
 high_dur_rptr
 
+high_dur_rptr$r <- as.numeric(high_dur_rptr$r)
+
 high_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
@@ -135,6 +143,8 @@ Endpoint = c("Time spent freezing", "Time spent freezing", "Time spent freezing"
   
 freezing_dur_rptr
 
+freezing_dur_rptr$r <- as.numeric(freezing_dur_rptr$r)
+
 freezing_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
@@ -156,6 +166,8 @@ frequency_rptr <- tibble(
 Endpoint = c("Entries into high zone", "Entries into high zone", "Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone"))
   
 frequency_rptr
+
+frequency_rptr$r <- as.numeric(frequency_rptr$r)
 
 freq_high_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
@@ -180,6 +192,8 @@ Endpoint = c("Latency to high zone", "Latency to high zone", "Latency to high zo
 
 latency_rptr
 
+latency_rptr$r <- as.numeric(latency_rptr$r)
+
 latency_high_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
@@ -200,9 +214,20 @@ Overall_Data_Joined2 <- full_join(Overall_Data_Joined1, mid_dur_rptr)
 Overall_Data_Joined3 <- full_join(Overall_Data_Joined2, high_dur_rptr)
 Overall_Data_Joined4 <- full_join(Overall_Data_Joined3, freezing_dur_rptr)
 Overall_Data_Joined5 <- full_join(Overall_Data_Joined4, frequency_rptr)
-Overall_Data_Joined_Final <- full_join(Overall_Data_Joined5, latency_rptr)
+Overall_Data_Joined_Final_Full <- full_join(Overall_Data_Joined5, latency_rptr)
 
-Overall_Data_Joined_Final
+
+Overall_Data_Joined_Final <- subset(Overall_Data_Joined_Final_Full, Overall_Data_Joined_Final_Full$Condition %in% c("Short","Tall","Contrast"))
+
+Overall_Data_Joined_Final #Will be used for plotting just the overall repeatabilites for tall tank, short tank and the contrast
+
+Overall_Data_Joined_Final_within_between <- subset(Overall_Data_Joined_Final_Full, Overall_Data_Joined_Final_Full$Condition %in% c("Within-Individual Variance (Short Tank)","Within-Individual Variance (Tall Tank)", "Between-Individual Variance (Short Tank)", "Between-Individual Variance (Tall Tank)")) #Will be used for plotting within-and between individual variance
+
+#Creating a new column
+Overall_Data_Joined_Final_within_between$Tank <- c("Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall")
+
+#Renaming to plot within and between individual variances
+Overall_Data_Joined_Final_within_between$Condition <- c("Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance")
 
 #Joining all tibbles for sex
 Overall_Data_Joined1 <- full_join(Tot_Dist_rptr_sex, low_dur_rptr_sex)
@@ -235,7 +260,35 @@ ylim(-0.2, 0.9)+
 Overall_New_plot
 
 ggsave(path = "../Plots", file = "Overall_plot_new.jpeg", limitsize = FALSE)
+
 ```
+
+#Plot for within and between individual variance
+```{r}
+Overall_New_plot_within_between <- ggplot(Overall_Data_Joined_Final_within_between, aes(x=Endpoint, y=r, colour=Tank)) +
+geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
+geom_hline(yintercept = 0, lty = "dotted") +
+coord_flip()+
+ylim(0, 1.3)+
+   theme(axis.title.y=element_blank())+
+   theme(legend.title=element_blank())+
+    scale_color_manual(values=c("#DD8D29", "#E2D200"))+
+    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +
+    theme(legend.position = "bottom")+
+  theme(axis.title.y=element_blank())+
+  facet_grid(~Condition)
+ 
+
+
+Overall_New_plot_within_between
+```
+
+
+
+
+
+
 
 #Overall forest plot showing differences between males and female repeatabilities for behavioral parameters in tall and short tanks
 ```{r}
