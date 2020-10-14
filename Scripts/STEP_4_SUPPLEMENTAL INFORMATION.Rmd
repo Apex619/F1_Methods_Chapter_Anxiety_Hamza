@@ -320,7 +320,7 @@ Joined_violins_indiv_tank <- indiv_tot_dist_tank + indiv_low_dur_tank + indiv_mi
 Joined_violins_indiv_tank
 ```
 
-#Plotting within individual and between indoividual variances
+#Creating data frame for within individual and between individual variances
 
 ```{r}
 Overall_Data_Joined_Final_within_between <- subset(Overall_Data_Joined_Final_Full, Overall_Data_Joined_Final_Full$Condition %in% c("Within-Individual Variance (Short Tank)","Within-Individual Variance (Tall Tank)", "Between-Individual Variance (Short Tank)", "Between-Individual Variance (Tall Tank)")) #Will be used for plotting within-and between individual variance
