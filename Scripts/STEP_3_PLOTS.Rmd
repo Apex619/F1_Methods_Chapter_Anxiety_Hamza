@@ -221,13 +221,7 @@ Overall_Data_Joined_Final <- subset(Overall_Data_Joined_Final_Full, Overall_Data
 
 Overall_Data_Joined_Final #Will be used for plotting just the overall repeatabilites for tall tank, short tank and the contrast
 
-Overall_Data_Joined_Final_within_between <- subset(Overall_Data_Joined_Final_Full, Overall_Data_Joined_Final_Full$Condition %in% c("Within-Individual Variance (Short Tank)","Within-Individual Variance (Tall Tank)", "Between-Individual Variance (Short Tank)", "Between-Individual Variance (Tall Tank)")) #Will be used for plotting within-and between individual variance
 
-#Creating a new column
-Overall_Data_Joined_Final_within_between$Tank <- c("Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall")
-
-#Renaming to plot within and between individual variances
-Overall_Data_Joined_Final_within_between$Condition <- c("Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance")
 
 #Joining all tibbles for sex
 Overall_Data_Joined1 <- full_join(Tot_Dist_rptr_sex, low_dur_rptr_sex)
@@ -263,26 +257,7 @@ ggsave(path = "../Plots", file = "Overall_plot_new.jpeg", limitsize = FALSE)
 
 ```
 
-#Plot for within and between individual variance
-```{r}
-Overall_New_plot_within_between <- ggplot(Overall_Data_Joined_Final_within_between, aes(x=Endpoint, y=r, colour=Tank)) +
-geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
-geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
-geom_hline(yintercept = 0, lty = "dotted") +
-coord_flip()+
-ylim(0, 1.3)+
-   theme(axis.title.y=element_blank())+
-   theme(legend.title=element_blank())+
-    scale_color_manual(values=c("#DD8D29", "#E2D200"))+
-    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +
-    theme(legend.position = "bottom")+
-  theme(axis.title.y=element_blank())+
-  facet_grid(~Condition)
- 
 
-
-Overall_New_plot_within_between
-```
 
 
 
