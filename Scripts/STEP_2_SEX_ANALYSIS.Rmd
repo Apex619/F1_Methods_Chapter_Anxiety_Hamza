@@ -109,7 +109,7 @@ rpt_low_dur(Both_Tanks_Female) -> Joined_low_dur_Female
 Old_low_dur_Female_boot<-unlist(Old_low_dur_Female$R_boot)
 Old_low_dur_Male_boot<-unlist(Old_low_dur_Male$R_boot)
 
-Diff_boot_low_dur_old <- Old_low_dur_Male_boot - Old_low_dur_Female_boot
+Diff_boot_low_dur_old <- Old_low_dur_Female_boot - Old_low_dur_Male_boot
 
 q8 <- quantile(Diff_boot_low_dur_old, c(0.025, 0.975)) 
 m8 <- mean(Diff_boot_low_dur_old)
