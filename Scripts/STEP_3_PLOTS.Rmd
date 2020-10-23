@@ -26,7 +26,13 @@ p<-ggplot(data=Review, aes(x = reorder(Endpoint, Count), y=Count)) +
 coord_flip()+
    scale_x_discrete(labels=c("Total distance travelled/exploration"=expression(bold("Total distance travelled/exploration")), "Time spent in mid zone"=expression(bold("Time spent in mid zone")),
                               "Time spent in low zone"=expression(bold("Time spent in low zone")),"Latency to high zone"=expression(bold("Latency to high zone")),"Time spent in high zone"=expression(bold("Time spent in high zone")),"Freezing duration/frequency"=expression(bold("Freezing duration/frequency")),"Entries into high zone"=expression(bold("Entries into high zone")), parse=TRUE))+
-  theme(axis.title.y=element_blank())
+  theme(
+  # Hide panel borders and remove grid lines
+  panel.border = element_blank(),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank())+
+  theme_classic()+
+    theme(axis.title.y=element_blank())
 p
   
 ggsave(path = "../Plots", file = "Review.jpeg", limitsize = FALSE)
@@ -37,13 +43,15 @@ ggsave(path = "../Plots", file = "Review.jpeg", limitsize = FALSE)
 Total distance
 ```{r, echo=FALSE}
 Tot_Dist_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_Tot_Dist$R$Fish_ID,Tall_Tot_Dist$R$Fish_ID, m1),
-  ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`,-0.01),
-  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`, 0.38),
-Endpoint = c("Total distance", "Total distance", "Total distance"))
+  Condition = c("Short", "Tall", "Contrast", "Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
+  r = c(Old_Tot_Dist$R$Fish_ID,Tall_Tot_Dist$R$Fish_ID, m1, within_between_tot_dist_old$R[1], within_between_tot_dist_old$R[2],within_between_tot_dist_tall$R[1], within_between_tot_dist_tall$R[2]),
+  ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`,-0.01, within_between_tot_dist_old$CI_emp[1,1], within_between_tot_dist_old$CI_emp[2,1],within_between_tot_dist_tall$CI_emp[1,1], within_between_tot_dist_tall$CI_emp[2,1]),
+  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`, 0.38, within_between_tot_dist_old$CI_emp[1,2], within_between_tot_dist_old$CI_emp[2,2],within_between_tot_dist_tall$CI_emp[1,2], within_between_tot_dist_tall$CI_emp[2,2]),
+Endpoint = c("Total distance", "Total distance", "Total distance", "Total distance", "Total distance","Total distance","Total distance"))
   
 Tot_Dist_rptr
+
+Tot_Dist_rptr$r <- as.numeric(Tot_Dist_rptr$r)
 
 Tot_Dist_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
@@ -61,13 +69,15 @@ Tot_Dist_rptr_sex
 Low duration
 ```{r, echo=FALSE}
 low_dur_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_low_dur$R$Fish_ID,Tall_low_dur$R$Fish_ID, m2),
-  ci.lb = c(Old_low_dur$CI_emp$`2.5%`,Tall_low_dur$CI_emp$`2.5%`, 0.0005054131),
-  ci.ub = c(Old_low_dur$CI_emp$`97.5%`,Tall_low_dur$CI_emp$`97.5%`, 0.3558383921 ),
-Endpoint = c("Time spent in low zone", "Time spent in low zone", "Time spent in low zone"))
+  Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)" ),
+  r = c(Old_low_dur$R$Fish_ID,Tall_low_dur$R$Fish_ID, m2,within_between_low_dur_old$R[1], within_between_low_dur_old$R[2],within_between_low_dur_tall$R[1], within_between_low_dur_tall$R[2]),
+  ci.lb = c(Old_low_dur$CI_emp$`2.5%`,Tall_low_dur$CI_emp$`2.5%`, 0.0004443611,within_between_low_dur_old$CI_emp[1,1], within_between_low_dur_old$CI_emp[2,1],within_between_low_dur_tall$CI_emp[1,1], within_between_low_dur_tall$CI_emp[2,1]),
+  ci.ub = c(Old_low_dur$CI_emp$`97.5%`,Tall_low_dur$CI_emp$`97.5%`, 0.3583075307,within_between_low_dur_old$CI_emp[1,2], within_between_low_dur_old$CI_emp[2,2],within_between_low_dur_tall$CI_emp[1,2], within_between_low_dur_tall$CI_emp[2,2] ),
+Endpoint = c("Time spent in low zone", "Time spent in low zone", "Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone"))
   
 low_dur_rptr
+
+low_dur_rptr$r <- as.numeric(low_dur_rptr$r)
 
 low_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
@@ -83,13 +93,15 @@ low_dur_rptr_sex
 Middle duration
 ```{r, echo=FALSE}
 mid_dur_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_mid_dur$R$Fish_ID,Tall_mid_dur$R$Fish_ID, m3),
-  ci.lb = c(Old_mid_dur$CI_emp$`2.5%`,Tall_mid_dur$CI_emp$`2.5%`, -0.13),
-  ci.ub = c(Old_mid_dur$CI_emp$`97.5%`,Tall_mid_dur$CI_emp$`97.5%`,0.21),
-Endpoint = c("Time spent in mid zone", "Time spent in mid zone", "Time spent in mid zone"))
+  Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)", "Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
+  r = c(Old_mid_dur$R$Fish_ID,Tall_mid_dur$R$Fish_ID, m3,within_between_mid_dur_old$R[1], within_between_mid_dur_old$R[2],within_between_mid_dur_tall$R[1], within_between_mid_dur_tall$R[2]),
+  ci.lb = c(Old_mid_dur$CI_emp$`2.5%`,Tall_mid_dur$CI_emp$`2.5%`, -0.13,within_between_mid_dur_old$CI_emp[1,1], within_between_mid_dur_old$CI_emp[2,1],within_between_mid_dur_tall$CI_emp[1,1], within_between_mid_dur_tall$CI_emp[2,1]),
+  ci.ub = c(Old_mid_dur$CI_emp$`97.5%`,Tall_mid_dur$CI_emp$`97.5%`,0.21,within_between_mid_dur_old$CI_emp[1,2], within_between_mid_dur_old$CI_emp[2,2],within_between_mid_dur_tall$CI_emp[1,2], within_between_mid_dur_tall$CI_emp[2,2]),
+Endpoint = c("Time spent in mid zone", "Time spent in mid zone", "Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone"))
   
 mid_dur_rptr
+
+mid_dur_rptr$r <- as.numeric(mid_dur_rptr$r)
 
 mid_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
@@ -105,13 +117,15 @@ mid_dur_rptr_sex
 High duration
 ```{r, echo=FALSE}
 high_dur_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_high_dur2$R$Fish_ID,Tall_high_dur2$R$Fish_ID, m4),
-  ci.lb = c(Old_high_dur2$CI_emp$`2.5%`,Tall_high_dur2$CI_emp$`2.5%`, -0.09),
-  ci.ub = c(Old_high_dur2$CI_emp$`97.5%`,Tall_high_dur2$CI_emp$`97.5%`, 0.22),
-Endpoint = c("Time spent in high zone", "Time spent in high zone", "Time spent in high zone"))
+  Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
+  r = c(Old_high_dur2$R$Fish_ID,Tall_high_dur2$R$Fish_ID, m4,within_between_high_dur_old$R[1], within_between_high_dur_old$R[2],within_between_high_dur_tall$R[1], within_between_high_dur_tall$R[2]),
+  ci.lb = c(Old_high_dur2$CI_emp$`2.5%`,Tall_high_dur2$CI_emp$`2.5%`, -0.09,within_between_high_dur_old$CI_emp[1,1], within_between_high_dur_old$CI_emp[2,1],within_between_high_dur_tall$CI_emp[1,1], within_between_high_dur_tall$CI_emp[2,1]),
+  ci.ub = c(Old_high_dur2$CI_emp$`97.5%`,Tall_high_dur2$CI_emp$`97.5%`, 0.22, within_between_high_dur_old$CI_emp[1,2], within_between_high_dur_old$CI_emp[2,2],within_between_high_dur_tall$CI_emp[1,2], within_between_high_dur_tall$CI_emp[2,2]),
+Endpoint = c("Time spent in high zone", "Time spent in high zone", "Time spent in high zone","Time spent in high zone","Time spent in high zone","Time spent in high zone","Time spent in high zone"))
   
 high_dur_rptr
+
+high_dur_rptr$r <- as.numeric(high_dur_rptr$r)
 
 high_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
@@ -127,13 +141,15 @@ high_dur_rptr_sex
 Freezing duration
 ```{r, echo=FALSE}
 freezing_dur_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_freezing_dur3$R$Fish_ID,Tall_freezing_dur3$R$Fish_ID, m5),
-  ci.lb = c(Old_freezing_dur3$CI_emp$`2.5%`,Tall_freezing_dur3$CI_emp$`2.5%`, -0.20),
-  ci.ub = c(Old_freezing_dur3$CI_emp$`97.5%`,Tall_freezing_dur3$CI_emp$`97.5%`, 0.20),
-Endpoint = c("Time spent freezing", "Time spent freezing", "Time spent freezing"))
+  Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
+  r = c(Old_freezing_dur3$R$Fish_ID,Tall_freezing_dur3$R$Fish_ID, m5, within_between_freezing_dur_old$R[1], within_between_freezing_dur_old$R[2],within_between_freezing_dur_tall$R[1], within_between_freezing_dur_tall$R[2]),
+  ci.lb = c(Old_freezing_dur3$CI_emp$`2.5%`,Tall_freezing_dur3$CI_emp$`2.5%`, -0.20, within_between_freezing_dur_old$CI_emp[1,1], within_between_freezing_dur_old$CI_emp[2,1],within_between_freezing_dur_tall$CI_emp[1,1], within_between_freezing_dur_tall$CI_emp[2,1]),
+  ci.ub = c(Old_freezing_dur3$CI_emp$`97.5%`,Tall_freezing_dur3$CI_emp$`97.5%`, 0.20,within_between_freezing_dur_old$CI_emp[1,2], within_between_freezing_dur_old$CI_emp[2,2],within_between_freezing_dur_tall$CI_emp[1,2], within_between_freezing_dur_tall$CI_emp[2,2]),
+Endpoint = c("Time spent freezing", "Time spent freezing", "Time spent freezing","Time spent freezing","Time spent freezing","Time spent freezing","Time spent freezing"))
   
 freezing_dur_rptr
+
+freezing_dur_rptr$r <- as.numeric(freezing_dur_rptr$r)
 
 freezing_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
@@ -149,13 +165,15 @@ freezing_dur_rptr_sex
 Entries into high zone
 ```{r}
 frequency_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_freq_high$R$Fish_ID,Tall_freq_high$R$Fish_ID, m7),
-  ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`, -0.02),
-  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.35),
-Endpoint = c("Entries into high zone", "Entries into high zone", "Entries into high zone"))
+  Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
+  r = c(Old_freq_high$R$Fish_ID,Tall_freq_high$R$Fish_ID, m7,within_between_freq_high_old$R[1], within_between_freq_high_old$R[2],within_between_freq_high_tall$R[1], within_between_freq_high_tall$R[2]),
+  ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`, -0.02,within_between_freq_high_old$CI_emp[1,1], within_between_freq_high_old$CI_emp[2,1],within_between_freq_high_tall$CI_emp[1,1], within_between_freq_high_tall$CI_emp[2,1]),
+  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.35,within_between_freq_high_old$CI_emp[1,2], within_between_freq_high_old$CI_emp[2,2],within_between_freq_high_tall$CI_emp[1,2], within_between_freq_high_tall$CI_emp[2,2]),
+Endpoint = c("Entries into high zone", "Entries into high zone", "Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone"))
   
 frequency_rptr
+
+frequency_rptr$r <- as.numeric(frequency_rptr$r)
 
 freq_high_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
@@ -172,13 +190,15 @@ freq_high_rptr_sex
 Latency to high
 ```{r}
 latency_rptr <- tibble(
-  Condition = c("Short", "Tall", "Contrast"),
-  r = c(Old_latency$R$Fish_ID,Tall_latency$R$Fish_ID, m6),
-  ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`, 0.14),
-  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.57),
-Endpoint = c("Latency to high zone", "Latency to high zone", "Latency to high zone"))
+  Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
+  r = c(Old_latency$R$Fish_ID,Tall_latency$R$Fish_ID, m6,within_between_latency_old$R[1], within_between_latency_old$R[2],within_between_latency_tall$R[1], within_between_latency_tall$R[2]),
+  ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`, 0.14,within_between_latency_old$CI_emp[1,1], within_between_latency_old$CI_emp[2,1],within_between_latency_tall$CI_emp[1,1], within_between_latency_tall$CI_emp[2,1]),
+  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.57,within_between_latency_old$CI_emp[1,2], within_between_latency_old$CI_emp[2,2],within_between_latency_tall$CI_emp[1,2], within_between_latency_tall$CI_emp[2,2]),
+Endpoint = c("Latency to high zone", "Latency to high zone", "Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone"))
 
 latency_rptr
+
+latency_rptr$r <- as.numeric(latency_rptr$r)
 
 latency_high_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
@@ -200,9 +220,14 @@ Overall_Data_Joined2 <- full_join(Overall_Data_Joined1, mid_dur_rptr)
 Overall_Data_Joined3 <- full_join(Overall_Data_Joined2, high_dur_rptr)
 Overall_Data_Joined4 <- full_join(Overall_Data_Joined3, freezing_dur_rptr)
 Overall_Data_Joined5 <- full_join(Overall_Data_Joined4, frequency_rptr)
-Overall_Data_Joined_Final <- full_join(Overall_Data_Joined5, latency_rptr)
+Overall_Data_Joined_Final_Full <- full_join(Overall_Data_Joined5, latency_rptr)
 
-Overall_Data_Joined_Final
+
+Overall_Data_Joined_Final <- subset(Overall_Data_Joined_Final_Full, Overall_Data_Joined_Final_Full$Condition %in% c("Short","Tall","Contrast"))
+
+Overall_Data_Joined_Final #Will be used for plotting just the overall repeatabilites for tall tank, short tank and the contrast
+
+
 
 #Joining all tibbles for sex
 Overall_Data_Joined1 <- full_join(Tot_Dist_rptr_sex, low_dur_rptr_sex)
@@ -218,24 +243,34 @@ Overall_Data_Joined_Final_sex
 #Overall forest plot showing repeatabilities of tall and short tanks
 ```{r}
 Overall_New_plot <- ggplot(Overall_Data_Joined_Final, aes(x=Endpoint, y=r, colour=Condition)) +
-geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0, position = position_dodge(0.3), size=1.1) +
+geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0.4, position = position_dodge(0.3), size=0.8) +
 geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
 geom_hline(yintercept = 0, lty = "dotted") +
 coord_flip()+
 ylim(-0.2, 0.9)+
    theme(axis.title.y=element_blank())+
    theme(legend.title=element_blank())+
+  theme_classic()+
   scale_color_manual(values=c("#000000", "#DD8D29", "#E2D200"))+
     theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +
-    theme(legend.position = "bottom")+
-  theme(axis.title.y=element_blank())
+  theme(axis.title.y=element_blank())+
+   theme(legend.position = "bottom")
  
 
 
 Overall_New_plot
 
 ggsave(path = "../Plots", file = "Overall_plot_new.jpeg", limitsize = FALSE)
+
 ```
+
+
+
+
+
+
+
+
 
 #Overall forest plot showing differences between males and female repeatabilities for behavioral parameters in tall and short tanks
 ```{r}
@@ -244,9 +279,9 @@ Sex_New_plot <-
          aes(x = Endpoint, y = r, colour = Condition)) +
   geom_errorbar(
     aes(ymin = ci.lb, ymax = ci.ub),
-    width = 0,
+    width = 0.4,
     position = position_dodge(0.3),
-    size = 1.1
+    size = 0.8
   ) +
   geom_point(aes(x = Endpoint, y = r),
              position = position_dodge(0.3),
@@ -257,6 +292,7 @@ Sex_New_plot <-
   facet_grid( ~ Tank) +
   theme(axis.title.y = element_blank()) +
   scale_color_manual(values = c("#000000", "#f8766d", "#00bfc4")) +
+    theme_classic()+
   theme(
     panel.border = element_rect(
       colour = "black",

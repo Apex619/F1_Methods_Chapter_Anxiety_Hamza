@@ -1,8 +1,18 @@
 #### Custom functions
 
+#Obtaining within and between-individual variances (total distance)
+rpt_within_between_tot_dist <- function(df) {
+  rpt(scale(tot_dist) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000, ratio = FALSE)
+}
+
 #Calculating repeatability for total distance travelled
 rpt_tot_dist <- function(df) {
   x <- rpt(tot_dist ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
+}
+
+#Obtaining within and between-individual variances (time spent in low zone)
+rpt_within_between_low_dur <- function(df) {
+  rpt(scale(low_dur) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000, ratio = FALSE)
 }
 
 #Calculating repeatability for time spent in low zone
@@ -10,9 +20,19 @@ rpt_low_dur <- function(df) {
   x <- rpt(low_dur ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
 }
 
+#Obtaining within and between-individual variances (time spent in mid zone)
+rpt_within_between_mid_dur <- function(df) {
+  rpt(scale(mid_dur) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000, ratio = FALSE)
+}
+
 #Calculating repeatability for time spent in mid zone
 rpt_mid_dur <- function(df) {
   x <- rpt(mid_dur ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
+}
+
+#Obtaining within and between-individual variances (time spent in high zone)
+rpt_within_between_high_dur <- function(df) {
+  rpt(scale(sqrt(high_dur)) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000, ratio = FALSE)
 }
 
 #Calculating repeatability for time spent in high zone
@@ -20,22 +40,35 @@ rpt_high_dur <- function(df) {
   x <- rpt(sqrt(high_dur) ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
 }
 
+#Obtaining within and between-individual variances (time spent freezing)
+rpt_within_between_freezing_dur <- function(df) {
+  rpt(scale(log(freezing_dur+1)) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000, ratio = FALSE)
+}
+
 #Calculating repeatability for time spent freezing
 rpt_freezing_dur <- function(df) {
   x <- rpt(log(freezing_dur+1) ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
 }
 
+#Obtaining within and between-individual variances (latency to high zone)
+rpt_within_between_latency <- function(df) {
+  rpt(scale(latency_high) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000, ratio = FALSE)
+}
 
 #Calculating repeatability for latency to the high zone
 rpt_latency <- function(df) {
   x <- rpt(latency_high ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
 }
 
+#Obtaining within and between-individual variances (entries to high zone)
+rpt_within_between_freq_high <- function(df) {
+  rpt(scale(sqrt(freq_high)) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000, ratio = FALSE)
+}
+
 #Calculating repeatability for entries to the high zone
 rpt_freq <- function(df) {
   x <- rpt(sqrt(freq_high) ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
 }
-
 
 
 # Writing functions for getting the difference between two tank's repeatablities

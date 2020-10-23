@@ -29,13 +29,15 @@ individual_means_tot_dist_tank
 indiv_tot_dist_tank <-ggplot(individual_means_tot_dist_tank, aes(Tank, Mean, fill=Tank)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+   
       scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+    theme_classic()+
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean distance (cm)")+
-   labs(title = "Total distance travelled")
+   labs(title = "Total distance travelled")+
+  theme(legend.position="none")
 
 indiv_tot_dist_tank
 
@@ -49,13 +51,15 @@ individual_means_low_dur_tank <- Anxiety_Joined %>%
 indiv_low_dur_tank <-ggplot(individual_means_low_dur_tank, aes(Tank, Mean, fill=Tank)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+
       scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+    theme_classic()+
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean seconds")+
-   labs(title = "Time spent in low zone")
+   labs(title = "Time spent in low zone")+
+     theme(legend.position="none")
 
 indiv_low_dur_tank
 
@@ -68,13 +72,15 @@ individual_means_mid_dur_tank <- Anxiety_Joined %>%
 indiv_mid_dur_tank <-ggplot(individual_means_mid_dur_tank, aes(Tank, Mean, fill=Tank)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+
       scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+    theme_classic()+
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean seconds")+
-   labs(title = "Time spent in mid zone")
+   labs(title = "Time spent in mid zone")+
+     theme(legend.position="none")
 
 indiv_mid_dur_tank
 
@@ -87,13 +93,14 @@ individual_means_high_dur_tank <- Anxiety_Joined %>%
 indiv_high_dur_tank <-ggplot(individual_means_high_dur_tank, aes(Tank, Mean, fill=Tank)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
       scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+    theme_classic()+
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean seconds")+
-   labs(title = "Time spent in high zone")
+   labs(title = "Time spent in high zone")+
+     theme(legend.position="none")
 
 indiv_high_dur_tank
 
@@ -105,13 +112,15 @@ individual_means_freezing_dur_tank <- Anxiety_Joined %>%
 indiv_freezing_dur_tank <-ggplot(individual_means_freezing_dur_tank, aes(Tank, Mean, fill=Tank)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+
       scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+    theme_classic()+
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean seconds")+
-   labs(title = "Time spent freezing")
+   labs(title = "Time spent freezing")+
+     theme(legend.position="none")
 
 indiv_freezing_dur_tank
 
@@ -127,13 +136,15 @@ individual_means_latency_high_tank <- Anxiety_Joined %>%
 indiv_latency_high_tank <-ggplot(individual_means_latency_high_tank, aes(Tank, Mean, fill=Tank)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+
       scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+    theme_classic()+
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean latency (seconds)")+
-   labs(title = "Latency to high zone")
+   labs(title = "Latency to high zone")+
+     theme(legend.position="none")
 
 indiv_latency_high_tank
 
@@ -145,13 +156,15 @@ individual_means_entries_tank <- Anxiety_Joined %>%
 indiv_entries_tank <-ggplot(individual_means_entries_tank, aes(Tank, Mean, fill=Tank)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+ 
       scale_x_discrete(labels=c("Old" = "Short", "Tall" = "Tall"))+
+    theme_classic()+
   scale_fill_manual(values = wes_palette("FantasticFox1", n = 2))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean entries")+
-   labs(title = "Entries into high zone")
+   labs(title = "Entries into high zone")+
+    theme(legend.position="none")
 
 indiv_entries_tank
 
@@ -175,14 +188,16 @@ individual_means_tot_dist
 indiv_tot_dist <-ggplot(individual_means_tot_dist, aes(Sex, Mean, fill=Sex)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
     scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+    theme_classic()+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean distance (cm)")+
-  labs(title = "Total distance travelled")
+  labs(title = "Total distance travelled")+
+     theme(legend.position="none")
 
 indiv_tot_dist
 
@@ -200,11 +215,13 @@ indiv_low <-ggplot(individual_means_low, aes(Sex, Mean, fill=Sex)) +
    theme(legend.position="none")+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
     scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   theme_classic()+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean seconds")+
-  labs(title = "Time spent in low zone")
+  labs(title = "Time spent in low zone")+
+     theme(legend.position="none")
 
 ggsave(path = "Plots", file = "indiv_low_duration.jpeg", limitsize = FALSE)
 
@@ -219,11 +236,13 @@ indiv_mid <-ggplot(individual_means_mid, aes(Sex, Mean, fill=Sex)) +
    theme(legend.position="none")+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
     scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+   theme_classic()+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean seconds")+
-  labs(title = "Time spent in mid zone")
+  labs(title = "Time spent in mid zone")+
+     theme(legend.position="none")
 
 ggsave(path = "Plots", file = "indiv_mid_dur.jpeg", limitsize = FALSE)
 
@@ -235,14 +254,16 @@ individual_means_high <- Anxiety_Joined %>%
 indiv_high <-ggplot(individual_means_high, aes(Sex, Mean, fill=Sex)) +
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
     scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+  theme_classic()+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean seconds")+
-  labs(title = "Time spent in high zone")
+  labs(title = "Time spent in high zone")+
+     theme(legend.position="none")
 
 ggsave(path = "Plots", file = "indiv_high_dur.jpeg", limitsize = FALSE)
 
@@ -254,14 +275,16 @@ individual_means_freezing <- Anxiety_Joined %>%
 indiv_freezing <-ggplot(individual_means_freezing, aes(Sex, log(Mean)+1, fill=Sex)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+
   facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
     scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+    theme_classic()+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean seconds")+
-  labs(title = "Time spent freezing")
+  labs(title = "Time spent freezing")+
+     theme(legend.position="none")
 
 ggsave(path = "Plots", file = "indiv_freezing.jpeg", limitsize = FALSE)
 
@@ -274,14 +297,16 @@ individual_means_latency <- Anxiety_Joined %>%
 indiv_latency <-ggplot(individual_means_freezing, aes(Sex, Mean, fill=Sex)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
+
  facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
     scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+      theme_classic()+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean latency")+
-  labs(title = "Latency to high zone")
+  labs(title = "Latency to high zone")+
+     theme(legend.position="none")
 
 ggsave(path = "Plots", file = "indiv_latency.jpeg", limitsize = FALSE)
 
@@ -293,13 +318,14 @@ individual_means_entries <- Anxiety_Joined %>%
 indiv_freq <-ggplot(individual_means_entries, aes(Sex, Mean, fill=Sex)) + 
    geom_violin(alpha = 0.1, draw_quantiles = c(0.25, 0.5, 0.75)) + 
   geom_jitter(width = 0.2, height = 0, alpha = 0.2) +
-   theme(legend.position="none")+
     scale_x_discrete(labels=c("female" = "Female", "male" = "Male"))+
+     theme_classic()+
    facet_grid(~Tank, labeller = labeller(Tank = tank_labs))+
   theme(axis.ticks.x=element_blank(),
        axis.title.x=element_blank())+
   labs(y="Mean entries")+
-  labs(title = "Entries into high zone")
+  labs(title = "Entries into high zone")+
+     theme(legend.position="none")
 
 indiv_freq
 
@@ -319,6 +345,44 @@ Joined_violins_indiv_tank <- indiv_tot_dist_tank + indiv_low_dur_tank + indiv_mi
 
 Joined_violins_indiv_tank
 ```
+
+#Creating data frame for within individual and between individual variances
+
+```{r}
+Overall_Data_Joined_Final_within_between <- subset(Overall_Data_Joined_Final_Full, Overall_Data_Joined_Final_Full$Condition %in% c("Within-Individual Variance (Short Tank)","Within-Individual Variance (Tall Tank)", "Between-Individual Variance (Short Tank)", "Between-Individual Variance (Tall Tank)")) #Will be used for plotting within-and between individual variance
+
+#Creating a new column
+Overall_Data_Joined_Final_within_between$Tank <- c("Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall","Short","Short","Tall", "Tall")
+
+#Renaming to plot within and between individual variances
+Overall_Data_Joined_Final_within_between$Condition <- c("Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance")
+
+
+```
+
+#Plot for within and between individual variance
+```{r}
+Overall_New_plot_within_between <- ggplot(Overall_Data_Joined_Final_within_between, aes(x=Endpoint, y=r, colour=Tank)) +
+geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub), width = 0.4, position = position_dodge(0.3), size=0.8) +
+geom_point(aes(x = Endpoint, y = r), position = position_dodge(0.3), size=3)+
+geom_hline(yintercept = 0, lty = "dotted") +
+coord_flip()+
+ylim(0, 1.3)+
+   theme(axis.title.y=element_blank())+
+   theme(legend.title=element_blank())+
+  theme_classic()+
+    scale_color_manual(values=c("#DD8D29", "#E2D200"))+
+    theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +
+    theme(legend.position = "bottom")+
+  theme(axis.title.y=element_blank())+
+  facet_grid(~Condition)+
+  labs(y = "Variance component")
+ 
+
+
+Overall_New_plot_within_between
+```
+
 
 Table to display mixed model results (using stargazer)
 ```{r}
