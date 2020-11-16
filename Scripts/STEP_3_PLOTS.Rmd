@@ -307,7 +307,14 @@ Sex_New_plot <-
   theme(axis.title.y = element_blank()) +
   theme(legend.position = "bottom") +
   theme(legend.title = element_blank())+
-  theme(strip.text.x = element_text(size = 12, color = "black", face = "bold.italic"))
+  theme(strip.text.x = element_text(size = 12, color = "black", face = "bold.italic"))+
+    annotate("text", x = 7, y = 0.86, label = "***", size = 7)+
+  annotate("text", x = 1, y = 0.86, label = "***", size = 7)+
+  annotate("text", x = 2, y = 0.86, label = "***", size = 7)+
+  annotate("text", x = 3, y = 0.86, label = "***", size = 7)+
+  annotate("text", x = 4, y = 0.86, label = "***", size = 7)+
+  annotate("text", x = 5, y = 0.86, label = "***", size = 7)+
+  annotate("text", x = 6, y = 0.86, label = "***", size = 7) #Manually edit out asterisk for intervals which are not significant
 
 Sex_New_plot
 
