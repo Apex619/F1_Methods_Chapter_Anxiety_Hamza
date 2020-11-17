@@ -255,8 +255,8 @@ ylim(-0.2, 0.9)+
     theme(panel.border = element_rect(colour = "black", fill=NA, size=2),axis.ticks = element_line(size=2,color="black"),axis.ticks.length=unit(0.2,"cm"))+      font("xylab",size=15)+font("xy",size=15)+font("xy.text", size = 15) +
   theme(axis.title.y=element_blank())+
    theme(legend.position = "bottom")+
-  annotate("text", x = 5, y = 0.75, label = "***", size = 7)+
-  annotate("text", x = 2, y = 0.75, label = "***", size = 7)
+  annotate("text", x = 5, y = 0.75, label = "*", size = 7)+
+  annotate("text", x = 2, y = 0.75, label = "*", size = 7)
  
 
 
@@ -308,13 +308,13 @@ Sex_New_plot <-
   theme(legend.position = "bottom") +
   theme(legend.title = element_blank())+
   theme(strip.text.x = element_text(size = 12, color = "black", face = "bold.italic"))+
-    annotate("text", x = 7, y = 0.86, label = "***", size = 7)+
-  annotate("text", x = 1, y = 0.86, label = "***", size = 7)+
-  annotate("text", x = 2, y = 0.86, label = "***", size = 7)+
-  annotate("text", x = 3, y = 0.86, label = "***", size = 7)+
-  annotate("text", x = 4, y = 0.86, label = "***", size = 7)+
-  annotate("text", x = 5, y = 0.86, label = "***", size = 7)+
-  annotate("text", x = 6, y = 0.86, label = "***", size = 7) #Manually edit out asterisk for intervals which are not significant
+    annotate("text", x = 7, y = 0.86, label = "*", size = 7)+
+  annotate("text", x = 1, y = 0.86, label = "*", size = 7)+
+  annotate("text", x = 2, y = 0.86, label = "*", size = 7)+
+  annotate("text", x = 3, y = 0.86, label = "*", size = 7)+
+  annotate("text", x = 4, y = 0.86, label = "*", size = 7)+
+  annotate("text", x = 5, y = 0.86, label = "*", size = 7)+
+  annotate("text", x = 6, y = 0.86, label = "*", size = 7) #Manually edit out asterisk for intervals which are not significant for now
 
 Sex_New_plot
 
