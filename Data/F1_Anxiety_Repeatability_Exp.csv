@@ -1,631 +1,631 @@
-Camera,Trial,water,water_time,Arena,Date,Day,Origin,Mark,Sex,Fish_ID,Group,Tank,tot_dist,mean_velocity,high_dur,mid_dur,low_dur,freezing_dur,arena_dur,latency_high,freq_high
-None,1,water1,start,1,2/03/2020,Monday,WCB,Blu.Bro,female,a9579,Within Control,Tall,1305.95,2.96807,12.64,11.2,416.24,1.28,440.08,275.04,3
-None,1,water1,start,2,2/03/2020,Monday,WCB,Blu.Gre,female,a9578,Within Control,Tall,1505.65,3.42192,61.92,63.36,314.8,0.32,440.08,184.4,8
-None,1,water1,start,3,2/03/2020,Monday,WCB,Bro.Bla,female,a9700,Within Control,Tall,1857.7,4.22204,150.48,122.32,167.28,0.48,440.08,83.68,25
-None,1,water1,start,4,2/03/2020,Monday,WCB,Ora.Gre,male,a9612,Within Control,Tall,277.191,0.62998,0,0,440.08,281.92,440.08,,0
-None,1,water1,start,5,2/03/2020,Monday,WCB,Red.Bro,male,a9677,Within Control,Tall,363.707,0.826606,0,0,440.08,202.96,440.08,,0
-None,1,water1,start,6,2/03/2020,Monday,WCB,Blu.Pur,male,a9581,Within Control,Tall,1190.75,2.70625,124.8,40.88,274.4,4.24,440.08,263.36,12
-None,2,water1,start,1,2/03/2020,Monday,WCB,Pin.Yel,male,a9587,Within Control,Tall,2022.54,4.59669,86.56,76.24,277.28,0.4,440.08,222.4,14
-None,2,water1,start,2,2/03/2020,Monday,WCB,Blu.Blu,male,a9575,Within Control,Tall,2133.93,4.84984,11.2,144.16,284.72,0.48,440.08,225.2,5
-None,2,water1,start,3,2/03/2020,Monday,WCB,_.Pur,female,a9605,Within Control,Tall,1177.8,2.67682,36.48,65.2,338.4,0.16,440.08,356,3
-None,2,water1,start,4,2/03/2020,Monday,WCB,Pin.Whi,male,a9590,Within Control,Tall,48.4961,0.110218,0,0.56,439.52,394.08,440.08,,0
-None,2,water1,start,5,2/03/2020,Monday,WCB,Ora.Bro,male,a9610,Within Control,Tall,1289.13,2.92985,0,0,440.08,0.64,440.08,,0
-None,2,water1,start,6,2/03/2020,Monday,WCB,Blu.Whi,female,a9580,Within Control,Tall,1098.81,2.49731,2.32,30.64,407.12,13.84,440.08,335.76,3
-None,3,water1,middle,1,2/03/2020,Monday,WCB,Whi.Ora,female,a9596,Within Control,Tall,1921.7,4.36749,52.48,77.28,310.32,0,440.08,302.72,11
-None,3,water1,middle,2,2/03/2020,Monday,WCB,Blu.Ora,female,a9583,Within Control,Tall,798.265,1.81424,17.6,26.56,395.92,153.6,440.08,391.84,4
-None,3,water1,middle,3,2/03/2020,Monday,WCB,Ora.Bla,female,a9608,Within Control,Tall,1430.99,3.25225,288.08,97.76,54.24,0.48,440.08,0,14
-None,3,water1,middle,4,2/03/2020,Monday,WCB,Pur.Pin,male,a9686,Within Control,Tall,1086.23,2.46871,0,0,440.08,12.96,440.08,,0
-None,3,water1,middle,5,2/03/2020,Monday,WCB,Bro.Gre,female,a9704,Within Control,Tall,1981.84,4.50419,73.44,101.04,265.6,0.72,440.08,134.72,15
-None,3,water1,middle,6,2/03/2020,Monday,WCB,Yel.Yel,female,a9613,Within Control,Tall,1014.11,2.30479,0,0,440.08,1.84,440.08,,0
-None,4,water1,middle,1,2/03/2020,Monday,WCB,Blu.Red,male,a9582,Within Control,Tall,2322.16,5.27763,93.84,65.04,281.2,12.48,440.08,39.2,23
-None,4,water1,middle,2,2/03/2020,Monday,WCB,Pur.Blu,male,a9687,Within Control,Tall,2458.29,5.58703,133.12,93.28,213.68,1.2,440.08,100.56,24
-None,4,water1,middle,3,2/03/2020,Monday,MA,Bro.Gre,female,a9796,Maternal,Tall,671.358,1.52581,17.92,22,400.16,79.36,440.08,384.56,3
-None,4,water1,middle,4,2/03/2020,Monday,MA,Red.Yel,female,a9761,Maternal,Tall,2109.92,4.79528,170.88,103.44,165.76,0.08,440.08,94.24,21
-None,4,water1,middle,5,2/03/2020,Monday,MA,Red.Blu,female,a9759,Maternal,Tall,7.03247,0.0159829,0,0,440.08,440,440.08,,0
-None,4,water1,middle,6,2/03/2020,Monday,MA,_.Yel,male,a9764,Maternal,Tall,1217.86,2.76786,0,0,440.08,1.12,440.08,,0
-None,5,water1,end,1,2/03/2020,Monday,MA,Gre.Gre,female,a9804,Maternal,Tall,1467.34,3.33487,0,0,440.08,0.24,440.08,,0
-None,5,water1,end,2,2/03/2020,Monday,MA,Red.Red,male,a9754,Maternal,Tall,1616.7,3.67432,17.12,88.8,334.16,0.24,440.08,224.72,5
-None,5,water1,end,3,2/03/2020,Monday,MA,Bro.Yel,female,a9794,Maternal,Tall,639.614,1.45367,0,0,440.08,4.08,440.08,,0
-None,5,water1,end,4,2/03/2020,Monday,MA,Red.Bro,male,a9760,Maternal,Tall,1745.63,3.96806,10.24,47.44,382.4,0.24,440.08,375.76,3
-None,5,water1,end,5,2/03/2020,Monday,MA,Red.Gre,female,a9758,Maternal,Tall,1761.89,4.00429,98.64,101.28,240.16,0.32,440.08,74.64,15
-None,5,water1,end,6,2/03/2020,Monday,MA,Gre.Blu,male,a9808,Maternal,Tall,7.01374,0.0159403,0,0,440.08,440,440.08,,0
-None,6,water1,end,1,2/03/2020,Monday,MA,Whi.Ora,female,a9839,Maternal,Tall,241.115,0.547988,0,0,440.08,230.24,440.08,,0
-None,6,water1,end,2,2/03/2020,Monday,MA,Gre.Whi,female,a9809,Maternal,Tall,1840.99,4.18407,119.36,54.4,266.32,1.44,440.08,104.72,14
-None,6,water1,end,3,2/03/2020,Monday,MA,_.Bla,male,a9800,Maternal,Tall,441.771,1.00403,0,0,440.08,158.16,440.08,,0
-None,6,water1,end,4,2/03/2020,Monday,MA,Red.Pur,female,a9762,Maternal,Tall,1383.77,3.14494,0,0,440.08,0.96,440.08,,0
-None,6,water1,end,5,2/03/2020,Monday,MA,Blu.Yel,female,a9845,Maternal,Tall,9.02942,0.0205214,0,0,440.08,440,440.08,,0
-None,6,water1,end,6,2/03/2020,Monday,MA,Red._,female,a9848,Maternal,Tall,945.819,2.14959,23.52,49.76,366.8,26.8,440.08,320.4,3
-None,7,water1,end,1,2/03/2020,Monday,MA,Bro.Pin,male,a9793,Maternal,Tall,13.8289,0.0314294,0,0,440.08,435.68,440.08,,0
-None,7,water1,end,2,2/03/2020,Monday,MA,_.Gre,male,a9803,Maternal,Tall,1901.75,4.32217,37.68,116.72,285.68,16.88,440.08,242,13
-None,7,water1,end,3,2/03/2020,Monday,MA,Pin.Ora,male,a9858,Maternal,Tall,687.686,1.56292,0,0,440.08,111.04,440.08,,0
-None,7,water1,end,4,2/03/2020,Monday,MA,Yel._,male,a9763,Maternal,Tall,27.2418,0.0619132,0,0,440.08,414.64,440.08,,0
-None,8,water2,,1,2/03/2020,Monday,WTB,Gre.Pur,male,a10043,Within Treatment,Tall,1871.71,4.25388,83.6,79.84,276.64,0.4,440.08,121.2,9
-None,8,water2,,2,2/03/2020,Monday,WTB,Ora.Ora,female,a10060,Within Treatment,Tall,2731.25,6.20739,198.16,108.08,133.84,0.08,440.08,0,40
-None,8,water2,,3,2/03/2020,Monday,WTB,_.Blu,female,a10040,Within Treatment,Tall,1832.56,4.1649,40.16,129.76,270.16,0.08,440.08,169.2,8
-None,8,water2,,4,2/03/2020,Monday,WTB,Whi.Bro,female,a10159,Within Treatment,Tall,2094.86,4.76105,167.52,48.72,223.84,0.72,440.08,12.72,15
-None,8,water2,,5,2/03/2020,Monday,WTB,Yel.Yel,female,a10097,Within Treatment,Tall,2102.91,4.77933,127.12,66.88,246.08,0.4,440.08,114.24,15
-None,8,water2,,6,2/03/2020,Monday,WTB,Pin.Bro,male,a10088,Within Treatment,Tall,1920.22,4.36414,88.56,99.44,252.08,2.32,440.08,64.08,18
-None,9,water2,,1,2/03/2020,Monday,WTB,Whi.Bla,male,a10152,Within Treatment,Tall,1347.47,3.06244,0,0,440.08,0.88,440.08,,0
-None,9,water2,,2,2/03/2020,Monday,WTB,Pur.Pur,female,a10081,Within Treatment,Tall,1905.09,4.33054,57.76,77.68,304.64,0.32,440.08,73.52,10
-None,9,water2,,3,2/03/2020,Monday,WTB,Whi.Pin,female,a10154,Within Treatment,Tall,1611.77,3.66311,69.68,105.36,265.04,0.72,440.08,235.04,9
-None,9,water2,,4,2/03/2020,Monday,WTB,Ora.Pin,female,a10063,Within Treatment,Tall,1524.63,3.46507,305.92,55.2,78.96,0.24,440.08,0,4
-None,9,water2,,5,2/03/2020,Monday,WTB,Pin.Red,male,a10089,Within Treatment,Tall,1668.31,3.79162,50.16,77.36,312.56,1.44,440.08,103.84,12
-None,9,water2,,6,2/03/2020,Monday,WTB,Pur.Gre,male,a10074,Within Treatment,Tall,1722.72,3.91526,86.88,120.88,232.32,0.24,440.08,97.04,12
-None,10,water2,,1,2/03/2020,Monday,WTB,_.Yel,male,a10096,Within Treatment,Tall,2020.47,4.59197,339.28,55.68,45.12,0.8,440.08,3.84,18
-None,10,water2,,2,2/03/2020,Monday,WTB,Red.Bro,male,a10169,Within Treatment,Tall,2872.03,6.52733,70.64,143.36,226.08,0.08,440.08,97.04,28
-None,10,water2,,3,2/03/2020,Monday,WTB,Whi.Ora,female,a10160,Within Treatment,Tall,991.45,2.25329,0,9.12,430.96,2.16,440.08,,0
-None,10,water2,,4,2/03/2020,Monday,WTB,Red._,male,a10155,Within Treatment,Tall,1146.64,2.60601,0,2.16,437.92,63.52,440.08,,0
-None,10,water2,,5,2/03/2020,Monday,WTB,Pur.Red,female,a10076,Within Treatment,Tall,1141.14,2.59349,97.84,59.04,283.2,128.08,440.08,197.36,11
-None,10,water2,,6,2/03/2020,Monday,WTB,Blu.Ora,female,a10059,Within Treatment,Tall,945.861,2.14968,0,0,440.08,110.4,440.08,,0
-None,11,water2,,1,2/03/2020,Monday,WTB,Gre._,male,a10037,Within Treatment,Tall,1880.12,4.273,157.84,151.92,130.32,0.24,440.08,137.2,14
-None,11,water2,,2,2/03/2020,Monday,WTB,Gre.Bro,male,a10044,Within Treatment,Tall,3202.08,7.27746,248,124.88,67.2,0.08,440.08,0,53
-None,11,water2,,3,2/03/2020,Monday,PA,Whi.Bro,female,a9929,Paternal,Tall,973.144,2.21169,18.08,45.84,376.16,109.6,440.08,161.68,7
-None,11,water2,,4,2/03/2020,Monday,PA,Whi.Red,male,a9931,Paternal,Tall,644.333,1.46439,0,0,440.08,32.8,440.08,,0
-None,11,water2,,5,2/03/2020,Monday,PA,Blu.Bla,male,a9984,Paternal,Tall,2414.39,5.48726,106.4,117.28,216.4,0.88,440.08,78.32,24
-None,11,water2,,6,2/03/2020,Monday,PA,Ora.Pin,female,a9961,Paternal,Tall,1631.69,3.70838,192.24,94.16,153.68,0.08,440.08,0,13
-None,12,water2,,1,2/03/2020,Monday,PA,Gre.Gre,female,a9874,Paternal,Tall,2229.71,5.06753,83.52,84,272.56,0.48,440.08,184.96,22
-None,12,water2,,2,2/03/2020,Monday,PA,Bla.Gre,female,a9922,Paternal,Tall,2319.61,5.27185,117.84,74.88,247.36,0.16,440.08,111.2,20
-None,12,water2,,3,2/03/2020,Monday,PA,Pin.Blu,male,a9960,Paternal,Tall,926.852,2.10648,17.68,34.08,388.32,10.72,440.08,392.08,4
-None,12,water2,,4,2/03/2020,Monday,PA,Gre.Pin,male,a9880,Paternal,Tall,2134.49,4.85111,95.68,71.44,272.96,0.24,440.08,152.48,19
-None,12,water2,,5,2/03/2020,Monday,PA,Bla.Pin,male,a9919,Paternal,Tall,2709.31,6.15752,149.12,119.2,171.76,0,440.08,50.16,33
-None,12,water2,,6,2/03/2020,Monday,PA,_.Bro,female,a9917,Paternal,Tall,2143.41,4.87139,191.6,74.48,174,0.32,440.08,136.64,19
-None,13,water2,,1,2/03/2020,Monday,PA,Ora.Ora,female,a9962,Paternal,Tall,2757.02,6.26595,230.24,77.12,132.72,0,440.08,22.08,29
-None,13,water2,,2,2/03/2020,Monday,PA,Gre.Blu,male,a9881,Paternal,Tall,12.2474,0.0278349,0,0,440.08,440,440.08,,0
-None,13,water2,,3,2/03/2020,Monday,PA,Pin.Pur,female,a9957,Paternal,Tall,1487.64,3.381,56.08,51.44,332.56,0.88,440.08,92.88,8
-None,13,water2,,4,2/03/2020,Monday,PA,Pin.Yel,male,a9956,Paternal,Tall,2500.38,5.68268,59.52,89.68,290.88,0.24,440.08,122.8,17
-None,13,water2,,5,2/03/2020,Monday,PA,Gre.Ora,female,a9876,Paternal,Tall,2295.99,5.21817,92.32,98.24,249.52,0.56,440.08,109.6,22
-None,13,water2,,6,2/03/2020,Monday,PA,Bla.Red,female,a9921,Paternal,Tall,1642.16,3.73218,0,5.84,434.24,0.64,440.08,,0
-None,14,water2,,1,2/03/2020,Monday,PA,_.Gre,male,a9873,Paternal,Tall,1853.32,4.21209,80.88,66.96,292.24,0.56,440.08,122.56,8
-None,14,water2,,2,2/03/2020,Monday,PA,Bla.Ora,female,a9887,Paternal,Tall,1379.04,3.13419,22.48,85.92,331.68,0.96,440.08,154.08,4
-None,14,water2,,3,2/03/2020,Monday,PA,Pin.Red,female,a9958,Paternal,Tall,1975.97,4.49085,91.28,102,246.8,0.64,440.08,188,16
-None,14,water2,,4,2/03/2020,Monday,PA,Whi.Whi,male,a9926,Paternal,Tall,1418.27,3.22334,40.16,50.4,349.52,74.08,440.08,264.96,11
-None,15,water3,,1,2/03/2020,Monday,WCA,Red.Pin,female,a9673,Within Control,Tall,2479.94,5.63623,127.76,88.24,224.08,0.08,440.08,16,19
-None,15,water3,,2,2/03/2020,Monday,WCA,Whi.Yel,female,a9599,Within Control,Tall,2538.11,5.76844,170.08,104.48,165.52,0.16,440.08,0.24,27
-None,15,water3,,3,2/03/2020,Monday,WCA,Red.Gre,male,a9680,Within Control,Tall,2571.68,5.84473,160.48,97.52,182.08,0.08,440.08,0.96,26
-None,15,water3,,4,2/03/2020,Monday,WCA,Red.Bla,male,a9676,Within Control,Tall,1045.88,2.37701,0,0,440.08,70.16,440.08,,0
-None,15,water3,,5,2/03/2020,Monday,WCA,Red.Yel,female,a9678,Within Control,Tall,1969.15,4.47534,139.76,73.52,226.8,0,440.08,9.36,16
-None,15,water3,,6,2/03/2020,Monday,WCA,Gre.Pur,female,a9556,Within Control,Tall,2690.1,6.11386,144.8,140.72,154.56,0.24,440.08,41.52,41
-None,16,water3,,1,2/03/2020,Monday,WCA,Ora.Blu,female,a9607,Within Control,Tall,2178.05,4.95101,134.24,114.24,191.52,0.24,440,103.2,25
-None,16,water3,,2,2/03/2020,Monday,WCA,Pur._,male,a9562,Within Control,Tall,44.3564,0.10081,0,0,440.08,411.04,440.08,,0
-None,16,water3,,3,2/03/2020,Monday,WCA,Ora.Red,male,a9606,Within Control,Tall,1748.47,3.97379,35.6,72.8,331.68,0.48,440.08,261.28,8
-None,16,water3,,4,2/03/2020,Monday,WCA,Gre.Bla,male,a9554,Within Control,Tall,1662.51,3.77843,190.72,126.88,122.48,0.4,440.08,88.96,19
-None,16,water3,,5,2/03/2020,Monday,WCA,Blu.Yel,female,a9577,Within Control,Tall,1766.44,4.01464,44.96,57.04,338.08,1.44,440.08,259.92,9
-None,16,water3,,6,2/03/2020,Monday,WCA,Pur.Red,female,a9566,Within Control,Tall,1596.72,3.62891,46.64,37.2,356.24,0.32,440.08,67.92,8
-None,17,water3,,1,2/03/2020,Monday,WCA,Ora.Ora,male,a9706,Within Control,Tall,1952.76,4.43809,34.56,56.96,348.56,0.4,440.08,136.96,6
-None,17,water3,,2,2/03/2020,Monday,WCA,Ora.Whi,male,a9611,Within Control,Tall,2214.7,5.0334,81.76,120.96,237.36,0.08,440.08,235.36,16
-None,17,water3,,3,2/03/2020,Monday,WCA,Red.Ora,male,a9681,Within Control,Tall,699.378,1.5895,0,0,440.08,46.96,440.08,,0
-None,17,water3,,4,2/03/2020,Monday,WCA,Pin.Gre,male,a9588,Within Control,Tall,1223.65,2.78103,11.44,30.08,398.56,1.6,440.08,208.4,3
-None,17,water3,,5,2/03/2020,Monday,WCA,Red.Whi,female,a9679,Within Control,Tall,1327.21,3.01638,34.24,77.04,328.8,13.2,440.08,268,7
-None,17,water3,,6,2/03/2020,Monday,WCA,Ora.Gre,female,a9603,Within Control,Tall,1780.38,4.0478,0,29.2,410.72,0.32,439.92,,0
-None,18,water3,,1,2/03/2020,Monday,WCA,Gre.Bro,male,a9558,Within Control,Tall,3004.42,6.82824,285.6,103.92,50.4,0.08,440.08,3.84,40
-None,18,water3,,2,2/03/2020,Monday,WCA,Gre.Blu,female,a9553,Within Control,Tall,2571.5,5.84431,138.32,105.12,196.64,0.8,440.08,56.16,26
-None,18,water3,,3,2/03/2020,Monday,MB,Red.Pin,male,a9755,Maternal,Tall,2177.79,4.94951,169.28,89.92,180.88,0.08,440.08,123.84,20
-None,18,water3,,4,2/03/2020,Monday,MB,_.Ora,female,a10198,Maternal,Tall,1632.96,3.71127,202.24,133.76,104.08,16.8,440.08,82.4,18
-None,18,water3,,5,2/03/2020,Monday,MB,Gre.Ora,female,a9868,Maternal,Tall,2381.1,5.4116,74.88,84.32,280.88,0.16,440.08,0,11
-None,18,water3,,6,2/03/2020,Monday,MB,Bla.Gre,female,a9787,Maternal,Tall,2333.01,5.30229,148.24,79.04,212.8,0.24,440.08,77.44,17
-None,19,water3,,1,2/03/2020,Monday,MB,_.Blu,male,a9844,Maternal,Tall,1535.95,3.49079,108.56,64.16,267.2,2.4,440.08,224.88,12
-None,19,water3,,2,2/03/2020,Monday,MB,Blu.Blu,male,a9843,Maternal,Tall,84.9706,0.193115,0,0,440.08,336.16,440.08,,0
-None,19,water3,,3,2/03/2020,Monday,MB,Red.Bla,male,a9756,Maternal,Tall,2492.15,5.66398,76.08,133.6,230.4,0.08,440.08,168.72,21
-None,19,water3,,4,2/03/2020,Monday,MB,Ora.Yel,male,a9813,Maternal,Tall,2384.68,5.42269,141.52,91.28,207.28,0.08,440.08,6.08,22
-None,19,water3,,5,2/03/2020,Monday,MB,Pur.Pin,male,a9824,Maternal,Tall,2583.12,5.87073,154.72,81.12,204.24,0.08,440.08,59.28,25
-None,19,water3,,6,2/03/2020,Monday,MB,Gre.Pur,female,a9867,Maternal,Tall,2114.05,4.80902,91.44,72.08,276.48,0.24,440,252.24,16
-None,20,water3,,1,2/03/2020,Monday,MB,Yel.Ora,female,a9778,Maternal,Tall,2402.68,5.46064,47.84,86.88,305.36,0.88,440.08,89.12,16
-None,20,water3,,2,2/03/2020,Monday,MB,Pin.Whi,female,a9862,Maternal,Tall,2441.2,5.54817,98.08,65.76,276.24,0.48,440.08,0,18
-None,20,water3,,3,2/03/2020,Monday,MB,Red._,male,a9752,Maternal,Tall,1542.01,3.50457,30.56,111.2,298.32,0.72,440.08,125.04,7
-None,20,water3,,4,2/03/2020,Monday,MB,Pin.Yel,female,a9854,Maternal,Tall,2962.48,6.74027,248,101.44,90.64,0,440.08,0,42
-None,20,water3,,5,2/03/2020,Monday,MB,Ora.Pur,male,a9821,Maternal,Tall,2107.24,4.78917,141.44,104.32,194.32,0,440.08,141.28,23
-None,20,water3,,6,2/03/2020,Monday,MB,Yel.Bla,female,a9777,Maternal,Tall,1943.15,4.41624,24.8,74.64,340.64,0.48,440.08,267.84,9
-None,21,water3,,1,2/03/2020,Monday,MB,Yel.Yel,male,a9765,Maternal,Tall,1777.06,4.03878,103.36,103.76,232.96,0.4,440.08,129.76,15
-None,21,water3,,2,2/03/2020,Monday,MB,_.Red,male,a9849,Maternal,Tall,1385.42,3.14867,15.2,51.2,373.68,2.56,440.08,303.04,5
-None,21,water3,,3,2/03/2020,Monday,MB,_._,female,a9774,Maternal,Tall,2103.53,4.78074,166.72,69.6,203.76,0.24,440.08,79.36,18
-None,21,water3,,4,2/03/2020,Monday,MB,Blu.Gre,male,a9846,Maternal,Tall,2093.42,4.7595,70.96,92.4,276.72,0.96,440.08,213.68,20
-None,21,water4,,5,2/03/2020,Monday,WTA,Pin.Gre,female,a10087,Within Treatment,Tall,8.6507,0.0196607,0,0,440.08,439.04,440.08,,0
-None,21,water4,,6,2/03/2020,Monday,WTA,Ora.Bro,male,a10070,Within Treatment,Tall,2279.9,5.19104,118.8,112.8,208.32,0.32,439.92,39.36,21
-None,22,water4,,1,2/03/2020,Monday,WTA,Red.Bla,female,a10164,Within Treatment,Tall,2341.83,5.32234,164.16,92.56,183.36,0.08,440.08,67.36,21
-None,22,water4,,2,2/03/2020,Monday,WTA,Blu.Blu,female,a10046,Within Treatment,Tall,2551.37,5.79857,135.36,117.68,187.04,0.4,440.08,8.8,27
-None,22,water4,,3,2/03/2020,Monday,WTA,Red.Whi,female,a10172,Within Treatment,Tall,2080.57,4.72857,113.28,119.04,207.76,1.04,440.08,100.8,23
-None,22,water4,,4,2/03/2020,Monday,WTA,Pur.Blu,female,a10079,Within Treatment,Tall,2957.08,6.7985,313.92,71.84,53.44,0.16,439.2,1.04,39
-None,22,water4,,5,2/03/2020,Monday,WTA,Blu._,female,a10039,Within Treatment,Tall,2555.16,5.80718,195.68,60,184.4,0.16,440.08,0,24
-None,22,water4,,6,2/03/2020,Monday,WTA,Bro.Bro,male,a10201,Within Treatment,Tall,2332.1,5.30022,348.32,49.68,42.08,0.24,440.08,1.92,18
-None,23,water4,,1,2/03/2020,Monday,WTA,Gre.Blu,female,a10041,Within Treatment,Tall,2164.02,4.91822,61.52,106.72,271.84,0.08,440.08,110,17
-None,23,water4,,2,2/03/2020,Monday,WTA,Pin.Bla,male,a10092,Within Treatment,Tall,1584.58,3.60132,26.16,47.84,366.08,1.12,440.08,188.24,8
-None,23,water4,,3,2/03/2020,Monday,WTA,Whi.Yel,male,a10157,Within Treatment,Tall,1897.59,4.3127,105.92,107.92,226.24,1.28,440.08,34.88,16
-None,23,water4,,4,2/03/2020,Monday,WTA,Yel._,male,a10095,Within Treatment,Tall,2859.48,6.51659,123.28,117.36,199.44,0.32,440.08,72.24,28
-None,23,water4,,5,2/03/2020,Monday,WTA,Blu.Yel,male,a10055,Within Treatment,Tall,2164.39,4.91906,130.64,85.52,223.92,0.24,440.08,5.52,27
-None,23,water4,,6,2/03/2020,Monday,WTA,Whi.Pur,female,a10158,Within Treatment,Tall,256.711,0.583434,0,0,440.08,303.6,440.08,,0
-None,24,water4,,1,2/03/2020,Monday,WTA,Pin.Blu,male,a10090,Within Treatment,Tall,3144.43,7.14642,142.24,138.8,159.04,0.24,440.08,54.32,45
-None,24,water4,,2,2/03/2020,Monday,WTA,Pur._,male,a10077,Within Treatment,Tall,1657.23,3.76642,74.56,111.44,254.08,0.8,440.08,39.52,14
-None,24,water4,,3,2/03/2020,Monday,WTA,Gre.Gre,female,a10034,Within Treatment,Tall,1036.11,2.3548,0,3.92,436.16,96.56,440.08,,0
-None,24,water4,,4,2/03/2020,Monday,WTA,Ora.Red,male,a10064,Within Treatment,Tall,2052.73,4.67294,80.96,134.88,224.08,0,439.92,0,20
-None,24,water4,,5,2/03/2020,Monday,WTA,Red.Pur,male,a10166,Within Treatment,Tall,144.155,0.327625,0,0,440.08,393.68,440.08,,0
-None,24,water4,,6,2/03/2020,Monday,WTA,Gre.Pin,female,a10036,Within Treatment,Tall,2457.16,5.5865,90.16,72.8,277.12,0.16,440.08,11.6,20
-None,25,water4,,1,2/03/2020,Monday,PB,Whi._,female,a9924,Paternal,Tall,2404.08,5.46382,173.52,128.32,138.24,0.4,440.08,20.24,32
-None,25,water4,,2,2/03/2020,Monday,PB,_.Red,female,a9903,Paternal,Tall,416.583,0.946779,0,0,440.08,175.68,440.08,,0
-None,25,water4,,3,2/03/2020,Monday,PB,_.Pur,male,a9981,Paternal,Tall,2223.46,5.05331,79.44,86.64,274,2.88,440.08,158.96,20
-None,25,water4,,4,2/03/2020,Monday,PB,Red._,male,a9941,Paternal,Tall,2288.46,5.20862,221.28,76.72,142,0.24,440,25.2,23
-None,25,water4,,5,2/03/2020,Monday,PB,Yel.Gre,male,a9901,Paternal,Tall,2051.67,4.66289,117.28,110.96,211.84,0.08,440.08,49.6,19
-None,25,water4,,6,2/03/2020,Monday,PB,Pin.Gre,female,a9952,Paternal,Tall,988.432,2.24644,21.36,17.52,401.2,24.8,440.08,138.8,2
-None,26,water4,,1,2/03/2020,Monday,PB,Whi.Ora,female,a9927,Paternal,Tall,1314.5,2.98749,28.24,24.88,386.96,14.48,440.08,398.56,5
-None,26,water4,,2,2/03/2020,Monday,PB,Blu.Gre,male,a9983,Paternal,Tall,340.635,0.774171,0,0,440.08,289.84,440.08,,0
-None,26,water4,,3,2/03/2020,Monday,PB,Red.Bla,male,a9949,Paternal,Tall,1865.25,4.23919,109.92,143.52,186.64,1.44,440.08,130.24,18
-None,26,water4,,4,2/03/2020,Monday,PB,Yel.Pur,female,a9899,Paternal,Tall,1956.66,4.44937,47.04,67.6,325.44,0.72,440.08,205.44,11
-None,26,water4,,5,2/03/2020,Monday,PB,Pur.Pur,female,a9982,Paternal,Tall,1521.97,3.45903,72.4,48.08,319.6,0.48,440.08,297.28,13
-None,26,water4,,6,2/03/2020,Monday,PB,Bro._,male,a9908,Paternal,Tall,2130,4.84091,106.24,111.12,222.72,0.72,440.08,77.92,19
-None,27,water4,,1,2/03/2020,Monday,PB,Bro.Bro,female,a9910,Paternal,Tall,1173.25,2.66647,0,1.36,438.72,0.32,440.08,,0
-None,27,water4,,2,2/03/2020,Monday,PB,Red.Yel,male,a9947,Paternal,Tall,933.652,2.12194,30.4,51.76,357.92,109.28,440.08,336.56,4
-None,27,water4,,3,2/03/2020,Monday,PB,Bla.Whi,female,a9923,Paternal,Tall,2035.39,4.6259,294.24,54.96,90.88,0.4,440.08,96.32,22
-None,27,water4,,4,2/03/2020,Monday,PB,Blu.Blu,male,a9973,Paternal,Tall,1491.04,3.38873,238.24,80.4,121.44,4.16,440.08,106.48,16
-None,27,water4,,5,2/03/2020,Monday,PB,Pin.Ora,female,a9953,Paternal,Tall,1458.15,3.31399,28.16,50.72,361.2,0.96,440.08,204.8,5
-None,27,water4,,6,2/03/2020,Monday,PB,Blu.Pur,male,a9975,Paternal,Tall,674.279,1.53245,0,0,440.08,130.72,440.08,,0
-None,28,water4,,1,2/03/2020,Monday,PB,Bro.Blu,male,a9937,Paternal,Tall,1600.87,3.63835,0,0,440.08,0.24,440.08,,0
-None,28,water4,,2,2/03/2020,Monday,PB,_.Ora,female,a9964,Paternal,Tall,1105.06,2.5115,28.16,40.24,371.68,92.16,440.08,220.88,5
-1,1,water1,,1,4/03/2020,Wed,PB,Bro._,male,a9908,Paternal,Old,2156.61,5.13772,48.88,50.88,320.24,21.04,420.16,56.72,18
-1,1,water1,,2,4/03/2020,Wed,PB,Bro.Bro,female,a9910,Paternal,Old,3438.83,7.81552,3.28,22,414.8,0.56,440.08,196.72,3
-1,1,water1,,3,4/03/2020,Wed,PB,Blu.Gre,male,a9983,Paternal,Old,2800.18,6.36404,25.2,34.08,380.16,0.56,440.08,251.68,12
-1,1,water1,,4,4/03/2020,Wed,PB,Red.Bla,male,a9949,Paternal,Old,3027.01,6.88709,11.84,55.12,372.64,0.8,439.84,59.76,9
-2,1,water1,,5,4/03/2020,Wed,PB,Blu.Blu,male,a9973,Paternal,Old,2050.94,4.66122,93.52,79.76,266.8,0.88,440.08,0.64,31
-2,1,water1,,6,4/03/2020,Wed,PB,Bla.Whi,female,a9923,Paternal,Old,2009.09,4.56612,49.92,139.36,250.8,0.16,440.08,67.84,30
-2,1,water1,,7,4/03/2020,Wed,PB,Whi.Ora,female,a9927,Paternal,Old,3314.93,7.53392,72.16,100.72,267.2,0.32,440.08,124.8,39
-2,1,water1,,8,4/03/2020,Wed,PB,_.Red,female,a9903,Paternal,Old,912.773,2.07448,0,0,440.08,286,440.08,,0
-1,2,water1,,1,4/03/2020,Wed,PB,_.Pur,male,a9981,Paternal,Old,2752.88,6.2611,13.6,24.8,401.68,0.24,440.08,0,8
-1,2,water1,,2,4/03/2020,Wed,PB,Whi._,female,a9924,Paternal,Old,2311.51,5.25631,68.32,142.56,229.2,0.32,440.08,77.68,40
-1,2,water1,,3,4/03/2020,Wed,PB,_.Ora,female,a9964,Paternal,Old,3231.91,7.36669,39.04,59.92,340.08,0.4,439.04,81.92,14
-1,2,water1,,4,4/03/2020,Wed,PB,Pin.Gre,female,a9952,Paternal,Old,2764.04,6.28192,75.6,76.64,287.6,0.56,440.08,218.56,29
-2,2,water1,,5,4/03/2020,Wed,PB,Red._,male,a9941,Paternal,Old,1794.61,4.07866,48.8,47.68,343.52,0.96,440.08,143.36,15
-2,2,water1,,6,4/03/2020,Wed,PB,Pur.Pur,female,a9982,Paternal,Old,2289.76,5.204,11.04,75.2,353.84,0.72,440.08,0,11
-2,2,water1,,7,4/03/2020,Wed,PB,Bro.Blu,male,a9937,Paternal,Old,4093.76,9.304,0.72,3.76,435.6,0.32,440.08,180.8,1
-2,2,water1,,8,4/03/2020,Wed,PB,Red.Yel,male,a9947,Paternal,Old,2330.16,5.41091,0,0,431.2,82.08,431.2,,0
-1,3,water1,,1,4/03/2020,Wed,PB,Blu.Pur,male,a9975,Paternal,Old,3074.57,7.00295,3.44,22.32,413.36,10.24,439.12,398.08,3
-1,3,water1,,2,4/03/2020,Wed,PB,Pin.Ora,female,a9953,Paternal,Old,2510.82,5.71056,10.88,46.64,382.24,0.88,439.76,39.28,11
-1,3,water1,,3,4/03/2020,Wed,PB,Yel.Gre,male,a9901,Paternal,Old,3008.16,6.84419,38,76.88,324.88,0.16,439.76,188.24,13
-1,3,water1,,4,4/03/2020,Wed,PB,Yel.Pur,female,a9899,Paternal,Old,4167.93,9.47257,0,1.76,437.92,12.4,440.08,,0
-1,4,water1,,1,4/03/2020,Wed,WTA,Red.Pur,male,a10166,Within Treatment,Old,2560.46,5.82029,18.08,33.6,388.32,0.88,440,234.64,8
-1,4,water1,,2,4/03/2020,Wed,WTA,Pin.Bla,male,a10092,Within Treatment,Old,2809.48,6.38517,8,60.24,371.84,0.16,440.08,140.24,11
-1,4,water1,,3,4/03/2020,Wed,WTA,Gre.Blu,female,a10041,Within Treatment,Old,3400.82,7.73476,1.52,11.36,425.76,11.76,440,369.44,1
-1,4,water1,,4,4/03/2020,Wed,WTA,Ora.Bro,male,a10070,Within Treatment,Old,2311.1,5.26398,79.6,78.24,281.68,0.4,439.52,56.4,40
-2,4,water1,,5,4/03/2020,Wed,WTA,Pin.Blu,male,a10090,Within Treatment,Old,2636.61,5.99557,78.56,67.68,293.84,0.32,440.08,108.08,27
-2,4,water1,,6,4/03/2020,Wed,WTA,Pur._,male,a10077,Within Treatment,Old,1928.94,4.38556,73.68,118.88,247.52,1.92,440.08,49.44,28
-2,4,water1,,7,4/03/2020,Wed,WTA,Whi.Yel,male,a10157,Within Treatment,Old,3744.12,8.51401,21.12,42.88,376.08,0.32,440.08,12.08,15
-2,4,water1,,8,4/03/2020,Wed,WTA,Whi.Pur,female,a10158,Within Treatment,Old,3385.68,7.69753,50.8,135.6,248.64,0.16,440.08,62.88,24
-1,5,water1,,1,4/03/2020,Wed,WTA,Pin.Gre,female,a10087,Within Treatment,Old,2251.62,5.12012,34.24,60.32,344.56,0.4,439.84,129.6,17
-1,5,water1,,2,4/03/2020,Wed,WTA,Blu.Blu,female,a10046,Within Treatment,Old,1703.29,4.56891,12.48,36.96,324.88,22.08,374.32,208.16,6
-1,5,water1,,3,4/03/2020,Wed,WTA,Yel._,male,a10095,Within Treatment,Old,3022.53,6.88064,73.36,73.36,291.76,0.16,439.52,45.2,34
-1,5,water1,,4,4/03/2020,Wed,WTA,Blu.Yel,male,a10055,Within Treatment,Old,1854.6,4.2173,55.68,93.92,290.48,0.72,440.08,85.44,21
-2,5,water1,,5,4/03/2020,Wed,WTA,Pur.Blu,female,a10079,Within Treatment,Old,2225.3,5.05751,73.68,105.92,260.48,0.16,440.08,0,33
-2,5,water1,,6,4/03/2020,Wed,WTA,Bro.Bro,male,a10201,Within Treatment,Old,1838.37,4.17812,95.12,144.4,200.56,0.48,440.08,17.84,29
-2,5,water1,,7,4/03/2020,Wed,WTA,Gre.Pin,female,a10036,Within Treatment,Old,2621.6,5.96578,73.36,77.68,288.72,0.56,440,103.2,22
-2,5,water1,,8,4/03/2020,Wed,WTA,Blu._,female,a10039,Within Treatment,Old,2049.16,4.66993,90.32,152.88,195.04,1.04,440,3.12,40
-1,6,water2,,1,4/03/2020,Wed,MB,Yel.Bla,female,a9777,Maternal,Old,2672.49,6.07385,46.88,64.64,328.56,0.4,440.08,49.68,20
-1,6,water2,,2,4/03/2020,Wed,MB,_.Ora,female,a10198,Maternal,Old,2221.06,5.0497,47.76,102.8,289.52,0.48,440.08,61.6,21
-1,6,water2,,3,4/03/2020,Wed,MB,Yel.Ora,female,a9778,Maternal,Old,2690.8,6.11991,66,52.96,320.8,0.56,439.76,38.56,20
-1,6,water2,,4,4/03/2020,Wed,MB,Blu.Blu,male,a9843,Maternal,Old,2974.86,6.76842,0,2.8,425.2,55.44,439.84,,0
-2,6,water2,,5,4/03/2020,Wed,MB,Gre.Pur,female,a9867,Maternal,Old,1967.09,5.33955,0,2.48,366.48,102.24,368.96,,0
-2,6,water2,,6,4/03/2020,Wed,MB,Red.Pin,male,a9755,Maternal,Old,2266.43,5.15098,86.24,83.52,270.32,0.48,440.08,24.96,35
-2,6,water2,,8,4/03/2020,Wed,MB,Yel.Yel,male,a9765,Maternal,Old,1985.29,4.51695,96.48,126.16,217.04,0.48,439.68,0.4,42
-1,7,water2,,1,4/03/2020,Wed,MB,_.Blu,male,a9844,Maternal,Old,1335.36,3.03491,33.76,125.2,281.12,0.64,440.08,257.6,13
-1,7,water2,,2,4/03/2020,Wed,MB,Blu.Gre,male,a9846,Maternal,Old,1727.74,4.80247,0,1.12,360.24,102.56,361.36,,0
-1,7,water2,,3,4/03/2020,Wed,MB,Red._,male,a9752,Maternal,Old,3370.61,7.66047,42.32,78.64,318.88,0.24,440.08,89.6,16
-1,7,water2,,4,4/03/2020,Wed,MB,Red.Bla,male,a9756,Maternal,Old,2986.41,6.7873,20.08,41.52,378.48,0.56,440.08,133.2,9
-2,7,water2,,5,4/03/2020,Wed,MB,_.Red,male,a9849,Maternal,Old,2385.97,5.42661,41.68,86.16,311.92,0.8,439.76,103.92,15
-2,7,water2,,6,4/03/2020,Wed,MB,Pin.Whi,female,a9862,Maternal,Old,1155.47,2.62607,51.76,63.6,324.56,186.8,440.08,205.2,20
-2,7,water2,,8,4/03/2020,Wed,MB,Pin.Yel,female,a9854,Maternal,Old,2794.36,6.36007,95.12,164.96,179.6,0,439.68,1.12,51
-1,8,water2,,1,4/03/2020,Wed,MB,Bla.Gre,female,a9787,Maternal,Old,1801.66,4.09916,58.32,79.2,302,0.48,439.92,40.16,14
-1,8,water2,,2,4/03/2020,Wed,MB,Gre.Ora,female,a9868,Maternal,Old,2690.99,6.14157,124.4,79.76,235.28,0.24,439.44,35.04,49
-1,8,water2,,3,4/03/2020,Wed,MB,_._,female,a9774,Maternal,Old,3364.73,7.6485,0.4,0.56,437.28,8.96,440.08,326.24,1
-1,8,water2,,4,4/03/2020,Wed,MB,Ora.Yel,male,a9813,Maternal,Old,2858.83,6.50088,1.84,19.44,418.72,27.76,440.08,304.56,2
-2,8,water2,,5,4/03/2020,Wed,WCA,Ora.Red,male,a9606,Within Control,Old,2298.89,5.22951,5.6,24.8,409.6,0.56,440,302.96,5
-2,8,water2,,6,4/03/2020,Wed,WCA,Pur._,male,a9562,Within Control,Old,1846.98,4.63227,5.76,21.04,372.32,136.48,399.12,2.4,3
-2,8,water2,,8,4/03/2020,Wed,WCA,Ora.Whi,male,a9611,Within Control,Old,957.093,2.1764,0.56,2.72,332.48,166.4,440.08,3.44,1
-1,9,water2,,1,4/03/2020,Wed,WCA,Ora.Gre,female,a9603,Within Control,Old,3065.32,6.97679,19.6,67.68,352.56,0.16,439.92,183.84,10
-1,9,water2,,2,4/03/2020,Wed,WCA,Pur.Red,female,a9566,Within Control,Old,2680.06,6.09104,21.36,50.88,367.84,0.32,440.08,95.92,9
-1,9,water2,,3,4/03/2020,Wed,WCA,Pin.Gre,male,a9588,Within Control,Old,2943.9,6.69311,53.68,93.28,293.12,0.16,440.08,103.28,27
-1,9,water2,,4,4/03/2020,Wed,WCA,Gre.Pur,female,a9556,Within Control,Old,2838.78,6.45177,15.92,44.72,379.44,0.56,440.08,89.68,13
-2,9,water2,,5,4/03/2020,Wed,WCA,Red.Pin,female,a9673,Within Control,Old,2857.54,6.49442,40.4,84.72,314.96,0.24,440.08,111.28,24
-2,9,water2,,6,4/03/2020,Wed,WCA,Gre.Bla,male,a9554,Within Control,Old,2573.16,5.86409,26.32,71.36,341.44,0.08,439.12,65.92,19
-2,9,water2,,8,4/03/2020,Wed,WCA,Whi.Yel,female,a9599,Within Control,Old,2856.62,6.49349,85.68,108.8,243.28,0.24,440,45.44,35
-1,10,water2,,1,4/03/2020,Wed,WCA,Gre.Bro,male,a9558,Within Control,Old,2600.7,5.91391,51.36,71.04,317.44,0.4,439.84,120,19
-1,10,water2,,2,4/03/2020,Wed,WCA,Red.Whi,female,a9679,Within Control,Old,4285.3,9.76595,10.64,26.56,402.72,2,439.92,94.24,7
-1,10,water2,,3,4/03/2020,Wed,WCA,Ora.Blu,female,a9607,Within Control,Old,3493.6,7.94289,49.84,86.48,303.76,0.08,440.08,147.84,21
-1,10,water2,,4,4/03/2020,Wed,WCA,Ora.Ora,male,a9706,Within Control,Old,3701.41,8.41536,35.28,44.88,359.84,0.08,440.08,89.28,20
-2,10,water2,,5,4/03/2020,Wed,WCA,Blu.Yel,female,a9577,Within Control,Old,2056.46,4.67378,41.12,58.4,340.56,0.32,440.08,175.44,18
-2,10,water2,,6,4/03/2020,Wed,WCA,Red.Gre,male,a9680,Within Control,Old,1600.56,3.64027,0.72,1.36,437.68,188.08,439.76,284.72,1
-2,10,water2,,8,4/03/2020,Wed,WCA,Red.Yel,female,a9678,Within Control,Old,3604.44,8.19638,31.44,51.52,349.6,0.16,440.08,73.76,20
-1,11,water3,,1,4/03/2020,Wed,PA,_.Gre,male,a9873,Paternal,Old,2403.63,5.47675,25.6,51.52,362.56,2.96,439.68,115.44,9
-1,11,water3,,2,4/03/2020,Wed,PA,Pin.Blu,male,a9960,Paternal,Old,2645.08,6.01593,61.28,97.52,281.28,5.44,440.08,67.92,32
-1,11,water3,,3,4/03/2020,Wed,PA,Pin.Yel,male,a9956,Paternal,Old,3049.41,6.93048,34.56,44,361.52,0.16,440.08,128.32,18
-1,11,water3,,4,4/03/2020,Wed,PA,Gre.Blu,male,a9881,Paternal,Old,1906.05,4.33193,4.8,28.8,405.28,62.32,440.08,266.4,5
-2,11,water3,,5,4/03/2020,Wed,PA,_.Bro,female,a9917,Paternal,Old,1958.47,4.45756,80.64,122.4,236.56,0.48,439.84,16.8,32
-2,11,water3,,6,4/03/2020,Wed,PA,Pin.Pur,female,a9957,Paternal,Old,2059.02,4.68726,83.92,92.96,263.04,0.88,439.92,10.72,27
-2,11,water3,,8,4/03/2020,Wed,PA,Whi.Bro,female,a9929,Paternal,Old,2036.73,4.63482,14.72,33.6,382.4,18.72,439.76,121.2,6
-1,12,water3,,1,4/03/2020,Wed,PA,Whi.Whi,male,a9926,Paternal,Old,2239,5.09233,31.12,65.92,342.96,9.92,440,0,10
-1,12,water3,,2,4/03/2020,Wed,PA,Ora.Ora,female,a9962,Paternal,Old,1867.41,4.24797,14.56,39.12,386.24,40.56,439.92,110.56,6
-1,12,water3,,3,4/03/2020,Wed,PA,Bla.Pin,male,a9919,Paternal,Old,2801.92,6.39241,97.04,126.72,214.08,0,438.96,56.32,34
-1,12,water3,,4,4/03/2020,Wed,PA,Bla.Red,female,a9921,Paternal,Old,3122.94,7.10792,5.12,19.84,414.32,6.48,439.68,342.88,3
-2,12,water3,,5,4/03/2020,Wed,PA,Ora.Pin,female,a9961,Paternal,Old,2117.36,4.81745,72,98.24,269.36,0.16,439.84,8.72,29
-2,12,water3,,6,4/03/2020,Wed,PA,Blu.Bla,male,a9984,Paternal,Old,2189.83,4.97689,67.12,60.8,312.16,0.64,440.08,17.12,25
-2,12,water3,,7,4/03/2020,Wed,PA,Gre.Gre,female,a9874,Paternal,Old,3729.63,8.48415,0,5.6,426.72,3.92,439.92,,0
-2,12,water3,,8,4/03/2020,Wed,PA,Gre.Pin,male,a9880,Paternal,Old,2104.8,4.78452,40.48,73.12,326.08,1.68,440,161.52,6
-1,13,water3,,1,4/03/2020,Wed,PA,Bla.Gre,female,a9922,Paternal,Old,2246.89,5.11588,84.96,95.12,257.52,0.32,440.08,31.52,48
-1,13,water3,,2,4/03/2020,Wed,PA,Whi.Red,male,a9931,Paternal,Old,225.231,0.512448,0,0,439.84,376.16,439.84,,0
-1,13,water3,,3,4/03/2020,Wed,PA,Gre.Ora,female,a9876,Paternal,Old,3172.18,7.20951,44.88,45.44,349.76,0.32,440.08,155.44,12
-1,13,water3,,4,4/03/2020,Wed,PA,Pin.Red,female,a9958,Paternal,Old,2897.53,6.58648,25.76,36.08,378.16,0.48,440.08,68.72,14
-2,13,water3,,5,4/03/2020,Wed,WTB,Whi.Ora,female,a10160,Within Treatment,Old,2429.41,5.52842,64.88,64.64,310.16,0.64,439.76,73.84,18
-2,13,water3,,6,4/03/2020,Wed,WTB,Whi.Pin,female,a10154,Within Treatment,Old,1447.67,3.29015,30.88,81.68,327.52,22.32,440.08,247.92,12
-2,13,water3,,7,4/03/2020,Wed,WTB,Whi.Bro,female,a10159,Within Treatment,Old,2567.38,5.83496,66,105.04,269.04,0.16,440.08,60.72,32
-2,13,water3,,8,4/03/2020,Wed,WTB,Pur.Red,female,a10076,Within Treatment,Old,2658.79,6.046,101.28,68,258.48,2.24,440.08,59.76,18
-1,14,water3,,1,4/03/2020,Wed,WTB,Pin.Red,male,a10089,Within Treatment,Old,3082.89,7.00784,34.32,36.96,368.8,0.4,440.08,26.96,14
-1,14,water3,,2,4/03/2020,Wed,WTB,Gre._,male,a10037,Within Treatment,Old,2294.24,5.21418,97.6,107.68,234.8,0.08,440.08,36.72,30
-1,14,water3,,3,4/03/2020,Wed,WTB,Gre.Bro,male,a10044,Within Treatment,Old,2005.51,4.79328,110.64,78,211.84,14.56,419.36,55.36,28
-1,14,water3,,4,4/03/2020,Wed,WTB,Red._,male,a10155,Within Treatment,Old,2771.69,6.30045,18.8,41.12,379.76,0.4,440.08,171.36,10
-2,14,water3,,5,4/03/2020,Wed,WTB,Ora.Pin,female,a10063,Within Treatment,Old,2381.05,5.41147,21.6,49.92,368.56,0.24,440.08,214.8,9
-2,14,water3,,6,4/03/2020,Wed,WTB,Ora.Ora,female,a10060,Within Treatment,Old,2203.75,5.0213,84.24,77.12,278.64,0.88,440,5.04,33
-2,14,water3,,7,4/03/2020,Wed,WTB,Pur.Gre,male,a10074,Within Treatment,Old,2571.23,5.8437,94.72,115.84,229.52,0.24,440.08,73.44,32
-2,14,water3,,8,4/03/2020,Wed,WTB,Pin.Bro,male,a10088,Within Treatment,Old,1804.7,4.10158,21.44,64.88,352.32,107.6,440.08,256.4,10
-1,15,water3,,1,4/03/2020,Wed,WTB,Yel.Yel,female,a10097,Within Treatment,Old,2206.39,5.01634,34.8,40.4,364.16,1.36,440.08,142.32,10
-1,15,water3,,2,4/03/2020,Wed,WTB,Whi.Bla,male,a10152,Within Treatment,Old,2229.7,5.06751,15.36,22,402.72,2.08,440.08,281.84,9
-1,15,water3,,3,4/03/2020,Wed,WTB,Blu.Ora,female,a10059,Within Treatment,Old,3191.48,7.25336,34.16,76.8,329.12,0.32,440.08,226.64,12
-1,15,water3,,4,4/03/2020,Wed,WTB,_.Yel,male,a10096,Within Treatment,Old,2748.83,6.25986,56.56,82.88,300.64,0.24,440.08,152.08,19
-2,15,water3,,5,4/03/2020,Wed,WTB,Pur.Pur,female,a10081,Within Treatment,Old,332.528,0.918993,0,0,362.24,301.36,362.24,,0
-2,15,water3,,6,4/03/2020,Wed,WTB,Red.Bro,male,a10169,Within Treatment,Old,2109.03,5.448,18.24,53.04,316,0.64,387.28,162.24,10
-2,15,water3,,7,4/03/2020,Wed,WTB,_.Blu,female,a10040,Within Treatment,Old,2817.78,6.40404,22.4,36.48,381.2,19.6,440.08,182.72,9
-2,15,water3,,8,4/03/2020,Wed,WTB,Gre.Pur,male,a10043,Within Treatment,Old,2618.76,5.95174,44.72,70.24,324.96,0.16,440.08,78.96,12
-1,16,water4,,1,4/03/2020,Wed,MA,Gre.Blu,male,a9808,Maternal,Old,206.833,1.00756,0,0,206.32,170.88,206.32,,0
-1,16,water4,,2,4/03/2020,Wed,MA,Gre.Whi,female,a9809,Maternal,Old,1913.11,4.34798,80,107.6,252.48,0.32,440.08,76.32,28
-1,16,water4,,3,4/03/2020,Wed,MA,Yel._,male,a9763,Maternal,Old,411.789,1.26223,0,0,258.08,253.6,327.2,,0
-1,16,water4,,4,4/03/2020,Wed,MA,Red.Pur,female,a9762,Maternal,Old,4017.03,9.12962,0,0,440.08,1.2,440.08,,0
-2,16,water4,,5,4/03/2020,Wed,MA,_.Yel,male,a9764,Maternal,Old,2443.84,5.56026,5.44,17.84,416.64,9.36,439.92,210.32,5
-2,16,water4,,6,4/03/2020,Wed,MA,_.Gre,male,a9803,Maternal,Old,2235.24,5.09213,3.68,4.56,431.36,57.84,439.6,210.24,6
-2,16,water4,,7,4/03/2020,Wed,MA,Red._,female,a9848,Maternal,Old,1771.78,4.02678,4.88,8.88,416.64,155.12,440.08,210.96,5
-2,16,water4,,8,4/03/2020,Wed,MA,Blu.Yel,female,a9845,Maternal,Old,2527.17,5.76873,44.4,59.44,329.44,29.44,438.64,130.32,19
-1,17,water4,,1,4/03/2020,Wed,MA,Bro.Gre,female,a9796,Maternal,Old,2387.71,5.42662,14.88,25.28,399.92,1.28,440.08,316.56,7
-1,17,water4,,2,4/03/2020,Wed,MA,Red.Gre,female,a9758,Maternal,Old,1531.32,3.48662,36.24,49.68,354.08,18.4,440,287.52,16
-1,17,water4,,3,4/03/2020,Wed,MA,Red.Yel,female,a9761,Maternal,Old,3469.36,7.88777,0,12.8,427.28,10.08,440.08,,0
-1,17,water4,,4,4/03/2020,Wed,MA,Pin.Ora,male,a9858,Maternal,Old,1760.54,4.00122,0,0,361.28,104,440.08,,0
-2,17,water4,,5,4/03/2020,Wed,MA,Bro.Pin,male,a9793,Maternal,Old,1707.96,4.12313,28,45.52,340.8,15.52,414.32,153.68,16
-2,17,water4,,6,4/03/2020,Wed,MA,Whi.Ora,female,a9839,Maternal,Old,1570.97,3.66365,0,0,429.12,173.6,429.12,,0
-2,17,water4,,7,4/03/2020,Wed,MA,Gre.Gre,female,a9804,Maternal,Old,4135.87,9.40141,0,0,440.08,22.16,440.08,,0
-2,17,water4,,8,4/03/2020,Wed,MA,Red.Red,male,a9754,Maternal,Old,3579.91,8.13763,18.72,34.64,386.32,0.16,440,81.92,10
-1,18,water4,,1,4/03/2020,Wed,MA,Red.Bro,male,a9760,Maternal,Old,2674.7,6.07885,0,1.28,438.8,0.56,440.08,,0
-1,18,water4,,2,4/03/2020,Wed,MA,_.Bla,male,a9800,Maternal,Old,2646.42,6.33115,0,11.04,407.36,40.88,418.4,,0
-1,18,water4,,3,4/03/2020,Wed,MA,Red.Blu,female,a9759,Maternal,Old,2850.16,6.47763,9.76,35.28,389.6,39.28,440.08,123.52,7
-1,18,water4,,4,4/03/2020,Wed,MA,Bro.Yel,female,a9794,Maternal,Old,1087.77,2.47221,0,0,278.96,303.28,440.08,,0
-2,18,water4,,5,4/03/2020,Wed,WCB,Pur.Blu,male,a9687,Within Control,Old,2346.35,5.54956,41.52,43.6,337.76,0.96,422.88,103.6,13
-2,18,water4,,6,4/03/2020,Wed,WCB,Blu.Whi,female,a9580,Within Control,Old,383.662,1.36515,0,0,281.68,210.96,282.48,,0
-2,18,water4,,7,4/03/2020,Wed,WCB,_.Pur,female,a9605,Within Control,Old,2311.97,5.25448,11.36,30.88,397.84,0.56,440.08,267.36,4
-2,18,water4,,8,4/03/2020,Wed,WCB,Ora.Bla,female,a9608,Within Control,Old,2419.92,5.49983,27.68,55.12,357.28,2.16,440.08,63.12,12
-1,19,water4,,1,4/03/2020,Wed,WCB,Whi.Ora,female,a9596,Within Control,Old,2777.55,6.31606,16.56,49.44,373.84,0.4,440.08,115.44,9
-1,19,water4,,2,4/03/2020,Wed,WCB,Bro.Gre,female,a9704,Within Control,Old,3414.79,7.77502,17.6,46.16,376.32,0.56,440.08,64.32,12
-1,19,water4,,3,4/03/2020,Wed,WCB,Blu.Bro,female,a9579,Within Control,Old,2492.96,5.672,11.12,22.72,405.12,70.16,439.6,344.64,6
-1,19,water4,,4,4/03/2020,Wed,WCB,Pur.Pin,male,a9686,Within Control,Old,2092.54,4.75751,2.16,6.72,430.24,43.44,440.08,150.72,1
-2,19,water4,,5,4/03/2020,Wed,WCB,Pin.Whi,male,a9590,Within Control,Old,162.696,0.446476,0,0,365.04,337.6,365.04,,0
-2,19,water4,,6,4/03/2020,Wed,WCB,Ora.Gre,male,a9612,Within Control,Old,958.398,3.30482,0,0,291.04,14.96,291.04,,0
-2,19,water4,,7,4/03/2020,Wed,WCB,Red.Bro,male,a9677,Within Control,Old,323.21,1.29824,0,0,249.92,205.84,249.92,,0
-2,19,water4,,8,4/03/2020,Wed,WCB,Blu.Pur,male,a9581,Within Control,Old,1935.97,4.39993,25.68,134.88,279.52,1.28,440.08,144.8,18
-1,20,water4,,1,4/03/2020,Wed,WCB,Yel.Yel,female,a9613,Within Control,Old,748.278,1.82364,0,0,410.72,267.84,410.72,,0
-1,20,water4,,2,4/03/2020,Wed,WCB,Bro.Bla,female,a9700,Within Control,Old,2302.91,5.23389,1.6,8.24,430.24,7.2,440.08,438.48,1
-1,20,water4,,3,4/03/2020,Wed,WCB,Blu.Gre,female,a9578,Within Control,Old,1628.82,3.70186,44.16,73.12,322.8,126.24,440.08,191.2,14
-1,20,water4,,4,4/03/2020,Wed,WCB,Blu.Blu,male,a9575,Within Control,Old,3352.77,7.61993,4,27.28,408.8,0.08,440.08,224.56,3
-2,20,water4,,5,4/03/2020,Wed,WCB,Pin.Yel,male,a9587,Within Control,Old,1364.8,3.84321,0,1.52,354.24,18.32,355.76,,0
-2,20,water4,,6,4/03/2020,Wed,WCB,Blu.Ora,female,a9583,Within Control,Old,138.513,0.845002,0,0,164.4,145.12,164.4,,0
-2,20,water4,,7,4/03/2020,Wed,WCB,Blu.Red,male,a9582,Within Control,Old,2808.65,6.3833,15.36,47.36,377.36,14.48,440.08,292.64,10
-2,20,water4,,8,4/03/2020,Wed,WCB,Ora.Bro,male,a9610,Within Control,Old,2013.38,4.57586,38.64,84.72,316.72,21.12,440.08,72.56,9
-1,1,water1,,1,9/03/2020,Monday,WTB,Gre._,male,a10037,Within Treatment,Old,2652.59,6.02861,19.6,57.28,363.2,0.08,440.08,132.08,12
-1,1,water1,,2,9/03/2020,Monday,WTB,Pur.Red,female,a10076,Within Treatment,Old,3083.93,7.00894,22.16,51.04,366.88,1.12,440.08,158.16,13
-1,1,water1,,3,9/03/2020,Monday,WTB,Pur.Pur,female,a10081,Within Treatment,Old,3002.4,6.82364,29.92,29.6,380.56,0.48,440.08,166.72,11
-1,1,water1,,4,9/03/2020,Monday,WTB,Gre.Bro,male,a10044,Within Treatment,Old,2733.27,6.21198,63.44,84.8,291.84,0.64,440.08,59.76,24
-2,1,water1,,5,9/03/2020,Monday,WTB,Pin.Bro,male,a10088,Within Treatment,Old,1723.21,3.92424,24.08,21.04,394.32,0.64,439.44,102.8,9
-2,1,water1,,6,9/03/2020,Monday,WTB,Whi.Bro,female,a10159,Within Treatment,Old,2297.58,5.22177,36.16,55.52,348.4,0.08,440.08,11.52,12
-2,1,water1,,7,9/03/2020,Monday,WTB,Ora.Pin,female,a10063,Within Treatment,Old,2484.17,5.64789,24,167.92,248.16,0.24,440.08,0,11
-2,1,water1,,8,9/03/2020,Monday,WTB,Red._,male,a10155,Within Treatment,Old,2234.47,5.07834,46.24,68.88,324.88,0.64,440.08,81.28,16
-1,2,water1,,1,9/03/2020,Monday,WTB,_.Yel,male,a10096,Within Treatment,Old,2145.96,4.87717,26.24,55.28,358.56,0.64,440.08,1.2,10
-1,2,water1,,2,9/03/2020,Monday,WTB,Ora.Ora,female,a10060,Within Treatment,Old,2225.96,5.06268,63.92,62.64,313.44,1.92,440,32.32,24
-1,2,water1,,3,9/03/2020,Monday,WTB,Red.Bro,male,a10169,Within Treatment,Old,2955.52,6.73054,0,4.96,434.96,10.24,439.92,,0
-1,2,water1,,4,9/03/2020,Monday,WTB,Whi.Pin,female,a10154,Within Treatment,Old,2109.58,4.79449,30.64,71.76,337.68,0.08,440.08,147.84,7
-2,2,water1,,5,9/03/2020,Monday,WTB,Gre.Pur,male,a10043,Within Treatment,Old,2277.8,5.17682,52.64,59.04,328.4,0.32,440.08,97.28,14
-2,2,water1,,6,9/03/2020,Monday,WTB,Yel.Yel,female,a10097,Within Treatment,Old,2199.65,4.9992,76.72,58.8,304.56,0.56,440.08,13.44,24
-2,2,water1,,7,9/03/2020,Monday,WTB,Pur.Gre,male,a10074,Within Treatment,Old,1273.37,4.33238,0,0,295.2,46.24,295.2,,0
-2,2,water1,,8,9/03/2020,Monday,WTB,Pin.Red,male,a10089,Within Treatment,Old,2450.71,5.56979,15.28,17.92,406.88,84.4,440.08,330.48,6
-1,3,water1,,1,9/03/2020,Monday,WTB,_.Blu,female,a10040,Within Treatment,Old,2736.47,6.21924,18.16,54,367.92,0.24,440.08,168.88,8
-1,3,water1,,2,9/03/2020,Monday,WTB,Blu.Ora,female,a10059,Within Treatment,Old,2166.89,4.92474,8.24,20.72,411.12,0.4,440.08,162.4,4
-1,3,water1,,3,9/03/2020,Monday,WTB,Whi.Bla,male,a10152,Within Treatment,Old,2565.32,5.83028,0,17.2,422.88,1.12,440.08,,0
-1,3,water1,,4,9/03/2020,Monday,WTB,Whi.Ora,female,a10160,Within Treatment,Old,3341.93,7.59806,0,0,440.08,134.16,440.08,,0
-2,3,water1,,5,9/03/2020,Monday,PA,Bla.Red,female,a9921,Paternal,Old,888.467,2.61068,0,3.36,337.04,214.88,340.4,,0
-2,3,water1,,6,9/03/2020,Monday,PA,Pin.Red,female,a9958,Paternal,Old,2330.74,5.29714,67.84,68.24,304,1.12,440.08,122.96,24
-2,3,water1,,7,9/03/2020,Monday,PA,Bla.Pin,male,a9919,Paternal,Old,2812.93,6.39302,29.6,63.2,347.28,0.16,440.08,35.68,17
-2,3,water1,,8,9/03/2020,Monday,PA,Bla.Gre,female,a9922,Paternal,Old,2798.61,6.36048,49.2,37.12,353.76,0.48,440.08,139.76,14
-1,4,water1,,1,9/03/2020,Monday,PA,Gre.Gre,female,a9874,Paternal,Old,2617.4,5.94863,15.04,23.68,401.36,7.12,440.08,395.6,4
-1,4,water1,,2,9/03/2020,Monday,PA,Bla.Ora,female,a9887,Paternal,Old,2333.23,5.30278,0,18.64,421.44,50.16,440.08,,0
-1,4,water1,,3,9/03/2020,Monday,PA,Whi.Whi,male,a9926,Paternal,Old,2356.83,6.39054,33.92,52.24,283.52,10.08,369.68,35.36,16
-1,4,water1,,4,9/03/2020,Monday,PA,Blu.Bla,male,a9984,Paternal,Old,2438.96,5.54309,67.2,94.96,277.92,0.32,440.08,5.6,33
-2,4,water1,,5,9/03/2020,Monday,PA,Ora.Pin,female,a9961,Paternal,Old,2464.31,5.60071,27.28,60.8,352,0.08,440.08,47.28,17
-2,4,water1,,6,9/03/2020,Monday,PA,Pin.Pur,female,a9957,Paternal,Old,2272.37,5.16447,34.08,78.4,327.6,0.32,440.08,31.12,21
-2,4,water1,,7,9/03/2020,Monday,PA,Whi.Bro,female,a9929,Paternal,Old,1908.02,4.33878,47.04,71.76,321.28,3.6,440.08,145.04,22
-2,4,water1,,8,9/03/2020,Monday,PA,Gre.Ora,female,a9876,Paternal,Old,3243.5,7.37159,25.68,41.68,372.72,0.4,440.08,122.08,9
-1,5,water1,,1,9/03/2020,Monday,PA,_.Bro,female,a9917,Paternal,Old,1667.53,3.78984,33.2,80.32,326.56,102.64,440.08,86,21
-1,5,water1,,2,9/03/2020,Monday,PA,Gre.Pin,male,a9880,Paternal,Old,2162.8,4.91546,63.92,99.6,276.56,0.48,440.08,241.92,32
-1,5,water1,,3,9/03/2020,Monday,PA,Whi.Red,male,a9931,Paternal,Old,404.284,1.13819,0,0,355.84,297.04,355.84,,0
-1,5,water1,,4,9/03/2020,Monday,PA,Ora.Ora,female,a9962,Paternal,Old,3564.07,8.10017,0,32.96,407.12,0.16,440.08,,0
-2,5,water1,,5,9/03/2020,Monday,PA,Pin.Blu,male,a9960,Paternal,Old,2567.63,5.83553,3.76,53.36,382.96,0.32,440.08,123.28,3
-2,5,water1,,6,9/03/2020,Monday,PA,Gre.Blu,male,a9881,Paternal,Old,2030.21,4.61411,2.96,26.32,410.8,42.56,440.08,434.24,1
-2,5,water1,,7,9/03/2020,Monday,PA,_.Gre,male,a9873,Paternal,Old,3416.07,7.76379,8.72,27.84,403.52,6.24,440.08,84.32,6
-2,5,water1,,8,9/03/2020,Monday,PA,Pin.Yel,male,a9956,Paternal,Old,3906.38,8.89432,0,2.96,437.12,0.24,440.08,,0
-1,6,water2,,1,9/03/2020,Monday,MA,Red._,female,a9848,Maternal,Old,2175.66,4.94467,13.44,48.72,377.92,69.52,440.08,315.52,7
-1,6,water2,,2,9/03/2020,Monday,MA,Bro.Gre,female,a9796,Maternal,Old,2081.16,4.72991,28.8,50.56,360.72,0.56,440.08,74.72,9
-1,6,water2,,3,9/03/2020,Monday,MA,_.Gre,male,a9803,Maternal,Old,1169.32,3.18027,0,0,368.64,105.28,368.64,,0
-1,6,water2,,4,9/03/2020,Monday,MA,Bro.Yel,female,a9794,Maternal,Old,2960.88,6.72928,0,0,440.08,1.12,440.08,,0
-2,6,water2,,5,9/03/2020,Monday,MA,Red.Gre,female,a9758,Maternal,Old,1764.89,4.01112,73.36,69.6,297.12,1.84,440.08,107.76,26
-2,6,water2,,6,9/03/2020,Monday,MA,Red.Yel,female,a9761,Maternal,Old,2375.73,5.39939,15.52,69.92,354.64,0.32,440.08,223.68,8
-2,6,water2,,7,9/03/2020,Monday,MA,Gre.Blu,male,a9808,Maternal,Old,194.477,0.818507,0,0,239.28,161.44,239.28,,0
-2,6,water2,,8,9/03/2020,Monday,MA,Red.Bro,male,a9760,Maternal,Old,1293.41,3.30018,0,0,392.56,192,392.56,,0
-1,7,water2,,1,9/03/2020,Monday,MA,Bro.Pin,male,a9793,Maternal,Old,2049.37,4.65767,44.56,67.12,328.4,0.8,440.08,78.48,19
-1,7,water2,,2,9/03/2020,Monday,MA,Red.Blu,female,a9759,Maternal,Old,175.265,0.39833,0,0,440.08,410.8,440.08,,0
-1,7,water2,,3,9/03/2020,Monday,MA,Whi.Ora,female,a9839,Maternal,Old,1168.96,4.81452,0,0,244.4,92.08,244.4,,0
-1,7,water2,,4,9/03/2020,Monday,MA,Red.Red,male,a9754,Maternal,Old,3983.49,9.0534,22.32,47.12,370.64,0.4,440.08,103.92,16
-2,7,water2,,5,9/03/2020,Monday,MA,_.Yel,male,a9764,Maternal,Old,2486.76,5.65174,1.92,33.04,405.12,5.6,440.08,297.92,2
-2,7,water2,,6,9/03/2020,Monday,MA,Gre.Gre,female,a9804,Maternal,Old,2041.21,4.63912,0,0,440.08,1.44,440.08,,0
-2,7,water2,,7,9/03/2020,Monday,MA,Red.Pur,female,a9762,Maternal,Old,2482.89,5.67491,0,0,439.68,20.88,439.68,,0
-2,7,water2,,8,9/03/2020,Monday,MA,Yel._,male,a9763,Maternal,Old,357.727,1.19914,0,0,299.28,236.4,299.28,,0
-1,8,water2,,1,9/03/2020,Monday,MA,_.Bla,male,a9800,Maternal,Old,2251.2,5.12008,35.6,61.2,343.2,72.48,440,244.64,10
-1,8,water2,,2,9/03/2020,Monday,MA,Blu.Yel,female,a9845,Maternal,Old,2162.25,4.9142,116.72,71.68,251.68,1.2,440.08,82.8,33
-1,8,water2,,3,9/03/2020,Monday,MA,Pin.Ora,male,a9858,Maternal,Old,2140.66,4.86514,36.16,44.96,358.96,4,440.08,303.84,8
-1,8,water2,,4,9/03/2020,Monday,MA,Gre.Whi,female,a9809,Maternal,Old,2380.72,5.41269,48,122.08,270,0.32,440.08,152.72,20
-2,8,water2,,5,9/03/2020,Monday,WCB,_.Pur,female,a9605,Within Control,Old,2773.39,6.30775,17.12,41.44,381.52,0.16,440.08,250.96,5
-2,8,water2,,6,9/03/2020,Monday,WCB,Pin.Whi,male,a9590,Within Control,Old,683.985,1.55451,0,0,440.08,196.88,440.08,,0
-2,8,water2,,7,9/03/2020,Monday,WCB,Pin.Yel,male,a9587,Within Control,Old,858.232,2.58379,0,0,333.36,99.28,333.36,,0
-2,8,water2,,8,9/03/2020,Monday,WCB,Blu.Ora,female,a9583,Within Control,Old,121.233,0.418506,0,0,290,269.92,290,,0
-1,9,water2,,1,9/03/2020,Monday,WCB,Yel.Yel,female,a9613,Within Control,Old,2463.69,5.5993,0,0,440.08,1.2,440.08,,0
-1,9,water2,,2,9/03/2020,Monday,WCB,Red.Bro,male,a9677,Within Control,Old,469.085,1.0661,0,0,440.08,364.96,440.08,,0
-1,9,water2,,3,9/03/2020,Monday,WCB,Bro.Gre,female,a9704,Within Control,Old,2443.59,5.55361,0.88,8.16,431.04,34,440.08,212.08,1
-1,9,water2,,4,9/03/2020,Monday,WCB,Ora.Bro,male,a9610,Within Control,Old,3027.96,6.88173,0,17.12,422.96,0.64,440.08,,0
-2,9,water2,,5,9/03/2020,Monday,WCB,Blu.Pur,male,a9581,Within Control,Old,1734.75,3.94261,40.56,117.84,281.68,0.8,440.08,60.88,25
-2,9,water2,,6,9/03/2020,Monday,WCB,Blu.Gre,female,a9578,Within Control,Old,2077.91,4.72252,37.76,48.16,354.16,0.96,440.08,179.84,13
-2,9,water2,,7,9/03/2020,Monday,WCB,Blu.Red,male,a9582,Within Control,Old,1938.49,4.80968,0,0.8,402.96,74.72,403.76,,0
-2,9,water2,,8,9/03/2020,Monday,WCB,Pur.Pin,male,a9686,Within Control,Old,2729.52,6.20346,20,39.76,380.32,11.92,440.08,110.4,10
-1,10,water2,,1,9/03/2020,Monday,WCB,Blu.Bro,female,a9579,Within Control,Old,2067.38,4.69859,16.96,66.56,356.56,25.76,440.08,113.36,8
-1,10,water2,,2,9/03/2020,Monday,WCB,Bro.Bla,female,a9700,Within Control,Old,878.002,2.08057,0,0,422.32,225.76,422.32,,0
-1,10,water2,,3,9/03/2020,Monday,WCB,Whi.Ora,female,a9596,Within Control,Old,4254.39,9.66906,0,1.28,438.8,0.72,440.08,,0
-1,10,water2,,4,9/03/2020,Monday,WCB,Blu.Whi,female,a9580,Within Control,Old,3408.8,7.76421,0,0,440,1.2,440,,0
-2,10,water2,,5,9/03/2020,Monday,WCB,Ora.Bla,female,a9608,Within Control,Old,2084.47,4.73744,79.76,59.12,301.2,0.8,440.08,48.48,15
-2,10,water2,,6,9/03/2020,Monday,WCB,Ora.Gre,male,a9612,Within Control,Old,2669.88,6.06791,21.84,38.24,380,0.16,440.08,244.88,8
-2,10,water2,,7,9/03/2020,Monday,WCB,Pur.Blu,male,a9687,Within Control,Old,2732.51,6.21024,32.64,62.08,345.36,5.12,440.08,78.48,16
-2,10,water2,,8,9/03/2020,Monday,WCB,Blu.Blu,male,a9575,Within Control,Old,3104.46,7.05558,0,7.28,432.8,56.4,440.08,,0
-1,11,water3,,1,9/03/2020,Monday,PB,Whi.Ora,female,a9927,Paternal,Old,2829.16,6.42991,31.36,81.36,327.2,0.64,440.08,89.84,21
-1,11,water3,,2,9/03/2020,Monday,PB,Blu.Pur,male,a9975,Paternal,Old,840.788,2.37887,0,5.2,348.64,215.6,353.84,,0
-1,11,water3,,3,9/03/2020,Monday,PB,Yel.Gre,male,a9901,Paternal,Old,2473.43,5.62144,13.68,56.16,370.24,20.72,440.08,327.6,5
-1,11,water3,,4,9/03/2020,Monday,PB,Bro.Bro,female,a9910,Paternal,Old,2247.11,5.77247,0,10.16,380.16,63.2,390.32,,0
-2,11,water3,,5,9/03/2020,Monday,PB,Yel.Pur,female,a9899,Paternal,Old,211.847,0.481909,0,0,440,410,440,,0
-2,11,water3,,6,9/03/2020,Monday,PB,Bla.Whi,female,a9923,Paternal,Old,2025.57,4.60357,62.72,85.04,292.32,0.48,440.08,34.08,20
-2,11,water3,,7,9/03/2020,Monday,PB,Whi._,female,a9924,Paternal,Old,2242.7,5.09704,82.24,87.44,270.4,0.4,440.08,118.72,20
-2,11,water3,,8,9/03/2020,Monday,PB,Red.Bla,male,a9949,Paternal,Old,2242.56,5.09674,45.28,62.56,332.24,24.4,440.08,108.88,9
-1,12,water3,,1,9/03/2020,Monday,PB,Red._,male,a9941,Paternal,Old,2070.52,4.70572,37.2,44,358.88,68.8,440.08,218.56,13
-1,12,water3,,2,9/03/2020,Monday,PB,Pin.Gre,female,a9952,Paternal,Old,2209.12,5.02072,39.52,32.32,368.24,0.8,440.08,158.8,8
-1,12,water3,,3,9/03/2020,Monday,PB,_.Red,female,a9903,Paternal,Old,331.916,1.00508,0,0,331.28,287.52,331.28,,0
-1,12,water3,,4,9/03/2020,Monday,PB,Bro.Blu,male,a9937,Paternal,Old,2929.14,6.68264,0,0,438.64,12.64,438.64,,0
-2,12,water3,,5,9/03/2020,Monday,PB,_.Pur,male,a9981,Paternal,Old,1861.81,4.23523,16.08,43.68,380.24,35.52,440,222.4,6
-2,12,water3,,6,9/03/2020,Monday,PB,Blu.Blu,male,a9973,Paternal,Old,1364.61,3.10138,59.36,56.88,323.84,36,440.08,100.64,10
-2,12,water3,,7,9/03/2020,Monday,PB,Blu.Gre,male,a9983,Paternal,Old,2679.43,6.0996,0,1.84,438.08,1.44,439.92,,0
-2,12,water3,,8,9/03/2020,Monday,PB,Pur.Pur,female,a9982,Paternal,Old,2175.05,4.9433,5.04,28.16,406.88,36.64,440.08,411.52,3
-1,13,water3,,1,9/03/2020,Monday,PB,_.Ora,female,a9964,Paternal,Old,2327.78,5.29041,41.2,50.32,348.56,1.68,440.08,209.76,18
-1,13,water3,,2,9/03/2020,Monday,PB,Red.Yel,male,a9947,Paternal,Old,1490.5,3.38749,0,0,440.08,93.04,440.08,,0
-1,13,water3,,3,9/03/2020,Monday,PB,Pin.Ora,female,a9953,Paternal,Old,2136.23,4.85507,0,2.16,437.92,37.12,440.08,,0
-1,13,water3,,4,9/03/2020,Monday,PB,Bro._,male,a9908,Paternal,Old,1914.7,4.35238,1.52,20,418.48,34.16,440,414.24,1
-2,13,water3,,5,9/03/2020,Monday,WTA,Red.Pur,male,a10166,Within Treatment,Old,2171.41,4.93501,11.2,30.4,398.48,1.68,440.08,172.08,5
-2,13,water3,,6,9/03/2020,Monday,WTA,Gre.Blu,female,a10041,Within Treatment,Old,2706.64,6.15145,7.84,52.4,379.84,0.16,440.08,153.28,7
-2,13,water3,,7,9/03/2020,Monday,WTA,Yel._,male,a10095,Within Treatment,Old,2947.4,6.70108,26.24,64.96,348.88,0.32,440.08,251.36,9
-2,13,water3,,8,9/03/2020,Monday,WTA,Pin.Bla,male,a10092,Within Treatment,Old,1840.16,4.18446,9.04,17.68,413.36,109.92,440.08,409.92,3
-1,14,water3,,1,9/03/2020,Monday,WTA,Whi.Yel,male,a10157,Within Treatment,Old,3059.15,6.95261,41.52,41.6,356.96,0.32,440.08,58.96,18
-1,14,water3,,2,9/03/2020,Monday,WTA,Pin.Blu,male,a10090,Within Treatment,Old,2070.21,4.70502,87.2,102.32,250.56,0.56,440.08,44.8,30
-1,14,water3,,3,9/03/2020,Monday,WTA,Red.Bla,female,a10164,Within Treatment,Old,2979.73,7.29181,49.28,41.68,318.32,13.04,409.28,173.52,15
-1,14,water3,,4,9/03/2020,Monday,WTA,Ora.Bro,male,a10070,Within Treatment,Old,2635.97,5.99302,84.08,153.6,202.4,0.16,440.08,10.32,37
-2,14,water3,,5,9/03/2020,Monday,WTA,Blu._,female,a10039,Within Treatment,Old,1774.77,4.03356,119.92,176.96,143.2,0.56,440.08,0,53
-2,14,water3,,6,9/03/2020,Monday,WTA,Ora.Red,male,a10064,Within Treatment,Old,2305.4,5.23955,29.2,42.24,368.64,0.56,440.08,205.2,9
-2,14,water3,,7,9/03/2020,Monday,WTA,Blu.Blu,female,a10046,Within Treatment,Old,2397.96,5.44992,36.96,52.08,351.04,0.96,440.08,78.4,12
-2,14,water3,,8,9/03/2020,Monday,WTA,Bro.Bro,male,a10201,Within Treatment,Old,2785.08,6.32973,45.84,71.04,323.2,0.4,440.08,302.88,13
-1,15,water3,,1,9/03/2020,Monday,WTA,Pin.Gre,female,a10087,Within Treatment,Old,2008.44,4.56463,79.28,84.96,275.84,0.48,440.08,41.76,21
-1,15,water3,,2,9/03/2020,Monday,WTA,Red.Whi,female,a10172,Within Treatment,Old,2693.9,6.12251,4.24,31.68,404.16,56.72,440.08,299.44,3
-1,15,water3,,3,9/03/2020,Monday,WTA,Whi.Pur,female,a10158,Within Treatment,Old,3407.95,7.74675,0,7.76,432.32,2.8,440.08,,0
-1,15,water3,,4,9/03/2020,Monday,WTA,Gre.Pin,female,a10036,Within Treatment,Old,2627.97,5.97267,131.68,129.6,178.8,0.4,440.08,35.04,33
-2,15,water3,,5,9/03/2020,Monday,WTA,Blu.Yel,male,a10055,Within Treatment,Old,1707.93,3.88166,52.64,99.52,287.92,0.16,440.08,0.72,23
-2,15,water3,,6,9/03/2020,Monday,WTA,Gre.Gre,female,a10034,Within Treatment,Old,2480.85,5.6383,146.88,92.72,200.48,0.64,440.08,7.76,47
-2,15,water3,,7,9/03/2020,Monday,WTA,Pur._,male,a10077,Within Treatment,Old,2372.95,5.39306,62.16,54.4,323.52,0.4,440.08,44.32,18
-2,15,water3,,8,9/03/2020,Monday,WTA,Pur.Blu,female,a10079,Within Treatment,Old,2378.39,5.40542,69.44,72.32,298.32,3.28,440.08,56.88,20
-1,16,water4,,1,9/03/2020,Monday,MB,Yel.Yel,male,a9765,Maternal,Old,1851.58,4.20813,2.56,32.88,404.64,0.24,440.08,401.6,1
-1,16,water4,,2,9/03/2020,Monday,MB,Red._,male,a9752,Maternal,Old,1930.16,4.38674,4.56,30.4,405.12,125.68,440.08,414.72,1
-1,16,water4,,3,9/03/2020,Monday,MB,Red.Bla,male,a9756,Maternal,Old,2605.56,5.92604,19.12,38.48,382.48,0.32,440.08,184.16,7
-1,16,water4,,4,9/03/2020,Monday,MB,Red.Pin,male,a9755,Maternal,Old,3131.16,7.11627,57.76,64.08,318.24,0.08,440.08,135.36,12
-2,16,water4,,5,9/03/2020,Monday,MB,Pur.Pin,male,a9824,Maternal,Old,2164.28,4.9215,52.72,88.96,298.4,0.08,440.08,90.88,29
-2,16,water4,,6,9/03/2020,Monday,MB,_.Blu,male,a9844,Maternal,Old,1419.88,3.227,99.12,133.2,207.76,1.12,440.08,142.08,40
-2,16,water4,,7,9/03/2020,Monday,MB,Pin.Whi,female,a9862,Maternal,Old,2278.01,5.17729,69.52,103.6,266.96,0.8,440.08,45.84,29
-2,16,water4,,8,9/03/2020,Monday,MB,_.Ora,female,a10198,Maternal,Old,2198.61,4.99683,42.48,85.52,312.08,0.4,440.08,93.6,10
-1,17,water4,,1,9/03/2020,Monday,MB,Pin.Yel,female,a9854,Maternal,Old,2272.48,5.16472,49.12,75.44,315.52,0.64,440.08,270.56,23
-1,17,water4,,2,9/03/2020,Monday,MB,Yel.Ora,female,a9778,Maternal,Old,2699.67,6.13561,15.04,34.64,390.4,1.92,440.08,269.12,6
-1,17,water4,,3,9/03/2020,Monday,MB,Ora.Yel,male,a9813,Maternal,Old,2310.79,5.61307,0,2.8,409.52,20.4,412.32,,0
-1,17,water4,,4,9/03/2020,Monday,MB,Blu.Gre,male,a9846,Maternal,Old,472.305,4.29056,0,0,111.2,56.96,111.2,,0
-2,17,water4,,5,9/03/2020,Monday,MB,Ora.Pur,male,a9821,Maternal,Old,2401.75,5.46051,6.56,46.96,386.56,0.56,440.08,262.08,4
-2,17,water4,,6,9/03/2020,Monday,MB,_._,female,a9774,Maternal,Old,2376.75,5.4017,0,0,440.08,150.16,440.08,,0
-2,17,water4,,7,9/03/2020,Monday,MB,Gre.Ora,female,a9868,Maternal,Old,2907.26,6.60741,62.8,77.12,300.16,0.24,440.08,68.16,30
-2,17,water4,,8,9/03/2020,Monday,MB,Gre.Pur,female,a9867,Maternal,Old,568.715,1.34665,0,0,422.72,301.44,422.72,,0
-1,18,water4,,1,9/03/2020,Monday,MB,Bla.Gre,female,a9787,Maternal,Old,1904.58,4.32859,83.28,120.88,235.92,0.56,440.08,37.04,29
-1,18,water4,,2,9/03/2020,Monday,MB,Yel.Bla,female,a9777,Maternal,Old,267.079,0.606997,0,0,440.08,390.24,440.08,,0
-1,18,water4,,3,9/03/2020,Monday,MB,_.Red,male,a9849,Maternal,Old,2448.1,5.56792,5.6,28.4,405.92,10.72,439.92,351.76,3
-1,18,water4,,4,9/03/2020,Monday,MB,Blu.Blu,male,a9843,Maternal,Old,1857.16,4.4859,17.84,41.52,355.04,41.52,414.4,338.8,9
-2,18,water4,,5,9/03/2020,Monday,WCA,Pur._,male,a9562,Within Control,Old,1265.31,4.50738,0,0,283.2,138.4,283.2,,0
-2,18,water4,,6,9/03/2020,Monday,WCA,Red.Bla,male,a9676,Within Control,Old,168.943,0.38396,0,0,440.08,407.76,440.08,,0
-2,18,water4,,7,9/03/2020,Monday,WCA,Red.Yel,female,a9678,Within Control,Old,2780.05,6.31829,34.08,46.4,359.6,1.68,440.08,2.72,6
-2,18,water4,,8,9/03/2020,Monday,WCA,Ora.Blu,female,a9607,Within Control,Old,1556.9,3.53842,0,0,440.08,212.88,440.08,,0
-1,19,water4,,1,9/03/2020,Monday,WCA,Red.Gre,male,a9680,Within Control,Old,2863.63,6.50826,11.04,29.68,399.36,47.28,440.08,360.96,7
-1,19,water4,,2,9/03/2020,Monday,WCA,Pur.Red,female,a9566,Within Control,Old,238.076,0.541082,0,0,440.08,402.48,440.08,,0
-1,19,water4,,3,9/03/2020,Monday,WCA,Gre.Blu,female,a9553,Within Control,Old,2508.22,5.70257,0,9.2,430.88,3.92,440.08,,0
-1,19,water4,,4,9/03/2020,Monday,WCA,Gre.Bro,male,a9558,Within Control,Old,3125.6,7.1114,10.4,26.24,403.28,20,439.92,196.48,4
-2,19,water4,,5,9/03/2020,Monday,WCA,Gre.Pur,female,a9556,Within Control,Old,2298.83,5.22461,10.48,42.8,386.8,7.84,440.08,282.16,7
-2,19,water4,,6,9/03/2020,Monday,WCA,Ora.Ora,male,a9706,Within Control,Old,756.359,1.719,0,0.8,439.28,297.44,440.08,,0
-2,19,water4,,7,9/03/2020,Monday,WCA,Red.Ora,male,a9681,Within Control,Old,876.945,1.99414,0,0,440.08,206.48,440.08,,0
-2,19,water4,,8,9/03/2020,Monday,WCA,Ora.Gre,female,a9603,Within Control,Old,1039.16,2.36174,0,0,440.08,267.76,440.08,,0
-1,20,water4,,1,9/03/2020,Monday,WCA,Red.Pin,female,a9673,Within Control,Old,3181.85,7.23148,12.64,55.12,372.32,0.48,440.08,241.04,11
-1,20,water4,,2,9/03/2020,Monday,WCA,Whi.Yel,female,a9599,Within Control,Old,1922.17,4.36858,0,0,440.08,160.32,440.08,,0
-1,20,water4,,3,9/03/2020,Monday,WCA,Ora.Red,male,a9606,Within Control,Old,2869.96,6.52501,0,3.04,437.04,1.04,440.08,,0
-1,20,water4,,4,9/03/2020,Monday,WCA,Red.Whi,female,a9679,Within Control,Old,581.23,1.67482,0,0,347.44,300.72,347.44,,0
-2,20,water4,,5,9/03/2020,Monday,WCA,Blu.Yel,female,a9577,Within Control,Old,1699.84,3.86467,62.08,106.72,271.28,1.12,440.08,20,31
-2,20,water4,,6,9/03/2020,Monday,WCA,Pin.Gre,male,a9588,Within Control,Old,2149.64,4.88554,0,1.68,438.4,2.8,440.08,,0
-2,20,water4,,7,9/03/2020,Monday,WCA,Ora.Whi,male,a9611,Within Control,Old,1520.62,4.54623,0,0,335.84,107.76,335.84,,0
-2,20,water4,,8,9/03/2020,Monday,WCA,Gre.Bla,male,a9554,Within Control,Old,1901.67,4.32198,17.44,50.08,372.56,71.6,440.08,152.32,7
-1,1,water1,,1,6/03/2020,Friday,WCA,Ora.Gre,female,a9603,Within Control,Tall,1947.36,4.76454,129.6,180.4,126.24,0.16,436.24,0,27
-1,1,water1,,2,6/03/2020,Friday,WCA,Red.Yel,female,a9678,Within Control,Tall,2345.74,5.37126,173.6,114.48,151.92,1.6,440,0,20
-1,1,water1,,3,6/03/2020,Friday,WCA,Gre.Bro,male,a9558,Within Control,Tall,3177,7.32838,220.8,163.68,55.6,0.88,440.08,0,34
-1,1,water1,,4,6/03/2020,Friday,WCA,Pur.Red,female,a9566,Within Control,Tall,2261.07,5.1388,76.08,118.8,245.2,0.24,440.08,0,15
-2,1,water1,,5,6/03/2020,Friday,WCA,Ora.Ora,male,a9706,Within Control,Tall,1181.03,4.99251,48.08,59.6,250.72,3.12,358.4,2.48,33
-2,1,water1,,6,6/03/2020,Friday,WCA,Gre.Blu,female,a9553,Within Control,Tall,1012.35,3.27155,60.24,49.84,290,0.32,400.08,136.24,30
-2,1,water1,,7,6/03/2020,Friday,WCA,Red.Whi,female,a9679,Within Control,Tall,1969.71,6.18938,120.56,83.12,211.12,1.12,414.8,88.88,57
-2,1,water1,,8,6/03/2020,Friday,WCA,Pin.Gre,male,a9588,Within Control,Tall,1206.16,3.44381,302.96,54.72,70.32,0.8,428,10,45
-1,2,water1,,1,6/03/2020,Friday,WCA,Pur._,male,a9562,Within Control,Tall,478.966,1.09054,0,0,440.08,2.64,440.08,,0
-1,2,water1,,2,6/03/2020,Friday,WCA,Blu.Yel,female,a9577,Within Control,Tall,2381.85,5.52992,112.4,165.6,161.76,0.16,439.76,111.84,19
-1,2,water1,,3,6/03/2020,Friday,WCA,Red.Bla,male,a9676,Within Control,Tall,631.611,1.43993,0,0,439.76,241.76,439.76,,0
-1,2,water1,,4,6/03/2020,Friday,WCA,Red.Pin,female,a9673,Within Control,Tall,2968.93,6.7722,89.76,221.12,129.12,0.08,440,0,32
-2,2,water1,,5,6/03/2020,Friday,WCA,Red.Ora,male,a9681,Within Control,Tall,1890.36,5.42832,19.6,28.56,377.04,0.72,425.2,391.6,4
-2,2,water1,,6,6/03/2020,Friday,WCA,Ora.Whi,male,a9611,Within Control,Tall,1812.03,4.33002,30.4,59.44,349.52,4.8,439.36,316.72,8
-2,2,water1,,7,6/03/2020,Friday,WCA,Gre.Bla,male,a9554,Within Control,Tall,2549.57,5.83266,165.12,94.08,180.88,0.08,440.08,94.48,18
-2,2,water1,,8,6/03/2020,Friday,WCA,Ora.Red,male,a9606,Within Control,Tall,1529.12,5.80618,100.32,64.96,236.56,0.24,401.84,190.4,48
-1,3,water1,,1,6/03/2020,Friday,WCA,Red.Gre,male,a9680,Within Control,Tall,2622.08,5.97449,47.6,84.32,308.16,0,440.08,0,10
-1,3,water1,,2,6/03/2020,Friday,WCA,Whi.Yel,female,a9599,Within Control,Tall,2874.41,6.54346,84.8,95.04,260.24,0,440.08,69.12,15
-1,3,water1,,3,6/03/2020,Friday,WCA,Ora.Blu,female,a9607,Within Control,Tall,2357.29,5.70054,139.36,116,183.76,0.16,439.12,88.88,24
-1,3,water1,,4,6/03/2020,Friday,WCA,Gre.Pur,female,a9556,Within Control,Tall,3060.84,6.95646,59.6,154.72,225.76,0,440.08,37.04,31
-2,3,water1,,5,6/03/2020,Friday,MB,Red.Pin,male,a9755,Maternal,Tall,1985.64,6.08944,191.6,90.88,132.48,0.56,414.96,16.24,49
-2,3,water1,,6,6/03/2020,Friday,MB,Ora.Yel,male,a9813,Maternal,Tall,1972.72,7.05754,130.48,82.64,190.08,0.24,403.2,45.2,48
-2,3,water1,,7,6/03/2020,Friday,MB,Red._,male,a9752,Maternal,Tall,964.286,4.47922,9.68,37.12,305.76,0.16,352.56,183.36,8
-2,3,water1,,8,6/03/2020,Friday,MB,_.Ora,female,a10198,Maternal,Tall,1949.89,6.73862,212,74.16,110.8,0,396.96,0,90
-1,4,water1,,1,6/03/2020,Friday,MB,Pin.Whi,female,a9862,Maternal,Tall,1710.52,3.94637,35.04,26.32,378.24,60.64,439.6,283.6,4
-1,4,water1,,2,6/03/2020,Friday,MB,_.Blu,male,a9844,Maternal,Tall,2100.03,4.7815,105.44,68.96,265.52,0.56,439.92,36.16,14
-1,4,water1,,3,6/03/2020,Friday,MB,Pin.Yel,female,a9854,Maternal,Tall,3632.2,8.50553,217.04,135.76,87.04,0,439.84,0,53
-1,4,water1,,4,6/03/2020,Friday,MB,_._,female,a9774,Maternal,Tall,2632.93,6.03772,80.8,77.36,281.92,0.32,440.08,70.56,16
-2,4,water1,,5,6/03/2020,Friday,MB,Yel.Bla,female,a9777,Maternal,Tall,1078.21,4.88499,64.88,77.2,208.16,0.16,350.24,131.44,49
-2,4,water1,,6,6/03/2020,Friday,MB,_.Red,male,a9849,Maternal,Tall,1891.85,4.30435,22.72,33.6,383.76,1.2,440.08,261.28,7
-2,4,water1,,7,6/03/2020,Friday,MB,Bla.Gre,female,a9787,Maternal,Tall,749.765,4.44595,161.44,73.04,79.28,0,313.76,0,144
-2,4,water1,,8,6/03/2020,Friday,MB,Blu.Blu,male,a9843,Maternal,Tall,1358.72,3.09814,30.64,40.24,368.88,1.12,439.76,357.84,5
-1,5,water1,,1,6/03/2020,Friday,MB,Red.Bla,male,a9756,Maternal,Tall,3346.94,7.60945,85.52,122,232.56,0.08,440.08,89.52,19
-1,5,water1,,2,6/03/2020,Friday,MB,Ora.Pur,male,a9821,Maternal,Tall,2825.05,6.43931,130.56,177.04,132.48,0.24,440.08,0,24
-1,5,water1,,3,6/03/2020,Friday,MB,Pur.Pin,male,a9824,Maternal,Tall,3958.14,9.08998,239.44,107.36,93.28,0.08,440.08,33.28,42
-1,5,water1,,4,6/03/2020,Friday,MB,Gre.Pur,female,a9867,Maternal,Tall,2328.9,5.29488,63.6,94.08,282.4,0.24,440.08,137.68,18
-2,5,water1,,5,6/03/2020,Friday,MB,Yel.Yel,male,a9765,Maternal,Tall,2349.63,6.83828,119.92,140.88,168.48,0,429.28,5.44,45
-2,5,water1,,6,6/03/2020,Friday,MB,Blu.Gre,male,a9846,Maternal,Tall,1186.39,2.69634,0.24,15.84,424,73.04,440.08,417.36,1
-2,5,water1,,7,6/03/2020,Friday,MB,Gre.Ora,female,a9868,Maternal,Tall,1972.43,7.1053,172.24,83.6,144,0.16,399.84,0,86
-2,5,water1,,8,6/03/2020,Friday,MB,Yel.Ora,female,a9778,Maternal,Tall,2101.31,7.8689,147.04,82.24,157.04,0.08,386.32,0,86
-1,6,water2,,1,6/03/2020,Friday,WTA,Gre.Gre,female,a10034,Within Treatment,Tall,2943.59,7.46194,169.76,135.04,129.84,0.08,434.64,0,46
-1,6,water2,,2,6/03/2020,Friday,WTA,Blu._,female,a10039,Within Treatment,Tall,4008.8,11.035,265.68,73.52,71.68,0.08,410.88,0.4,78
-1,6,water2,,3,6/03/2020,Friday,WTA,Gre.Pin,female,a10036,Within Treatment,Tall,2762.19,6.31791,77.28,67.04,295.76,0.08,440.08,0,19
-1,6,water2,,4,6/03/2020,Friday,WTA,Gre.Blu,female,a10041,Within Treatment,Tall,2225.11,5.12414,46.48,118.88,274.72,22.08,440.08,256.64,13
-2,6,water2,,5,6/03/2020,Friday,WTA,Red.Bla,female,a10164,Within Treatment,Tall,1443.93,5.41852,87.84,78.48,223.28,0.08,389.6,78.8,47
-2,6,water2,,6,6/03/2020,Friday,WTA,Pur.Blu,female,a10079,Within Treatment,Tall,1080.81,6.07468,132.48,65.52,124.64,0.96,322.64,25.76,106
-2,6,water2,,7,6/03/2020,Friday,WTA,Ora.Red,male,a10064,Within Treatment,Tall,1336.25,6.10492,151.76,131.28,83.68,0.4,366.72,0.08,95
-2,6,water2,,8,6/03/2020,Friday,WTA,Blu.Blu,female,a10046,Within Treatment,Tall,748.261,4.3912,36.96,85.2,186.72,0,308.88,0,42
-1,7,water2,,1,6/03/2020,Friday,WTA,Red.Pur,male,a10166,Within Treatment,Tall,1565.52,3.55929,9.36,41.2,389.52,0.96,440.08,385.44,4
-1,7,water2,,2,6/03/2020,Friday,WTA,Blu.Yel,male,a10055,Within Treatment,Tall,2235.62,5.10695,29.76,37.68,372.64,16.4,440.08,110.08,11
-1,7,water2,,3,6/03/2020,Friday,WTA,Pin.Blu,male,a10090,Within Treatment,Tall,4512.58,10.3197,135.76,184.64,119.6,0.08,440,28.32,61
-1,7,water2,,4,6/03/2020,Friday,WTA,Red.Whi,female,a10172,Within Treatment,Tall,2363.71,5.37206,36.64,139.28,264.16,0.4,440.08,174.64,9
-2,7,water2,,5,6/03/2020,Friday,WTA,Pin.Bla,male,a10092,Within Treatment,Tall,815.514,3.05482,25.2,37.76,304.4,0.4,367.36,364.64,17
-2,7,water2,,6,6/03/2020,Friday,WTA,Whi.Pur,female,a10158,Within Treatment,Tall,965.051,2.75226,0,0,420.16,1.44,420.16,,0
-2,7,water2,,7,6/03/2020,Friday,WTA,Ora.Bro,male,a10070,Within Treatment,Tall,3297.47,8.3692,109.36,103.44,225.28,0.08,438.08,18.8,30
-2,7,water2,,8,6/03/2020,Friday,WTA,Whi.Yel,male,a10157,Within Treatment,Tall,2357.63,7.91152,189.76,106.32,122.32,0.4,418.4,63.52,64
-1,8,water2,,1,6/03/2020,Friday,WTA,Pur._,male,a10077,Within Treatment,Tall,3116.78,7.14334,133.2,108.4,198.08,0.08,439.68,0,29
-1,8,water2,,2,6/03/2020,Friday,WTA,Pin.Gre,female,a10087,Within Treatment,Tall,2407.99,5.50674,97.2,137.12,205.76,0.16,440.08,26,21
-1,8,water2,,3,6/03/2020,Friday,WTA,Yel._,male,a10095,Within Treatment,Tall,3611.83,8.21768,96.32,100.56,243.2,0,440.08,58.56,29
-1,8,water2,,4,6/03/2020,Friday,WTA,Bro.Bro,male,a10201,Within Treatment,Tall,2871.38,6.56405,336.32,60.8,42.8,5.12,439.92,0,25
-2,8,water2,,5,6/03/2020,Friday,PB,Pin.Ora,female,a9953,Paternal,Tall,771.292,3.92555,8.8,54.56,258,0.08,321.36,27.76,11
-2,8,water2,,6,6/03/2020,Friday,PB,Whi.Ora,female,a9927,Paternal,Tall,2065.88,5.75645,103.44,104.88,220.96,0.16,429.28,68.88,42
-2,8,water2,,7,6/03/2020,Friday,PB,Red.Yel,male,a9947,Paternal,Tall,1499.11,3.42888,26.24,33.36,380.24,1.52,439.84,184.48,4
-2,8,water2,,8,6/03/2020,Friday,PB,Blu.Gre,male,a9983,Paternal,Tall,1264.91,4.47026,69.84,38,293.84,0.64,401.68,292.4,39
-1,9,water2,,1,6/03/2020,Friday,PB,_.Ora,female,a9964,Paternal,Tall,1903.57,4.99886,58.56,58,315.28,0.4,431.84,161.52,18
-1,9,water2,,2,6/03/2020,Friday,PB,Bro.Blu,male,a9937,Paternal,Tall,1484.65,3.37606,0,0,440.08,7.68,440.08,,0
-1,9,water2,,3,6/03/2020,Friday,PB,Pur.Pur,female,a9982,Paternal,Tall,2401.6,5.45818,83.28,103.6,253.2,0,440.08,190.96,17
-1,9,water2,,4,6/03/2020,Friday,PB,Red.Bla,male,a9949,Paternal,Tall,2724.22,6.1914,72.08,137.04,230.96,0.32,440.08,107.84,19
-2,9,water2,,5,6/03/2020,Friday,PB,Yel.Gre,male,a9901,Paternal,Tall,3052.7,8.02496,82.48,100.8,251.68,0.16,434.96,7.2,32
-2,9,water2,,6,6/03/2020,Friday,PB,_.Pur,male,a9981,Paternal,Tall,2311.37,5.32672,59.52,71.04,309.2,0.24,439.76,214.56,13
-2,9,water2,,7,6/03/2020,Friday,PB,Pin.Gre,female,a9952,Paternal,Tall,2453.9,7.37349,173.28,87.68,156.48,0.16,417.44,3.92,56
-2,9,water2,,8,6/03/2020,Friday,PB,Bro.Bro,female,a9910,Paternal,Tall,1144.88,2.99582,37.68,30.32,361.44,0.72,429.44,382.56,9
-1,10,water2,,1,6/03/2020,Friday,PB,Yel.Pur,female,a9899,Paternal,Tall,839.571,2.2434,0,0,427.6,40.72,427.6,,0
-1,10,water2,,2,6/03/2020,Friday,PB,Red._,male,a9941,Paternal,Tall,2907.03,6.6407,47.76,115.28,276.88,0.32,439.92,200.96,17
-1,10,water2,,3,6/03/2020,Friday,PB,Blu.Blu,male,a9973,Paternal,Tall,1926.36,4.41825,227.68,69.12,142.96,2.16,439.76,27.92,16
-1,10,water2,,4,6/03/2020,Friday,PB,Bla.Whi,female,a9923,Paternal,Tall,2808.39,6.39085,111.36,79.36,249.36,0.88,440.08,42.72,21
-2,10,water2,,5,6/03/2020,Friday,PB,Whi._,female,a9924,Paternal,Tall,1598.9,6.36709,167.04,98.32,120.08,0.08,385.44,0.24,81
-2,10,water2,,6,6/03/2020,Friday,PB,Blu.Pur,male,a9975,Paternal,Tall,475.462,1.11716,0,0,438.24,266.32,438.24,,0
-2,10,water2,,7,6/03/2020,Friday,PB,_.Red,female,a9903,Paternal,Tall,466.7,1.42009,0,0,400.24,49.04,400.24,,0
-2,10,water2,,8,6/03/2020,Friday,PB,Bro._,male,a9908,Paternal,Tall,3200.81,8.74921,124.64,117.2,183.36,0.08,425.2,50.96,49
-1,11,water3,,1,6/03/2020,Friday,WCB,Bro.Bla,female,a9700,Within Control,Tall,2292.06,5.41091,83.36,70.72,283.12,0.32,437.2,29.44,16
-1,11,water3,,2,6/03/2020,Friday,WCB,Blu.Ora,female,a9583,Within Control,Tall,363.84,0.826909,0,0,440.08,173.44,440.08,,0
-1,11,water3,,3,6/03/2020,Friday,WCB,Ora.Gre,male,a9612,Within Control,Tall,2014.43,4.58076,25.6,64.64,349.84,0.32,440.08,323.44,5
-1,11,water3,,4,6/03/2020,Friday,WCB,Blu.Bro,female,a9579,Within Control,Tall,1992.01,4.52728,42.64,78.32,319.12,0.4,440.08,90.4,14
-2,11,water3,,5,6/03/2020,Friday,WCB,Blu.Whi,female,a9580,Within Control,Tall,1310.86,5.14466,37.12,69.2,271.36,0.16,377.68,177.12,18
-2,11,water3,,6,6/03/2020,Friday,WCB,Bro.Gre,female,a9704,Within Control,Tall,1058.29,3.57047,18.96,37.52,329.6,0.16,386.08,193.6,11
-2,11,water3,,7,6/03/2020,Friday,WCB,Blu.Red,male,a9582,Within Control,Tall,1633.5,3.94717,30.96,24,384.24,0.48,439.2,197.2,10
-2,11,water3,,8,6/03/2020,Friday,WCB,Pin.Yel,male,a9587,Within Control,Tall,2846.05,8.12599,125.12,62.48,239.12,0,426.72,132.72,36
-1,12,water3,,1,6/03/2020,Friday,WCB,Whi.Ora,female,a9596,Within Control,Tall,2417.62,5.53484,14.4,15.76,409.92,0.08,440.08,423.84,2
-1,12,water3,,2,6/03/2020,Friday,WCB,Blu.Gre,female,a9578,Within Control,Tall,2184.84,4.97279,59.2,36.08,344.8,0.24,440.08,30.72,9
-1,12,water3,,3,6/03/2020,Friday,WCB,Ora.Bro,male,a9610,Within Control,Tall,2306.7,5.25397,30,50.4,359.68,0.16,440.08,358.8,10
-1,12,water3,,4,6/03/2020,Friday,WCB,Yel.Yel,female,a9613,Within Control,Tall,1922.54,4.36941,0,0,440.08,0.16,440.08,,0
-2,12,water3,,5,6/03/2020,Friday,WCB,Pur.Pin,male,a9686,Within Control,Tall,1377.06,3.78731,0,0,428.56,0.72,428.56,,0
-2,12,water3,,6,6/03/2020,Friday,WCB,Red.Bro,male,a9677,Within Control,Tall,370.299,0.868106,0,0,437.12,160.72,437.12,,0
-2,12,water3,,7,6/03/2020,Friday,WCB,Pin.Whi,male,a9590,Within Control,Tall,665.408,1.5489,0,0,438,47.52,438,,0
-2,12,water3,,8,6/03/2020,Friday,WCB,Ora.Bla,female,a9608,Within Control,Tall,1189.84,4.40552,123.36,84.96,175.28,0.32,383.6,0,65
-1,13,water3,,1,6/03/2020,Friday,WCB,Pur.Blu,male,a9687,Within Control,Tall,2567.24,6.1535,94.72,68.96,273.52,0.24,437.2,94.56,22
-1,13,water3,,2,6/03/2020,Friday,WCB,Blu.Blu,male,a9575,Within Control,Tall,3254.94,7.3976,39.52,120.48,280.08,0,440.08,95.36,10
-1,13,water3,,3,6/03/2020,Friday,WCB,_.Pur,female,a9605,Within Control,Tall,2468.37,5.61914,164.56,160,115.52,0,440.08,0,23
-1,13,water3,,4,6/03/2020,Friday,WCB,Blu.Pur,male,a9581,Within Control,Tall,1950.81,4.43365,18.48,97.44,324.16,0.16,440.08,315.52,3
-2,13,water3,,5,6/03/2020,Friday,MA,Red.Gre,female,a9758,Maternal,Tall,582.851,4.71257,81.12,76.8,93.76,0.16,251.68,43.44,98
-2,13,water3,,6,6/03/2020,Friday,MA,Red.Red,male,a9754,Maternal,Tall,1343.94,5.13737,14.96,100.48,279.84,0,395.28,203.44,12
-2,13,water3,,7,6/03/2020,Friday,MA,Bro.Yel,female,a9794,Maternal,Tall,915.158,2.11177,0,0,439.76,0.88,439.76,,0
-2,13,water3,,8,6/03/2020,Friday,MA,Gre.Blu,male,a9808,Maternal,Tall,839.999,2.68679,0,0,404.64,1.2,404.64,,0
-1,14,water3,,1,6/03/2020,Friday,MA,Whi.Ora,female,a9839,Maternal,Tall,1525.23,3.66782,0,15.36,422,0.48,437.36,,0
-1,14,water3,,2,6/03/2020,Friday,MA,Red.Bro,male,a9760,Maternal,Tall,2627.36,5.97127,26.96,84.72,328.4,0.16,440.08,226.16,8
-1,14,water3,,3,6/03/2020,Friday,MA,Gre.Whi,female,a9809,Maternal,Tall,2594.18,5.93255,156.48,58.48,225.12,0.32,440.08,33.44,19
-1,14,water3,,4,6/03/2020,Friday,MA,Red.Pur,female,a9762,Maternal,Tall,2179.42,4.95502,0,6.56,433.52,0.16,440.08,,0
-2,14,water3,,5,6/03/2020,Friday,MA,Red.Yel,female,a9761,Maternal,Tall,1928.17,7.25967,128.56,80.32,176.32,0.24,385.2,28.08,84
-2,14,water3,,6,6/03/2020,Friday,MA,Bro.Gre,female,a9796,Maternal,Tall,1663.82,6.15316,150.56,70.08,169.84,0.56,390.48,55.2,75
-2,14,water3,,7,6/03/2020,Friday,MA,Yel._,male,a9763,Maternal,Tall,426.163,1.18827,0,16,399.12,46.4,415.12,,0
-2,14,water3,,8,6/03/2020,Friday,MA,Gre.Gre,female,a9804,Maternal,Tall,1061.33,6.0717,96.48,105.44,152.8,0,354.72,143.2,93
-1,15,water3,,1,6/03/2020,Friday,MA,_.Bla,male,a9800,Maternal,Tall,2305.45,5.24156,36.16,73.52,330.4,0.48,440.08,295.04,11
-1,15,water3,,2,6/03/2020,Friday,MA,Bro.Pin,male,a9793,Maternal,Tall,2471.93,5.61803,75.92,106.96,257.2,0.16,440.08,80.48,16
-1,15,water3,,3,6/03/2020,Friday,MA,Pin.Ora,male,a9858,Maternal,Tall,2187.66,4.98556,68.56,95.28,276.08,0.56,439.92,212.16,13
-1,15,water3,,4,6/03/2020,Friday,MA,_.Gre,male,a9803,Maternal,Tall,2918.76,6.63355,62.64,113.28,264.16,0.08,440.08,111.2,11
-2,15,water3,,5,6/03/2020,Friday,MA,Blu.Yel,female,a9845,Maternal,Tall,1403.18,5.49318,100.72,83.6,201.36,0.24,385.68,120.88,54
-2,15,water3,,6,6/03/2020,Friday,MA,Red.Blu,female,a9759,Maternal,Tall,100.358,0.233088,0,0,437.6,309.52,437.6,,0
-2,15,water3,,7,6/03/2020,Friday,MA,_.Yel,male,a9764,Maternal,Tall,1087.97,4.58517,102.96,77.04,172.96,0.56,352.96,106.08,59
-2,15,water3,,8,6/03/2020,Friday,MA,Red._,female,a9848,Maternal,Tall,2093.95,7.42745,126.48,73.44,186.16,0.32,386.08,63.84,53
-1,16,water4,,1,6/03/2020,Friday,WTB,Whi.Bla,male,a10152,Within Treatment,Tall,1697.7,3.94961,2.72,13.6,422.48,0.24,438.8,437.36,1
-1,16,water4,,2,6/03/2020,Friday,WTB,Pur.Gre,male,a10074,Within Treatment,Tall,2624.12,5.99004,124.72,131.2,184.08,0.08,440,73.68,20
-1,16,water4,,3,6/03/2020,Friday,WTB,Pin.Red,male,a10089,Within Treatment,Tall,2522.52,5.75707,64.32,111.04,264.64,0.16,440,24.8,17
-1,16,water4,,4,6/03/2020,Friday,WTB,Whi.Ora,female,a10160,Within Treatment,Tall,2804.92,6.38295,77.12,104,258.96,0.08,440.08,78.64,28
-2,16,water4,,5,6/03/2020,Friday,WTB,Red.Bro,male,a10169,Within Treatment,Tall,2034.09,7.35285,72.56,88.72,233.84,0,395.12,58.56,47
-2,16,water4,,6,6/03/2020,Friday,WTB,Gre.Pur,male,a10043,Within Treatment,Tall,2221.18,5.71292,38.8,80.4,318.32,0.32,437.52,98.72,9
-2,16,water4,,7,6/03/2020,Friday,WTB,Pin.Bro,male,a10088,Within Treatment,Tall,2240.76,5.10006,92.64,100.16,247.28,0.56,440.08,56.56,13
-2,16,water4,,8,6/03/2020,Friday,WTB,Yel.Yel,female,a10097,Within Treatment,Tall,1136.53,5.52358,112.64,51.68,167.28,0.16,331.6,0,82
-1,17,water4,,1,6/03/2020,Friday,WTB,Pur.Pur,female,a10081,Within Treatment,Tall,1022.99,3.08278,46.8,39.84,324.24,29.76,410.88,176.8,19
-1,17,water4,,2,6/03/2020,Friday,WTB,Ora.Ora,female,a10060,Within Treatment,Tall,2771.03,7.79604,108.64,74.8,247.68,0.08,431.12,25.68,39
-1,17,water4,,3,6/03/2020,Friday,WTB,Whi.Bro,female,a10159,Within Treatment,Tall,3746.01,8.53384,153.2,110.48,176.4,0,440.08,10.72,29
-1,17,water4,,4,6/03/2020,Friday,WTB,Ora.Pin,female,a10063,Within Treatment,Tall,2571.27,5.86726,115.2,148.96,175.92,0.08,440.08,0,20
-2,17,water4,,5,6/03/2020,Friday,WTB,Red._,male,a10155,Within Treatment,Tall,1744.51,4.02629,0,1.76,437.52,0.56,439.28,,0
-2,17,water4,,6,6/03/2020,Friday,WTB,Gre._,male,a10037,Within Treatment,Tall,715.016,1.65452,0,1.84,437.2,1.68,439.04,,0
-2,17,water4,,7,6/03/2020,Friday,WTB,Whi.Pin,female,a10154,Within Treatment,Tall,1306.72,4.46649,64.32,86.72,242.16,0.24,393.2,73.36,36
-2,17,water4,,8,6/03/2020,Friday,WTB,Gre.Bro,male,a10044,Within Treatment,Tall,1765.99,8.01558,233.6,66.8,58.88,0.16,359.28,0,142
-1,18,water4,,1,6/03/2020,Friday,WTB,Blu.Ora,female,a10059,Within Treatment,Tall,674.097,1.57411,0,0,439.36,26.96,439.36,,0
-1,18,water4,,2,6/03/2020,Friday,WTB,_.Yel,male,a10096,Within Treatment,Tall,3732.17,8.4961,209.92,154.96,75.2,0.08,440.08,57.76,50
-1,18,water4,,3,6/03/2020,Friday,WTB,Pur.Red,female,a10076,Within Treatment,Tall,2084.37,5.87875,84.72,102.4,239.04,3.68,426.16,25.52,36
-1,18,water4,,4,6/03/2020,Friday,WTB,_.Blu,female,a10040,Within Treatment,Tall,2661.91,6.07742,31.52,117.84,290.72,0,440.08,154.32,20
-2,18,water4,,5,6/03/2020,Friday,PA,Pin.Red,female,a9958,Paternal,Tall,1592.57,5.11358,59.36,74.88,286.72,0.08,420.96,95.52,25
-2,18,water4,,6,6/03/2020,Friday,PA,Bla.Red,female,a9921,Paternal,Tall,2343.35,9.05749,78.56,67.12,258.4,0.24,404.08,149.52,54
-2,18,water4,,7,6/03/2020,Friday,PA,Blu.Bla,male,a9984,Paternal,Tall,2171.91,8.24943,120.32,85.52,198.8,0.32,404.64,31.12,46
-2,18,water4,,8,6/03/2020,Friday,PA,Bla.Pin,male,a9919,Paternal,Tall,1433.31,7.69272,247.76,51.68,54.64,0.32,354.08,0,161
-1,19,water4,,1,6/03/2020,Friday,PA,Bla.Gre,female,a9922,Paternal,Tall,2466.06,6.98679,118.56,63.92,244.48,0.16,426.96,12.96,37
-1,19,water4,,2,6/03/2020,Friday,PA,Ora.Pin,female,a9961,Paternal,Tall,2683.46,6.13559,75.12,72,292.96,0.08,440.08,153.12,14
-1,19,water4,,3,6/03/2020,Friday,PA,Gre.Pin,male,a9880,Paternal,Tall,2681.64,6.10128,36.56,71.6,331.92,1.6,440.08,96.08,12
-1,19,water4,,4,6/03/2020,Friday,PA,_.Bro,female,a9917,Paternal,Tall,2236.29,5.08617,47.28,64.64,328.16,0.48,440.08,96.4,13
-2,19,water4,,5,6/03/2020,Friday,PA,Whi.Bro,female,a9929,Paternal,Tall,643.952,4.54511,57.76,41.04,179.44,0.08,278.24,82.4,69
-2,19,water4,,6,6/03/2020,Friday,PA,Pin.Yel,male,a9956,Paternal,Tall,2475.73,5.7351,36.96,81.36,321.44,0.48,439.76,115.84,12
-2,19,water4,,7,6/03/2020,Friday,PA,Ora.Ora,female,a9962,Paternal,Tall,1308.37,6.927,122.08,81.52,156.96,0.32,360.56,53.12,97
-2,19,water4,,8,6/03/2020,Friday,PA,Bla.Ora,female,a9887,Paternal,Tall,1322.84,4.33322,50.72,104.24,248,0.32,402.96,140.64,38
-1,20,water4,,1,6/03/2020,Friday,PA,Gre.Blu,male,a9881,Paternal,Tall,1992.7,4.52886,59.84,62.32,317.92,0.72,440.08,274.64,9
-1,20,water4,,2,6/03/2020,Friday,PA,_.Gre,male,a9873,Paternal,Tall,2799.47,6.36243,96.56,105.28,238.24,0.24,440.08,51.28,23
-1,20,water4,,3,6/03/2020,Friday,PA,Whi.Red,male,a9931,Paternal,Tall,165.264,0.3756,0,0,440.08,154,440.08,,0
-1,20,water4,,4,6/03/2020,Friday,PA,Gre.Ora,female,a9876,Paternal,Tall,3356.31,7.63076,132.56,119.68,187.84,0,440.08,78.08,32
-2,20,water4,,5,6/03/2020,Friday,PA,Gre.Gre,female,a9874,Paternal,Tall,1098.65,6.35497,96.72,64.24,174.4,0,335.36,129.52,93
-2,20,water4,,6,6/03/2020,Friday,PA,Whi.Whi,male,a9926,Paternal,Tall,1550.96,3.63326,58.08,38.48,342.08,103.6,438.64,245.6,13
-2,20,water4,,7,6/03/2020,Friday,PA,Pin.Pur,female,a9957,Paternal,Tall,1650.01,6.54559,230.56,66.56,87.68,0,384.8,0,144
-2,20,water4,,8,6/03/2020,Friday,PA,Pin.Blu,male,a9960,Paternal,Tall,1459.8,5.00206,48.72,57.36,293.68,5.76,399.76,224.96,27
+Camera,Trial,water,Arena,Date,Day,Origin,Mark,Sex,Fish_ID,Group,Tank,tot_dist,mean_velocity,high_dur,mid_dur,low_dur,freezing_dur,arena_dur,latency_high,freq_high
+None,1,water1,1,2/03/2020,Monday,WCB,Blu.Bro,female,a9579,Within Control,Tall,1305.95,2.96807,12.64,11.2,416.24,1.28,440.08,275.04,3
+None,1,water1,2,2/03/2020,Monday,WCB,Blu.Gre,female,a9578,Within Control,Tall,1505.65,3.42192,61.92,63.36,314.8,0.32,440.08,184.4,8
+None,1,water1,3,2/03/2020,Monday,WCB,Bro.Bla,female,a9700,Within Control,Tall,1857.7,4.22204,150.48,122.32,167.28,0.48,440.08,83.68,25
+None,1,water1,4,2/03/2020,Monday,WCB,Ora.Gre,male,a9612,Within Control,Tall,277.191,0.62998,0,0,440.08,281.92,440.08,,0
+None,1,water1,5,2/03/2020,Monday,WCB,Red.Bro,male,a9677,Within Control,Tall,363.707,0.826606,0,0,440.08,202.96,440.08,,0
+None,1,water1,6,2/03/2020,Monday,WCB,Blu.Pur,male,a9581,Within Control,Tall,1190.75,2.70625,124.8,40.88,274.4,4.24,440.08,263.36,12
+None,2,water1,1,2/03/2020,Monday,WCB,Pin.Yel,male,a9587,Within Control,Tall,2022.54,4.59669,86.56,76.24,277.28,0.4,440.08,222.4,14
+None,2,water1,2,2/03/2020,Monday,WCB,Blu.Blu,male,a9575,Within Control,Tall,2133.93,4.84984,11.2,144.16,284.72,0.48,440.08,225.2,5
+None,2,water1,3,2/03/2020,Monday,WCB,_.Pur,female,a9605,Within Control,Tall,1177.8,2.67682,36.48,65.2,338.4,0.16,440.08,356,3
+None,2,water1,4,2/03/2020,Monday,WCB,Pin.Whi,male,a9590,Within Control,Tall,48.4961,0.110218,0,0.56,439.52,394.08,440.08,,0
+None,2,water1,5,2/03/2020,Monday,WCB,Ora.Bro,male,a9610,Within Control,Tall,1289.13,2.92985,0,0,440.08,0.64,440.08,,0
+None,2,water1,6,2/03/2020,Monday,WCB,Blu.Whi,female,a9580,Within Control,Tall,1098.81,2.49731,2.32,30.64,407.12,13.84,440.08,335.76,3
+None,3,water1,1,2/03/2020,Monday,WCB,Whi.Ora,female,a9596,Within Control,Tall,1921.7,4.36749,52.48,77.28,310.32,0,440.08,302.72,11
+None,3,water1,2,2/03/2020,Monday,WCB,Blu.Ora,female,a9583,Within Control,Tall,798.265,1.81424,17.6,26.56,395.92,153.6,440.08,391.84,4
+None,3,water1,3,2/03/2020,Monday,WCB,Ora.Bla,female,a9608,Within Control,Tall,1430.99,3.25225,288.08,97.76,54.24,0.48,440.08,0,14
+None,3,water1,4,2/03/2020,Monday,WCB,Pur.Pin,male,a9686,Within Control,Tall,1086.23,2.46871,0,0,440.08,12.96,440.08,,0
+None,3,water1,5,2/03/2020,Monday,WCB,Bro.Gre,female,a9704,Within Control,Tall,1981.84,4.50419,73.44,101.04,265.6,0.72,440.08,134.72,15
+None,3,water1,6,2/03/2020,Monday,WCB,Yel.Yel,female,a9613,Within Control,Tall,1014.11,2.30479,0,0,440.08,1.84,440.08,,0
+None,4,water1,1,2/03/2020,Monday,WCB,Blu.Red,male,a9582,Within Control,Tall,2322.16,5.27763,93.84,65.04,281.2,12.48,440.08,39.2,23
+None,4,water1,2,2/03/2020,Monday,WCB,Pur.Blu,male,a9687,Within Control,Tall,2458.29,5.58703,133.12,93.28,213.68,1.2,440.08,100.56,24
+None,4,water1,3,2/03/2020,Monday,MA,Bro.Gre,female,a9796,Maternal,Tall,671.358,1.52581,17.92,22,400.16,79.36,440.08,384.56,3
+None,4,water1,4,2/03/2020,Monday,MA,Red.Yel,female,a9761,Maternal,Tall,2109.92,4.79528,170.88,103.44,165.76,0.08,440.08,94.24,21
+None,4,water1,5,2/03/2020,Monday,MA,Red.Blu,female,a9759,Maternal,Tall,7.03247,0.0159829,0,0,440.08,440,440.08,,0
+None,4,water1,6,2/03/2020,Monday,MA,_.Yel,male,a9764,Maternal,Tall,1217.86,2.76786,0,0,440.08,1.12,440.08,,0
+None,5,water1,1,2/03/2020,Monday,MA,Gre.Gre,female,a9804,Maternal,Tall,1467.34,3.33487,0,0,440.08,0.24,440.08,,0
+None,5,water1,2,2/03/2020,Monday,MA,Red.Red,male,a9754,Maternal,Tall,1616.7,3.67432,17.12,88.8,334.16,0.24,440.08,224.72,5
+None,5,water1,3,2/03/2020,Monday,MA,Bro.Yel,female,a9794,Maternal,Tall,639.614,1.45367,0,0,440.08,4.08,440.08,,0
+None,5,water1,4,2/03/2020,Monday,MA,Red.Bro,male,a9760,Maternal,Tall,1745.63,3.96806,10.24,47.44,382.4,0.24,440.08,375.76,3
+None,5,water1,5,2/03/2020,Monday,MA,Red.Gre,female,a9758,Maternal,Tall,1761.89,4.00429,98.64,101.28,240.16,0.32,440.08,74.64,15
+None,5,water1,6,2/03/2020,Monday,MA,Gre.Blu,male,a9808,Maternal,Tall,7.01374,0.0159403,0,0,440.08,440,440.08,,0
+None,6,water1,1,2/03/2020,Monday,MA,Whi.Ora,female,a9839,Maternal,Tall,241.115,0.547988,0,0,440.08,230.24,440.08,,0
+None,6,water1,2,2/03/2020,Monday,MA,Gre.Whi,female,a9809,Maternal,Tall,1840.99,4.18407,119.36,54.4,266.32,1.44,440.08,104.72,14
+None,6,water1,3,2/03/2020,Monday,MA,_.Bla,male,a9800,Maternal,Tall,441.771,1.00403,0,0,440.08,158.16,440.08,,0
+None,6,water1,4,2/03/2020,Monday,MA,Red.Pur,female,a9762,Maternal,Tall,1383.77,3.14494,0,0,440.08,0.96,440.08,,0
+None,6,water1,5,2/03/2020,Monday,MA,Blu.Yel,female,a9845,Maternal,Tall,9.02942,0.0205214,0,0,440.08,440,440.08,,0
+None,6,water1,6,2/03/2020,Monday,MA,Red._,female,a9848,Maternal,Tall,945.819,2.14959,23.52,49.76,366.8,26.8,440.08,320.4,3
+None,7,water1,1,2/03/2020,Monday,MA,Bro.Pin,male,a9793,Maternal,Tall,13.8289,0.0314294,0,0,440.08,435.68,440.08,,0
+None,7,water1,2,2/03/2020,Monday,MA,_.Gre,male,a9803,Maternal,Tall,1901.75,4.32217,37.68,116.72,285.68,16.88,440.08,242,13
+None,7,water1,3,2/03/2020,Monday,MA,Pin.Ora,male,a9858,Maternal,Tall,687.686,1.56292,0,0,440.08,111.04,440.08,,0
+None,7,water1,4,2/03/2020,Monday,MA,Yel._,male,a9763,Maternal,Tall,27.2418,0.0619132,0,0,440.08,414.64,440.08,,0
+None,8,water2,1,2/03/2020,Monday,WTB,Gre.Pur,male,a10043,Within Treatment,Tall,1871.71,4.25388,83.6,79.84,276.64,0.4,440.08,121.2,9
+None,8,water2,2,2/03/2020,Monday,WTB,Ora.Ora,female,a10060,Within Treatment,Tall,2731.25,6.20739,198.16,108.08,133.84,0.08,440.08,0,40
+None,8,water2,3,2/03/2020,Monday,WTB,_.Blu,female,a10040,Within Treatment,Tall,1832.56,4.1649,40.16,129.76,270.16,0.08,440.08,169.2,8
+None,8,water2,4,2/03/2020,Monday,WTB,Whi.Bro,female,a10159,Within Treatment,Tall,2094.86,4.76105,167.52,48.72,223.84,0.72,440.08,12.72,15
+None,8,water2,5,2/03/2020,Monday,WTB,Yel.Yel,female,a10097,Within Treatment,Tall,2102.91,4.77933,127.12,66.88,246.08,0.4,440.08,114.24,15
+None,8,water2,6,2/03/2020,Monday,WTB,Pin.Bro,male,a10088,Within Treatment,Tall,1920.22,4.36414,88.56,99.44,252.08,2.32,440.08,64.08,18
+None,9,water2,1,2/03/2020,Monday,WTB,Whi.Bla,male,a10152,Within Treatment,Tall,1347.47,3.06244,0,0,440.08,0.88,440.08,,0
+None,9,water2,2,2/03/2020,Monday,WTB,Pur.Pur,female,a10081,Within Treatment,Tall,1905.09,4.33054,57.76,77.68,304.64,0.32,440.08,73.52,10
+None,9,water2,3,2/03/2020,Monday,WTB,Whi.Pin,female,a10154,Within Treatment,Tall,1611.77,3.66311,69.68,105.36,265.04,0.72,440.08,235.04,9
+None,9,water2,4,2/03/2020,Monday,WTB,Ora.Pin,female,a10063,Within Treatment,Tall,1524.63,3.46507,305.92,55.2,78.96,0.24,440.08,0,4
+None,9,water2,5,2/03/2020,Monday,WTB,Pin.Red,male,a10089,Within Treatment,Tall,1668.31,3.79162,50.16,77.36,312.56,1.44,440.08,103.84,12
+None,9,water2,6,2/03/2020,Monday,WTB,Pur.Gre,male,a10074,Within Treatment,Tall,1722.72,3.91526,86.88,120.88,232.32,0.24,440.08,97.04,12
+None,10,water2,1,2/03/2020,Monday,WTB,_.Yel,male,a10096,Within Treatment,Tall,2020.47,4.59197,339.28,55.68,45.12,0.8,440.08,3.84,18
+None,10,water2,2,2/03/2020,Monday,WTB,Red.Bro,male,a10169,Within Treatment,Tall,2872.03,6.52733,70.64,143.36,226.08,0.08,440.08,97.04,28
+None,10,water2,3,2/03/2020,Monday,WTB,Whi.Ora,female,a10160,Within Treatment,Tall,991.45,2.25329,0,9.12,430.96,2.16,440.08,,0
+None,10,water2,4,2/03/2020,Monday,WTB,Red._,male,a10155,Within Treatment,Tall,1146.64,2.60601,0,2.16,437.92,63.52,440.08,,0
+None,10,water2,5,2/03/2020,Monday,WTB,Pur.Red,female,a10076,Within Treatment,Tall,1141.14,2.59349,97.84,59.04,283.2,128.08,440.08,197.36,11
+None,10,water2,6,2/03/2020,Monday,WTB,Blu.Ora,female,a10059,Within Treatment,Tall,945.861,2.14968,0,0,440.08,110.4,440.08,,0
+None,11,water2,1,2/03/2020,Monday,WTB,Gre._,male,a10037,Within Treatment,Tall,1880.12,4.273,157.84,151.92,130.32,0.24,440.08,137.2,14
+None,11,water2,2,2/03/2020,Monday,WTB,Gre.Bro,male,a10044,Within Treatment,Tall,3202.08,7.27746,248,124.88,67.2,0.08,440.08,0,53
+None,11,water2,3,2/03/2020,Monday,PA,Whi.Bro,female,a9929,Paternal,Tall,973.144,2.21169,18.08,45.84,376.16,109.6,440.08,161.68,7
+None,11,water2,4,2/03/2020,Monday,PA,Whi.Red,male,a9931,Paternal,Tall,644.333,1.46439,0,0,440.08,32.8,440.08,,0
+None,11,water2,5,2/03/2020,Monday,PA,Blu.Bla,male,a9984,Paternal,Tall,2414.39,5.48726,106.4,117.28,216.4,0.88,440.08,78.32,24
+None,11,water2,6,2/03/2020,Monday,PA,Ora.Pin,female,a9961,Paternal,Tall,1631.69,3.70838,192.24,94.16,153.68,0.08,440.08,0,13
+None,12,water2,1,2/03/2020,Monday,PA,Gre.Gre,female,a9874,Paternal,Tall,2229.71,5.06753,83.52,84,272.56,0.48,440.08,184.96,22
+None,12,water2,2,2/03/2020,Monday,PA,Bla.Gre,female,a9922,Paternal,Tall,2319.61,5.27185,117.84,74.88,247.36,0.16,440.08,111.2,20
+None,12,water2,3,2/03/2020,Monday,PA,Pin.Blu,male,a9960,Paternal,Tall,926.852,2.10648,17.68,34.08,388.32,10.72,440.08,392.08,4
+None,12,water2,4,2/03/2020,Monday,PA,Gre.Pin,male,a9880,Paternal,Tall,2134.49,4.85111,95.68,71.44,272.96,0.24,440.08,152.48,19
+None,12,water2,5,2/03/2020,Monday,PA,Bla.Pin,male,a9919,Paternal,Tall,2709.31,6.15752,149.12,119.2,171.76,0,440.08,50.16,33
+None,12,water2,6,2/03/2020,Monday,PA,_.Bro,female,a9917,Paternal,Tall,2143.41,4.87139,191.6,74.48,174,0.32,440.08,136.64,19
+None,13,water2,1,2/03/2020,Monday,PA,Ora.Ora,female,a9962,Paternal,Tall,2757.02,6.26595,230.24,77.12,132.72,0,440.08,22.08,29
+None,13,water2,2,2/03/2020,Monday,PA,Gre.Blu,male,a9881,Paternal,Tall,12.2474,0.0278349,0,0,440.08,440,440.08,,0
+None,13,water2,3,2/03/2020,Monday,PA,Pin.Pur,female,a9957,Paternal,Tall,1487.64,3.381,56.08,51.44,332.56,0.88,440.08,92.88,8
+None,13,water2,4,2/03/2020,Monday,PA,Pin.Yel,male,a9956,Paternal,Tall,2500.38,5.68268,59.52,89.68,290.88,0.24,440.08,122.8,17
+None,13,water2,5,2/03/2020,Monday,PA,Gre.Ora,female,a9876,Paternal,Tall,2295.99,5.21817,92.32,98.24,249.52,0.56,440.08,109.6,22
+None,13,water2,6,2/03/2020,Monday,PA,Bla.Red,female,a9921,Paternal,Tall,1642.16,3.73218,0,5.84,434.24,0.64,440.08,,0
+None,14,water2,1,2/03/2020,Monday,PA,_.Gre,male,a9873,Paternal,Tall,1853.32,4.21209,80.88,66.96,292.24,0.56,440.08,122.56,8
+None,14,water2,2,2/03/2020,Monday,PA,Bla.Ora,female,a9887,Paternal,Tall,1379.04,3.13419,22.48,85.92,331.68,0.96,440.08,154.08,4
+None,14,water2,3,2/03/2020,Monday,PA,Pin.Red,female,a9958,Paternal,Tall,1975.97,4.49085,91.28,102,246.8,0.64,440.08,188,16
+None,14,water2,4,2/03/2020,Monday,PA,Whi.Whi,male,a9926,Paternal,Tall,1418.27,3.22334,40.16,50.4,349.52,74.08,440.08,264.96,11
+None,15,water3,1,2/03/2020,Monday,WCA,Red.Pin,female,a9673,Within Control,Tall,2479.94,5.63623,127.76,88.24,224.08,0.08,440.08,16,19
+None,15,water3,2,2/03/2020,Monday,WCA,Whi.Yel,female,a9599,Within Control,Tall,2538.11,5.76844,170.08,104.48,165.52,0.16,440.08,0.24,27
+None,15,water3,3,2/03/2020,Monday,WCA,Red.Gre,male,a9680,Within Control,Tall,2571.68,5.84473,160.48,97.52,182.08,0.08,440.08,0.96,26
+None,15,water3,4,2/03/2020,Monday,WCA,Red.Bla,male,a9676,Within Control,Tall,1045.88,2.37701,0,0,440.08,70.16,440.08,,0
+None,15,water3,5,2/03/2020,Monday,WCA,Red.Yel,female,a9678,Within Control,Tall,1969.15,4.47534,139.76,73.52,226.8,0,440.08,9.36,16
+None,15,water3,6,2/03/2020,Monday,WCA,Gre.Pur,female,a9556,Within Control,Tall,2690.1,6.11386,144.8,140.72,154.56,0.24,440.08,41.52,41
+None,16,water3,1,2/03/2020,Monday,WCA,Ora.Blu,female,a9607,Within Control,Tall,2178.05,4.95101,134.24,114.24,191.52,0.24,440,103.2,25
+None,16,water3,2,2/03/2020,Monday,WCA,Pur._,male,a9562,Within Control,Tall,44.3564,0.10081,0,0,440.08,411.04,440.08,,0
+None,16,water3,3,2/03/2020,Monday,WCA,Ora.Red,male,a9606,Within Control,Tall,1748.47,3.97379,35.6,72.8,331.68,0.48,440.08,261.28,8
+None,16,water3,4,2/03/2020,Monday,WCA,Gre.Bla,male,a9554,Within Control,Tall,1662.51,3.77843,190.72,126.88,122.48,0.4,440.08,88.96,19
+None,16,water3,5,2/03/2020,Monday,WCA,Blu.Yel,female,a9577,Within Control,Tall,1766.44,4.01464,44.96,57.04,338.08,1.44,440.08,259.92,9
+None,16,water3,6,2/03/2020,Monday,WCA,Pur.Red,female,a9566,Within Control,Tall,1596.72,3.62891,46.64,37.2,356.24,0.32,440.08,67.92,8
+None,17,water3,1,2/03/2020,Monday,WCA,Ora.Ora,male,a9706,Within Control,Tall,1952.76,4.43809,34.56,56.96,348.56,0.4,440.08,136.96,6
+None,17,water3,2,2/03/2020,Monday,WCA,Ora.Whi,male,a9611,Within Control,Tall,2214.7,5.0334,81.76,120.96,237.36,0.08,440.08,235.36,16
+None,17,water3,3,2/03/2020,Monday,WCA,Red.Ora,male,a9681,Within Control,Tall,699.378,1.5895,0,0,440.08,46.96,440.08,,0
+None,17,water3,4,2/03/2020,Monday,WCA,Pin.Gre,male,a9588,Within Control,Tall,1223.65,2.78103,11.44,30.08,398.56,1.6,440.08,208.4,3
+None,17,water3,5,2/03/2020,Monday,WCA,Red.Whi,female,a9679,Within Control,Tall,1327.21,3.01638,34.24,77.04,328.8,13.2,440.08,268,7
+None,17,water3,6,2/03/2020,Monday,WCA,Ora.Gre,female,a9603,Within Control,Tall,1780.38,4.0478,0,29.2,410.72,0.32,439.92,,0
+None,18,water3,1,2/03/2020,Monday,WCA,Gre.Bro,male,a9558,Within Control,Tall,3004.42,6.82824,285.6,103.92,50.4,0.08,440.08,3.84,40
+None,18,water3,2,2/03/2020,Monday,WCA,Gre.Blu,female,a9553,Within Control,Tall,2571.5,5.84431,138.32,105.12,196.64,0.8,440.08,56.16,26
+None,18,water3,3,2/03/2020,Monday,MB,Red.Pin,male,a9755,Maternal,Tall,2177.79,4.94951,169.28,89.92,180.88,0.08,440.08,123.84,20
+None,18,water3,4,2/03/2020,Monday,MB,_.Ora,female,a10198,Maternal,Tall,1632.96,3.71127,202.24,133.76,104.08,16.8,440.08,82.4,18
+None,18,water3,5,2/03/2020,Monday,MB,Gre.Ora,female,a9868,Maternal,Tall,2381.1,5.4116,74.88,84.32,280.88,0.16,440.08,0,11
+None,18,water3,6,2/03/2020,Monday,MB,Bla.Gre,female,a9787,Maternal,Tall,2333.01,5.30229,148.24,79.04,212.8,0.24,440.08,77.44,17
+None,19,water3,1,2/03/2020,Monday,MB,_.Blu,male,a9844,Maternal,Tall,1535.95,3.49079,108.56,64.16,267.2,2.4,440.08,224.88,12
+None,19,water3,2,2/03/2020,Monday,MB,Blu.Blu,male,a9843,Maternal,Tall,84.9706,0.193115,0,0,440.08,336.16,440.08,,0
+None,19,water3,3,2/03/2020,Monday,MB,Red.Bla,male,a9756,Maternal,Tall,2492.15,5.66398,76.08,133.6,230.4,0.08,440.08,168.72,21
+None,19,water3,4,2/03/2020,Monday,MB,Ora.Yel,male,a9813,Maternal,Tall,2384.68,5.42269,141.52,91.28,207.28,0.08,440.08,6.08,22
+None,19,water3,5,2/03/2020,Monday,MB,Pur.Pin,male,a9824,Maternal,Tall,2583.12,5.87073,154.72,81.12,204.24,0.08,440.08,59.28,25
+None,19,water3,6,2/03/2020,Monday,MB,Gre.Pur,female,a9867,Maternal,Tall,2114.05,4.80902,91.44,72.08,276.48,0.24,440,252.24,16
+None,20,water3,1,2/03/2020,Monday,MB,Yel.Ora,female,a9778,Maternal,Tall,2402.68,5.46064,47.84,86.88,305.36,0.88,440.08,89.12,16
+None,20,water3,2,2/03/2020,Monday,MB,Pin.Whi,female,a9862,Maternal,Tall,2441.2,5.54817,98.08,65.76,276.24,0.48,440.08,0,18
+None,20,water3,3,2/03/2020,Monday,MB,Red._,male,a9752,Maternal,Tall,1542.01,3.50457,30.56,111.2,298.32,0.72,440.08,125.04,7
+None,20,water3,4,2/03/2020,Monday,MB,Pin.Yel,female,a9854,Maternal,Tall,2962.48,6.74027,248,101.44,90.64,0,440.08,0,42
+None,20,water3,5,2/03/2020,Monday,MB,Ora.Pur,male,a9821,Maternal,Tall,2107.24,4.78917,141.44,104.32,194.32,0,440.08,141.28,23
+None,20,water3,6,2/03/2020,Monday,MB,Yel.Bla,female,a9777,Maternal,Tall,1943.15,4.41624,24.8,74.64,340.64,0.48,440.08,267.84,9
+None,21,water3,1,2/03/2020,Monday,MB,Yel.Yel,male,a9765,Maternal,Tall,1777.06,4.03878,103.36,103.76,232.96,0.4,440.08,129.76,15
+None,21,water3,2,2/03/2020,Monday,MB,_.Red,male,a9849,Maternal,Tall,1385.42,3.14867,15.2,51.2,373.68,2.56,440.08,303.04,5
+None,21,water3,3,2/03/2020,Monday,MB,_._,female,a9774,Maternal,Tall,2103.53,4.78074,166.72,69.6,203.76,0.24,440.08,79.36,18
+None,21,water3,4,2/03/2020,Monday,MB,Blu.Gre,male,a9846,Maternal,Tall,2093.42,4.7595,70.96,92.4,276.72,0.96,440.08,213.68,20
+None,21,water4,5,2/03/2020,Monday,WTA,Pin.Gre,female,a10087,Within Treatment,Tall,8.6507,0.0196607,0,0,440.08,439.04,440.08,,0
+None,21,water4,6,2/03/2020,Monday,WTA,Ora.Bro,male,a10070,Within Treatment,Tall,2279.9,5.19104,118.8,112.8,208.32,0.32,439.92,39.36,21
+None,22,water4,1,2/03/2020,Monday,WTA,Red.Bla,female,a10164,Within Treatment,Tall,2341.83,5.32234,164.16,92.56,183.36,0.08,440.08,67.36,21
+None,22,water4,2,2/03/2020,Monday,WTA,Blu.Blu,female,a10046,Within Treatment,Tall,2551.37,5.79857,135.36,117.68,187.04,0.4,440.08,8.8,27
+None,22,water4,3,2/03/2020,Monday,WTA,Red.Whi,female,a10172,Within Treatment,Tall,2080.57,4.72857,113.28,119.04,207.76,1.04,440.08,100.8,23
+None,22,water4,4,2/03/2020,Monday,WTA,Pur.Blu,female,a10079,Within Treatment,Tall,2957.08,6.7985,313.92,71.84,53.44,0.16,439.2,1.04,39
+None,22,water4,5,2/03/2020,Monday,WTA,Blu._,female,a10039,Within Treatment,Tall,2555.16,5.80718,195.68,60,184.4,0.16,440.08,0,24
+None,22,water4,6,2/03/2020,Monday,WTA,Bro.Bro,male,a10201,Within Treatment,Tall,2332.1,5.30022,348.32,49.68,42.08,0.24,440.08,1.92,18
+None,23,water4,1,2/03/2020,Monday,WTA,Gre.Blu,female,a10041,Within Treatment,Tall,2164.02,4.91822,61.52,106.72,271.84,0.08,440.08,110,17
+None,23,water4,2,2/03/2020,Monday,WTA,Pin.Bla,male,a10092,Within Treatment,Tall,1584.58,3.60132,26.16,47.84,366.08,1.12,440.08,188.24,8
+None,23,water4,3,2/03/2020,Monday,WTA,Whi.Yel,male,a10157,Within Treatment,Tall,1897.59,4.3127,105.92,107.92,226.24,1.28,440.08,34.88,16
+None,23,water4,4,2/03/2020,Monday,WTA,Yel._,male,a10095,Within Treatment,Tall,2859.48,6.51659,123.28,117.36,199.44,0.32,440.08,72.24,28
+None,23,water4,5,2/03/2020,Monday,WTA,Blu.Yel,male,a10055,Within Treatment,Tall,2164.39,4.91906,130.64,85.52,223.92,0.24,440.08,5.52,27
+None,23,water4,6,2/03/2020,Monday,WTA,Whi.Pur,female,a10158,Within Treatment,Tall,256.711,0.583434,0,0,440.08,303.6,440.08,,0
+None,24,water4,1,2/03/2020,Monday,WTA,Pin.Blu,male,a10090,Within Treatment,Tall,3144.43,7.14642,142.24,138.8,159.04,0.24,440.08,54.32,45
+None,24,water4,2,2/03/2020,Monday,WTA,Pur._,male,a10077,Within Treatment,Tall,1657.23,3.76642,74.56,111.44,254.08,0.8,440.08,39.52,14
+None,24,water4,3,2/03/2020,Monday,WTA,Gre.Gre,female,a10034,Within Treatment,Tall,1036.11,2.3548,0,3.92,436.16,96.56,440.08,,0
+None,24,water4,4,2/03/2020,Monday,WTA,Ora.Red,male,a10064,Within Treatment,Tall,2052.73,4.67294,80.96,134.88,224.08,0,439.92,0,20
+None,24,water4,5,2/03/2020,Monday,WTA,Red.Pur,male,a10166,Within Treatment,Tall,144.155,0.327625,0,0,440.08,393.68,440.08,,0
+None,24,water4,6,2/03/2020,Monday,WTA,Gre.Pin,female,a10036,Within Treatment,Tall,2457.16,5.5865,90.16,72.8,277.12,0.16,440.08,11.6,20
+None,25,water4,1,2/03/2020,Monday,PB,Whi._,female,a9924,Paternal,Tall,2404.08,5.46382,173.52,128.32,138.24,0.4,440.08,20.24,32
+None,25,water4,2,2/03/2020,Monday,PB,_.Red,female,a9903,Paternal,Tall,416.583,0.946779,0,0,440.08,175.68,440.08,,0
+None,25,water4,3,2/03/2020,Monday,PB,_.Pur,male,a9981,Paternal,Tall,2223.46,5.05331,79.44,86.64,274,2.88,440.08,158.96,20
+None,25,water4,4,2/03/2020,Monday,PB,Red._,male,a9941,Paternal,Tall,2288.46,5.20862,221.28,76.72,142,0.24,440,25.2,23
+None,25,water4,5,2/03/2020,Monday,PB,Yel.Gre,male,a9901,Paternal,Tall,2051.67,4.66289,117.28,110.96,211.84,0.08,440.08,49.6,19
+None,25,water4,6,2/03/2020,Monday,PB,Pin.Gre,female,a9952,Paternal,Tall,988.432,2.24644,21.36,17.52,401.2,24.8,440.08,138.8,2
+None,26,water4,1,2/03/2020,Monday,PB,Whi.Ora,female,a9927,Paternal,Tall,1314.5,2.98749,28.24,24.88,386.96,14.48,440.08,398.56,5
+None,26,water4,2,2/03/2020,Monday,PB,Blu.Gre,male,a9983,Paternal,Tall,340.635,0.774171,0,0,440.08,289.84,440.08,,0
+None,26,water4,3,2/03/2020,Monday,PB,Red.Bla,male,a9949,Paternal,Tall,1865.25,4.23919,109.92,143.52,186.64,1.44,440.08,130.24,18
+None,26,water4,4,2/03/2020,Monday,PB,Yel.Pur,female,a9899,Paternal,Tall,1956.66,4.44937,47.04,67.6,325.44,0.72,440.08,205.44,11
+None,26,water4,5,2/03/2020,Monday,PB,Pur.Pur,female,a9982,Paternal,Tall,1521.97,3.45903,72.4,48.08,319.6,0.48,440.08,297.28,13
+None,26,water4,6,2/03/2020,Monday,PB,Bro._,male,a9908,Paternal,Tall,2130,4.84091,106.24,111.12,222.72,0.72,440.08,77.92,19
+None,27,water4,1,2/03/2020,Monday,PB,Bro.Bro,female,a9910,Paternal,Tall,1173.25,2.66647,0,1.36,438.72,0.32,440.08,,0
+None,27,water4,2,2/03/2020,Monday,PB,Red.Yel,male,a9947,Paternal,Tall,933.652,2.12194,30.4,51.76,357.92,109.28,440.08,336.56,4
+None,27,water4,3,2/03/2020,Monday,PB,Bla.Whi,female,a9923,Paternal,Tall,2035.39,4.6259,294.24,54.96,90.88,0.4,440.08,96.32,22
+None,27,water4,4,2/03/2020,Monday,PB,Blu.Blu,male,a9973,Paternal,Tall,1491.04,3.38873,238.24,80.4,121.44,4.16,440.08,106.48,16
+None,27,water4,5,2/03/2020,Monday,PB,Pin.Ora,female,a9953,Paternal,Tall,1458.15,3.31399,28.16,50.72,361.2,0.96,440.08,204.8,5
+None,27,water4,6,2/03/2020,Monday,PB,Blu.Pur,male,a9975,Paternal,Tall,674.279,1.53245,0,0,440.08,130.72,440.08,,0
+None,28,water4,1,2/03/2020,Monday,PB,Bro.Blu,male,a9937,Paternal,Tall,1600.87,3.63835,0,0,440.08,0.24,440.08,,0
+None,28,water4,2,2/03/2020,Monday,PB,_.Ora,female,a9964,Paternal,Tall,1105.06,2.5115,28.16,40.24,371.68,92.16,440.08,220.88,5
+1,1,water1,1,4/03/2020,Wed,PB,Bro._,male,a9908,Paternal,Old,2156.61,5.13772,48.88,50.88,320.24,21.04,420.16,56.72,18
+1,1,water1,2,4/03/2020,Wed,PB,Bro.Bro,female,a9910,Paternal,Old,3438.83,7.81552,3.28,22,414.8,0.56,440.08,196.72,3
+1,1,water1,3,4/03/2020,Wed,PB,Blu.Gre,male,a9983,Paternal,Old,2800.18,6.36404,25.2,34.08,380.16,0.56,440.08,251.68,12
+1,1,water1,4,4/03/2020,Wed,PB,Red.Bla,male,a9949,Paternal,Old,3027.01,6.88709,11.84,55.12,372.64,0.8,439.84,59.76,9
+2,1,water1,5,4/03/2020,Wed,PB,Blu.Blu,male,a9973,Paternal,Old,2050.94,4.66122,93.52,79.76,266.8,0.88,440.08,0.64,31
+2,1,water1,6,4/03/2020,Wed,PB,Bla.Whi,female,a9923,Paternal,Old,2009.09,4.56612,49.92,139.36,250.8,0.16,440.08,67.84,30
+2,1,water1,7,4/03/2020,Wed,PB,Whi.Ora,female,a9927,Paternal,Old,3314.93,7.53392,72.16,100.72,267.2,0.32,440.08,124.8,39
+2,1,water1,8,4/03/2020,Wed,PB,_.Red,female,a9903,Paternal,Old,912.773,2.07448,0,0,440.08,286,440.08,,0
+1,2,water1,1,4/03/2020,Wed,PB,_.Pur,male,a9981,Paternal,Old,2752.88,6.2611,13.6,24.8,401.68,0.24,440.08,0,8
+1,2,water1,2,4/03/2020,Wed,PB,Whi._,female,a9924,Paternal,Old,2311.51,5.25631,68.32,142.56,229.2,0.32,440.08,77.68,40
+1,2,water1,3,4/03/2020,Wed,PB,_.Ora,female,a9964,Paternal,Old,3231.91,7.36669,39.04,59.92,340.08,0.4,439.04,81.92,14
+1,2,water1,4,4/03/2020,Wed,PB,Pin.Gre,female,a9952,Paternal,Old,2764.04,6.28192,75.6,76.64,287.6,0.56,440.08,218.56,29
+2,2,water1,5,4/03/2020,Wed,PB,Red._,male,a9941,Paternal,Old,1794.61,4.07866,48.8,47.68,343.52,0.96,440.08,143.36,15
+2,2,water1,6,4/03/2020,Wed,PB,Pur.Pur,female,a9982,Paternal,Old,2289.76,5.204,11.04,75.2,353.84,0.72,440.08,0,11
+2,2,water1,7,4/03/2020,Wed,PB,Bro.Blu,male,a9937,Paternal,Old,4093.76,9.304,0.72,3.76,435.6,0.32,440.08,180.8,1
+2,2,water1,8,4/03/2020,Wed,PB,Red.Yel,male,a9947,Paternal,Old,2330.16,5.41091,0,0,431.2,82.08,431.2,,0
+1,3,water1,1,4/03/2020,Wed,PB,Blu.Pur,male,a9975,Paternal,Old,3074.57,7.00295,3.44,22.32,413.36,10.24,439.12,398.08,3
+1,3,water1,2,4/03/2020,Wed,PB,Pin.Ora,female,a9953,Paternal,Old,2510.82,5.71056,10.88,46.64,382.24,0.88,439.76,39.28,11
+1,3,water1,3,4/03/2020,Wed,PB,Yel.Gre,male,a9901,Paternal,Old,3008.16,6.84419,38,76.88,324.88,0.16,439.76,188.24,13
+1,3,water1,4,4/03/2020,Wed,PB,Yel.Pur,female,a9899,Paternal,Old,4167.93,9.47257,0,1.76,437.92,12.4,440.08,,0
+1,4,water1,1,4/03/2020,Wed,WTA,Red.Pur,male,a10166,Within Treatment,Old,2560.46,5.82029,18.08,33.6,388.32,0.88,440,234.64,8
+1,4,water1,2,4/03/2020,Wed,WTA,Pin.Bla,male,a10092,Within Treatment,Old,2809.48,6.38517,8,60.24,371.84,0.16,440.08,140.24,11
+1,4,water1,3,4/03/2020,Wed,WTA,Gre.Blu,female,a10041,Within Treatment,Old,3400.82,7.73476,1.52,11.36,425.76,11.76,440,369.44,1
+1,4,water1,4,4/03/2020,Wed,WTA,Ora.Bro,male,a10070,Within Treatment,Old,2311.1,5.26398,79.6,78.24,281.68,0.4,439.52,56.4,40
+2,4,water1,5,4/03/2020,Wed,WTA,Pin.Blu,male,a10090,Within Treatment,Old,2636.61,5.99557,78.56,67.68,293.84,0.32,440.08,108.08,27
+2,4,water1,6,4/03/2020,Wed,WTA,Pur._,male,a10077,Within Treatment,Old,1928.94,4.38556,73.68,118.88,247.52,1.92,440.08,49.44,28
+2,4,water1,7,4/03/2020,Wed,WTA,Whi.Yel,male,a10157,Within Treatment,Old,3744.12,8.51401,21.12,42.88,376.08,0.32,440.08,12.08,15
+2,4,water1,8,4/03/2020,Wed,WTA,Whi.Pur,female,a10158,Within Treatment,Old,3385.68,7.69753,50.8,135.6,248.64,0.16,440.08,62.88,24
+1,5,water1,1,4/03/2020,Wed,WTA,Pin.Gre,female,a10087,Within Treatment,Old,2251.62,5.12012,34.24,60.32,344.56,0.4,439.84,129.6,17
+1,5,water1,2,4/03/2020,Wed,WTA,Blu.Blu,female,a10046,Within Treatment,Old,1703.29,4.56891,12.48,36.96,324.88,22.08,374.32,208.16,6
+1,5,water1,3,4/03/2020,Wed,WTA,Yel._,male,a10095,Within Treatment,Old,3022.53,6.88064,73.36,73.36,291.76,0.16,439.52,45.2,34
+1,5,water1,4,4/03/2020,Wed,WTA,Blu.Yel,male,a10055,Within Treatment,Old,1854.6,4.2173,55.68,93.92,290.48,0.72,440.08,85.44,21
+2,5,water1,5,4/03/2020,Wed,WTA,Pur.Blu,female,a10079,Within Treatment,Old,2225.3,5.05751,73.68,105.92,260.48,0.16,440.08,0,33
+2,5,water1,6,4/03/2020,Wed,WTA,Bro.Bro,male,a10201,Within Treatment,Old,1838.37,4.17812,95.12,144.4,200.56,0.48,440.08,17.84,29
+2,5,water1,7,4/03/2020,Wed,WTA,Gre.Pin,female,a10036,Within Treatment,Old,2621.6,5.96578,73.36,77.68,288.72,0.56,440,103.2,22
+2,5,water1,8,4/03/2020,Wed,WTA,Blu._,female,a10039,Within Treatment,Old,2049.16,4.66993,90.32,152.88,195.04,1.04,440,3.12,40
+1,6,water2,1,4/03/2020,Wed,MB,Yel.Bla,female,a9777,Maternal,Old,2672.49,6.07385,46.88,64.64,328.56,0.4,440.08,49.68,20
+1,6,water2,2,4/03/2020,Wed,MB,_.Ora,female,a10198,Maternal,Old,2221.06,5.0497,47.76,102.8,289.52,0.48,440.08,61.6,21
+1,6,water2,3,4/03/2020,Wed,MB,Yel.Ora,female,a9778,Maternal,Old,2690.8,6.11991,66,52.96,320.8,0.56,439.76,38.56,20
+1,6,water2,4,4/03/2020,Wed,MB,Blu.Blu,male,a9843,Maternal,Old,2974.86,6.76842,0,2.8,425.2,55.44,439.84,,0
+2,6,water2,5,4/03/2020,Wed,MB,Gre.Pur,female,a9867,Maternal,Old,1967.09,5.33955,0,2.48,366.48,102.24,368.96,,0
+2,6,water2,6,4/03/2020,Wed,MB,Red.Pin,male,a9755,Maternal,Old,2266.43,5.15098,86.24,83.52,270.32,0.48,440.08,24.96,35
+2,6,water2,8,4/03/2020,Wed,MB,Yel.Yel,male,a9765,Maternal,Old,1985.29,4.51695,96.48,126.16,217.04,0.48,439.68,0.4,42
+1,7,water2,1,4/03/2020,Wed,MB,_.Blu,male,a9844,Maternal,Old,1335.36,3.03491,33.76,125.2,281.12,0.64,440.08,257.6,13
+1,7,water2,2,4/03/2020,Wed,MB,Blu.Gre,male,a9846,Maternal,Old,1727.74,4.80247,0,1.12,360.24,102.56,361.36,,0
+1,7,water2,3,4/03/2020,Wed,MB,Red._,male,a9752,Maternal,Old,3370.61,7.66047,42.32,78.64,318.88,0.24,440.08,89.6,16
+1,7,water2,4,4/03/2020,Wed,MB,Red.Bla,male,a9756,Maternal,Old,2986.41,6.7873,20.08,41.52,378.48,0.56,440.08,133.2,9
+2,7,water2,5,4/03/2020,Wed,MB,_.Red,male,a9849,Maternal,Old,2385.97,5.42661,41.68,86.16,311.92,0.8,439.76,103.92,15
+2,7,water2,6,4/03/2020,Wed,MB,Pin.Whi,female,a9862,Maternal,Old,1155.47,2.62607,51.76,63.6,324.56,186.8,440.08,205.2,20
+2,7,water2,8,4/03/2020,Wed,MB,Pin.Yel,female,a9854,Maternal,Old,2794.36,6.36007,95.12,164.96,179.6,0,439.68,1.12,51
+1,8,water2,1,4/03/2020,Wed,MB,Bla.Gre,female,a9787,Maternal,Old,1801.66,4.09916,58.32,79.2,302,0.48,439.92,40.16,14
+1,8,water2,2,4/03/2020,Wed,MB,Gre.Ora,female,a9868,Maternal,Old,2690.99,6.14157,124.4,79.76,235.28,0.24,439.44,35.04,49
+1,8,water2,3,4/03/2020,Wed,MB,_._,female,a9774,Maternal,Old,3364.73,7.6485,0.4,0.56,437.28,8.96,440.08,326.24,1
+1,8,water2,4,4/03/2020,Wed,MB,Ora.Yel,male,a9813,Maternal,Old,2858.83,6.50088,1.84,19.44,418.72,27.76,440.08,304.56,2
+2,8,water2,5,4/03/2020,Wed,WCA,Ora.Red,male,a9606,Within Control,Old,2298.89,5.22951,5.6,24.8,409.6,0.56,440,302.96,5
+2,8,water2,6,4/03/2020,Wed,WCA,Pur._,male,a9562,Within Control,Old,1846.98,4.63227,5.76,21.04,372.32,136.48,399.12,2.4,3
+2,8,water2,8,4/03/2020,Wed,WCA,Ora.Whi,male,a9611,Within Control,Old,957.093,2.1764,0.56,2.72,332.48,166.4,440.08,3.44,1
+1,9,water2,1,4/03/2020,Wed,WCA,Ora.Gre,female,a9603,Within Control,Old,3065.32,6.97679,19.6,67.68,352.56,0.16,439.92,183.84,10
+1,9,water2,2,4/03/2020,Wed,WCA,Pur.Red,female,a9566,Within Control,Old,2680.06,6.09104,21.36,50.88,367.84,0.32,440.08,95.92,9
+1,9,water2,3,4/03/2020,Wed,WCA,Pin.Gre,male,a9588,Within Control,Old,2943.9,6.69311,53.68,93.28,293.12,0.16,440.08,103.28,27
+1,9,water2,4,4/03/2020,Wed,WCA,Gre.Pur,female,a9556,Within Control,Old,2838.78,6.45177,15.92,44.72,379.44,0.56,440.08,89.68,13
+2,9,water2,5,4/03/2020,Wed,WCA,Red.Pin,female,a9673,Within Control,Old,2857.54,6.49442,40.4,84.72,314.96,0.24,440.08,111.28,24
+2,9,water2,6,4/03/2020,Wed,WCA,Gre.Bla,male,a9554,Within Control,Old,2573.16,5.86409,26.32,71.36,341.44,0.08,439.12,65.92,19
+2,9,water2,8,4/03/2020,Wed,WCA,Whi.Yel,female,a9599,Within Control,Old,2856.62,6.49349,85.68,108.8,243.28,0.24,440,45.44,35
+1,10,water2,1,4/03/2020,Wed,WCA,Gre.Bro,male,a9558,Within Control,Old,2600.7,5.91391,51.36,71.04,317.44,0.4,439.84,120,19
+1,10,water2,2,4/03/2020,Wed,WCA,Red.Whi,female,a9679,Within Control,Old,4285.3,9.76595,10.64,26.56,402.72,2,439.92,94.24,7
+1,10,water2,3,4/03/2020,Wed,WCA,Ora.Blu,female,a9607,Within Control,Old,3493.6,7.94289,49.84,86.48,303.76,0.08,440.08,147.84,21
+1,10,water2,4,4/03/2020,Wed,WCA,Ora.Ora,male,a9706,Within Control,Old,3701.41,8.41536,35.28,44.88,359.84,0.08,440.08,89.28,20
+2,10,water2,5,4/03/2020,Wed,WCA,Blu.Yel,female,a9577,Within Control,Old,2056.46,4.67378,41.12,58.4,340.56,0.32,440.08,175.44,18
+2,10,water2,6,4/03/2020,Wed,WCA,Red.Gre,male,a9680,Within Control,Old,1600.56,3.64027,0.72,1.36,437.68,188.08,439.76,284.72,1
+2,10,water2,8,4/03/2020,Wed,WCA,Red.Yel,female,a9678,Within Control,Old,3604.44,8.19638,31.44,51.52,349.6,0.16,440.08,73.76,20
+1,11,water3,1,4/03/2020,Wed,PA,_.Gre,male,a9873,Paternal,Old,2403.63,5.47675,25.6,51.52,362.56,2.96,439.68,115.44,9
+1,11,water3,2,4/03/2020,Wed,PA,Pin.Blu,male,a9960,Paternal,Old,2645.08,6.01593,61.28,97.52,281.28,5.44,440.08,67.92,32
+1,11,water3,3,4/03/2020,Wed,PA,Pin.Yel,male,a9956,Paternal,Old,3049.41,6.93048,34.56,44,361.52,0.16,440.08,128.32,18
+1,11,water3,4,4/03/2020,Wed,PA,Gre.Blu,male,a9881,Paternal,Old,1906.05,4.33193,4.8,28.8,405.28,62.32,440.08,266.4,5
+2,11,water3,5,4/03/2020,Wed,PA,_.Bro,female,a9917,Paternal,Old,1958.47,4.45756,80.64,122.4,236.56,0.48,439.84,16.8,32
+2,11,water3,6,4/03/2020,Wed,PA,Pin.Pur,female,a9957,Paternal,Old,2059.02,4.68726,83.92,92.96,263.04,0.88,439.92,10.72,27
+2,11,water3,8,4/03/2020,Wed,PA,Whi.Bro,female,a9929,Paternal,Old,2036.73,4.63482,14.72,33.6,382.4,18.72,439.76,121.2,6
+1,12,water3,1,4/03/2020,Wed,PA,Whi.Whi,male,a9926,Paternal,Old,2239,5.09233,31.12,65.92,342.96,9.92,440,0,10
+1,12,water3,2,4/03/2020,Wed,PA,Ora.Ora,female,a9962,Paternal,Old,1867.41,4.24797,14.56,39.12,386.24,40.56,439.92,110.56,6
+1,12,water3,3,4/03/2020,Wed,PA,Bla.Pin,male,a9919,Paternal,Old,2801.92,6.39241,97.04,126.72,214.08,0,438.96,56.32,34
+1,12,water3,4,4/03/2020,Wed,PA,Bla.Red,female,a9921,Paternal,Old,3122.94,7.10792,5.12,19.84,414.32,6.48,439.68,342.88,3
+2,12,water3,5,4/03/2020,Wed,PA,Ora.Pin,female,a9961,Paternal,Old,2117.36,4.81745,72,98.24,269.36,0.16,439.84,8.72,29
+2,12,water3,6,4/03/2020,Wed,PA,Blu.Bla,male,a9984,Paternal,Old,2189.83,4.97689,67.12,60.8,312.16,0.64,440.08,17.12,25
+2,12,water3,7,4/03/2020,Wed,PA,Gre.Gre,female,a9874,Paternal,Old,3729.63,8.48415,0,5.6,426.72,3.92,439.92,,0
+2,12,water3,8,4/03/2020,Wed,PA,Gre.Pin,male,a9880,Paternal,Old,2104.8,4.78452,40.48,73.12,326.08,1.68,440,161.52,6
+1,13,water3,1,4/03/2020,Wed,PA,Bla.Gre,female,a9922,Paternal,Old,2246.89,5.11588,84.96,95.12,257.52,0.32,440.08,31.52,48
+1,13,water3,2,4/03/2020,Wed,PA,Whi.Red,male,a9931,Paternal,Old,225.231,0.512448,0,0,439.84,376.16,439.84,,0
+1,13,water3,3,4/03/2020,Wed,PA,Gre.Ora,female,a9876,Paternal,Old,3172.18,7.20951,44.88,45.44,349.76,0.32,440.08,155.44,12
+1,13,water3,4,4/03/2020,Wed,PA,Pin.Red,female,a9958,Paternal,Old,2897.53,6.58648,25.76,36.08,378.16,0.48,440.08,68.72,14
+2,13,water3,5,4/03/2020,Wed,WTB,Whi.Ora,female,a10160,Within Treatment,Old,2429.41,5.52842,64.88,64.64,310.16,0.64,439.76,73.84,18
+2,13,water3,6,4/03/2020,Wed,WTB,Whi.Pin,female,a10154,Within Treatment,Old,1447.67,3.29015,30.88,81.68,327.52,22.32,440.08,247.92,12
+2,13,water3,7,4/03/2020,Wed,WTB,Whi.Bro,female,a10159,Within Treatment,Old,2567.38,5.83496,66,105.04,269.04,0.16,440.08,60.72,32
+2,13,water3,8,4/03/2020,Wed,WTB,Pur.Red,female,a10076,Within Treatment,Old,2658.79,6.046,101.28,68,258.48,2.24,440.08,59.76,18
+1,14,water3,1,4/03/2020,Wed,WTB,Pin.Red,male,a10089,Within Treatment,Old,3082.89,7.00784,34.32,36.96,368.8,0.4,440.08,26.96,14
+1,14,water3,2,4/03/2020,Wed,WTB,Gre._,male,a10037,Within Treatment,Old,2294.24,5.21418,97.6,107.68,234.8,0.08,440.08,36.72,30
+1,14,water3,3,4/03/2020,Wed,WTB,Gre.Bro,male,a10044,Within Treatment,Old,2005.51,4.79328,110.64,78,211.84,14.56,419.36,55.36,28
+1,14,water3,4,4/03/2020,Wed,WTB,Red._,male,a10155,Within Treatment,Old,2771.69,6.30045,18.8,41.12,379.76,0.4,440.08,171.36,10
+2,14,water3,5,4/03/2020,Wed,WTB,Ora.Pin,female,a10063,Within Treatment,Old,2381.05,5.41147,21.6,49.92,368.56,0.24,440.08,214.8,9
+2,14,water3,6,4/03/2020,Wed,WTB,Ora.Ora,female,a10060,Within Treatment,Old,2203.75,5.0213,84.24,77.12,278.64,0.88,440,5.04,33
+2,14,water3,7,4/03/2020,Wed,WTB,Pur.Gre,male,a10074,Within Treatment,Old,2571.23,5.8437,94.72,115.84,229.52,0.24,440.08,73.44,32
+2,14,water3,8,4/03/2020,Wed,WTB,Pin.Bro,male,a10088,Within Treatment,Old,1804.7,4.10158,21.44,64.88,352.32,107.6,440.08,256.4,10
+1,15,water3,1,4/03/2020,Wed,WTB,Yel.Yel,female,a10097,Within Treatment,Old,2206.39,5.01634,34.8,40.4,364.16,1.36,440.08,142.32,10
+1,15,water3,2,4/03/2020,Wed,WTB,Whi.Bla,male,a10152,Within Treatment,Old,2229.7,5.06751,15.36,22,402.72,2.08,440.08,281.84,9
+1,15,water3,3,4/03/2020,Wed,WTB,Blu.Ora,female,a10059,Within Treatment,Old,3191.48,7.25336,34.16,76.8,329.12,0.32,440.08,226.64,12
+1,15,water3,4,4/03/2020,Wed,WTB,_.Yel,male,a10096,Within Treatment,Old,2748.83,6.25986,56.56,82.88,300.64,0.24,440.08,152.08,19
+2,15,water3,5,4/03/2020,Wed,WTB,Pur.Pur,female,a10081,Within Treatment,Old,332.528,0.918993,0,0,362.24,301.36,362.24,,0
+2,15,water3,6,4/03/2020,Wed,WTB,Red.Bro,male,a10169,Within Treatment,Old,2109.03,5.448,18.24,53.04,316,0.64,387.28,162.24,10
+2,15,water3,7,4/03/2020,Wed,WTB,_.Blu,female,a10040,Within Treatment,Old,2817.78,6.40404,22.4,36.48,381.2,19.6,440.08,182.72,9
+2,15,water3,8,4/03/2020,Wed,WTB,Gre.Pur,male,a10043,Within Treatment,Old,2618.76,5.95174,44.72,70.24,324.96,0.16,440.08,78.96,12
+1,16,water4,1,4/03/2020,Wed,MA,Gre.Blu,male,a9808,Maternal,Old,206.833,1.00756,0,0,206.32,170.88,206.32,,0
+1,16,water4,2,4/03/2020,Wed,MA,Gre.Whi,female,a9809,Maternal,Old,1913.11,4.34798,80,107.6,252.48,0.32,440.08,76.32,28
+1,16,water4,3,4/03/2020,Wed,MA,Yel._,male,a9763,Maternal,Old,411.789,1.26223,0,0,258.08,253.6,327.2,,0
+1,16,water4,4,4/03/2020,Wed,MA,Red.Pur,female,a9762,Maternal,Old,4017.03,9.12962,0,0,440.08,1.2,440.08,,0
+2,16,water4,5,4/03/2020,Wed,MA,_.Yel,male,a9764,Maternal,Old,2443.84,5.56026,5.44,17.84,416.64,9.36,439.92,210.32,5
+2,16,water4,6,4/03/2020,Wed,MA,_.Gre,male,a9803,Maternal,Old,2235.24,5.09213,3.68,4.56,431.36,57.84,439.6,210.24,6
+2,16,water4,7,4/03/2020,Wed,MA,Red._,female,a9848,Maternal,Old,1771.78,4.02678,4.88,8.88,416.64,155.12,440.08,210.96,5
+2,16,water4,8,4/03/2020,Wed,MA,Blu.Yel,female,a9845,Maternal,Old,2527.17,5.76873,44.4,59.44,329.44,29.44,438.64,130.32,19
+1,17,water4,1,4/03/2020,Wed,MA,Bro.Gre,female,a9796,Maternal,Old,2387.71,5.42662,14.88,25.28,399.92,1.28,440.08,316.56,7
+1,17,water4,2,4/03/2020,Wed,MA,Red.Gre,female,a9758,Maternal,Old,1531.32,3.48662,36.24,49.68,354.08,18.4,440,287.52,16
+1,17,water4,3,4/03/2020,Wed,MA,Red.Yel,female,a9761,Maternal,Old,3469.36,7.88777,0,12.8,427.28,10.08,440.08,,0
+1,17,water4,4,4/03/2020,Wed,MA,Pin.Ora,male,a9858,Maternal,Old,1760.54,4.00122,0,0,361.28,104,440.08,,0
+2,17,water4,5,4/03/2020,Wed,MA,Bro.Pin,male,a9793,Maternal,Old,1707.96,4.12313,28,45.52,340.8,15.52,414.32,153.68,16
+2,17,water4,6,4/03/2020,Wed,MA,Whi.Ora,female,a9839,Maternal,Old,1570.97,3.66365,0,0,429.12,173.6,429.12,,0
+2,17,water4,7,4/03/2020,Wed,MA,Gre.Gre,female,a9804,Maternal,Old,4135.87,9.40141,0,0,440.08,22.16,440.08,,0
+2,17,water4,8,4/03/2020,Wed,MA,Red.Red,male,a9754,Maternal,Old,3579.91,8.13763,18.72,34.64,386.32,0.16,440,81.92,10
+1,18,water4,1,4/03/2020,Wed,MA,Red.Bro,male,a9760,Maternal,Old,2674.7,6.07885,0,1.28,438.8,0.56,440.08,,0
+1,18,water4,2,4/03/2020,Wed,MA,_.Bla,male,a9800,Maternal,Old,2646.42,6.33115,0,11.04,407.36,40.88,418.4,,0
+1,18,water4,3,4/03/2020,Wed,MA,Red.Blu,female,a9759,Maternal,Old,2850.16,6.47763,9.76,35.28,389.6,39.28,440.08,123.52,7
+1,18,water4,4,4/03/2020,Wed,MA,Bro.Yel,female,a9794,Maternal,Old,1087.77,2.47221,0,0,278.96,303.28,440.08,,0
+2,18,water4,5,4/03/2020,Wed,WCB,Pur.Blu,male,a9687,Within Control,Old,2346.35,5.54956,41.52,43.6,337.76,0.96,422.88,103.6,13
+2,18,water4,6,4/03/2020,Wed,WCB,Blu.Whi,female,a9580,Within Control,Old,383.662,1.36515,0,0,281.68,210.96,282.48,,0
+2,18,water4,7,4/03/2020,Wed,WCB,_.Pur,female,a9605,Within Control,Old,2311.97,5.25448,11.36,30.88,397.84,0.56,440.08,267.36,4
+2,18,water4,8,4/03/2020,Wed,WCB,Ora.Bla,female,a9608,Within Control,Old,2419.92,5.49983,27.68,55.12,357.28,2.16,440.08,63.12,12
+1,19,water4,1,4/03/2020,Wed,WCB,Whi.Ora,female,a9596,Within Control,Old,2777.55,6.31606,16.56,49.44,373.84,0.4,440.08,115.44,9
+1,19,water4,2,4/03/2020,Wed,WCB,Bro.Gre,female,a9704,Within Control,Old,3414.79,7.77502,17.6,46.16,376.32,0.56,440.08,64.32,12
+1,19,water4,3,4/03/2020,Wed,WCB,Blu.Bro,female,a9579,Within Control,Old,2492.96,5.672,11.12,22.72,405.12,70.16,439.6,344.64,6
+1,19,water4,4,4/03/2020,Wed,WCB,Pur.Pin,male,a9686,Within Control,Old,2092.54,4.75751,2.16,6.72,430.24,43.44,440.08,150.72,1
+2,19,water4,5,4/03/2020,Wed,WCB,Pin.Whi,male,a9590,Within Control,Old,162.696,0.446476,0,0,365.04,337.6,365.04,,0
+2,19,water4,6,4/03/2020,Wed,WCB,Ora.Gre,male,a9612,Within Control,Old,958.398,3.30482,0,0,291.04,14.96,291.04,,0
+2,19,water4,7,4/03/2020,Wed,WCB,Red.Bro,male,a9677,Within Control,Old,323.21,1.29824,0,0,249.92,205.84,249.92,,0
+2,19,water4,8,4/03/2020,Wed,WCB,Blu.Pur,male,a9581,Within Control,Old,1935.97,4.39993,25.68,134.88,279.52,1.28,440.08,144.8,18
+1,20,water4,1,4/03/2020,Wed,WCB,Yel.Yel,female,a9613,Within Control,Old,748.278,1.82364,0,0,410.72,267.84,410.72,,0
+1,20,water4,2,4/03/2020,Wed,WCB,Bro.Bla,female,a9700,Within Control,Old,2302.91,5.23389,1.6,8.24,430.24,7.2,440.08,438.48,1
+1,20,water4,3,4/03/2020,Wed,WCB,Blu.Gre,female,a9578,Within Control,Old,1628.82,3.70186,44.16,73.12,322.8,126.24,440.08,191.2,14
+1,20,water4,4,4/03/2020,Wed,WCB,Blu.Blu,male,a9575,Within Control,Old,3352.77,7.61993,4,27.28,408.8,0.08,440.08,224.56,3
+2,20,water4,5,4/03/2020,Wed,WCB,Pin.Yel,male,a9587,Within Control,Old,1364.8,3.84321,0,1.52,354.24,18.32,355.76,,0
+2,20,water4,6,4/03/2020,Wed,WCB,Blu.Ora,female,a9583,Within Control,Old,138.513,0.845002,0,0,164.4,145.12,164.4,,0
+2,20,water4,7,4/03/2020,Wed,WCB,Blu.Red,male,a9582,Within Control,Old,2808.65,6.3833,15.36,47.36,377.36,14.48,440.08,292.64,10
+2,20,water4,8,4/03/2020,Wed,WCB,Ora.Bro,male,a9610,Within Control,Old,2013.38,4.57586,38.64,84.72,316.72,21.12,440.08,72.56,9
+1,1,water1,1,9/03/2020,Monday,WTB,Gre._,male,a10037,Within Treatment,Old,2652.59,6.02861,19.6,57.28,363.2,0.08,440.08,132.08,12
+1,1,water1,2,9/03/2020,Monday,WTB,Pur.Red,female,a10076,Within Treatment,Old,3083.93,7.00894,22.16,51.04,366.88,1.12,440.08,158.16,13
+1,1,water1,3,9/03/2020,Monday,WTB,Pur.Pur,female,a10081,Within Treatment,Old,3002.4,6.82364,29.92,29.6,380.56,0.48,440.08,166.72,11
+1,1,water1,4,9/03/2020,Monday,WTB,Gre.Bro,male,a10044,Within Treatment,Old,2733.27,6.21198,63.44,84.8,291.84,0.64,440.08,59.76,24
+2,1,water1,5,9/03/2020,Monday,WTB,Pin.Bro,male,a10088,Within Treatment,Old,1723.21,3.92424,24.08,21.04,394.32,0.64,439.44,102.8,9
+2,1,water1,6,9/03/2020,Monday,WTB,Whi.Bro,female,a10159,Within Treatment,Old,2297.58,5.22177,36.16,55.52,348.4,0.08,440.08,11.52,12
+2,1,water1,7,9/03/2020,Monday,WTB,Ora.Pin,female,a10063,Within Treatment,Old,2484.17,5.64789,24,167.92,248.16,0.24,440.08,0,11
+2,1,water1,8,9/03/2020,Monday,WTB,Red._,male,a10155,Within Treatment,Old,2234.47,5.07834,46.24,68.88,324.88,0.64,440.08,81.28,16
+1,2,water1,1,9/03/2020,Monday,WTB,_.Yel,male,a10096,Within Treatment,Old,2145.96,4.87717,26.24,55.28,358.56,0.64,440.08,1.2,10
+1,2,water1,2,9/03/2020,Monday,WTB,Ora.Ora,female,a10060,Within Treatment,Old,2225.96,5.06268,63.92,62.64,313.44,1.92,440,32.32,24
+1,2,water1,3,9/03/2020,Monday,WTB,Red.Bro,male,a10169,Within Treatment,Old,2955.52,6.73054,0,4.96,434.96,10.24,439.92,,0
+1,2,water1,4,9/03/2020,Monday,WTB,Whi.Pin,female,a10154,Within Treatment,Old,2109.58,4.79449,30.64,71.76,337.68,0.08,440.08,147.84,7
+2,2,water1,5,9/03/2020,Monday,WTB,Gre.Pur,male,a10043,Within Treatment,Old,2277.8,5.17682,52.64,59.04,328.4,0.32,440.08,97.28,14
+2,2,water1,6,9/03/2020,Monday,WTB,Yel.Yel,female,a10097,Within Treatment,Old,2199.65,4.9992,76.72,58.8,304.56,0.56,440.08,13.44,24
+2,2,water1,7,9/03/2020,Monday,WTB,Pur.Gre,male,a10074,Within Treatment,Old,1273.37,4.33238,0,0,295.2,46.24,295.2,,0
+2,2,water1,8,9/03/2020,Monday,WTB,Pin.Red,male,a10089,Within Treatment,Old,2450.71,5.56979,15.28,17.92,406.88,84.4,440.08,330.48,6
+1,3,water1,1,9/03/2020,Monday,WTB,_.Blu,female,a10040,Within Treatment,Old,2736.47,6.21924,18.16,54,367.92,0.24,440.08,168.88,8
+1,3,water1,2,9/03/2020,Monday,WTB,Blu.Ora,female,a10059,Within Treatment,Old,2166.89,4.92474,8.24,20.72,411.12,0.4,440.08,162.4,4
+1,3,water1,3,9/03/2020,Monday,WTB,Whi.Bla,male,a10152,Within Treatment,Old,2565.32,5.83028,0,17.2,422.88,1.12,440.08,,0
+1,3,water1,4,9/03/2020,Monday,WTB,Whi.Ora,female,a10160,Within Treatment,Old,3341.93,7.59806,0,0,440.08,134.16,440.08,,0
+2,3,water1,5,9/03/2020,Monday,PA,Bla.Red,female,a9921,Paternal,Old,888.467,2.61068,0,3.36,337.04,214.88,340.4,,0
+2,3,water1,6,9/03/2020,Monday,PA,Pin.Red,female,a9958,Paternal,Old,2330.74,5.29714,67.84,68.24,304,1.12,440.08,122.96,24
+2,3,water1,7,9/03/2020,Monday,PA,Bla.Pin,male,a9919,Paternal,Old,2812.93,6.39302,29.6,63.2,347.28,0.16,440.08,35.68,17
+2,3,water1,8,9/03/2020,Monday,PA,Bla.Gre,female,a9922,Paternal,Old,2798.61,6.36048,49.2,37.12,353.76,0.48,440.08,139.76,14
+1,4,water1,1,9/03/2020,Monday,PA,Gre.Gre,female,a9874,Paternal,Old,2617.4,5.94863,15.04,23.68,401.36,7.12,440.08,395.6,4
+1,4,water1,2,9/03/2020,Monday,PA,Bla.Ora,female,a9887,Paternal,Old,2333.23,5.30278,0,18.64,421.44,50.16,440.08,,0
+1,4,water1,3,9/03/2020,Monday,PA,Whi.Whi,male,a9926,Paternal,Old,2356.83,6.39054,33.92,52.24,283.52,10.08,369.68,35.36,16
+1,4,water1,4,9/03/2020,Monday,PA,Blu.Bla,male,a9984,Paternal,Old,2438.96,5.54309,67.2,94.96,277.92,0.32,440.08,5.6,33
+2,4,water1,5,9/03/2020,Monday,PA,Ora.Pin,female,a9961,Paternal,Old,2464.31,5.60071,27.28,60.8,352,0.08,440.08,47.28,17
+2,4,water1,6,9/03/2020,Monday,PA,Pin.Pur,female,a9957,Paternal,Old,2272.37,5.16447,34.08,78.4,327.6,0.32,440.08,31.12,21
+2,4,water1,7,9/03/2020,Monday,PA,Whi.Bro,female,a9929,Paternal,Old,1908.02,4.33878,47.04,71.76,321.28,3.6,440.08,145.04,22
+2,4,water1,8,9/03/2020,Monday,PA,Gre.Ora,female,a9876,Paternal,Old,3243.5,7.37159,25.68,41.68,372.72,0.4,440.08,122.08,9
+1,5,water1,1,9/03/2020,Monday,PA,_.Bro,female,a9917,Paternal,Old,1667.53,3.78984,33.2,80.32,326.56,102.64,440.08,86,21
+1,5,water1,2,9/03/2020,Monday,PA,Gre.Pin,male,a9880,Paternal,Old,2162.8,4.91546,63.92,99.6,276.56,0.48,440.08,241.92,32
+1,5,water1,3,9/03/2020,Monday,PA,Whi.Red,male,a9931,Paternal,Old,404.284,1.13819,0,0,355.84,297.04,355.84,,0
+1,5,water1,4,9/03/2020,Monday,PA,Ora.Ora,female,a9962,Paternal,Old,3564.07,8.10017,0,32.96,407.12,0.16,440.08,,0
+2,5,water1,5,9/03/2020,Monday,PA,Pin.Blu,male,a9960,Paternal,Old,2567.63,5.83553,3.76,53.36,382.96,0.32,440.08,123.28,3
+2,5,water1,6,9/03/2020,Monday,PA,Gre.Blu,male,a9881,Paternal,Old,2030.21,4.61411,2.96,26.32,410.8,42.56,440.08,434.24,1
+2,5,water1,7,9/03/2020,Monday,PA,_.Gre,male,a9873,Paternal,Old,3416.07,7.76379,8.72,27.84,403.52,6.24,440.08,84.32,6
+2,5,water1,8,9/03/2020,Monday,PA,Pin.Yel,male,a9956,Paternal,Old,3906.38,8.89432,0,2.96,437.12,0.24,440.08,,0
+1,6,water2,1,9/03/2020,Monday,MA,Red._,female,a9848,Maternal,Old,2175.66,4.94467,13.44,48.72,377.92,69.52,440.08,315.52,7
+1,6,water2,2,9/03/2020,Monday,MA,Bro.Gre,female,a9796,Maternal,Old,2081.16,4.72991,28.8,50.56,360.72,0.56,440.08,74.72,9
+1,6,water2,3,9/03/2020,Monday,MA,_.Gre,male,a9803,Maternal,Old,1169.32,3.18027,0,0,368.64,105.28,368.64,,0
+1,6,water2,4,9/03/2020,Monday,MA,Bro.Yel,female,a9794,Maternal,Old,2960.88,6.72928,0,0,440.08,1.12,440.08,,0
+2,6,water2,5,9/03/2020,Monday,MA,Red.Gre,female,a9758,Maternal,Old,1764.89,4.01112,73.36,69.6,297.12,1.84,440.08,107.76,26
+2,6,water2,6,9/03/2020,Monday,MA,Red.Yel,female,a9761,Maternal,Old,2375.73,5.39939,15.52,69.92,354.64,0.32,440.08,223.68,8
+2,6,water2,7,9/03/2020,Monday,MA,Gre.Blu,male,a9808,Maternal,Old,194.477,0.818507,0,0,239.28,161.44,239.28,,0
+2,6,water2,8,9/03/2020,Monday,MA,Red.Bro,male,a9760,Maternal,Old,1293.41,3.30018,0,0,392.56,192,392.56,,0
+1,7,water2,1,9/03/2020,Monday,MA,Bro.Pin,male,a9793,Maternal,Old,2049.37,4.65767,44.56,67.12,328.4,0.8,440.08,78.48,19
+1,7,water2,2,9/03/2020,Monday,MA,Red.Blu,female,a9759,Maternal,Old,175.265,0.39833,0,0,440.08,410.8,440.08,,0
+1,7,water2,3,9/03/2020,Monday,MA,Whi.Ora,female,a9839,Maternal,Old,1168.96,4.81452,0,0,244.4,92.08,244.4,,0
+1,7,water2,4,9/03/2020,Monday,MA,Red.Red,male,a9754,Maternal,Old,3983.49,9.0534,22.32,47.12,370.64,0.4,440.08,103.92,16
+2,7,water2,5,9/03/2020,Monday,MA,_.Yel,male,a9764,Maternal,Old,2486.76,5.65174,1.92,33.04,405.12,5.6,440.08,297.92,2
+2,7,water2,6,9/03/2020,Monday,MA,Gre.Gre,female,a9804,Maternal,Old,2041.21,4.63912,0,0,440.08,1.44,440.08,,0
+2,7,water2,7,9/03/2020,Monday,MA,Red.Pur,female,a9762,Maternal,Old,2482.89,5.67491,0,0,439.68,20.88,439.68,,0
+2,7,water2,8,9/03/2020,Monday,MA,Yel._,male,a9763,Maternal,Old,357.727,1.19914,0,0,299.28,236.4,299.28,,0
+1,8,water2,1,9/03/2020,Monday,MA,_.Bla,male,a9800,Maternal,Old,2251.2,5.12008,35.6,61.2,343.2,72.48,440,244.64,10
+1,8,water2,2,9/03/2020,Monday,MA,Blu.Yel,female,a9845,Maternal,Old,2162.25,4.9142,116.72,71.68,251.68,1.2,440.08,82.8,33
+1,8,water2,3,9/03/2020,Monday,MA,Pin.Ora,male,a9858,Maternal,Old,2140.66,4.86514,36.16,44.96,358.96,4,440.08,303.84,8
+1,8,water2,4,9/03/2020,Monday,MA,Gre.Whi,female,a9809,Maternal,Old,2380.72,5.41269,48,122.08,270,0.32,440.08,152.72,20
+2,8,water2,5,9/03/2020,Monday,WCB,_.Pur,female,a9605,Within Control,Old,2773.39,6.30775,17.12,41.44,381.52,0.16,440.08,250.96,5
+2,8,water2,6,9/03/2020,Monday,WCB,Pin.Whi,male,a9590,Within Control,Old,683.985,1.55451,0,0,440.08,196.88,440.08,,0
+2,8,water2,7,9/03/2020,Monday,WCB,Pin.Yel,male,a9587,Within Control,Old,858.232,2.58379,0,0,333.36,99.28,333.36,,0
+2,8,water2,8,9/03/2020,Monday,WCB,Blu.Ora,female,a9583,Within Control,Old,121.233,0.418506,0,0,290,269.92,290,,0
+1,9,water2,1,9/03/2020,Monday,WCB,Yel.Yel,female,a9613,Within Control,Old,2463.69,5.5993,0,0,440.08,1.2,440.08,,0
+1,9,water2,2,9/03/2020,Monday,WCB,Red.Bro,male,a9677,Within Control,Old,469.085,1.0661,0,0,440.08,364.96,440.08,,0
+1,9,water2,3,9/03/2020,Monday,WCB,Bro.Gre,female,a9704,Within Control,Old,2443.59,5.55361,0.88,8.16,431.04,34,440.08,212.08,1
+1,9,water2,4,9/03/2020,Monday,WCB,Ora.Bro,male,a9610,Within Control,Old,3027.96,6.88173,0,17.12,422.96,0.64,440.08,,0
+2,9,water2,5,9/03/2020,Monday,WCB,Blu.Pur,male,a9581,Within Control,Old,1734.75,3.94261,40.56,117.84,281.68,0.8,440.08,60.88,25
+2,9,water2,6,9/03/2020,Monday,WCB,Blu.Gre,female,a9578,Within Control,Old,2077.91,4.72252,37.76,48.16,354.16,0.96,440.08,179.84,13
+2,9,water2,7,9/03/2020,Monday,WCB,Blu.Red,male,a9582,Within Control,Old,1938.49,4.80968,0,0.8,402.96,74.72,403.76,,0
+2,9,water2,8,9/03/2020,Monday,WCB,Pur.Pin,male,a9686,Within Control,Old,2729.52,6.20346,20,39.76,380.32,11.92,440.08,110.4,10
+1,10,water2,1,9/03/2020,Monday,WCB,Blu.Bro,female,a9579,Within Control,Old,2067.38,4.69859,16.96,66.56,356.56,25.76,440.08,113.36,8
+1,10,water2,2,9/03/2020,Monday,WCB,Bro.Bla,female,a9700,Within Control,Old,878.002,2.08057,0,0,422.32,225.76,422.32,,0
+1,10,water2,3,9/03/2020,Monday,WCB,Whi.Ora,female,a9596,Within Control,Old,4254.39,9.66906,0,1.28,438.8,0.72,440.08,,0
+1,10,water2,4,9/03/2020,Monday,WCB,Blu.Whi,female,a9580,Within Control,Old,3408.8,7.76421,0,0,440,1.2,440,,0
+2,10,water2,5,9/03/2020,Monday,WCB,Ora.Bla,female,a9608,Within Control,Old,2084.47,4.73744,79.76,59.12,301.2,0.8,440.08,48.48,15
+2,10,water2,6,9/03/2020,Monday,WCB,Ora.Gre,male,a9612,Within Control,Old,2669.88,6.06791,21.84,38.24,380,0.16,440.08,244.88,8
+2,10,water2,7,9/03/2020,Monday,WCB,Pur.Blu,male,a9687,Within Control,Old,2732.51,6.21024,32.64,62.08,345.36,5.12,440.08,78.48,16
+2,10,water2,8,9/03/2020,Monday,WCB,Blu.Blu,male,a9575,Within Control,Old,3104.46,7.05558,0,7.28,432.8,56.4,440.08,,0
+1,11,water3,1,9/03/2020,Monday,PB,Whi.Ora,female,a9927,Paternal,Old,2829.16,6.42991,31.36,81.36,327.2,0.64,440.08,89.84,21
+1,11,water3,2,9/03/2020,Monday,PB,Blu.Pur,male,a9975,Paternal,Old,840.788,2.37887,0,5.2,348.64,215.6,353.84,,0
+1,11,water3,3,9/03/2020,Monday,PB,Yel.Gre,male,a9901,Paternal,Old,2473.43,5.62144,13.68,56.16,370.24,20.72,440.08,327.6,5
+1,11,water3,4,9/03/2020,Monday,PB,Bro.Bro,female,a9910,Paternal,Old,2247.11,5.77247,0,10.16,380.16,63.2,390.32,,0
+2,11,water3,5,9/03/2020,Monday,PB,Yel.Pur,female,a9899,Paternal,Old,211.847,0.481909,0,0,440,410,440,,0
+2,11,water3,6,9/03/2020,Monday,PB,Bla.Whi,female,a9923,Paternal,Old,2025.57,4.60357,62.72,85.04,292.32,0.48,440.08,34.08,20
+2,11,water3,7,9/03/2020,Monday,PB,Whi._,female,a9924,Paternal,Old,2242.7,5.09704,82.24,87.44,270.4,0.4,440.08,118.72,20
+2,11,water3,8,9/03/2020,Monday,PB,Red.Bla,male,a9949,Paternal,Old,2242.56,5.09674,45.28,62.56,332.24,24.4,440.08,108.88,9
+1,12,water3,1,9/03/2020,Monday,PB,Red._,male,a9941,Paternal,Old,2070.52,4.70572,37.2,44,358.88,68.8,440.08,218.56,13
+1,12,water3,2,9/03/2020,Monday,PB,Pin.Gre,female,a9952,Paternal,Old,2209.12,5.02072,39.52,32.32,368.24,0.8,440.08,158.8,8
+1,12,water3,3,9/03/2020,Monday,PB,_.Red,female,a9903,Paternal,Old,331.916,1.00508,0,0,331.28,287.52,331.28,,0
+1,12,water3,4,9/03/2020,Monday,PB,Bro.Blu,male,a9937,Paternal,Old,2929.14,6.68264,0,0,438.64,12.64,438.64,,0
+2,12,water3,5,9/03/2020,Monday,PB,_.Pur,male,a9981,Paternal,Old,1861.81,4.23523,16.08,43.68,380.24,35.52,440,222.4,6
+2,12,water3,6,9/03/2020,Monday,PB,Blu.Blu,male,a9973,Paternal,Old,1364.61,3.10138,59.36,56.88,323.84,36,440.08,100.64,10
+2,12,water3,7,9/03/2020,Monday,PB,Blu.Gre,male,a9983,Paternal,Old,2679.43,6.0996,0,1.84,438.08,1.44,439.92,,0
+2,12,water3,8,9/03/2020,Monday,PB,Pur.Pur,female,a9982,Paternal,Old,2175.05,4.9433,5.04,28.16,406.88,36.64,440.08,411.52,3
+1,13,water3,1,9/03/2020,Monday,PB,_.Ora,female,a9964,Paternal,Old,2327.78,5.29041,41.2,50.32,348.56,1.68,440.08,209.76,18
+1,13,water3,2,9/03/2020,Monday,PB,Red.Yel,male,a9947,Paternal,Old,1490.5,3.38749,0,0,440.08,93.04,440.08,,0
+1,13,water3,3,9/03/2020,Monday,PB,Pin.Ora,female,a9953,Paternal,Old,2136.23,4.85507,0,2.16,437.92,37.12,440.08,,0
+1,13,water3,4,9/03/2020,Monday,PB,Bro._,male,a9908,Paternal,Old,1914.7,4.35238,1.52,20,418.48,34.16,440,414.24,1
+2,13,water3,5,9/03/2020,Monday,WTA,Red.Pur,male,a10166,Within Treatment,Old,2171.41,4.93501,11.2,30.4,398.48,1.68,440.08,172.08,5
+2,13,water3,6,9/03/2020,Monday,WTA,Gre.Blu,female,a10041,Within Treatment,Old,2706.64,6.15145,7.84,52.4,379.84,0.16,440.08,153.28,7
+2,13,water3,7,9/03/2020,Monday,WTA,Yel._,male,a10095,Within Treatment,Old,2947.4,6.70108,26.24,64.96,348.88,0.32,440.08,251.36,9
+2,13,water3,8,9/03/2020,Monday,WTA,Pin.Bla,male,a10092,Within Treatment,Old,1840.16,4.18446,9.04,17.68,413.36,109.92,440.08,409.92,3
+1,14,water3,1,9/03/2020,Monday,WTA,Whi.Yel,male,a10157,Within Treatment,Old,3059.15,6.95261,41.52,41.6,356.96,0.32,440.08,58.96,18
+1,14,water3,2,9/03/2020,Monday,WTA,Pin.Blu,male,a10090,Within Treatment,Old,2070.21,4.70502,87.2,102.32,250.56,0.56,440.08,44.8,30
+1,14,water3,3,9/03/2020,Monday,WTA,Red.Bla,female,a10164,Within Treatment,Old,2979.73,7.29181,49.28,41.68,318.32,13.04,409.28,173.52,15
+1,14,water3,4,9/03/2020,Monday,WTA,Ora.Bro,male,a10070,Within Treatment,Old,2635.97,5.99302,84.08,153.6,202.4,0.16,440.08,10.32,37
+2,14,water3,5,9/03/2020,Monday,WTA,Blu._,female,a10039,Within Treatment,Old,1774.77,4.03356,119.92,176.96,143.2,0.56,440.08,0,53
+2,14,water3,6,9/03/2020,Monday,WTA,Ora.Red,male,a10064,Within Treatment,Old,2305.4,5.23955,29.2,42.24,368.64,0.56,440.08,205.2,9
+2,14,water3,7,9/03/2020,Monday,WTA,Blu.Blu,female,a10046,Within Treatment,Old,2397.96,5.44992,36.96,52.08,351.04,0.96,440.08,78.4,12
+2,14,water3,8,9/03/2020,Monday,WTA,Bro.Bro,male,a10201,Within Treatment,Old,2785.08,6.32973,45.84,71.04,323.2,0.4,440.08,302.88,13
+1,15,water3,1,9/03/2020,Monday,WTA,Pin.Gre,female,a10087,Within Treatment,Old,2008.44,4.56463,79.28,84.96,275.84,0.48,440.08,41.76,21
+1,15,water3,2,9/03/2020,Monday,WTA,Red.Whi,female,a10172,Within Treatment,Old,2693.9,6.12251,4.24,31.68,404.16,56.72,440.08,299.44,3
+1,15,water3,3,9/03/2020,Monday,WTA,Whi.Pur,female,a10158,Within Treatment,Old,3407.95,7.74675,0,7.76,432.32,2.8,440.08,,0
+1,15,water3,4,9/03/2020,Monday,WTA,Gre.Pin,female,a10036,Within Treatment,Old,2627.97,5.97267,131.68,129.6,178.8,0.4,440.08,35.04,33
+2,15,water3,5,9/03/2020,Monday,WTA,Blu.Yel,male,a10055,Within Treatment,Old,1707.93,3.88166,52.64,99.52,287.92,0.16,440.08,0.72,23
+2,15,water3,6,9/03/2020,Monday,WTA,Gre.Gre,female,a10034,Within Treatment,Old,2480.85,5.6383,146.88,92.72,200.48,0.64,440.08,7.76,47
+2,15,water3,7,9/03/2020,Monday,WTA,Pur._,male,a10077,Within Treatment,Old,2372.95,5.39306,62.16,54.4,323.52,0.4,440.08,44.32,18
+2,15,water3,8,9/03/2020,Monday,WTA,Pur.Blu,female,a10079,Within Treatment,Old,2378.39,5.40542,69.44,72.32,298.32,3.28,440.08,56.88,20
+1,16,water4,1,9/03/2020,Monday,MB,Yel.Yel,male,a9765,Maternal,Old,1851.58,4.20813,2.56,32.88,404.64,0.24,440.08,401.6,1
+1,16,water4,2,9/03/2020,Monday,MB,Red._,male,a9752,Maternal,Old,1930.16,4.38674,4.56,30.4,405.12,125.68,440.08,414.72,1
+1,16,water4,3,9/03/2020,Monday,MB,Red.Bla,male,a9756,Maternal,Old,2605.56,5.92604,19.12,38.48,382.48,0.32,440.08,184.16,7
+1,16,water4,4,9/03/2020,Monday,MB,Red.Pin,male,a9755,Maternal,Old,3131.16,7.11627,57.76,64.08,318.24,0.08,440.08,135.36,12
+2,16,water4,5,9/03/2020,Monday,MB,Pur.Pin,male,a9824,Maternal,Old,2164.28,4.9215,52.72,88.96,298.4,0.08,440.08,90.88,29
+2,16,water4,6,9/03/2020,Monday,MB,_.Blu,male,a9844,Maternal,Old,1419.88,3.227,99.12,133.2,207.76,1.12,440.08,142.08,40
+2,16,water4,7,9/03/2020,Monday,MB,Pin.Whi,female,a9862,Maternal,Old,2278.01,5.17729,69.52,103.6,266.96,0.8,440.08,45.84,29
+2,16,water4,8,9/03/2020,Monday,MB,_.Ora,female,a10198,Maternal,Old,2198.61,4.99683,42.48,85.52,312.08,0.4,440.08,93.6,10
+1,17,water4,1,9/03/2020,Monday,MB,Pin.Yel,female,a9854,Maternal,Old,2272.48,5.16472,49.12,75.44,315.52,0.64,440.08,270.56,23
+1,17,water4,2,9/03/2020,Monday,MB,Yel.Ora,female,a9778,Maternal,Old,2699.67,6.13561,15.04,34.64,390.4,1.92,440.08,269.12,6
+1,17,water4,3,9/03/2020,Monday,MB,Ora.Yel,male,a9813,Maternal,Old,2310.79,5.61307,0,2.8,409.52,20.4,412.32,,0
+1,17,water4,4,9/03/2020,Monday,MB,Blu.Gre,male,a9846,Maternal,Old,472.305,4.29056,0,0,111.2,56.96,111.2,,0
+2,17,water4,5,9/03/2020,Monday,MB,Ora.Pur,male,a9821,Maternal,Old,2401.75,5.46051,6.56,46.96,386.56,0.56,440.08,262.08,4
+2,17,water4,6,9/03/2020,Monday,MB,_._,female,a9774,Maternal,Old,2376.75,5.4017,0,0,440.08,150.16,440.08,,0
+2,17,water4,7,9/03/2020,Monday,MB,Gre.Ora,female,a9868,Maternal,Old,2907.26,6.60741,62.8,77.12,300.16,0.24,440.08,68.16,30
+2,17,water4,8,9/03/2020,Monday,MB,Gre.Pur,female,a9867,Maternal,Old,568.715,1.34665,0,0,422.72,301.44,422.72,,0
+1,18,water4,1,9/03/2020,Monday,MB,Bla.Gre,female,a9787,Maternal,Old,1904.58,4.32859,83.28,120.88,235.92,0.56,440.08,37.04,29
+1,18,water4,2,9/03/2020,Monday,MB,Yel.Bla,female,a9777,Maternal,Old,267.079,0.606997,0,0,440.08,390.24,440.08,,0
+1,18,water4,3,9/03/2020,Monday,MB,_.Red,male,a9849,Maternal,Old,2448.1,5.56792,5.6,28.4,405.92,10.72,439.92,351.76,3
+1,18,water4,4,9/03/2020,Monday,MB,Blu.Blu,male,a9843,Maternal,Old,1857.16,4.4859,17.84,41.52,355.04,41.52,414.4,338.8,9
+2,18,water4,5,9/03/2020,Monday,WCA,Pur._,male,a9562,Within Control,Old,1265.31,4.50738,0,0,283.2,138.4,283.2,,0
+2,18,water4,6,9/03/2020,Monday,WCA,Red.Bla,male,a9676,Within Control,Old,168.943,0.38396,0,0,440.08,407.76,440.08,,0
+2,18,water4,7,9/03/2020,Monday,WCA,Red.Yel,female,a9678,Within Control,Old,2780.05,6.31829,34.08,46.4,359.6,1.68,440.08,2.72,6
+2,18,water4,8,9/03/2020,Monday,WCA,Ora.Blu,female,a9607,Within Control,Old,1556.9,3.53842,0,0,440.08,212.88,440.08,,0
+1,19,water4,1,9/03/2020,Monday,WCA,Red.Gre,male,a9680,Within Control,Old,2863.63,6.50826,11.04,29.68,399.36,47.28,440.08,360.96,7
+1,19,water4,2,9/03/2020,Monday,WCA,Pur.Red,female,a9566,Within Control,Old,238.076,0.541082,0,0,440.08,402.48,440.08,,0
+1,19,water4,3,9/03/2020,Monday,WCA,Gre.Blu,female,a9553,Within Control,Old,2508.22,5.70257,0,9.2,430.88,3.92,440.08,,0
+1,19,water4,4,9/03/2020,Monday,WCA,Gre.Bro,male,a9558,Within Control,Old,3125.6,7.1114,10.4,26.24,403.28,20,439.92,196.48,4
+2,19,water4,5,9/03/2020,Monday,WCA,Gre.Pur,female,a9556,Within Control,Old,2298.83,5.22461,10.48,42.8,386.8,7.84,440.08,282.16,7
+2,19,water4,6,9/03/2020,Monday,WCA,Ora.Ora,male,a9706,Within Control,Old,756.359,1.719,0,0.8,439.28,297.44,440.08,,0
+2,19,water4,7,9/03/2020,Monday,WCA,Red.Ora,male,a9681,Within Control,Old,876.945,1.99414,0,0,440.08,206.48,440.08,,0
+2,19,water4,8,9/03/2020,Monday,WCA,Ora.Gre,female,a9603,Within Control,Old,1039.16,2.36174,0,0,440.08,267.76,440.08,,0
+1,20,water4,1,9/03/2020,Monday,WCA,Red.Pin,female,a9673,Within Control,Old,3181.85,7.23148,12.64,55.12,372.32,0.48,440.08,241.04,11
+1,20,water4,2,9/03/2020,Monday,WCA,Whi.Yel,female,a9599,Within Control,Old,1922.17,4.36858,0,0,440.08,160.32,440.08,,0
+1,20,water4,3,9/03/2020,Monday,WCA,Ora.Red,male,a9606,Within Control,Old,2869.96,6.52501,0,3.04,437.04,1.04,440.08,,0
+1,20,water4,4,9/03/2020,Monday,WCA,Red.Whi,female,a9679,Within Control,Old,581.23,1.67482,0,0,347.44,300.72,347.44,,0
+2,20,water4,5,9/03/2020,Monday,WCA,Blu.Yel,female,a9577,Within Control,Old,1699.84,3.86467,62.08,106.72,271.28,1.12,440.08,20,31
+2,20,water4,6,9/03/2020,Monday,WCA,Pin.Gre,male,a9588,Within Control,Old,2149.64,4.88554,0,1.68,438.4,2.8,440.08,,0
+2,20,water4,7,9/03/2020,Monday,WCA,Ora.Whi,male,a9611,Within Control,Old,1520.62,4.54623,0,0,335.84,107.76,335.84,,0
+2,20,water4,8,9/03/2020,Monday,WCA,Gre.Bla,male,a9554,Within Control,Old,1901.67,4.32198,17.44,50.08,372.56,71.6,440.08,152.32,7
+1,1,water1,1,6/03/2020,Friday,WCA,Ora.Gre,female,a9603,Within Control,Tall,1947.36,4.76454,129.6,180.4,126.24,0.16,436.24,0,27
+1,1,water1,2,6/03/2020,Friday,WCA,Red.Yel,female,a9678,Within Control,Tall,2345.74,5.37126,173.6,114.48,151.92,1.6,440,0,20
+1,1,water1,3,6/03/2020,Friday,WCA,Gre.Bro,male,a9558,Within Control,Tall,3177,7.32838,220.8,163.68,55.6,0.88,440.08,0,34
+1,1,water1,4,6/03/2020,Friday,WCA,Pur.Red,female,a9566,Within Control,Tall,2261.07,5.1388,76.08,118.8,245.2,0.24,440.08,0,15
+2,1,water1,5,6/03/2020,Friday,WCA,Ora.Ora,male,a9706,Within Control,Tall,1181.03,4.99251,48.08,59.6,250.72,3.12,358.4,2.48,33
+2,1,water1,6,6/03/2020,Friday,WCA,Gre.Blu,female,a9553,Within Control,Tall,1012.35,3.27155,60.24,49.84,290,0.32,400.08,136.24,30
+2,1,water1,7,6/03/2020,Friday,WCA,Red.Whi,female,a9679,Within Control,Tall,1969.71,6.18938,120.56,83.12,211.12,1.12,414.8,88.88,57
+2,1,water1,8,6/03/2020,Friday,WCA,Pin.Gre,male,a9588,Within Control,Tall,1206.16,3.44381,302.96,54.72,70.32,0.8,428,10,45
+1,2,water1,1,6/03/2020,Friday,WCA,Pur._,male,a9562,Within Control,Tall,478.966,1.09054,0,0,440.08,2.64,440.08,,0
+1,2,water1,2,6/03/2020,Friday,WCA,Blu.Yel,female,a9577,Within Control,Tall,2381.85,5.52992,112.4,165.6,161.76,0.16,439.76,111.84,19
+1,2,water1,3,6/03/2020,Friday,WCA,Red.Bla,male,a9676,Within Control,Tall,631.611,1.43993,0,0,439.76,241.76,439.76,,0
+1,2,water1,4,6/03/2020,Friday,WCA,Red.Pin,female,a9673,Within Control,Tall,2968.93,6.7722,89.76,221.12,129.12,0.08,440,0,32
+2,2,water1,5,6/03/2020,Friday,WCA,Red.Ora,male,a9681,Within Control,Tall,1890.36,5.42832,19.6,28.56,377.04,0.72,425.2,391.6,4
+2,2,water1,6,6/03/2020,Friday,WCA,Ora.Whi,male,a9611,Within Control,Tall,1812.03,4.33002,30.4,59.44,349.52,4.8,439.36,316.72,8
+2,2,water1,7,6/03/2020,Friday,WCA,Gre.Bla,male,a9554,Within Control,Tall,2549.57,5.83266,165.12,94.08,180.88,0.08,440.08,94.48,18
+2,2,water1,8,6/03/2020,Friday,WCA,Ora.Red,male,a9606,Within Control,Tall,1529.12,5.80618,100.32,64.96,236.56,0.24,401.84,190.4,48
+1,3,water1,1,6/03/2020,Friday,WCA,Red.Gre,male,a9680,Within Control,Tall,2622.08,5.97449,47.6,84.32,308.16,0,440.08,0,10
+1,3,water1,2,6/03/2020,Friday,WCA,Whi.Yel,female,a9599,Within Control,Tall,2874.41,6.54346,84.8,95.04,260.24,0,440.08,69.12,15
+1,3,water1,3,6/03/2020,Friday,WCA,Ora.Blu,female,a9607,Within Control,Tall,2357.29,5.70054,139.36,116,183.76,0.16,439.12,88.88,24
+1,3,water1,4,6/03/2020,Friday,WCA,Gre.Pur,female,a9556,Within Control,Tall,3060.84,6.95646,59.6,154.72,225.76,0,440.08,37.04,31
+2,3,water1,5,6/03/2020,Friday,MB,Red.Pin,male,a9755,Maternal,Tall,1985.64,6.08944,191.6,90.88,132.48,0.56,414.96,16.24,49
+2,3,water1,6,6/03/2020,Friday,MB,Ora.Yel,male,a9813,Maternal,Tall,1972.72,7.05754,130.48,82.64,190.08,0.24,403.2,45.2,48
+2,3,water1,7,6/03/2020,Friday,MB,Red._,male,a9752,Maternal,Tall,964.286,4.47922,9.68,37.12,305.76,0.16,352.56,183.36,8
+2,3,water1,8,6/03/2020,Friday,MB,_.Ora,female,a10198,Maternal,Tall,1949.89,6.73862,212,74.16,110.8,0,396.96,0,90
+1,4,water1,1,6/03/2020,Friday,MB,Pin.Whi,female,a9862,Maternal,Tall,1710.52,3.94637,35.04,26.32,378.24,60.64,439.6,283.6,4
+1,4,water1,2,6/03/2020,Friday,MB,_.Blu,male,a9844,Maternal,Tall,2100.03,4.7815,105.44,68.96,265.52,0.56,439.92,36.16,14
+1,4,water1,3,6/03/2020,Friday,MB,Pin.Yel,female,a9854,Maternal,Tall,3632.2,8.50553,217.04,135.76,87.04,0,439.84,0,53
+1,4,water1,4,6/03/2020,Friday,MB,_._,female,a9774,Maternal,Tall,2632.93,6.03772,80.8,77.36,281.92,0.32,440.08,70.56,16
+2,4,water1,5,6/03/2020,Friday,MB,Yel.Bla,female,a9777,Maternal,Tall,1078.21,4.88499,64.88,77.2,208.16,0.16,350.24,131.44,49
+2,4,water1,6,6/03/2020,Friday,MB,_.Red,male,a9849,Maternal,Tall,1891.85,4.30435,22.72,33.6,383.76,1.2,440.08,261.28,7
+2,4,water1,7,6/03/2020,Friday,MB,Bla.Gre,female,a9787,Maternal,Tall,749.765,4.44595,161.44,73.04,79.28,0,313.76,0,144
+2,4,water1,8,6/03/2020,Friday,MB,Blu.Blu,male,a9843,Maternal,Tall,1358.72,3.09814,30.64,40.24,368.88,1.12,439.76,357.84,5
+1,5,water1,1,6/03/2020,Friday,MB,Red.Bla,male,a9756,Maternal,Tall,3346.94,7.60945,85.52,122,232.56,0.08,440.08,89.52,19
+1,5,water1,2,6/03/2020,Friday,MB,Ora.Pur,male,a9821,Maternal,Tall,2825.05,6.43931,130.56,177.04,132.48,0.24,440.08,0,24
+1,5,water1,3,6/03/2020,Friday,MB,Pur.Pin,male,a9824,Maternal,Tall,3958.14,9.08998,239.44,107.36,93.28,0.08,440.08,33.28,42
+1,5,water1,4,6/03/2020,Friday,MB,Gre.Pur,female,a9867,Maternal,Tall,2328.9,5.29488,63.6,94.08,282.4,0.24,440.08,137.68,18
+2,5,water1,5,6/03/2020,Friday,MB,Yel.Yel,male,a9765,Maternal,Tall,2349.63,6.83828,119.92,140.88,168.48,0,429.28,5.44,45
+2,5,water1,6,6/03/2020,Friday,MB,Blu.Gre,male,a9846,Maternal,Tall,1186.39,2.69634,0.24,15.84,424,73.04,440.08,417.36,1
+2,5,water1,7,6/03/2020,Friday,MB,Gre.Ora,female,a9868,Maternal,Tall,1972.43,7.1053,172.24,83.6,144,0.16,399.84,0,86
+2,5,water1,8,6/03/2020,Friday,MB,Yel.Ora,female,a9778,Maternal,Tall,2101.31,7.8689,147.04,82.24,157.04,0.08,386.32,0,86
+1,6,water2,1,6/03/2020,Friday,WTA,Gre.Gre,female,a10034,Within Treatment,Tall,2943.59,7.46194,169.76,135.04,129.84,0.08,434.64,0,46
+1,6,water2,2,6/03/2020,Friday,WTA,Blu._,female,a10039,Within Treatment,Tall,4008.8,11.035,265.68,73.52,71.68,0.08,410.88,0.4,78
+1,6,water2,3,6/03/2020,Friday,WTA,Gre.Pin,female,a10036,Within Treatment,Tall,2762.19,6.31791,77.28,67.04,295.76,0.08,440.08,0,19
+1,6,water2,4,6/03/2020,Friday,WTA,Gre.Blu,female,a10041,Within Treatment,Tall,2225.11,5.12414,46.48,118.88,274.72,22.08,440.08,256.64,13
+2,6,water2,5,6/03/2020,Friday,WTA,Red.Bla,female,a10164,Within Treatment,Tall,1443.93,5.41852,87.84,78.48,223.28,0.08,389.6,78.8,47
+2,6,water2,6,6/03/2020,Friday,WTA,Pur.Blu,female,a10079,Within Treatment,Tall,1080.81,6.07468,132.48,65.52,124.64,0.96,322.64,25.76,106
+2,6,water2,7,6/03/2020,Friday,WTA,Ora.Red,male,a10064,Within Treatment,Tall,1336.25,6.10492,151.76,131.28,83.68,0.4,366.72,0.08,95
+2,6,water2,8,6/03/2020,Friday,WTA,Blu.Blu,female,a10046,Within Treatment,Tall,748.261,4.3912,36.96,85.2,186.72,0,308.88,0,42
+1,7,water2,1,6/03/2020,Friday,WTA,Red.Pur,male,a10166,Within Treatment,Tall,1565.52,3.55929,9.36,41.2,389.52,0.96,440.08,385.44,4
+1,7,water2,2,6/03/2020,Friday,WTA,Blu.Yel,male,a10055,Within Treatment,Tall,2235.62,5.10695,29.76,37.68,372.64,16.4,440.08,110.08,11
+1,7,water2,3,6/03/2020,Friday,WTA,Pin.Blu,male,a10090,Within Treatment,Tall,4512.58,10.3197,135.76,184.64,119.6,0.08,440,28.32,61
+1,7,water2,4,6/03/2020,Friday,WTA,Red.Whi,female,a10172,Within Treatment,Tall,2363.71,5.37206,36.64,139.28,264.16,0.4,440.08,174.64,9
+2,7,water2,5,6/03/2020,Friday,WTA,Pin.Bla,male,a10092,Within Treatment,Tall,815.514,3.05482,25.2,37.76,304.4,0.4,367.36,364.64,17
+2,7,water2,6,6/03/2020,Friday,WTA,Whi.Pur,female,a10158,Within Treatment,Tall,965.051,2.75226,0,0,420.16,1.44,420.16,,0
+2,7,water2,7,6/03/2020,Friday,WTA,Ora.Bro,male,a10070,Within Treatment,Tall,3297.47,8.3692,109.36,103.44,225.28,0.08,438.08,18.8,30
+2,7,water2,8,6/03/2020,Friday,WTA,Whi.Yel,male,a10157,Within Treatment,Tall,2357.63,7.91152,189.76,106.32,122.32,0.4,418.4,63.52,64
+1,8,water2,1,6/03/2020,Friday,WTA,Pur._,male,a10077,Within Treatment,Tall,3116.78,7.14334,133.2,108.4,198.08,0.08,439.68,0,29
+1,8,water2,2,6/03/2020,Friday,WTA,Pin.Gre,female,a10087,Within Treatment,Tall,2407.99,5.50674,97.2,137.12,205.76,0.16,440.08,26,21
+1,8,water2,3,6/03/2020,Friday,WTA,Yel._,male,a10095,Within Treatment,Tall,3611.83,8.21768,96.32,100.56,243.2,0,440.08,58.56,29
+1,8,water2,4,6/03/2020,Friday,WTA,Bro.Bro,male,a10201,Within Treatment,Tall,2871.38,6.56405,336.32,60.8,42.8,5.12,439.92,0,25
+2,8,water2,5,6/03/2020,Friday,PB,Pin.Ora,female,a9953,Paternal,Tall,771.292,3.92555,8.8,54.56,258,0.08,321.36,27.76,11
+2,8,water2,6,6/03/2020,Friday,PB,Whi.Ora,female,a9927,Paternal,Tall,2065.88,5.75645,103.44,104.88,220.96,0.16,429.28,68.88,42
+2,8,water2,7,6/03/2020,Friday,PB,Red.Yel,male,a9947,Paternal,Tall,1499.11,3.42888,26.24,33.36,380.24,1.52,439.84,184.48,4
+2,8,water2,8,6/03/2020,Friday,PB,Blu.Gre,male,a9983,Paternal,Tall,1264.91,4.47026,69.84,38,293.84,0.64,401.68,292.4,39
+1,9,water2,1,6/03/2020,Friday,PB,_.Ora,female,a9964,Paternal,Tall,1903.57,4.99886,58.56,58,315.28,0.4,431.84,161.52,18
+1,9,water2,2,6/03/2020,Friday,PB,Bro.Blu,male,a9937,Paternal,Tall,1484.65,3.37606,0,0,440.08,7.68,440.08,,0
+1,9,water2,3,6/03/2020,Friday,PB,Pur.Pur,female,a9982,Paternal,Tall,2401.6,5.45818,83.28,103.6,253.2,0,440.08,190.96,17
+1,9,water2,4,6/03/2020,Friday,PB,Red.Bla,male,a9949,Paternal,Tall,2724.22,6.1914,72.08,137.04,230.96,0.32,440.08,107.84,19
+2,9,water2,5,6/03/2020,Friday,PB,Yel.Gre,male,a9901,Paternal,Tall,3052.7,8.02496,82.48,100.8,251.68,0.16,434.96,7.2,32
+2,9,water2,6,6/03/2020,Friday,PB,_.Pur,male,a9981,Paternal,Tall,2311.37,5.32672,59.52,71.04,309.2,0.24,439.76,214.56,13
+2,9,water2,7,6/03/2020,Friday,PB,Pin.Gre,female,a9952,Paternal,Tall,2453.9,7.37349,173.28,87.68,156.48,0.16,417.44,3.92,56
+2,9,water2,8,6/03/2020,Friday,PB,Bro.Bro,female,a9910,Paternal,Tall,1144.88,2.99582,37.68,30.32,361.44,0.72,429.44,382.56,9
+1,10,water2,1,6/03/2020,Friday,PB,Yel.Pur,female,a9899,Paternal,Tall,839.571,2.2434,0,0,427.6,40.72,427.6,,0
+1,10,water2,2,6/03/2020,Friday,PB,Red._,male,a9941,Paternal,Tall,2907.03,6.6407,47.76,115.28,276.88,0.32,439.92,200.96,17
+1,10,water2,3,6/03/2020,Friday,PB,Blu.Blu,male,a9973,Paternal,Tall,1926.36,4.41825,227.68,69.12,142.96,2.16,439.76,27.92,16
+1,10,water2,4,6/03/2020,Friday,PB,Bla.Whi,female,a9923,Paternal,Tall,2808.39,6.39085,111.36,79.36,249.36,0.88,440.08,42.72,21
+2,10,water2,5,6/03/2020,Friday,PB,Whi._,female,a9924,Paternal,Tall,1598.9,6.36709,167.04,98.32,120.08,0.08,385.44,0.24,81
+2,10,water2,6,6/03/2020,Friday,PB,Blu.Pur,male,a9975,Paternal,Tall,475.462,1.11716,0,0,438.24,266.32,438.24,,0
+2,10,water2,7,6/03/2020,Friday,PB,_.Red,female,a9903,Paternal,Tall,466.7,1.42009,0,0,400.24,49.04,400.24,,0
+2,10,water2,8,6/03/2020,Friday,PB,Bro._,male,a9908,Paternal,Tall,3200.81,8.74921,124.64,117.2,183.36,0.08,425.2,50.96,49
+1,11,water3,1,6/03/2020,Friday,WCB,Bro.Bla,female,a9700,Within Control,Tall,2292.06,5.41091,83.36,70.72,283.12,0.32,437.2,29.44,16
+1,11,water3,2,6/03/2020,Friday,WCB,Blu.Ora,female,a9583,Within Control,Tall,363.84,0.826909,0,0,440.08,173.44,440.08,,0
+1,11,water3,3,6/03/2020,Friday,WCB,Ora.Gre,male,a9612,Within Control,Tall,2014.43,4.58076,25.6,64.64,349.84,0.32,440.08,323.44,5
+1,11,water3,4,6/03/2020,Friday,WCB,Blu.Bro,female,a9579,Within Control,Tall,1992.01,4.52728,42.64,78.32,319.12,0.4,440.08,90.4,14
+2,11,water3,5,6/03/2020,Friday,WCB,Blu.Whi,female,a9580,Within Control,Tall,1310.86,5.14466,37.12,69.2,271.36,0.16,377.68,177.12,18
+2,11,water3,6,6/03/2020,Friday,WCB,Bro.Gre,female,a9704,Within Control,Tall,1058.29,3.57047,18.96,37.52,329.6,0.16,386.08,193.6,11
+2,11,water3,7,6/03/2020,Friday,WCB,Blu.Red,male,a9582,Within Control,Tall,1633.5,3.94717,30.96,24,384.24,0.48,439.2,197.2,10
+2,11,water3,8,6/03/2020,Friday,WCB,Pin.Yel,male,a9587,Within Control,Tall,2846.05,8.12599,125.12,62.48,239.12,0,426.72,132.72,36
+1,12,water3,1,6/03/2020,Friday,WCB,Whi.Ora,female,a9596,Within Control,Tall,2417.62,5.53484,14.4,15.76,409.92,0.08,440.08,423.84,2
+1,12,water3,2,6/03/2020,Friday,WCB,Blu.Gre,female,a9578,Within Control,Tall,2184.84,4.97279,59.2,36.08,344.8,0.24,440.08,30.72,9
+1,12,water3,3,6/03/2020,Friday,WCB,Ora.Bro,male,a9610,Within Control,Tall,2306.7,5.25397,30,50.4,359.68,0.16,440.08,358.8,10
+1,12,water3,4,6/03/2020,Friday,WCB,Yel.Yel,female,a9613,Within Control,Tall,1922.54,4.36941,0,0,440.08,0.16,440.08,,0
+2,12,water3,5,6/03/2020,Friday,WCB,Pur.Pin,male,a9686,Within Control,Tall,1377.06,3.78731,0,0,428.56,0.72,428.56,,0
+2,12,water3,6,6/03/2020,Friday,WCB,Red.Bro,male,a9677,Within Control,Tall,370.299,0.868106,0,0,437.12,160.72,437.12,,0
+2,12,water3,7,6/03/2020,Friday,WCB,Pin.Whi,male,a9590,Within Control,Tall,665.408,1.5489,0,0,438,47.52,438,,0
+2,12,water3,8,6/03/2020,Friday,WCB,Ora.Bla,female,a9608,Within Control,Tall,1189.84,4.40552,123.36,84.96,175.28,0.32,383.6,0,65
+1,13,water3,1,6/03/2020,Friday,WCB,Pur.Blu,male,a9687,Within Control,Tall,2567.24,6.1535,94.72,68.96,273.52,0.24,437.2,94.56,22
+1,13,water3,2,6/03/2020,Friday,WCB,Blu.Blu,male,a9575,Within Control,Tall,3254.94,7.3976,39.52,120.48,280.08,0,440.08,95.36,10
+1,13,water3,3,6/03/2020,Friday,WCB,_.Pur,female,a9605,Within Control,Tall,2468.37,5.61914,164.56,160,115.52,0,440.08,0,23
+1,13,water3,4,6/03/2020,Friday,WCB,Blu.Pur,male,a9581,Within Control,Tall,1950.81,4.43365,18.48,97.44,324.16,0.16,440.08,315.52,3
+2,13,water3,5,6/03/2020,Friday,MA,Red.Gre,female,a9758,Maternal,Tall,582.851,4.71257,81.12,76.8,93.76,0.16,251.68,43.44,98
+2,13,water3,6,6/03/2020,Friday,MA,Red.Red,male,a9754,Maternal,Tall,1343.94,5.13737,14.96,100.48,279.84,0,395.28,203.44,12
+2,13,water3,7,6/03/2020,Friday,MA,Bro.Yel,female,a9794,Maternal,Tall,915.158,2.11177,0,0,439.76,0.88,439.76,,0
+2,13,water3,8,6/03/2020,Friday,MA,Gre.Blu,male,a9808,Maternal,Tall,839.999,2.68679,0,0,404.64,1.2,404.64,,0
+1,14,water3,1,6/03/2020,Friday,MA,Whi.Ora,female,a9839,Maternal,Tall,1525.23,3.66782,0,15.36,422,0.48,437.36,,0
+1,14,water3,2,6/03/2020,Friday,MA,Red.Bro,male,a9760,Maternal,Tall,2627.36,5.97127,26.96,84.72,328.4,0.16,440.08,226.16,8
+1,14,water3,3,6/03/2020,Friday,MA,Gre.Whi,female,a9809,Maternal,Tall,2594.18,5.93255,156.48,58.48,225.12,0.32,440.08,33.44,19
+1,14,water3,4,6/03/2020,Friday,MA,Red.Pur,female,a9762,Maternal,Tall,2179.42,4.95502,0,6.56,433.52,0.16,440.08,,0
+2,14,water3,5,6/03/2020,Friday,MA,Red.Yel,female,a9761,Maternal,Tall,1928.17,7.25967,128.56,80.32,176.32,0.24,385.2,28.08,84
+2,14,water3,6,6/03/2020,Friday,MA,Bro.Gre,female,a9796,Maternal,Tall,1663.82,6.15316,150.56,70.08,169.84,0.56,390.48,55.2,75
+2,14,water3,7,6/03/2020,Friday,MA,Yel._,male,a9763,Maternal,Tall,426.163,1.18827,0,16,399.12,46.4,415.12,,0
+2,14,water3,8,6/03/2020,Friday,MA,Gre.Gre,female,a9804,Maternal,Tall,1061.33,6.0717,96.48,105.44,152.8,0,354.72,143.2,93
+1,15,water3,1,6/03/2020,Friday,MA,_.Bla,male,a9800,Maternal,Tall,2305.45,5.24156,36.16,73.52,330.4,0.48,440.08,295.04,11
+1,15,water3,2,6/03/2020,Friday,MA,Bro.Pin,male,a9793,Maternal,Tall,2471.93,5.61803,75.92,106.96,257.2,0.16,440.08,80.48,16
+1,15,water3,3,6/03/2020,Friday,MA,Pin.Ora,male,a9858,Maternal,Tall,2187.66,4.98556,68.56,95.28,276.08,0.56,439.92,212.16,13
+1,15,water3,4,6/03/2020,Friday,MA,_.Gre,male,a9803,Maternal,Tall,2918.76,6.63355,62.64,113.28,264.16,0.08,440.08,111.2,11
+2,15,water3,5,6/03/2020,Friday,MA,Blu.Yel,female,a9845,Maternal,Tall,1403.18,5.49318,100.72,83.6,201.36,0.24,385.68,120.88,54
+2,15,water3,6,6/03/2020,Friday,MA,Red.Blu,female,a9759,Maternal,Tall,100.358,0.233088,0,0,437.6,309.52,437.6,,0
+2,15,water3,7,6/03/2020,Friday,MA,_.Yel,male,a9764,Maternal,Tall,1087.97,4.58517,102.96,77.04,172.96,0.56,352.96,106.08,59
+2,15,water3,8,6/03/2020,Friday,MA,Red._,female,a9848,Maternal,Tall,2093.95,7.42745,126.48,73.44,186.16,0.32,386.08,63.84,53
+1,16,water4,1,6/03/2020,Friday,WTB,Whi.Bla,male,a10152,Within Treatment,Tall,1697.7,3.94961,2.72,13.6,422.48,0.24,438.8,437.36,1
+1,16,water4,2,6/03/2020,Friday,WTB,Pur.Gre,male,a10074,Within Treatment,Tall,2624.12,5.99004,124.72,131.2,184.08,0.08,440,73.68,20
+1,16,water4,3,6/03/2020,Friday,WTB,Pin.Red,male,a10089,Within Treatment,Tall,2522.52,5.75707,64.32,111.04,264.64,0.16,440,24.8,17
+1,16,water4,4,6/03/2020,Friday,WTB,Whi.Ora,female,a10160,Within Treatment,Tall,2804.92,6.38295,77.12,104,258.96,0.08,440.08,78.64,28
+2,16,water4,5,6/03/2020,Friday,WTB,Red.Bro,male,a10169,Within Treatment,Tall,2034.09,7.35285,72.56,88.72,233.84,0,395.12,58.56,47
+2,16,water4,6,6/03/2020,Friday,WTB,Gre.Pur,male,a10043,Within Treatment,Tall,2221.18,5.71292,38.8,80.4,318.32,0.32,437.52,98.72,9
+2,16,water4,7,6/03/2020,Friday,WTB,Pin.Bro,male,a10088,Within Treatment,Tall,2240.76,5.10006,92.64,100.16,247.28,0.56,440.08,56.56,13
+2,16,water4,8,6/03/2020,Friday,WTB,Yel.Yel,female,a10097,Within Treatment,Tall,1136.53,5.52358,112.64,51.68,167.28,0.16,331.6,0,82
+1,17,water4,1,6/03/2020,Friday,WTB,Pur.Pur,female,a10081,Within Treatment,Tall,1022.99,3.08278,46.8,39.84,324.24,29.76,410.88,176.8,19
+1,17,water4,2,6/03/2020,Friday,WTB,Ora.Ora,female,a10060,Within Treatment,Tall,2771.03,7.79604,108.64,74.8,247.68,0.08,431.12,25.68,39
+1,17,water4,3,6/03/2020,Friday,WTB,Whi.Bro,female,a10159,Within Treatment,Tall,3746.01,8.53384,153.2,110.48,176.4,0,440.08,10.72,29
+1,17,water4,4,6/03/2020,Friday,WTB,Ora.Pin,female,a10063,Within Treatment,Tall,2571.27,5.86726,115.2,148.96,175.92,0.08,440.08,0,20
+2,17,water4,5,6/03/2020,Friday,WTB,Red._,male,a10155,Within Treatment,Tall,1744.51,4.02629,0,1.76,437.52,0.56,439.28,,0
+2,17,water4,6,6/03/2020,Friday,WTB,Gre._,male,a10037,Within Treatment,Tall,715.016,1.65452,0,1.84,437.2,1.68,439.04,,0
+2,17,water4,7,6/03/2020,Friday,WTB,Whi.Pin,female,a10154,Within Treatment,Tall,1306.72,4.46649,64.32,86.72,242.16,0.24,393.2,73.36,36
+2,17,water4,8,6/03/2020,Friday,WTB,Gre.Bro,male,a10044,Within Treatment,Tall,1765.99,8.01558,233.6,66.8,58.88,0.16,359.28,0,142
+1,18,water4,1,6/03/2020,Friday,WTB,Blu.Ora,female,a10059,Within Treatment,Tall,674.097,1.57411,0,0,439.36,26.96,439.36,,0
+1,18,water4,2,6/03/2020,Friday,WTB,_.Yel,male,a10096,Within Treatment,Tall,3732.17,8.4961,209.92,154.96,75.2,0.08,440.08,57.76,50
+1,18,water4,3,6/03/2020,Friday,WTB,Pur.Red,female,a10076,Within Treatment,Tall,2084.37,5.87875,84.72,102.4,239.04,3.68,426.16,25.52,36
+1,18,water4,4,6/03/2020,Friday,WTB,_.Blu,female,a10040,Within Treatment,Tall,2661.91,6.07742,31.52,117.84,290.72,0,440.08,154.32,20
+2,18,water4,5,6/03/2020,Friday,PA,Pin.Red,female,a9958,Paternal,Tall,1592.57,5.11358,59.36,74.88,286.72,0.08,420.96,95.52,25
+2,18,water4,6,6/03/2020,Friday,PA,Bla.Red,female,a9921,Paternal,Tall,2343.35,9.05749,78.56,67.12,258.4,0.24,404.08,149.52,54
+2,18,water4,7,6/03/2020,Friday,PA,Blu.Bla,male,a9984,Paternal,Tall,2171.91,8.24943,120.32,85.52,198.8,0.32,404.64,31.12,46
+2,18,water4,8,6/03/2020,Friday,PA,Bla.Pin,male,a9919,Paternal,Tall,1433.31,7.69272,247.76,51.68,54.64,0.32,354.08,0,161
+1,19,water4,1,6/03/2020,Friday,PA,Bla.Gre,female,a9922,Paternal,Tall,2466.06,6.98679,118.56,63.92,244.48,0.16,426.96,12.96,37
+1,19,water4,2,6/03/2020,Friday,PA,Ora.Pin,female,a9961,Paternal,Tall,2683.46,6.13559,75.12,72,292.96,0.08,440.08,153.12,14
+1,19,water4,3,6/03/2020,Friday,PA,Gre.Pin,male,a9880,Paternal,Tall,2681.64,6.10128,36.56,71.6,331.92,1.6,440.08,96.08,12
+1,19,water4,4,6/03/2020,Friday,PA,_.Bro,female,a9917,Paternal,Tall,2236.29,5.08617,47.28,64.64,328.16,0.48,440.08,96.4,13
+2,19,water4,5,6/03/2020,Friday,PA,Whi.Bro,female,a9929,Paternal,Tall,643.952,4.54511,57.76,41.04,179.44,0.08,278.24,82.4,69
+2,19,water4,6,6/03/2020,Friday,PA,Pin.Yel,male,a9956,Paternal,Tall,2475.73,5.7351,36.96,81.36,321.44,0.48,439.76,115.84,12
+2,19,water4,7,6/03/2020,Friday,PA,Ora.Ora,female,a9962,Paternal,Tall,1308.37,6.927,122.08,81.52,156.96,0.32,360.56,53.12,97
+2,19,water4,8,6/03/2020,Friday,PA,Bla.Ora,female,a9887,Paternal,Tall,1322.84,4.33322,50.72,104.24,248,0.32,402.96,140.64,38
+1,20,water4,1,6/03/2020,Friday,PA,Gre.Blu,male,a9881,Paternal,Tall,1992.7,4.52886,59.84,62.32,317.92,0.72,440.08,274.64,9
+1,20,water4,2,6/03/2020,Friday,PA,_.Gre,male,a9873,Paternal,Tall,2799.47,6.36243,96.56,105.28,238.24,0.24,440.08,51.28,23
+1,20,water4,3,6/03/2020,Friday,PA,Whi.Red,male,a9931,Paternal,Tall,165.264,0.3756,0,0,440.08,154,440.08,,0
+1,20,water4,4,6/03/2020,Friday,PA,Gre.Ora,female,a9876,Paternal,Tall,3356.31,7.63076,132.56,119.68,187.84,0,440.08,78.08,32
+2,20,water4,5,6/03/2020,Friday,PA,Gre.Gre,female,a9874,Paternal,Tall,1098.65,6.35497,96.72,64.24,174.4,0,335.36,129.52,93
+2,20,water4,6,6/03/2020,Friday,PA,Whi.Whi,male,a9926,Paternal,Tall,1550.96,3.63326,58.08,38.48,342.08,103.6,438.64,245.6,13
+2,20,water4,7,6/03/2020,Friday,PA,Pin.Pur,female,a9957,Paternal,Tall,1650.01,6.54559,230.56,66.56,87.68,0,384.8,0,144
+2,20,water4,8,6/03/2020,Friday,PA,Pin.Blu,male,a9960,Paternal,Tall,1459.8,5.00206,48.72,57.36,293.68,5.76,399.76,224.96,27
