@@ -392,9 +392,29 @@ stargazer(Model_Tot_Dist1, Model_low_dur1, Model_mid_dur1, Model_high_dur1a, Mod
 Additional analyses to check for changes between water changes 
 NOTE: WATER CHANGES OCCURED AFTER 2 TANKS HAD BEEN RUN
 ```{r}
-Model_Tot_Dist_water <- lmer(tot_dist ~ Sex + water + (1 | Fish_ID), data = Anxiety_Joined)
+
+Model_Tot_Dist_water <- lm(tot_dist ~ water_time, data = Anxiety_Joined)
 hist(resid(Model_Tot_Dist_water))
 tab_model(Model_Tot_Dist_water)
+plot(Model_Tot_Dist_water)
+ggplot(Anxiety_Joined, aes(x = water_time, y = tot_dist) ) +
+     geom_point() +
+     geom_smooth(method = "lm", se = FALSE)
+
+#Subset by Day to use as an example
+
+Day1 <- subset(Anxiety_Joined, Anxiety_Joined$Date == "2/03/2020") 
+
+
+Model_Tot_Dist_water_day1 <- lm(tot_dist ~ water_time, data = Day1)
+hist(resid(Model_Tot_Dist_water_day1))
+tab_model(Model_Tot_Dist_water_day1)
+plot(Model_Tot_Dist_water_day1)
+ggplot(Day1, aes(x = water_time, y = tot_dist) ) +
+     geom_point() +
+     geom_smooth(method = "lm", se = FALSE)
+
+
 ```
 
 

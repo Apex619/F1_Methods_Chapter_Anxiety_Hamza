@@ -38,6 +38,8 @@ Tall_Tanks <- subset(Anxiety_Joined, Anxiety_Joined$Tank == "Tall")
 str(Anxiety_Joined)
 str(Old_Tanks)
 str(Tall_Tanks)
+
+
 ```
 
 ### MAIN ANALYSIS FOR ALL BEHAVIORAL PARAMETERS
