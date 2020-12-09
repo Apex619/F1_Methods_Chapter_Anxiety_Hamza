@@ -60,6 +60,12 @@ rpt_latency <- function(df) {
   x <- rpt(latency_high ~ (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000)
 }
 
+
+rpt_latency2 <- function(df) {
+  x <- rpt(sqrt(latency_high) ~ water_time + (1 |  Fish_ID), grname = "Fish_ID", data = df, datatype = "Gaussian", nboot = 1000, npermut = 1000)
+}
+
+
 #Obtaining within and between-individual variances (entries to high zone)
 rpt_within_between_freq_high <- function(df) {
   rpt(scale(sqrt(freq_high)) ~ (1 |  Fish_ID), grname = c("Fish_ID", "Residual"), data = df, datatype = "Gaussian", nboot = 10000, npermut = 10000, ratio = FALSE)
