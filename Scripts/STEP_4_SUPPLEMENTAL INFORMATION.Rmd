@@ -475,6 +475,12 @@ ggplot(Anxiety_Joined, aes(x = water_time, y = latency_high) ) +
      geom_point() +
      geom_smooth(method = "lm", se = FALSE)
 
+#TODO
+model_lat <- lmer(sqrt(latency_high) ~ water_time + (1 |Fish_ID), data = Anxiety_Joined)
+
+summary(model_lat)
+
+hist(resid(model_lat))
 ```
 
 

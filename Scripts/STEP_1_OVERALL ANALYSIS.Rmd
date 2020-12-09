@@ -247,7 +247,9 @@ anova(Model_freezing_dur1a, Model_freezing_dur2a)
 
 #latency to high
 ```{r}
-Model_latency <- lmer(latency_high ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
+
+#TODO - probably should squrt
+Model_latency <- lmer(sqrt(latency_high) ~ Tank + Sex + water_time + (1 | Fish_ID), data = Anxiety_Joined)
 hist(residuals(Model_latency)) 
 
 
@@ -257,6 +259,8 @@ rpt_latency(Old_Tanks) -> Old_latency
 rpt_latency(Tall_Tanks) -> Tall_latency
 rpt_latency(Anxiety_Joined) -> Joined_latency
 
+rpt_latency2(Old_Tanks) -> Old_latency2
+rpt_latency2(Tall_Tanks) -> Tall_latency2
 #Obtaining within-individual and between-individual variance 
 
 rpt_within_between_latency(Old_Tanks) -> within_between_latency_old #Short tanks
