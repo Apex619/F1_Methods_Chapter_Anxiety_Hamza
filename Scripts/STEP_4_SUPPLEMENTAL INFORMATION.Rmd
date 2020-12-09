@@ -391,29 +391,89 @@ stargazer(Model_Tot_Dist1, Model_low_dur1, Model_mid_dur1, Model_high_dur1a, Mod
 
 Additional analyses to check for changes between water changes 
 NOTE: WATER CHANGES OCCURED AFTER 2 TANKS HAD BEEN RUN
+Some data require trasformations
 ```{r}
-
+#Total distance
 Model_Tot_Dist_water <- lm(tot_dist ~ water_time, data = Anxiety_Joined)
+
 hist(resid(Model_Tot_Dist_water))
+
 tab_model(Model_Tot_Dist_water)
-plot(Model_Tot_Dist_water)
+
 ggplot(Anxiety_Joined, aes(x = water_time, y = tot_dist) ) +
      geom_point() +
      geom_smooth(method = "lm", se = FALSE)
 
-#Subset by Day to use as an example
+#Low duration
+Model_low_dur_water <- lm(low_dur ~ water_time, data = Anxiety_Joined)
 
-Day1 <- subset(Anxiety_Joined, Anxiety_Joined$Date == "2/03/2020") 
+hist(resid(Model_low_dur_water))
 
+tab_model(Model_low_dur_water)
 
-Model_Tot_Dist_water_day1 <- lm(tot_dist ~ water_time, data = Day1)
-hist(resid(Model_Tot_Dist_water_day1))
-tab_model(Model_Tot_Dist_water_day1)
-plot(Model_Tot_Dist_water_day1)
-ggplot(Day1, aes(x = water_time, y = tot_dist) ) +
+ggplot(Anxiety_Joined, aes(x = water_time, y = low_dur) ) +
      geom_point() +
      geom_smooth(method = "lm", se = FALSE)
 
+
+#Mid duration
+Model_mid_dur_water <- lm(mid_dur ~ water_time, data = Anxiety_Joined)
+
+hist(resid(Model_mid_dur_water))
+
+tab_model(Model_mid_dur_water)
+
+ggplot(Anxiety_Joined, aes(x = water_time, y = mid_dur) ) +
+     geom_point() +
+     geom_smooth(method = "lm", se = FALSE)
+
+#High duration
+
+Model_high_dur_water <- lm(high_dur ~ water_time, data = Anxiety_Joined)
+
+hist(resid(Model_high_dur_water))
+
+tab_model(Model_high_dur_water)
+
+ggplot(Anxiety_Joined, aes(x = water_time, y = high_dur) ) +
+     geom_point() +
+     geom_smooth(method = "lm", se = FALSE)
+
+#Time spent freezing
+
+Model_freezing_dur_water <- lm(freezing_dur ~ water_time, data = Anxiety_Joined)
+
+hist(resid(Model_freezing_dur_water))
+
+tab_model(Model_freezing_dur_water)
+
+ggplot(Anxiety_Joined, aes(x = water_time, y = freezing_dur) ) +
+     geom_point() +
+     geom_smooth(method = "lm", se = FALSE)
+
+#Frequency to enter high zone
+
+Model_freq_high_water <- lm(freq_high ~ water_time, data = Anxiety_Joined)
+
+hist(resid(Model_freq_high_water))
+
+tab_model(Model_freq_high_water)
+
+ggplot(Anxiety_Joined, aes(x = water_time, y = freq_high) ) +
+     geom_point() +
+     geom_smooth(method = "lm", se = FALSE)
+
+#latency to enter high zone
+
+Model_latency_high_water <- lm(latency_high ~ water_time, data = Anxiety_Joined)
+
+hist(resid(Model_latency_high_water))
+
+tab_model(Model_latency_high_water)
+
+ggplot(Anxiety_Joined, aes(x = water_time, y = latency_high) ) +
+     geom_point() +
+     geom_smooth(method = "lm", se = FALSE)
 
 ```
 
