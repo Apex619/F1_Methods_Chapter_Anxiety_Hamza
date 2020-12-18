@@ -40,19 +40,19 @@ THESE STEPS ARE REPEATED FOR ALL BEHAVIORAL PARAMETERS, REFER TO THE FIRST BEHAV
 ### Total distance travelled
 ```{r}
 #Checking normality assumption
-Model_Tot_Dist_sex <- lmer(tot_dist ~ Tank + Sex + (1 | Fish_ID), data = Anxiety_Joined)
-tab_model(Model_Tot_Dist)
+Model_Tot_Dist_sex <- lmer(tot_dist ~ Tank + Sex + water_time + (1 | Fish_ID), data = Anxiety_Joined)
+tab_model(Model_Tot_Dist_sex)
 hist(residuals(Model_Tot_Dist_sex))
 
 #Repeatability analysis males
 rpt_tot_dist(Old_Tanks_Male) -> Old_Tot_Dist_Male #repeatability for short tanks (males)
 rpt_tot_dist(Tall_Tanks_Male) -> Tall_Tot_Dist_Male #repeatability for tall tanks (males)
-rpt_tot_dist(Both_Tanks_Male) -> Joined_Tot_Dist_Male #repeatability overall for males (both tanks)
+# rpt_tot_dist(Both_Tanks_Male) -> Joined_Tot_Dist_Male #repeatability overall for males (both tanks)
 
 #Repeatability analysis females
 rpt_tot_dist(Old_Tanks_Female) -> Old_Tot_Dist_Female #repeatability for short tanks (females)
 rpt_tot_dist(Tall_Tanks_Female) -> Tall_Tot_Dist_Female #repeatability for tall tanks (females)
-rpt_tot_dist(Both_Tanks_Female) -> Joined_Tot_Dist_Female #repeatability overall for females (both tanks)
+# rpt_tot_dist(Both_Tanks_Female) -> Joined_Tot_Dist_Female #repeatability overall for females (both tanks)
 
 
 
@@ -86,21 +86,21 @@ mean_tot_tall <- mean(Diff_boot_Tot_Dist_tall)
 ### Time spent in the low zone ('low duration')
 ```{r}
 
-Model_low_dur_male <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
+Model_low_dur_male <- lmer(low_dur ~ Tank + water_time + (1 | Fish_ID), data = Both_Tanks_Male)
 hist(residuals(Model_low_dur_male)) #Normality assumption met
 
-Model_low_dur_female <- lmer(low_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+Model_low_dur_female <- lmer(low_dur ~ Tank +water_time + (1 | Fish_ID), data = Both_Tanks_Female)
 hist(residuals(Model_low_dur_female)) #Normality assumption met
 
 #Repeatability analysis males
 rpt_low_dur(Old_Tanks_Male) -> Old_low_dur_Male 
 rpt_low_dur(Tall_Tanks_Male) -> Tall_low_dur_Male 
-rpt_low_dur(Both_Tanks_Male) -> Joined_low_dur_Male 
+# rpt_low_dur(Both_Tanks_Male) -> Joined_low_dur_Male 
 
 #Repeatability analysis females
 rpt_low_dur(Old_Tanks_Female) -> Old_low_dur_Female 
 rpt_low_dur(Tall_Tanks_Female) -> Tall_low_dur_Female 
-rpt_low_dur(Both_Tanks_Female) -> Joined_low_dur_Female 
+# rpt_low_dur(Both_Tanks_Female) -> Joined_low_dur_Female 
 
 
 
@@ -135,22 +135,22 @@ m9 <- mean(Diff_boot_low_dur_tall)
 
 #Checking normality assumptions
 
-Model_mid_dur_male <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
+Model_mid_dur_male <- lmer(mid_dur ~ Tank + water_time +(1 | Fish_ID), data = Both_Tanks_Male)
 hist(residuals(Model_mid_dur_male)) #Normality assumption met
 
-Model_mid_dur_female <- lmer(mid_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+Model_mid_dur_female <- lmer(mid_dur ~ Tank + water_time + (1 | Fish_ID), data = Both_Tanks_Female)
 hist(residuals(Model_mid_dur_female)) #Normality assumption met
 
 
 #Repeatability analysis males
 rpt_mid_dur(Old_Tanks_Male) -> Old_mid_dur_Male 
 rpt_mid_dur(Tall_Tanks_Male) -> Tall_mid_dur_Male 
-rpt_mid_dur(Both_Tanks_Male) -> Joined_mid_dur_Male 
+# rpt_mid_dur(Both_Tanks_Male) -> Joined_mid_dur_Male 
 
 #Repeatability analysis females
 rpt_mid_dur(Old_Tanks_Female) -> Old_mid_dur_Female 
 rpt_mid_dur(Tall_Tanks_Female) -> Tall_mid_dur_Female 
-rpt_mid_dur(Both_Tanks_Female) -> Joined_mid_dur_Female 
+# rpt_mid_dur(Both_Tanks_Female) -> Joined_mid_dur_Female 
 
 
 #Contrast analysis old tank
@@ -184,10 +184,10 @@ hist(residuals(Model_high_dur_male))#Normality assumption for males not met
 Model_high_dur2_male <- lmer(sqrt(high_dur) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
 hist(residuals(Model_high_dur2_male))#Normality assumption for males satisfied with a square root transformation
 
-Model_high_dur_Female <- lmer(high_dur ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+Model_high_dur_Female <- lmer(high_dur ~ Tank + water_time +(1 | Fish_ID), data = Both_Tanks_Female)
 hist(residuals(Model_high_dur_Female))#Normality assumption for males not satisfying
 
-Model_high_dur_Female2 <- lmer(sqrt(high_dur) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+Model_high_dur_Female2 <- lmer(sqrt(high_dur) ~ Tank + water_time +(1 | Fish_ID), data = Both_Tanks_Female)
 hist(residuals(Model_high_dur_Female2))#Normality assumption for females satisfied with a square root transformation
 
 
@@ -196,12 +196,12 @@ hist(residuals(Model_high_dur_Female2))#Normality assumption for females satisfi
 #Repeatability analysis males
 rpt_high_dur(Old_Tanks_Male) -> Old_high_dur_Male2 
 rpt_high_dur(Tall_Tanks_Male) -> Tall_high_dur_Male2 
-rpt_high_dur(Both_Tanks_Male) -> Joined_high_dur_Male2 
+# rpt_high_dur(Both_Tanks_Male) -> Joined_high_dur_Male2 
 
 #Repeatability analysis females
 rpt_high_dur(Old_Tanks_Female) -> Old_high_dur_Female2 
 rpt_high_dur(Tall_Tanks_Female) -> Tall_high_dur_Female2 
-rpt_high_dur(Both_Tanks_Female) -> Joined_high_dur_Female2 
+# rpt_high_dur(Both_Tanks_Female) -> Joined_high_dur_Female2 
 
 
 #Contrast analysis old tank
@@ -232,7 +232,7 @@ m13 <- mean(Diff_boot_high_dur_tall)
 Model_freezing_dur_male3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
 hist(residuals(Model_freezing_dur_male3)) #Log transformation was deemed appropriate to meet normality
 
-Model_freezing_dur_female3 <- lmer(log(freezing_dur+1) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+Model_freezing_dur_female3 <- lmer(log(freezing_dur+1) ~ Tank + water_time +(1 | Fish_ID), data = Both_Tanks_Female)
 hist(residuals(Model_freezing_dur_female3))#Log transformation was deemed appropriate to meet normality
 
 
@@ -240,12 +240,12 @@ hist(residuals(Model_freezing_dur_female3))#Log transformation was deemed approp
 #Repeatability analysis males
 rpt_freezing_dur(Old_Tanks_Male) -> Old_freezing_dur_Male3 
 rpt_freezing_dur(Tall_Tanks_Male) -> Tall_freezing_dur_Male3 
-rpt_freezing_dur(Both_Tanks_Male) -> Joined_freezing_dur_Male3 
+# rpt_freezing_dur(Both_Tanks_Male) -> Joined_freezing_dur_Male3 
 
 #Repeatability analysis females
 rpt_freezing_dur(Old_Tanks_Female) -> Old_freezing_dur_Female3 
 rpt_freezing_dur(Tall_Tanks_Female) -> Tall_freezing_dur_Female3 
-rpt_freezing_dur(Both_Tanks_Female) -> Joined_freezing_dur_Female3 
+# rpt_freezing_dur(Both_Tanks_Female) -> Joined_freezing_dur_Female3 
 
 
 #Contrast analysis old tank
@@ -273,22 +273,22 @@ m15 <- mean(Diff_boot_freezing_dur_tall)
 
 #Latency to high zone
 ```{r}
-Model_latency_male <- lmer(latency_high ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
+Model_latency_male <- lmer(latency_high ~ Tank + water_time +(1 | Fish_ID), data = Both_Tanks_Male)
 hist(residuals(Model_latency_male))#Normality assumption met
 
-Model_latency_female <- lmer(latency_high ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+Model_latency_female <- lmer(latency_high ~ Tank + water_time +(1 | Fish_ID), data = Both_Tanks_Female)
 hist(residuals(Model_latency_female))#Normality assumption met
 
 #Repeatability analysis males
 rpt_latency(Old_Tanks_Male) -> Old_latency_high_Male 
 rpt_latency(Tall_Tanks_Male) -> Tall_latency_high_Male
-rpt_latency(Both_Tanks_Male) -> Joined_latency_high_Male 
+# rpt_latency(Both_Tanks_Male) -> Joined_latency_high_Male 
 
 
 #Repeatability analysis females
 rpt_latency(Old_Tanks_Female) -> Old_latency_high_Female 
 rpt_latency(Tall_Tanks_Female) -> Tall_latency_high_Female 
-rpt_latency(Both_Tanks_Female) -> Joined_latency_high_Female 
+# rpt_latency(Both_Tanks_Female) -> Joined_latency_high_Female 
 
 #Contrast analysis old tank
 
@@ -323,23 +323,23 @@ hist(residuals(Model_freq_high_male))#Normality assumption not met
 Model_freq_high_male2 <- lmer(sqrt(freq_high) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Male)
 hist(residuals(Model_freq_high_male2))#Normality assumptions met with square root transformation
 
-Model_freq_high_female <- lmer(freq_high ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+Model_freq_high_female <- lmer(freq_high ~ Tank + water_time +(1 | Fish_ID), data = Both_Tanks_Female)
 hist(residuals(Model_freq_high_female))#Normality assumption not met
 
-Model_freq_high_female2 <- lmer(sqrt(freq_high) ~ Tank + (1 | Fish_ID), data = Both_Tanks_Female)
+Model_freq_high_female2 <- lmer(sqrt(freq_high) ~ Tank + water_time +(1 | Fish_ID), data = Both_Tanks_Female)
 hist(residuals(Model_freq_high_female2))#Normality assumptions met with square root transformation
 
 
 #Repeatability analysis males
 rpt_freq(Old_Tanks_Male) -> Old_freq_high_Male 
 rpt_freq(Tall_Tanks_Male) -> Tall_freq_high_Male
-rpt_freq(Both_Tanks_Male) -> Joined_freqlatency_high_Male 
+# rpt_freq(Both_Tanks_Male) -> Joined_freqlatency_high_Male 
 
 
 #Repeatability analysis females
 rpt_freq(Old_Tanks_Female) -> Old_freq_high_Female 
 rpt_freq(Tall_Tanks_Female) -> Tall_freq_high_Female 
-rpt_freq(Both_Tanks_Female) -> Joined_freq_high_Female 
+# rpt_freq(Both_Tanks_Female) -> Joined_freq_high_Female 
 
 
 #Contrast analysis old tank

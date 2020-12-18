@@ -386,15 +386,15 @@ Overall_New_plot_within_between
 
 Table to display mixed model results (using stargazer)
 ```{r}
-stargazer(Model_Tot_Dist1, Model_low_dur1, Model_mid_dur1, Model_high_dur1a, Model_freezing_dur1a, Model_latency_high1a, Model_freq_high1a, omit.stat = c("bic","aic","ll"),  covariate.labels = c("Short Tank", "Tall Tank", "Male"), align = TRUE, type= "html",dep.var.labels= c("Total distance travelled", "Time spent in low zone", "Time spent in mid zone", "Time spent in high zone", "Time spent freezing", "Latency to high zone", "Entries to high zone"),dep.var.caption= "Behavioral parameters",style="all", out = "Table.html")
+stargazer(Model_Tot_Dist1, Model_low_dur1, Model_mid_dur1, Model_high_dur1a, Model_freezing_dur1a, Model_latency_high1a, Model_freq_high1a, omit.stat = c("bic","aic","ll"),  covariate.labels = c("Short Tank", "Tall Tank", "Male", "Water Condition"), align = TRUE, type= "html",dep.var.labels= c("Total distance travelled", "Time spent in low zone", "Time spent in mid zone", "Time spent in high zone", "Time spent freezing", "Latency to high zone", "Entries to high zone"),dep.var.caption= "Behavioral parameters",style="all", out = "Table.html")
 ```
 
 Additional analyses to check for changes between water changes 
 NOTE: WATER CHANGES OCCURED AFTER 2 TANKS HAD BEEN RUN
-Some data require trasformations
+Some data require transformations
 ```{r}
 #Total distance
-Model_Tot_Dist_water <- lm(tot_dist ~ water_time, data = Anxiety_Joined)
+Model_Tot_Dist_water <- lmer(tot_dist ~ water_time + (1|Fish_ID), data = Anxiety_Joined)
 
 hist(resid(Model_Tot_Dist_water))
 
@@ -405,7 +405,7 @@ ggplot(Anxiety_Joined, aes(x = water_time, y = tot_dist) ) +
      geom_smooth(method = "lm", se = FALSE)
 
 #Low duration
-Model_low_dur_water <- lm(low_dur ~ water_time, data = Anxiety_Joined)
+Model_low_dur_water <- lmer(low_dur ~ water_time + (1|Fish_ID), data = Anxiety_Joined)
 
 hist(resid(Model_low_dur_water))
 
@@ -417,7 +417,7 @@ ggplot(Anxiety_Joined, aes(x = water_time, y = low_dur) ) +
 
 
 #Mid duration
-Model_mid_dur_water <- lm(mid_dur ~ water_time, data = Anxiety_Joined)
+Model_mid_dur_water <- lmer(mid_dur ~ water_time+ (1|Fish_ID), data = Anxiety_Joined)
 
 hist(resid(Model_mid_dur_water))
 
@@ -429,7 +429,7 @@ ggplot(Anxiety_Joined, aes(x = water_time, y = mid_dur) ) +
 
 #High duration
 
-Model_high_dur_water <- lm(high_dur ~ water_time, data = Anxiety_Joined)
+Model_high_dur_water <- lmer(high_dur ~ water_time+ (1|Fish_ID), data = Anxiety_Joined)
 
 hist(resid(Model_high_dur_water))
 
@@ -441,7 +441,7 @@ ggplot(Anxiety_Joined, aes(x = water_time, y = high_dur) ) +
 
 #Time spent freezing
 
-Model_freezing_dur_water <- lm(freezing_dur ~ water_time, data = Anxiety_Joined)
+Model_freezing_dur_water <- lmer(freezing_dur ~ water_time+ (1|Fish_ID), data = Anxiety_Joined)
 
 hist(resid(Model_freezing_dur_water))
 
@@ -453,7 +453,7 @@ ggplot(Anxiety_Joined, aes(x = water_time, y = freezing_dur) ) +
 
 #Frequency to enter high zone
 
-Model_freq_high_water <- lm(freq_high ~ water_time, data = Anxiety_Joined)
+Model_freq_high_water <- lmer(freq_high ~ water_time+ (1|Fish_ID), data = Anxiety_Joined)
 
 hist(resid(Model_freq_high_water))
 
@@ -465,7 +465,7 @@ ggplot(Anxiety_Joined, aes(x = water_time, y = freq_high) ) +
 
 #latency to enter high zone
 
-Model_latency_high_water <- lm(latency_high ~ water_time, data = Anxiety_Joined)
+Model_latency_high_water <- lmer(sqrt(latency_high) ~ water_time+ (1|Fish_ID), data = Anxiety_Joined)
 
 hist(resid(Model_latency_high_water))
 
@@ -475,12 +475,6 @@ ggplot(Anxiety_Joined, aes(x = water_time, y = latency_high) ) +
      geom_point() +
      geom_smooth(method = "lm", se = FALSE)
 
-#TODO
-model_lat <- lmer(sqrt(latency_high) ~ water_time + (1 |Fish_ID), data = Anxiety_Joined)
-
-summary(model_lat)
-
-hist(resid(model_lat))
 ```
 
 
