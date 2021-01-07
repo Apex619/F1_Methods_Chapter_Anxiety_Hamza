@@ -45,8 +45,8 @@ Total distance
 Tot_Dist_rptr <- tibble(
   Condition = c("Short", "Tall", "Contrast", "Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
   r = c(Old_Tot_Dist$R$Fish_ID,Tall_Tot_Dist$R$Fish_ID, m1, within_between_tot_dist_old$R[1], within_between_tot_dist_old$R[2],within_between_tot_dist_tall$R[1], within_between_tot_dist_tall$R[2]),
-  ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`,-0.04, within_between_tot_dist_old$CI_emp[1,1], within_between_tot_dist_old$CI_emp[2,1],within_between_tot_dist_tall$CI_emp[1,1], within_between_tot_dist_tall$CI_emp[2,1]),
-  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`, 0.37, within_between_tot_dist_old$CI_emp[1,2], within_between_tot_dist_old$CI_emp[2,2],within_between_tot_dist_tall$CI_emp[1,2], within_between_tot_dist_tall$CI_emp[2,2]),
+  ci.lb = c(Old_Tot_Dist$CI_emp$`2.5%`,Tall_Tot_Dist$CI_emp$`2.5%`,-0.02, within_between_tot_dist_old$CI_emp[1,1], within_between_tot_dist_old$CI_emp[2,1],within_between_tot_dist_tall$CI_emp[1,1], within_between_tot_dist_tall$CI_emp[2,1]),
+  ci.ub = c(Old_Tot_Dist$CI_emp$`97.5%`,Tall_Tot_Dist$CI_emp$`97.5%`, 0.38, within_between_tot_dist_old$CI_emp[1,2], within_between_tot_dist_old$CI_emp[2,2],within_between_tot_dist_tall$CI_emp[1,2], within_between_tot_dist_tall$CI_emp[2,2]),
 Endpoint = c("Total distance", "Total distance", "Total distance", "Total distance", "Total distance","Total distance","Total distance"))
   
 Tot_Dist_rptr
@@ -57,8 +57,8 @@ Tot_Dist_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
   r = c(Old_Tot_Dist_Male$R$Fish_ID,Old_Tot_Dist_Female$R$Fish_ID,Tall_Tot_Dist_Male$R$Fish_ID,Tall_Tot_Dist_Female$R$Fish_ID,mean_tot_old, mean_tot_tall ),
-  ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`, 0.35, -0.08),
-  ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`, 0.68, 0.45),
+  ci.lb = c(Old_Tot_Dist_Male$CI_emp$`2.5%`,Old_Tot_Dist_Female$CI_emp$`2.5%`,Tall_Tot_Dist_Male$CI_emp$`2.5%`,Tall_Tot_Dist_Female$CI_emp$`2.5%`, 0.38, -0.06),
+  ci.ub = c(Old_Tot_Dist_Male$CI_emp$`97.5%`,Old_Tot_Dist_Female$CI_emp$`97.5%`,Tall_Tot_Dist_Male$CI_emp$`97.5%`,Tall_Tot_Dist_Female$CI_emp$`97.5%`, 0.70, 0.46),
 Endpoint = c("Total distance","Total distance","Total distance","Total distance","Total distance","Total distance"))
   
 Tot_Dist_rptr_sex
@@ -71,7 +71,7 @@ Low duration
 low_dur_rptr <- tibble(
   Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)" ),
   r = c(Old_low_dur$R$Fish_ID,Tall_low_dur$R$Fish_ID, m2,within_between_low_dur_old$R[1], within_between_low_dur_old$R[2],within_between_low_dur_tall$R[1], within_between_low_dur_tall$R[2]),
-  ci.lb = c(Old_low_dur$CI_emp$`2.5%`,Tall_low_dur$CI_emp$`2.5%`, 0.013,within_between_low_dur_old$CI_emp[1,1], within_between_low_dur_old$CI_emp[2,1],within_between_low_dur_tall$CI_emp[1,1], within_between_low_dur_tall$CI_emp[2,1]),
+  ci.lb = c(Old_low_dur$CI_emp$`2.5%`,Tall_low_dur$CI_emp$`2.5%`, 0.02,within_between_low_dur_old$CI_emp[1,1], within_between_low_dur_old$CI_emp[2,1],within_between_low_dur_tall$CI_emp[1,1], within_between_low_dur_tall$CI_emp[2,1]),
   ci.ub = c(Old_low_dur$CI_emp$`97.5%`,Tall_low_dur$CI_emp$`97.5%`, 0.37,within_between_low_dur_old$CI_emp[1,2], within_between_low_dur_old$CI_emp[2,2],within_between_low_dur_tall$CI_emp[1,2], within_between_low_dur_tall$CI_emp[2,2] ),
 Endpoint = c("Time spent in low zone", "Time spent in low zone", "Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone"))
   
@@ -83,8 +83,8 @@ low_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
   r = c(Old_low_dur_Male$R$Fish_ID,Old_low_dur_Female$R$Fish_ID,Tall_low_dur_Male$R$Fish_ID,Tall_low_dur_Female$R$Fish_ID,m8,m9),
-  ci.lb = c(Old_low_dur_Male$CI_emp$`2.5%`,Old_low_dur_Female$CI_emp$`2.5%`,Tall_low_dur_Male$CI_emp$`2.5%`,Tall_low_dur_Female$CI_emp$`2.5%`,-0.28,0.10),
-  ci.ub = c(Old_low_dur_Male$CI_emp$`97.5%`,Old_low_dur_Female$CI_emp$`97.5%`,Tall_low_dur_Male$CI_emp$`97.5%`,Tall_low_dur_Female$CI_emp$`97.5%`,0.27,0.55),
+  ci.lb = c(Old_low_dur_Male$CI_emp$`2.5%`,Old_low_dur_Female$CI_emp$`2.5%`,Tall_low_dur_Male$CI_emp$`2.5%`,Tall_low_dur_Female$CI_emp$`2.5%`,-0.26,0.10),
+  ci.ub = c(Old_low_dur_Male$CI_emp$`97.5%`,Old_low_dur_Female$CI_emp$`97.5%`,Tall_low_dur_Male$CI_emp$`97.5%`,Tall_low_dur_Female$CI_emp$`97.5%`,0.30,0.54),
 Endpoint = c("Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone","Time spent in low zone"))
 
 low_dur_rptr_sex
@@ -107,8 +107,8 @@ mid_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
   r = c(Old_mid_dur_Male$R$Fish_ID,Old_mid_dur_Female$R$Fish_ID,Tall_mid_dur_Male$R$Fish_ID,Tall_mid_dur_Female$R$Fish_ID,m10,m11 ),
-  ci.lb = c(Old_mid_dur_Male$CI_emp$`2.5%`,Old_mid_dur_Female$CI_emp$`2.5%`,Tall_mid_dur_Male$CI_emp$`2.5%`,Tall_mid_dur_Female$CI_emp$`2.5%`,-0.22,0.07),
-  ci.ub = c(Old_mid_dur_Male$CI_emp$`97.5%`,Old_mid_dur_Female$CI_emp$`97.5%`,Tall_mid_dur_Male$CI_emp$`97.5%`,Tall_mid_dur_Female$CI_emp$`97.5%`,0.27,0.56),
+  ci.lb = c(Old_mid_dur_Male$CI_emp$`2.5%`,Old_mid_dur_Female$CI_emp$`2.5%`,Tall_mid_dur_Male$CI_emp$`2.5%`,Tall_mid_dur_Female$CI_emp$`2.5%`,-0.22,0.09),
+  ci.ub = c(Old_mid_dur_Male$CI_emp$`97.5%`,Old_mid_dur_Female$CI_emp$`97.5%`,Tall_mid_dur_Male$CI_emp$`97.5%`,Tall_mid_dur_Female$CI_emp$`97.5%`,0.26,0.58),
 Endpoint = c("Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone","Time spent in mid zone"))
 
 mid_dur_rptr_sex
@@ -155,8 +155,8 @@ freezing_dur_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
   r = c(Old_freezing_dur_Male3$R$Fish_ID,Old_freezing_dur_Female3$R$Fish_ID,Tall_freezing_dur_Male3$R$Fish_ID,Tall_freezing_dur_Female3$R$Fish_ID,m14,m15),
-  ci.lb = c(Old_freezing_dur_Male3$CI_emp$`2.5%`,Old_freezing_dur_Female3$CI_emp$`2.5%`,Tall_freezing_dur_Male3$CI_emp$`2.5%`,Tall_freezing_dur_Female3$CI_emp$`2.5%`,0.03,-0.25),
-  ci.ub = c(Old_freezing_dur_Male3$CI_emp$`97.5%`,Old_freezing_dur_Female3$CI_emp$`97.5%`,Tall_freezing_dur_Male3$CI_emp$`97.5%`,Tall_freezing_dur_Female3$CI_emp$`97.5%`,0.56,0.32),
+  ci.lb = c(Old_freezing_dur_Male3$CI_emp$`2.5%`,Old_freezing_dur_Female3$CI_emp$`2.5%`,Tall_freezing_dur_Male3$CI_emp$`2.5%`,Tall_freezing_dur_Female3$CI_emp$`2.5%`,0.03,-0.22),
+  ci.ub = c(Old_freezing_dur_Male3$CI_emp$`97.5%`,Old_freezing_dur_Female3$CI_emp$`97.5%`,Tall_freezing_dur_Male3$CI_emp$`97.5%`,Tall_freezing_dur_Female3$CI_emp$`97.5%`,0.56,0.34),
 Endpoint = c("Time spent freezing","Time spent freezing","Time spent freezing","Time spent freezing","Time spent freezing","Time spent freezing"))
 
 freezing_dur_rptr_sex
@@ -167,8 +167,8 @@ Entries into high zone
 frequency_rptr <- tibble(
   Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
   r = c(Old_freq_high$R$Fish_ID,Tall_freq_high$R$Fish_ID, m7,within_between_freq_high_old$R[1], within_between_freq_high_old$R[2],within_between_freq_high_tall$R[1], within_between_freq_high_tall$R[2]),
-  ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`, -0.05,within_between_freq_high_old$CI_emp[1,1], within_between_freq_high_old$CI_emp[2,1],within_between_freq_high_tall$CI_emp[1,1], within_between_freq_high_tall$CI_emp[2,1]),
-  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.31,within_between_freq_high_old$CI_emp[1,2], within_between_freq_high_old$CI_emp[2,2],within_between_freq_high_tall$CI_emp[1,2], within_between_freq_high_tall$CI_emp[2,2]),
+  ci.lb = c(Old_freq_high$CI_emp$`2.5%`,Tall_freq_high$CI_emp$`2.5%`, -0.06,within_between_freq_high_old$CI_emp[1,1], within_between_freq_high_old$CI_emp[2,1],within_between_freq_high_tall$CI_emp[1,1], within_between_freq_high_tall$CI_emp[2,1]),
+  ci.ub = c(Old_freq_high$CI_emp$`97.5%`,Tall_freq_high$CI_emp$`97.5%`, 0.30,within_between_freq_high_old$CI_emp[1,2], within_between_freq_high_old$CI_emp[2,2],within_between_freq_high_tall$CI_emp[1,2], within_between_freq_high_tall$CI_emp[2,2]),
 Endpoint = c("Entries into high zone", "Entries into high zone", "Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone"))
   
 frequency_rptr
@@ -179,8 +179,8 @@ freq_high_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
   r = c(Old_freq_high_Male$R$Fish_ID,Old_freq_high_Female$R$Fish_ID,Tall_freq_high_Male$R$Fish_ID,Tall_freq_high_Female$R$Fish_ID,m18,m19 ),
-  ci.lb = c(Old_freq_high_Male$CI_emp$`2.5%`,Old_freq_high_Female$CI_emp$`2.5%`,Tall_freq_high_Male$CI_emp$`2.5%`,Tall_freq_high_Female$CI_emp$`2.5%`,-0.07,0.12),
-  ci.ub = c(Old_freq_high_Male$CI_emp$`97.5%`,Old_freq_high_Female$CI_emp$`97.5%`,Tall_freq_high_Male$CI_emp$`97.5%`,Tall_freq_high_Female$CI_emp$`97.5%`,0.43,0.62),
+  ci.lb = c(Old_freq_high_Male$CI_emp$`2.5%`,Old_freq_high_Female$CI_emp$`2.5%`,Tall_freq_high_Male$CI_emp$`2.5%`,Tall_freq_high_Female$CI_emp$`2.5%`,-0.07,0.13),
+  ci.ub = c(Old_freq_high_Male$CI_emp$`97.5%`,Old_freq_high_Female$CI_emp$`97.5%`,Tall_freq_high_Male$CI_emp$`97.5%`,Tall_freq_high_Female$CI_emp$`97.5%`,0.43,0.63),
 Endpoint = c("Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone","Entries into high zone"))
 
 freq_high_rptr_sex
@@ -192,8 +192,8 @@ Latency to high
 latency_rptr <- tibble(
   Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
   r = c(Old_latency$R$Fish_ID,Tall_latency$R$Fish_ID, m6,within_between_latency_old$R[1], within_between_latency_old$R[2],within_between_latency_tall$R[1], within_between_latency_tall$R[2]),
-  ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`, 0.15,within_between_latency_old$CI_emp[1,1], within_between_latency_old$CI_emp[2,1],within_between_latency_tall$CI_emp[1,1], within_between_latency_tall$CI_emp[2,1]),
-  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.57,within_between_latency_old$CI_emp[1,2], within_between_latency_old$CI_emp[2,2],within_between_latency_tall$CI_emp[1,2], within_between_latency_tall$CI_emp[2,2]),
+  ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`, 0.13,within_between_latency_old$CI_emp[1,1], within_between_latency_old$CI_emp[2,1],within_between_latency_tall$CI_emp[1,1], within_between_latency_tall$CI_emp[2,1]),
+  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.58,within_between_latency_old$CI_emp[1,2], within_between_latency_old$CI_emp[2,2],within_between_latency_tall$CI_emp[1,2], within_between_latency_tall$CI_emp[2,2]),
 Endpoint = c("Latency to high zone", "Latency to high zone", "Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone"))
 
 latency_rptr
@@ -204,8 +204,8 @@ latency_high_rptr_sex <- tibble(
   Tank = c("Short","Short", "Tall", "Tall", "Short", "Tall"),
   Condition = c("Male","Female","Male", "Female", "Contrast", "Contrast"),
   r = c(Old_latency_high_Male$R$Fish_ID,Old_latency_high_Female$R$Fish_ID,Tall_latency_high_Male$R$Fish_ID,Tall_latency_high_Female$R$Fish_ID,m16,m17),
-  ci.lb = c(Old_latency_high_Male$CI_emp$`2.5%`,Old_latency_high_Female$CI_emp$`2.5%`,Tall_latency_high_Male$CI_emp$`2.5%`,Tall_latency_high_Female$CI_emp$`2.5%`,-0.31,0.16),
-  ci.ub = c(Old_latency_high_Male$CI_emp$`97.5%`,Old_latency_high_Female$CI_emp$`97.5%`,Tall_latency_high_Male$CI_emp$`97.5%`,Tall_latency_high_Female$CI_emp$`97.5%`,0.34,0.68),
+  ci.lb = c(Old_latency_high_Male$CI_emp$`2.5%`,Old_latency_high_Female$CI_emp$`2.5%`,Tall_latency_high_Male$CI_emp$`2.5%`,Tall_latency_high_Female$CI_emp$`2.5%`,-0.34,0.16),
+  ci.ub = c(Old_latency_high_Male$CI_emp$`97.5%`,Old_latency_high_Female$CI_emp$`97.5%`,Tall_latency_high_Male$CI_emp$`97.5%`,Tall_latency_high_Female$CI_emp$`97.5%`,0.31,0.69),
 Endpoint = c("Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone"))
 
 latency_high_rptr_sex
@@ -262,7 +262,6 @@ ylim(-0.2, 0.9)+
 
 Overall_New_plot
 
-ggsave(path = "../Plots", file = "Overall_plot_new.jpeg", limitsize = FALSE)
 
 ```
 
@@ -318,7 +317,7 @@ Sex_New_plot <-
 
 Sex_New_plot
 
-ggsave(path = "../Plots", file = "Overall_plot_sex.jpeg", limitsize = FALSE)
+
 ```
 
 
@@ -354,4 +353,6 @@ latency_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$latenc
 Joined_violins_new_design <- tot_dist_violin + low_dur_violin + mid_dur_violin + high_dur_violin + freezing_dur_violin + latency_violin+freq_violin + plot_layout(ncol = 2, nrow=4)
 Joined_violins_new_design
 ```
+
+
 

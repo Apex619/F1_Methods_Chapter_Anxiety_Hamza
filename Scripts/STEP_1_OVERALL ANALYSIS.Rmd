@@ -51,7 +51,7 @@ str(Tall_Tanks)
 
 THESE STEPS ARE REPEATED FOR ALL BEHAVIORAL PARAMETERS, REFER TO THE FIRST BEHAVIORAL PARAMETER FOR COMMENTS AND REFERENCE 
 
-# Total distance travelled
+### Total distance travelled
 ```{r, echo=FALSE}
 
 #Check Normality with mixed model and then histogram of residuals
