@@ -358,6 +358,7 @@ Overall_Data_Joined_Final_within_between$Tank <- c("Short","Short","Tall", "Tall
 Overall_Data_Joined_Final_within_between$Condition <- c("Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance","Between-Individual Variance", "Within-Individual Variance", "Between-Individual Variance", "Within-Individual Variance")
 
 
+
 ```
 
 #Plot for within and between individual variance

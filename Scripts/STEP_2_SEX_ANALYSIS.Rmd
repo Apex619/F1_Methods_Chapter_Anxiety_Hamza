@@ -296,7 +296,7 @@ Old_latency_high_Female_boot<-unlist(Old_latency_high_Female$R_boot)
 Old_latency_high_Male_boot<-unlist(Old_latency_high_Male$R_boot)
 
 
-Diff_boot_latency_high_old <- Old_latency_high_Male_boot - Old_latency_high_Female_boot
+Diff_boot_latency_high_old <- Old_latency_high_Female_boot - Old_latency_high_Male_boot
 
 
 q16 <- quantile(Diff_boot_latency_high_old, c(0.025, 0.975)) 
