@@ -191,9 +191,9 @@ Latency to high
 ```{r}
 latency_rptr <- tibble(
   Condition = c("Short", "Tall", "Contrast","Between-Individual Variance (Short Tank)", "Within-Individual Variance (Short Tank)","Between-Individual Variance (Tall Tank)", "Within-Individual Variance (Tall Tank)"),
-  r = c(Old_latency$R$Fish_ID,Tall_latency$R$Fish_ID, m6,within_between_latency_old$R[1], within_between_latency_old$R[2],within_between_latency_tall$R[1], within_between_latency_tall$R[2]),
-  ci.lb = c(Old_latency$CI_emp$`2.5%`,Tall_latency$CI_emp$`2.5%`, 0.13,within_between_latency_old$CI_emp[1,1], within_between_latency_old$CI_emp[2,1],within_between_latency_tall$CI_emp[1,1], within_between_latency_tall$CI_emp[2,1]),
-  ci.ub = c(Old_latency$CI_emp$`97.5%`,Tall_latency$CI_emp$`97.5%`, 0.58,within_between_latency_old$CI_emp[1,2], within_between_latency_old$CI_emp[2,2],within_between_latency_tall$CI_emp[1,2], within_between_latency_tall$CI_emp[2,2]),
+  r = c(Old_latency2$R$Fish_ID,Tall_latency2$R$Fish_ID, m6,within_between_latency_old$R[1], within_between_latency_old$R[2],within_between_latency_tall$R[1], within_between_latency_tall$R[2]),
+  ci.lb = c(Old_latency2$CI_emp$`2.5%`,Tall_latency2$CI_emp$`2.5%`, 0.13,within_between_latency_old$CI_emp[1,1], within_between_latency_old$CI_emp[2,1],within_between_latency_tall$CI_emp[1,1], within_between_latency_tall$CI_emp[2,1]),
+  ci.ub = c(Old_latency2$CI_emp$`97.5%`,Tall_latency2$CI_emp$`97.5%`, 0.58,within_between_latency_old$CI_emp[1,2], within_between_latency_old$CI_emp[2,2],within_between_latency_tall$CI_emp[1,2], within_between_latency_tall$CI_emp[2,2]),
 Endpoint = c("Latency to high zone", "Latency to high zone", "Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone","Latency to high zone"))
 
 latency_rptr
