@@ -29,19 +29,21 @@ Model_Tot_Dist <- #assign our model an appropriate name
 
 hist(residuals(Model_Tot_Dist)) #histogram of residuals to check for normal distribution
 
-#assumption of normality is satisfied, we can now examine the results of our model
+# Assumption of normality is satisfied, we can now examine the results of our model
 
-tab_model(Model_Tot_Dist) #displaying results in a nice table
+tab_model(Model_Tot_Dist) #displaying results in a nice table with the tab_model function
 
 # Overall, from the table output, based on our intercept, zebrafish travelled significantly less in
-# tall tanks. Males also travelled less and as time went on and stress hormones were added, zebrafish
-# also swam less. However the latter two results are insignificant. 
+# tall tanks. Males also travelled less and as time went on and stress hormones were added and zebrafish
+# also swam less. However the latter two results are insignificant. There is also extra information 
+# presented in the table.
 
 # To conduct repeatability analysis, we will use the package rptR. This package uses the mixed effects
-# model framework and requires specifying a mixed model similiar to what we just produced before.
+# model framework. Note: The mixed model run previously also displays repeatability as ICC, however this
+# cannot be considered accurate due to the lack bootstraps and permutations. 
 
 # Unadjusted repeatabilities will involve no fixed factors and only the random factor. However, we will
-# conduct adjusted analyses as water condition was a signifcant factor in our overall models (see paper)
+# conduct adjusted analyses with water condition.
 
 library(rptR)
 
@@ -49,12 +51,13 @@ total_distance_example <- #using the function rpt
   rpt(tot_dist ~ #specifying our response variable
                                 water_time + #fixed factor
                                 (1 |  Fish_ID), #random effect
-                              grname = "Fish_ID", #random effect 
+                              grname = "Fish_ID", #random effect in quotation marks, must match with above
                               data = Anxiety_Joined, #dataframe
-                              datatype = "Gaussian", nboot = 1000, npermut = 1000) #bootstraps and 
-#                                                                                   permutations to obtain 
-#                                                                                   SE and CI
+                              datatype = "Gaussian", #specify datatype
+      nboot = 1000, npermut = 1000) #bootstraps and 
+#                                   permutations to obtain 
+#                                   SE and CI, 1000 will be enough for now but 10,000 is ideal
 
 total_distance_example #run to see repeatability
 
-# We obtain a repeatability of 0.26 which is moderate
+# We obtain a significant repeatability of 0.26 (95% CI 0.174 - 0.34) which is moderate
