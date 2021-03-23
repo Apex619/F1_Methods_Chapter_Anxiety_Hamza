@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #checks for installation and loads packages
 pacman::p_load(lmerTest,ggThemeAssist,rptR,lme4,readxl, tidyr, dplyr, magrittr, lubridate, stringr, purrr,
                sjPlot,ggplot2,lubridate,wesanderson,ggbeeswarm,emmeans,patchwork,viridis,nlme,Rmisc,ggpubr,
-               stargazer)
+               stargazer,ggsignif)
 # Load custom functions
 source("../Scripts/functions.R") #load custom functions
 ```
@@ -325,28 +325,57 @@ Sex_New_plot
 ```{r}
 
 
-low_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined,Anxiety_Joined$low_dur,"Time spent in low zone ***", "Seconds")
-
+low_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined,Anxiety_Joined$low_dur,"Time spent in low zone", "Seconds")+
+  ylim(0,600)+
+  geom_signif(comparisons = list(c("Old", "Tall")), #Adding contrasts
+              map_signif_level=TRUE, y_position = 480, annotations = "***", textsize = 5)
+  
 low_dur_violin
 
 
-tot_dist_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$tot_dist, "Total distance travelled ***", "Distance (cm)")
+tot_dist_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$tot_dist, "Total distance travelled", "Distance (cm)")+
+  ylim(0,5500)+
+  geom_signif(comparisons = list(c("Old", "Tall")), #Adding contrasts
+              map_signif_level=TRUE, y_position = 4750, annotations = "***", textsize = 5)
+
+tot_dist_violin
 
 
 
-mid_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$mid_dur, "Time spent in mid zone ***", "Seconds")
+mid_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$mid_dur, "Time spent in mid zone", "Seconds")+
+  ylim(0,300)+
+  geom_signif(comparisons = list(c("Old", "Tall")), #Adding contrasts
+              map_signif_level=TRUE, y_position = 240, annotations = "***", textsize = 5)
+mid_dur_violin
 
 
-high_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$high_dur, "Time spent in high zone ***", "Seconds")
+high_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$high_dur, "Time spent in high zone", "Seconds")+
+  ylim(0,480)+
+  geom_signif(comparisons = list(c("Old", "Tall")), #Adding contrasts
+              map_signif_level=TRUE, y_position = 380, annotations = "***", textsize = 5)
+high_dur_violin
+
+freezing_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, log(Anxiety_Joined$freezing_dur+1), "Time spent freezing", "Seconds")+
+  ylim(0,8)+
+  geom_signif(comparisons = list(c("Old", "Tall")), #Adding contrasts
+              map_signif_level=TRUE, y_position = 7.2, annotations = "***", textsize = 5)
+
+freezing_dur_violin
+
+freq_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$freq_high, "Frequency of visits to high zone", "Visits")+
+  ylim(0,200)+
+  geom_signif(comparisons = list(c("Old", "Tall")), #Adding contrasts
+              map_signif_level=TRUE, y_position = 180, annotations = "***", textsize = 5)
 
 
-freezing_dur_violin <- violin_plot_custom_hamza(Anxiety_Joined, log(Anxiety_Joined$freezing_dur+1), "Time spent freezing ***", "Seconds")
-
-
-freq_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$freq_high, "Frequency of visits to high zone ***", "Visits")
 freq_violin
 
-latency_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$latency_high, "Latency to the high zone ***", "Seconds")
+latency_violin <- violin_plot_custom_hamza(Anxiety_Joined, Anxiety_Joined$latency_high, "Latency to the high zone", "Seconds")+
+  ylim(0,550)+
+  geom_signif(comparisons = list(c("Old", "Tall")), #Adding contrasts
+              map_signif_level=TRUE, y_position = 480, annotations = "***", textsize = 5)
+
+latency_violin
 
 #Joining plots together using patchwork to create one main plot
 
